@@ -31,14 +31,20 @@ def summarize(headlines):
         f"{joined}"
     )
 
+    # モデル名を 2.5-flash-lite に変更（404エラー回避）
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
-        f"gemini-2.5-flash:generateContent?key={GEMINI_API_KEY}"
+        f"gemini-2.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
     )
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
 
     res = requests.post(url, json=payload, timeout=60)
-    res.raise_for_status()
+    
+    # エラーが発生した場合は詳細ログを出力
+    if res.status_code != 200:
+        print(f"API Error ({res.status_code}): {res.text}")
+        res.raise_for_status()
+
     data = res.json()
     return data["candidates"][0]["content"]["parts"][0]["text"].strip()
 
