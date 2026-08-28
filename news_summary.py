@@ -14,7 +14,7 @@ API_URL = (
     f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
 )
 
-# --- RSS取得ヘルパー関数（タイトルのみ取得して文字数を節約） ---
+# --- RSS取得ヘルパー関数 ---
 def fetch_rss_titles(query, max_items=12):
     url = f"https://news.google.com/rss/search?q={query}&hl=ja&gl=JP&ceid=JP:ja"
     feed = feedparser.parse(url)
@@ -29,13 +29,13 @@ def summarize_ai_trends():
     news_titles = fetch_rss_titles("AI", max_items=12)
     prompt = (
         "以下は最新のAIニュースの見出し一覧です。\n"
-        "URLや前置きは含めず、内容をわかりやすく日本語で要約・解説してください。\n\n"
+        "【絶対ルール】「〜について要約します」「以下は〜」といった前置き・挨拶・導入文は一切禁止です。いきなり本文から始めてください。\n\n"
         "【対象ニュース】\n"
         f"{news_titles}\n\n"
-        "【出力ルール】\n"
-        "1. 開発者向けツール/LLM動向 -> ビジネス活用 -> ハード・ガバナンスの優先順位で記述してください。\n"
-        "2. URLやリンクは記載しないでください。\n"
-        "3. 全体で500〜700字程度で簡潔かつ具体的に記述してください。"
+        "【出力形式】\n"
+        "1. 開発者向けツール/LLM動向 -> ビジネス活用 -> ハード・ガバナンスの順に記述。\n"
+        "2. URLやリンクは含めない。\n"
+        "3. 全体で600〜800字程度で簡潔・具体的にまとめる。"
     )
 
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
@@ -50,16 +50,17 @@ def summarize_medical_trends():
 
     prompt = (
         "以下は最新の医療・ゲノム・病理および地域医療ニュースの見出し一覧です。\n"
-        "「どんな患者・疾患に、どの検査・手技が使われているか」「臨床・学術的変化」に重点を置いて要約してください。\n\n"
+        "「どんな患者・疾患に、どの検査・手技が使われているか」「臨床・学術的変化」に重点を置いて要約してください。\n"
+        "【絶対ルール】「〜について要約します」「以下は〜」といった前置き・挨拶・導入文は一切禁止です。いきなり本文から始めてください。\n\n"
         "【全国ニュース】\n"
         f"{med_titles}\n\n"
         "【地域ニュース】\n"
         f"{local_titles}\n\n"
-        "【出力形式と構成ルール】\n"
-        "・ゲノム関連、検査技術、病理、AI活用に関する情報を最優先にして並べてください。\n"
-        "・地域医療情報（和歌山・大阪南部）がある場合は、施設名や規模等を明記してください。\n"
-        "・各トピックごとに【要点】【対象患者・手技】【医局への提案】の形式でまとめてください。\n"
-        "・URLやリンクは一切記載せず、全体で600〜800字程度に収めてください。"
+        "【出力形式】\n"
+        "・ゲノム関連、検査技術、病理、AI活用に関する情報を最優先。\n"
+        "・地域医療情報（和歌山・大阪南部）がある場合は、施設名や規模等を明記。\n"
+        "・各トピックごとに【要点】【対象患者・手技】【医局への提案】の形式で記述。\n"
+        "・URLやリンクは含めず、全体で600〜800字程度にまとめる。"
     )
 
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
@@ -69,9 +70,9 @@ def summarize_medical_trends():
 
 # --- ntfy.sh 送信関数 ---
 def send_notification(title, text):
-    # ntfyの制限対策（万が一長すぎた場合のみ安全カット）
-    if len(text) > 1200:
-        text = text[:1150] + "\n\n(※一部省略)"
+    # バイト数制限（添付ファイル化）を防止するため、1000文字で安全カット
+    if len(text) > 1000:
+        text = text[:950] + "\n\n(※文字数制限のため一部省略)"
 
     res = requests.post(
         f"https://ntfy.sh/{NTFY_TOPIC}",
@@ -96,7 +97,7 @@ def main():
     except Exception as e:
         print(f"AI Trends Error: {e}")
 
-    # レート制限・送信連続エラー回避のため15秒待機
+    # レート制限回避のため15秒待機
     print("Waiting 15 seconds before next request...")
     time.sleep(15)
 
