@@ -31,10 +31,10 @@ def summarize(headlines):
         f"{joined}"
     )
 
-    # モデル名を 2.5-flash-lite に変更（404エラー回避）
+    # 最新の gemini-3.5-flash-lite に変更
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
-        f"gemini-2.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
+        f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
     )
     payload = {"contents": [{"parts": [{"text": prompt}]}]}
 
