@@ -14,8 +14,8 @@ API_URL = (
     f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
 )
 
-# --- RSS取得ヘルパー関数 ---
-def fetch_rss_titles(query, max_items=12):
+# --- RSS取得関数 ---
+def fetch_rss_titles(query, max_items=8):
     url = f"https://news.google.com/rss/search?q={query}&hl=ja&gl=JP&ceid=JP:ja"
     feed = feedparser.parse(url)
     titles = []
@@ -24,67 +24,18 @@ def fetch_rss_titles(query, max_items=12):
         titles.append(f"- {title}")
     return "\n".join(titles)
 
-# --- 1. AIトレンドの要約 ---
-def summarize_ai_trends():
-    news_titles = fetch_rss_titles("AI", max_items=12)
-    prompt = (
-        "以下は最新のAIニュースの見出し一覧です。\n"
-        "【絶対ルール】「〜について要約します」「以下は〜」といった前置き・挨拶・導入文は一切禁止です。いきなり本文から始めてください。\n\n"
-        "【対象ニュース】\n"
-        f"{news_titles}\n\n"
-        "【出力形式】\n"
-        "1. 開発者向けツール/LLM動向 -> ビジネス活用 -> ハード・ガバナンスの順に記述。\n"
-        "2. URLやリンクは含めない。\n"
-        "3. 全体で400〜600字程度で簡潔・具体的にまとめる。"
-    )
-    payload = {"contents": [{"parts": [{"text": prompt}]}]}
-    res = requests.post(API_URL, json=payload, timeout=60)
-    res.raise_for_status()
-    return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-
-# --- 2. 医療・ゲノム・病理ニュースの要約 ---
-def summarize_medical_trends():
-    med_titles = fetch_rss_titles("医療 検査 ゲノム 病理", max_items=12)
-    prompt = (
-        "以下は最新の医療・ゲノム・病理関連ニュースの見出し一覧です。\n"
-        "「どんな患者・疾患に、どの検査・手技が使われているか」「臨床・学術的変化」に重点を置いて要約してください。\n"
-        "【絶対ルール】「〜について要約します」「以下は〜」といった前置き・挨拶・導入文は一切禁止です。いきなり本文から始めてください。\n\n"
-        "【対象ニュース】\n"
-        f"{med_titles}\n\n"
-        "【出力形式】\n"
-        "・ゲノム関連、検査技術、病理、AI活用に関する情報を最優先。\n"
-        "・各トピックごとに【要点】【対象患者・手技】【医局への提案】の形式で記述。\n"
-        "・URLやリンクは含めず、全体で500〜700字程度にまとめる。"
-    )
-    payload = {"contents": [{"parts": [{"text": prompt}]}]}
-    res = requests.post(API_URL, json=payload, timeout=60)
-    res.raise_for_status()
-    return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-
-# --- 3. 地域医療・ニュースの要約 ---
-def summarize_local_trends():
-    local_titles = fetch_rss_titles("和歌山 医療 OR 大阪 病院 開業", max_items=10)
-    prompt = (
-        "以下は最新の和歌山県・大阪南部の地域医療ニュースの見出し一覧です。\n"
-        "【絶対ルール】「〜について要約します」「以下は〜」といった前置き・挨拶・導入文は一切禁止です。いきなり本文から始めてください。\n\n"
-        "【対象ニュース】\n"
-        f"{local_titles}\n\n"
-        "【出力形式】\n"
-        "・施設名、所在地、診療科、規模、時期などがわかる場合は明記する。\n"
-        "・地域の医療提供体制の変化や新規開業・閉院の情報に絞って記述する。\n"
-        "・各トピックを簡潔な箇条書きでまとめる。\n"
-        "・URLやリンクは含めず、全体で300〜500字程度にまとめる。"
-    )
-    payload = {"contents": [{"parts": [{"text": prompt}]}]}
+# --- 共通のGemini要約関数（厳格な350文字制限） ---
+def generate_short_summary(prompt_text):
+    payload = {"contents": [{"parts": [{"text": prompt_text}]}]}
     res = requests.post(API_URL, json=payload, timeout=60)
     res.raise_for_status()
     return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
 
 # --- ntfy.sh 送信関数 ---
 def send_notification(title, text):
-    # バイト数制限（添付ファイル化）を防止するため、1000文字で安全カット
-    if len(text) > 1000:
-        text = text[:950] + "\n\n(※文字数制限のため一部省略)"
+    # 送信前に380文字を超えていたらカット（絶対途中で切れさせない安全網）
+    if len(text) > 380:
+        text = text[:360] + "\n(以下省略)"
 
     res = requests.post(
         f"https://ntfy.sh/{NTFY_TOPIC}",
@@ -100,36 +51,55 @@ def send_notification(title, text):
 def main():
     today = datetime.now().strftime("%Y-%m-%d")
 
-    # 1. AIトピックス送信
+    # 1. AI：LLM・開発動向（超短文）
     try:
-        print("Fetching AI trends...")
-        ai_summary = summarize_ai_trends()
-        send_notification(f"🤖 AIトレンド要約 {today}", ai_summary)
-        print("AI summary sent successfully.")
+        print("Sending Topic 1...")
+        titles = fetch_rss_titles("AI LLM 開発", max_items=6)
+        prompt = f"最新のAI開発・LLMニュースの見出しです。\n前置き一切なしで、要点のみを【全角300文字以内】で簡潔に要約してください。\n\n{titles}"
+        text = generate_short_summary(prompt)
+        send_notification(f"🤖 AI① 開発・LLM動向 {today}", text)
+        print("Topic 1 sent.")
     except Exception as e:
-        print(f"AI Trends Error: {e}")
+        print(f"Topic 1 Error: {e}")
 
-    time.sleep(15)
+    time.sleep(10)
 
-    # 2. 医療・ゲノムトピックス送信
+    # 2. AI：ビジネス活用（超短文）
     try:
-        print("Fetching Medical trends...")
-        med_summary = summarize_medical_trends()
-        send_notification(f"🏥 医療・ゲノム・病理 {today}", med_summary)
-        print("Medical summary sent successfully.")
+        print("Sending Topic 2...")
+        titles = fetch_rss_titles("AI ビジネス 活用", max_items=6)
+        prompt = f"最新のAIビジネス事例ニュースの見出しです。\n前置き一切なしで、要点のみを【全角300文字以内】で簡潔に要約してください。\n\n{titles}"
+        text = generate_short_summary(prompt)
+        send_notification(f"🤖 AI② ビジネス事例 {today}", text)
+        print("Topic 2 sent.")
     except Exception as e:
-        print(f"Medical Trends Error: {e}")
+        print(f"Topic 2 Error: {e}")
 
-    time.sleep(15)
+    time.sleep(10)
 
-    # 3. 地域医療トピックス送信
+    # 3. 医療・ゲノム・病理（超短文）
     try:
-        print("Fetching Local trends...")
-        local_summary = summarize_local_trends()
-        send_notification(f"📍 地域医療ニュース(和歌山/大阪) {today}", local_summary)
-        print("Local summary sent successfully.")
+        print("Sending Topic 3...")
+        titles = fetch_rss_titles("医療 ゲノム 病理 検査", max_items=6)
+        prompt = f"最新の医療・ゲノム・病理ニュースの見出しです。\n前置き一切なしで、「対象疾患・検査」と「要点」を【全角300文字以内】で要約してください。\n\n{titles}"
+        text = generate_short_summary(prompt)
+        send_notification(f"🏥 医療ゲノム・病理 {today}", text)
+        print("Topic 3 sent.")
     except Exception as e:
-        print(f"Local Trends Error: {e}")
+        print(f"Topic 3 Error: {e}")
+
+    time.sleep(10)
+
+    # 4. 地域医療：和歌山・大阪南部（超短文）
+    try:
+        print("Sending Topic 4...")
+        titles = fetch_rss_titles("和歌山 医療 OR 大阪 病院 開業", max_items=6)
+        prompt = f"最新の和歌山・大阪南部の医療ニュースです。\n前置き一切なしで、施設名や地域医療の動きを【全角300文字以内】で箇条書き要約してください。\n\n{titles}"
+        text = generate_short_summary(prompt)
+        send_notification(f"📍 地域医療(和歌山/大阪) {today}", text)
+        print("Topic 4 sent.")
+    except Exception as e:
+        print(f"Topic 4 Error: {e}")
 
 if __name__ == "__main__":
     main()
