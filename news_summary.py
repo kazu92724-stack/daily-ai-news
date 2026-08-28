@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import urllib.parse
 import requests
 import feedparser
 from datetime import datetime
@@ -14,9 +15,10 @@ API_URL = (
     f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
 )
 
-# --- RSS取得関数 ---
+# --- RSS取得関数（URLエンコード処理を追加） ---
 def fetch_rss_titles(query, max_items=8):
-    url = f"https://news.google.com/rss/search?q={query}&hl=ja&gl=JP&ceid=JP:ja"
+    encoded_query = urllib.parse.quote(query)
+    url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
     feed = feedparser.parse(url)
     titles = []
     for entry in feed.entries[:max_items]:
@@ -24,7 +26,7 @@ def fetch_rss_titles(query, max_items=8):
         titles.append(f"- {title}")
     return "\n".join(titles)
 
-# --- 共通のGemini要約関数（厳格な350文字制限） ---
+# --- 共通のGemini要約関数 ---
 def generate_short_summary(prompt_text):
     payload = {"contents": [{"parts": [{"text": prompt_text}]}]}
     res = requests.post(API_URL, json=payload, timeout=60)
@@ -33,7 +35,6 @@ def generate_short_summary(prompt_text):
 
 # --- ntfy.sh 送信関数 ---
 def send_notification(title, text):
-    # 送信前に380文字を超えていたらカット（絶対途中で切れさせない安全網）
     if len(text) > 380:
         text = text[:360] + "\n(以下省略)"
 
@@ -51,7 +52,7 @@ def send_notification(title, text):
 def main():
     today = datetime.now().strftime("%Y-%m-%d")
 
-    # 1. AI：LLM・開発動向（超短文）
+    # 1. AI：LLM・開発動向
     try:
         print("Sending Topic 1...")
         titles = fetch_rss_titles("AI LLM 開発", max_items=6)
@@ -64,7 +65,7 @@ def main():
 
     time.sleep(10)
 
-    # 2. AI：ビジネス活用（超短文）
+    # 2. AI：ビジネス活用
     try:
         print("Sending Topic 2...")
         titles = fetch_rss_titles("AI ビジネス 活用", max_items=6)
@@ -77,7 +78,7 @@ def main():
 
     time.sleep(10)
 
-    # 3. 医療・ゲノム・病理（超短文）
+    # 3. 医療・ゲノム・病理
     try:
         print("Sending Topic 3...")
         titles = fetch_rss_titles("医療 ゲノム 病理 検査", max_items=6)
@@ -90,7 +91,7 @@ def main():
 
     time.sleep(10)
 
-    # 4. 地域医療：和歌山・大阪南部（超短文）
+    # 4. 地域医療：和歌山・大阪南部
     try:
         print("Sending Topic 4...")
         titles = fetch_rss_titles("和歌山 医療 OR 大阪 病院 開業", max_items=6)
