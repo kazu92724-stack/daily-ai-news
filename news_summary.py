@@ -100,6 +100,7 @@ def get_all_summaries():
 def generate_rss_xml(summaries):
     today_str = datetime.now().strftime("%Y-%m-%d")
     now_rfc822 = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
+    now_time_str = datetime.now().strftime("%Y-%m-%d-%H%M%S")
 
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
@@ -112,11 +113,8 @@ def generate_rss_xml(summaries):
     for title, content in summaries:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = f"{title} ({today_str})"
-        
-        # HTML形式の文章をそのままRSSのdescriptionに流し込みます
         ET.SubElement(item, "description").text = content
-       　now_time_str = datetime.now().strftime("%Y-%m-%d-%H%M%S")
-　　　　　ET.SubElement(item, "guid").text = f"{title}-{now_time_str}"
+        ET.SubElement(item, "guid").text = f"{title}-{now_time_str}"
         ET.SubElement(item, "pubDate").text = now_rfc822
 
     tree = ET.ElementTree(rss)
