@@ -49,7 +49,13 @@ def get_all_summaries():
     ai_data = fetch_rss_news("AI LLM 開発", max_items=10)
     ai_prompt = (
         "以下は最新のAIニュース一覧（タイトルとURL）です。\n"
-        "前置きは一切不要です。開発動向・ビジネス事例・ガバナンスに分けて、各トピックの要約と元のURLを明記してわかりやすく解説してください。\n\n"
+        "前置きは一切不要です。開発動向・ビジネス事例・ガバナンスに分けて要約してください。\n\n"
+        "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
+        "- 見出しには <h3> や <h4> を使用する\n"
+        "- 箇条書きには <ul> と <li> を使用する\n"
+        "- 強調したいキーワードは <strong> を使用する\n"
+        "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
+        "- Markdown記法（**太字** や [リンク](URL) など）は絶対に含めないこと\n\n"
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
@@ -60,7 +66,13 @@ def get_all_summaries():
     med_data = fetch_rss_news("医療 ゲノム 病理 検査", max_items=10)
     med_prompt = (
         "以下は最新の医療・ゲノム・病理ニュース一覧です。\n"
-        "前置きは不要です。「対象疾患・検査手技」「臨床的変化」「医局・現場への提案」を含め、元URL付きで詳細に要約してください。\n\n"
+        "前置きは不要です。「対象疾患・検査手技」「臨床的変化」「医局・現場への提案」を含めて詳細に要約してください。\n\n"
+        "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
+        "- 見出しには <h3> や <h4> を使用する\n"
+        "- 箇条書きには <ul> と <li> を使用する\n"
+        "- 強調したいキーワードは <strong> を使用する\n"
+        "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
+        "- Markdown記法は絶対に使用しないこと\n\n"
         f"{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
@@ -71,7 +83,13 @@ def get_all_summaries():
     local_data = fetch_rss_news("和歌山 医療 OR 大阪 病院 開業", max_items=8)
     local_prompt = (
         "以下は和歌山・大阪南部の医療ニュース一覧です。\n"
-        "前置きは不要です。施設名や地域の動き、新規開業等のポイントを元URL付きで簡潔にまとめてください。\n\n"
+        "前置きは不要です。施設名や地域の動き、新規開業等のポイントを簡潔にまとめてください。\n\n"
+        "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
+        "- 見出しには <h3> や <h4> を使用する\n"
+        "- 箇条書きには <ul> と <li> を使用する\n"
+        "- 強調したいキーワードは <strong> を使用する\n"
+        "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
+        "- Markdown記法は絶対に使用しないこと\n\n"
         f"{local_data}"
     )
     summaries.append(("📍 地域医療ニュース（和歌山/大阪南部）", generate_summary(local_prompt)))
@@ -94,8 +112,10 @@ def generate_rss_xml(summaries):
     for title, content in summaries:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = f"{title} ({today_str})"
-        formatted_content = content.replace("\n", "<br>")
-        ET.SubElement(item, "description").text = formatted_content
+        
+        # HTML形式の文章をそのままRSSのdescriptionに流し込みます
+        ET.SubElement(item, "description").text = content
+        
         ET.SubElement(item, "guid").text = f"{title}-{today_str}"
         ET.SubElement(item, "pubDate").text = now_rfc822
 
