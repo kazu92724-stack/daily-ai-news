@@ -87,7 +87,7 @@ def generate_rss_xml(summaries):
     channel = ET.SubElement(rss, "channel")
     
     ET.SubElement(channel, "title").text = "Daily AI & Medical News Summary"
-    ET.SubElement(channel, "link").text = "https://github.com"
+    ET.SubElement(channel, "link").text = "https://kazu92724-stack.github.io/daily-ai-news/"
     ET.SubElement(channel, "description").text = "Geminiによる毎日の医療・AI・地域ニュース要約フィード"
     ET.SubElement(channel, "language").text = "ja"
 
