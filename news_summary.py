@@ -1,5 +1,6 @@
 import os
 import re
+import time
 import urllib.parse
 import requests
 import feedparser
@@ -24,18 +25,27 @@ def fetch_rss_news(query, max_items=10):
         items.append(f"- タイトル: {title}\n  URL: {entry.link}")
     return "\n".join(items)
 
-# --- Gemini要約関数 ---
-def generate_summary(prompt_text):
+# --- Gemini要約関数（503エラー時の自動再試行つき） ---
+def generate_summary(prompt_text, retries=3):
     payload = {"contents": [{"parts": [{"text": prompt_text}]}]}
-    res = requests.post(API_URL, json=payload, timeout=60)
-    res.raise_for_status()
-    return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+    for attempt in range(retries):
+        try:
+            res = requests.post(API_URL, json=payload, timeout=60)
+            res.raise_for_status()
+            return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
+        except requests.exceptions.HTTPError as e:
+            if attempt < retries - 1:
+                print(f"API呼び出し一時エラー (試行 {attempt + 1}/{retries}): {e}. 10秒後に再試行します...")
+                time.sleep(10)
+            else:
+                raise e
 
 # --- 各カテゴリの要約生成 ---
 def get_all_summaries():
     summaries = []
     
     # 1. AIトレンド
+    print("Generating AI summary...")
     ai_data = fetch_rss_news("AI LLM 開発", max_items=10)
     ai_prompt = (
         "以下は最新のAIニュース一覧（タイトルとURL）です。\n"
@@ -43,8 +53,10 @@ def get_all_summaries():
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
+    time.sleep(5)
 
     # 2. 医療・ゲノム・病理
+    print("Generating Medical summary...")
     med_data = fetch_rss_news("医療 ゲノム 病理 検査", max_items=10)
     med_prompt = (
         "以下は最新の医療・ゲノム・病理ニュース一覧です。\n"
@@ -52,8 +64,10 @@ def get_all_summaries():
         f"{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
+    time.sleep(5)
 
     # 3. 地域医療（和歌山・大阪南部）
+    print("Generating Local Medical summary...")
     local_data = fetch_rss_news("和歌山 医療 OR 大阪 病院 開業", max_items=8)
     local_prompt = (
         "以下は和歌山・大阪南部の医療ニュース一覧です。\n"
@@ -80,10 +94,8 @@ def generate_rss_xml(summaries):
     for title, content in summaries:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = f"{title} ({today_str})"
-        # HTML改行に変換してRSSリーダーで見やすくする
         formatted_content = content.replace("\n", "<br>")
         ET.SubElement(item, "description").text = formatted_content
-        # ユニークなID（GUID）を設定
         ET.SubElement(item, "guid").text = f"{title}-{today_str}"
         ET.SubElement(item, "pubDate").text = now_rfc822
 
