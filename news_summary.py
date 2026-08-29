@@ -115,8 +115,8 @@ def generate_rss_xml(summaries):
         
         # HTML形式の文章をそのままRSSのdescriptionに流し込みます
         ET.SubElement(item, "description").text = content
-        
-        ET.SubElement(item, "guid").text = f"{title}-{today_str}"
+       　now_time_str = datetime.now().strftime("%Y-%m-%d-%H%M%S")
+　　　　　ET.SubElement(item, "guid").text = f"{title}-{now_time_str}"
         ET.SubElement(item, "pubDate").text = now_rfc822
 
     tree = ET.ElementTree(rss)
