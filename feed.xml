@@ -11,144 +11,108 @@
   &lt;h3&gt;開発動向&lt;/h3&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      Preferred Networks（PFN）がゼロから開発する国産AIや最新の「PLaMo 3.0 Prime」について、その独自開発の利点や継続的な取り組みが注目されています。&lt;br&gt;
+      &lt;strong&gt;国産LLMの開発&lt;/strong&gt;に関して、Preferred Networks（PFN）がゼロから開発する「PLaMo」シリーズ（PLaMo 3.0 Primeなど）の利点や開発背景に注目が集まっています。&lt;br&gt;
       &lt;a href="https://news.google.com/rss/articles/CBMibEFVX3lxTE0wM3JZdjhfZnlhbGZacno2enplMXZsb1lLbGVpOW1XbmdCVXB2ODM1NmQ1elhDZy1VNEg4Rk9nX1dqam14T3AzbFNkdkVOeUFsVi1Eamx6c1UzM1F4ZUszamR6SUtDOFdSbnl5bg?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; | 
       &lt;a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOVzktbTNkXzR0TC1uTVY5UzVLOG03aGpvSWZrR3JUZEZDZ1RPekZBZkU0N1J3TWZ1Z18tUkhGbEJDVVl3MFM3ekVMZjdEMzlEdG9nZ3JNaFFaMThGT2JBT240Zlphb1pUTEI4cllFTU9JbktnWjhPQl9TSmRRVjJwZg?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; | 
       &lt;a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE45amRXa0tIaVRhVE1Qa21Kb0N5VWVpcG8wcXJoaUNsaDEzNjlCdEZIaF8tcjR6LXFCM3RpWm1rdE9aRS1qTUtIc0JaSU8?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      オープンAIが、AIの安全性を高めるための攻撃・防御テストツールとして&lt;strong&gt;「LLMハッカー」&lt;/strong&gt;を開発したことが報じられています。&lt;br&gt;
-      &lt;a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxORXpHOXZENHRVTDUwOVQwLUdmSkFud1JCbS03c0t5UWNXaFhGRHFrZF9tY3JlVWZuMFFaSW93azRKYmVsS0s1Z19VLVo0NzQzOEFOSnIyeGFwcWU5cjktUFpLcF9qNUtHTGFOYWc4SUYwcDhrUEdwbWRKMTFiTy1wN3ljT0dZTmpianhydlFlTHJ3X0lWb2Vyek5hSGViQm5meWFGdGpuakpGTDNuV1BJYmdR?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
+      業務とともに学び続ける&lt;strong&gt;自己進化マルチAIエージェント技術&lt;/strong&gt;の開発が進められています。&lt;br&gt;
+      &lt;a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE4xZUYyZ1IwRFRPR0pCYS03MExLdHBldnJyUW1BR05DeVA4S2tORVFZNER0b2lkcnZGNDRfdFlaTkxtLWlkRFFDUWg5Y2hFbTJFbDg3R205NDU4YktPaUs4?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 
   &lt;h3&gt;ビジネス事例&lt;/h3&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      ホリエモンAI学校が、医療機関向けの&lt;strong&gt;ローカルLLM搭載PC&lt;/strong&gt;の開発を発表し、事前登録を開始しました。&lt;br&gt;
+      ホリエモンAI学校が、医療機関向けの&lt;strong&gt;ローカルLLM搭載PC&lt;/strong&gt;の事前登録を開始しました。&lt;br&gt;
       &lt;a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTE84NXJwVEtDaTQ1TXlhUHpTdlRNaWZTaVpnTWlZQ1hwNUdNWkV4R25FOE5GNzNmTU9zZ2gxT1hERGlMenV6TUFFOUhiVlFRUERhZjZRcS1KNlI0UQ?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      ナレッジワークが営業領域に特化した業界特化型LLMの研究開発を開始し、セールスAIエージェントの精度向上を目指しています。&lt;br&gt;
+      ナレッジワークが営業領域に特化した&lt;strong&gt;業界特化LLMの研究開発&lt;/strong&gt;を開始し、セールスAIエージェントの精度向上を目指しています。&lt;br&gt;
       &lt;a href="https://news.google.com/rss/articles/CBMiakFVX3lxTFBlRG9jcFBhRGw5c3pSRnRLc3lEOUtPZUJLdjZOVmpTSDZvMEtFSzNLWWJkWGpmRDRvNXVKbHdrZ0R0ZXFUMTNSNVREWVV3NTB1SE1YNUVFREY4UEpmcHZzN3N6TWhsQ2pLTnc?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-      データ主権を守る国内AI基盤として、プライベートLLMを活用した&lt;strong&gt;AIエージェント開発の最新動向&lt;/strong&gt;に関するセミナーやイベントが開催されています。&lt;br&gt;
-      &lt;a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxQNnd3c1A1VEJTMmZleTdyc0ZiR0NOMWMtaXAzVUtoYjd1RGtuS2dqUk05Zmt1bThNNkZmcFE3UHVmQzNJU3BLR0RLaG9yT0huQjlPcjhKWEVIaWNKTG8xQS05YmtHQjQ3dUpIYmxCS2VZRnZOa0gtNGhFRVMtNUsxZFZR?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 
-  &lt;h3&gt;ガバナンス&lt;/h3&gt;
+  &lt;h3&gt;ガバナンス・セキュリティ&lt;/h3&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      自民党の塩崎彰久氏が、AI競争において単なる&lt;strong&gt;LLM開発に集中せず法整備を進める方針&lt;/strong&gt;を27年に向け示すなど、規制や制度面への関心が高まっています。&lt;br&gt;
+      自民党の塩崎彰久氏が、今後のAI競争において「LLM開発に集中せず」27年の法整備に向けて取り組む方針を示しました。&lt;br&gt;
       &lt;a href="https://news.google.com/rss/articles/CBMibEFVX3lxTFBhQm4ybEE0Ymx4Nm9Cd2tHQ01mS3hRNkIzWUJIN1hQT3JWN2g0NTFkTkYxU1NxXzRka1YwOTI1SEluRUp5dFJnM0tFNHc4YXdPRWhXbE9NUnVyNDZTcndZbnFsVjVDbkNsSDBwVg?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      行政やガバナンスにおける活用を見据えた、ガバメントAI&lt;strong&gt;「源内」&lt;/strong&gt;に関する情報が公開されています。&lt;br&gt;
+      ガバメントAI「源内」に関する取り組みが進められています。&lt;br&gt;
       &lt;a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE5IR184RU9sdjZzMktVTVMyaFhxTUN6cEw2Mm43MGlHaUZRQzFxU3hHa0E0TktCUG81cVhrdDFyQW1WSl8zS3lLRGh1YVZ4alNmX2c?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      オープンAIがAIのセキュリティ対策として、AIの攻撃で守りを鍛える&lt;strong&gt;「LLMハッカー」&lt;/strong&gt;を開発しました。&lt;br&gt;
+      &lt;a href="https://news.google.com/rss/articles/CBMisgFBVV95cUxORXpHOXZENHRVTDUwOVQwLUdmSkFud1JCbS03c0t5UWNXaFhGRHFrZF9tY3JlVWZuMFFaSW93azRKYmVsS0s1Z19VLVo0NzQzOEFOSnIyeGFwcWU5cjktUFpLcF9qNUtHTGFOYWc4SUYwcDhrUEdwbWRKMTFiTy1wN3ljT0dZTmpianhydlFlTHJ3X0lWb2Vyek5hSGViQm5meWFGdGpuakpGTDNuV1BJYmdR?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</description>
-      <guid>🤖 AI最新トレンド-2026-08-29</guid>
-      <pubDate>Sat, 29 Aug 2026 14:49:51 GMT</pubDate>
+      <guid>🤖 AI最新トレンド-2026-08-29-150402</guid>
+      <pubDate>Sat, 29 Aug 2026 15:04:02 GMT</pubDate>
     </item>
     <item>
       <title>🏥 医療・ゲノム・病理ニュース (2026-08-29)</title>
-      <description>&lt;h3&gt;医療・ゲノム・病理ニュース要約&lt;/h3&gt;
+      <description>&lt;div&gt;
+  &lt;h3&gt;現代のがん医療と病理・ゲノム検査を巡る最新動向の要約&lt;/h3&gt;
 
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;h4&gt;患者と医療を支える病理医・検査技師とテクノロジー&lt;/h4&gt;
-    &lt;p&gt;現代のがん医療において、病理診断や検査技術、そしてそれを支えるテクノロジーの重要性が広く再認識されています。&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt; 全般的ながん疾患、病理学的検査全般&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt; 精度の高い診断と迅速な情報提供により、患者中心の治療選択がスムーズになっています。&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt; 臨床医と病理医・検査技師の緊密な連携体制の構築が求められます。&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBraUk0ZS1OX0ZVME1Fa0VzUEl6VXhKb3RGZTlKNkRMSmN6NkwtSGIwUlMxS1B5UHNGbDg1clpvc3Z4NWRDZTF3LQ?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;h4&gt;1. 小児がん・がんゲノム医療の進展と実臨床の課題&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt;小児がん患者を対象とした&lt;strong&gt;ゲノムプロファイリング検査&lt;/strong&gt;（次世代シーケンサーを用いた遺伝子パネル検査）。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt;小児がんにおけるゲノム検査の有用性が確認され、全国で運用可能な体制の実証が進む一方、遺伝子パネル検査を踏まえて&lt;strong&gt;「最適な抗がん剤」の投与に至った患者が8.1％&lt;/strong&gt;にとどまるというデータも示され、アクセスの拡大と治療選択肢の創出が急務となっています。&lt;br&gt;&lt;a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9mUGRLa1preUZHOWRxQ1M1Z2xvWENtNU50U25DaHMtR2VSeHNUZ044X1Q1VXRKLXlzYU5RSTZlZGF2ZW5ldDdqWHNfVEpLZ3NBbzJzRERhZEtuek83cnRCQkNVTmJfUjhQb2l4al8xb3g1UkVMbW11T2M2NEo?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / &lt;a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE1TY3g3OEJkYm1JdjdFaDVZVzg2SkJvbUN0QzRhd1NTa2Z6anIwMzNkS3paVGszUk51RGlwbXVSdzFuU210aC1qTA?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / &lt;a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9WeHJONWRCX05uSVFuZThQXzhRQ2RqUXBQUVBNZnZDbUdZM2hjaWppc0lTZFFLbkV5V1dya0hSbWUweVk0TDNodWJ4dVR2TkJOd3BkcEs0TUc2c3JWVmRpeE5yMUZkUTZXTXJDTGR3?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt;検査を実施するだけでなく、いかに迅速かつ確実にマッチング治療へ繋げるか、多職種によるカンファレンス体制の強化が求められます。&lt;br&gt;&lt;a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE9Ydi1ucFZZQ3NnaVUtckZEaDc3ZTNrTGpqbklBTEpWLUhrOHphVmtJX29WcTM4QVJKNVNiMGZvRkJHMGlyekJDYUJmUnBRR0YxdDJFdUF0SjN3SlU?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/li&gt;
+  &lt;/ul&gt;
 
-  &lt;li&gt;
-    &lt;h4&gt;小児がんにおけるゲノムプロファイリング検査の有用性と全国体制&lt;/h4&gt;
-    &lt;p&gt;小児がん治療においてゲノムプロファイリング検査の有用性が確認され、全国で運用可能な体制の実証が進んでいます。&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt; 小児がん、がんゲノムプロファイリング検査（遺伝子パネル検査）&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt; 難治性小児がんに対する個別化医療の可能性が拡大しています。&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt; 小児がん患者へのゲノム検査アクセスの均てん化に向けた体制整備が必要です。&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMifEFVX3lxTE9mUGRLa1preUZHOWRxQ1M1Z2xvWENtNU50U25DaHMtR2VSeHNUZ044X1Q1VXRKLXlzYU5RSTZlZGF2ZW5ldDdqWHNfVEpLZ3NBbzJzRERhZEtuek83cnRCQkNVTmJfUjhQb2l4al8xb3g1UkVMbW11T2M2NEo?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; | &lt;a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE9WeHJONWRCX05uSVFuZThQXzhRQ2RqUXBQUVBNZnZDbUdZM2hjaWppc0lTZFFLbkV5V1dya0hSbWUweVk0TDNodWJ4dVR2TkJOd3BkcEs0TUc2c3JWVmRpeE5yMUZkUTZXTXJDTGR3?oc=5" target="_blank"&gt;関連記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;h4&gt;2. 病理診断・ゲノム医療の融合とテクノロジーの活用&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt;がん全般を対象とした&lt;strong&gt;病理診断、病理診断AI、次世代シーケンサーによるゲノム検査&lt;/strong&gt;。&lt;br&gt;&lt;a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTFBraUk0ZS1OX0ZVME1Fa0VzUEl6VXhKb3RGZTlKNkRMSmN6NkwtSGIwUlMxS1B5UHNGbDg1clpvc3Z4NWRDZTF3LQ?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / &lt;a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5jV2FfaGpyNTNpWERGQ05CbGEwM1NudEU1anNhckFITWpLX0NLb0xEU2UzelRLMzNZMGFpTTZqZXV5TDJPVDJ1NW8yOGFUalNrWGJCckJTNDVUUG1ySkE?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt;病理診断の現場でゲノム検査を行うことが「当たり前」になるべきという見解が示され、病理診断AIなどの新しいテクノロジー導入が注目されています。また、病理検査サービスの市場規模拡大が予測されています。&lt;br&gt;&lt;a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE9zb0dlTjV1eHlHdEtDMDhoVnV4cDYyNnVjMThoZS1xRkRzSGxuaTVHeXdIU3dsTWpfeHZpTFlLc2hHNmRjOHloLW5oRlM3dGs?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / &lt;a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVlRXQ2NjWmhBS3FEa0JRUG84ckdyQlZQVmtTS3ZNdGcwZWxWQU5qOFplU1ZjQndDTGtRS1EyTkc5MjRLR1BiZUpCTHRuTUNUSFdBUFhYaWZYV2E5OVphYmctYlEwUmlvLW5YMjh6Z2lJdGg1RGdrNGh3cFg0eVlqWEdEeE1Pd1Rr?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / &lt;a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE1tbVpUUWllV0dFelpsU2x2LTF3UVRhZWlHaXVoZ2xaVFNZMmw0YXRISk83emxBZzlxUHlEQlduVDNWOC1yV3F2Y05Ia0FJTjZ6VnVXN19EOXA5dTRhQzVmYmY0dEhqZw?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt;形態学的診断と遺伝子学的解析の垣根を越えた&lt;strong&gt;統合的な診断体制の構築&lt;/strong&gt;と、AIツールを使いこなせる専門人材の育成・確保が急務です。&lt;/li&gt;
+  &lt;/ul&gt;
 
-  &lt;li&gt;
-    &lt;h4&gt;病理検査サービスの市場動向と病理診断AIの未来&lt;/h4&gt;
-    &lt;p&gt;病理検査の市場規模拡大が予測される中、診断支援を行う病理AIツールへの注目が高まっています。&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt; 病理診断全般、AIを活用した画像解析&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt; 病理診断の効率化と見落とし防止、診断精度の標準化が期待されます。&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt; 検査室のDX化やAIツールの導入検討、臨床検査技師の育成環境の強化が急務です。&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE9zb0dlTjV1eHlHdEtDMDhoVnV4cDYyNnVjMThoZS1xRkRzSGxuaTVHeXdIU3dsTWpfeHZpTFlLc2hHNmRjOHloLW5oRlM3dGs?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; | &lt;a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPVlRXQ2NjWmhBS3FEa0JRUG84ckdyQlZQVmtTS3ZNdGcwZWxWQU5qOFplU1ZjQndDTGtRS1EyTkc5MjRLR1BiZUpCTHRuTUNUSFdBUFhYaWZYV2E5OVphYmctYlEwUmlvLW5YMjh6Z2lJdGg1RGdrNGh3cFg0eVlqWEdEeE1Pd1Rr?oc=5" target="_blank"&gt;AI関連記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;h4&gt;次世代シーケンサーとがんゲノム医療の普及・課題&lt;/h4&gt;
-    &lt;p&gt;次世代シーケンサーの普及が進む一方で、遺伝子パネル検査に基づき最適な抗がん剤投与に至る割合の現状や、病理診断とゲノム検査の融合の必要性が議論されています。&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt; 固形がんなど、がんゲノム医療対象疾患、次世代シーケンサー（NGS）による遺伝子パネル検査&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt; 最適な治療薬にたどり着く割合（現状約8.1％）の向上に向けた、マッチング精度の改善が求められています。&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt; 「病理診断でゲノム検査を行うことが当たり前になる」ような体制づくりと、より多くの患者へ医療を届けるための連携強化が必要です。&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;
-      &lt;a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5jV2FfaGpyNTNpWERGQ05CbGEwM1NudEU1anNhckFITWpLX0NLb0xEU2UzelRLMzNZMGFpTTZqZXV5TDJPVDJ1NW8yOGFUalNrWGJCckJTNDVUUG1ySkE?oc=5" target="_blank"&gt;NGS記事を読む&lt;/a&gt; | 
-      &lt;a href="https://news.google.com/rss/articles/CBMiW0FVX3lxTE9Ydi1ucFZZQ3NnaVUtckZEaDc3ZTNrTGpqbklBTEpWLUhrOHphVmtJX29WcTM4QVJKNVNiMGZvRkJHMGlyekJDYUJmUnBRR0YxdDJFdUF0SjN3SlU?oc=5" target="_blank"&gt;普及記事を読む&lt;/a&gt; | 
-      &lt;a href="https://news.google.com/rss/articles/CBMiSEFVX3lxTE1TY3g3OEJkYm1JdjdFaDVZVzg2SkJvbUN0QzRhd1NTa2Z6anIwMzNkS3paVGszUk51RGlwbXVSdzFuU210aC1qTA?oc=5" target="_blank"&gt;コンソーシアム記事を読む&lt;/a&gt; | 
-      &lt;a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE1tbVpUUWllV0dFelpsU2x2LTF3UVRhZWlHaXVoZ2xaVFNZMmw0YXRISk83emxBZzlxUHlEQlduVDNWOC1yV3F2Y05Ia0FJTjZ6VnVXN19EOXA5dTRhQzVmYmY0dEhqZw?oc=5" target="_blank"&gt;慶應大・西原教授の提言を読む&lt;/a&gt;
-    &lt;/p&gt;
-  &lt;/li&gt;
-
-  &lt;li&gt;
-    &lt;h4&gt;臨床検査技師の育成と学びの現場&lt;/h4&gt;
-    &lt;p&gt;高度化する医療現場を支える臨床検査技師をどのように育て、輩出していくのか、教育現場の取り組みが紹介されています。&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt; 臨床検査全般、ゲノム検査・病理検査含む検査技術&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt; 高度医療に対応できる検査技師の専門性向上が、チーム医療の質を底上げしています。&lt;/li&gt;
-      &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt; 現場のスタッフと教育機関が一体となり、実地即応型の人材育成を支援することが重要です。&lt;/li&gt;
-    &lt;/ul&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPYV9ySTFDako4YWM4TXhUaVBzaU43Nmt1U0VqUzZxd2pSTVV1Y0cwYWRoODgwdjdrYUthZ1hsQmJDZlljMUlPR2dGQ0FFaWFFYzBzZXMwMzFvOTRJOC13cFFsSjlWQi1Hcl91WmhUeFkyZEtTMEo1ampjbmljMTBjbnNBY2thbjJm?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid>🏥 医療・ゲノム・病理ニュース-2026-08-29</guid>
-      <pubDate>Sat, 29 Aug 2026 14:49:51 GMT</pubDate>
+  &lt;h4&gt;3. 医療技術を支える人材育成の重要性&lt;/h4&gt;
+  &lt;ul&gt;
+    &lt;li&gt;&lt;strong&gt;対象疾患・検査手技：&lt;/strong&gt;高度化するゲノム医療や病理検査を支える&lt;strong&gt;臨床検査技師・病理医の育成&lt;/strong&gt;。&lt;br&gt;&lt;a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPYV9ySTFDako4YWM4TXhUaVBzaU43Nmt1U0VqUzZxd2pSTVV1Y0cwYWRoODgwdjdrYUthZ1hsQmJDZlljMUlPR2dGQ0FFaWFFYzBzZXMwMzFvOTRJOC13cFFsSjlWQi1Hcl91WmhUeFkyZEtTMEo1ampjbmljMTBjbnNBY2thbjJm?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;臨床的変化：&lt;/strong&gt;最先端の医療機器や検査手法が導入される中、それを支える学びの現場や教育体制の重要性が改めてクローズアップされています。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;医局・現場への提案：&lt;/strong&gt;チーム医療の要となる検査技師や若手医師に対し、次世代シーケンサーやAI解析などの先端技術に触れる機会を積極的に提供し、現場の教育体制をアップデートすることが求められます。&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;</description>
+      <guid>🏥 医療・ゲノム・病理ニュース-2026-08-29-150402</guid>
+      <pubDate>Sat, 29 Aug 2026 15:04:02 GMT</pubDate>
     </item>
     <item>
       <title>📍 地域医療ニュース（和歌山/大阪南部） (2026-08-29)</title>
       <description>&lt;div&gt;
-  &lt;h3&gt;医療施設・クリニックの開業・経営動向に関するニュース&lt;/h3&gt;
+  &lt;h3&gt;医療施設・クリニック開業および地域の動向&lt;/h3&gt;
   &lt;ul&gt;
     &lt;li&gt;
-      &lt;strong&gt;全国の開業動向データ：&lt;/strong&gt; 医療施設の開業数が&lt;strong&gt;36％減少&lt;/strong&gt;した動向や、逆に病院・診療所の開業数が前年比&lt;strong&gt;26％増&lt;/strong&gt;（全国1,466件）となったランキングに関する独自調査が発表されています。&lt;br&gt;
+      &lt;strong&gt;全国の医療施設開業動向：&lt;/strong&gt; 医療施設の開業数が&lt;strong&gt;36％減少&lt;/strong&gt;したという独自調査（2026年初頭）がある一方、別の調査では病院・診療所の開業数が前年比&lt;strong&gt;26％増&lt;/strong&gt;（全国1,466件）を記録するなど、地域や調査によって異なる動きが見られます。
       &lt;a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE9IZGFKM3RlSjd0NWFENjFEN2NnVk9kdVdwbUxJVk0yS2Zoc19TbmNQemNvT0RWcXN6ZXh1dy1neWVuTkhJZ3N6c3ZZUEVRaVk?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / 
       &lt;a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTE8zc3RUV2pqVnJuQnVuTW5FMDRhWFhjWWJFdEhCZkZIZWdqZnBYMTB1eS1ISmE3dGNsV19EQ2Y2UW5KbjRPOHJpSHdaOFY3TjA?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;strong&gt;新規開業・動物医療：&lt;/strong&gt; 兵庫県神戸市灘区（大石）に&lt;strong&gt;7月31日開業&lt;/strong&gt;した年中無休の&lt;strong&gt;「兵庫ペット医療センター」&lt;/strong&gt;の情報や、大阪府豊中市の&lt;strong&gt;「どうぶつ眼科専門クリニック」&lt;/strong&gt;のANCHORSグループ参画など、動物医療分野での動きが見られます。&lt;br&gt;
-      &lt;a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE4ySEtlVFBRSEJSMzZpTHlqVU1oUU9ub1dYSVB3QU56UDVuVUpwWGY5cUswenVmWkZGdmMwbGJEc1dhaG05YlhTaS1pUHctc0p6a1otakhSWmw4dXYtOHk4UFAtNUY2ejByMHJPX1d4akZXZmdtaDJjRUZBbm5UdVXSAYQBQVVfeXFMT0pSZUNpYTZKMWFzbGdWbGdnM1htUElqNkFOVkRSMElVTFR4OHl1aW84ME1jbUxNOUMwRC0xc3VKYVEyTDNEZ1ZoVmVaNGV3NlBrdWxvLU1WZzlUcTAzOWZHTjlxclVLQ2tBbWpJbzBwYmN1bk1tb0hVOWJ2aDhsazFwSV90?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / 
+      &lt;strong&gt;兵庫ペット医療センター（神戸市灘区・大石）：&lt;/strong&gt; 7月31日に&lt;strong&gt;年中無休&lt;/strong&gt;のペット医療センターが新規開業しました。
+      &lt;a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE4ySEtlVFBRSEJSMzZpTHlqVU1oUU9ub1dYSVB3QU56UDVuVUpwWGY5cUswenVmWkZGdmMwbGJEc1dhaG05YlhTaS1pUHctc0p6a1otakhSWmw4dXYtOHk4UFAtNUY2ejByMHJPX1d4akZXZmdtaDJjRUZBbm5UdVXSAYQBQVVfeXFMT0pSZUNpYTZKMWFzbGdWbGdnM1htUElqNkFOVkRSMElVTFR4OHl1aW84ME1jbUxNOUMwRC0xc3VKYVEyTDNEZ1ZoVmVaNGV3NlBrdWxvLU1WZzlUcTAzOWZHTjlxclVLQ2tBbWpJbzBwYmN1bk1tb0hVOWJ2aDhsazFwSV90?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;strong&gt;どうぶつ眼科専門クリニック（大阪府豊中市）：&lt;/strong&gt; 専門特化した動物病院が新たに「ANCHORSグループ」に参画しました。
       &lt;a href="https://news.google.com/rss/articles/CBMibkFVX3lxTE4zMDNYZjhCb2dzOXFPQS1kODRVUVlOOHhhQ3B5NkkxUzJHZGx6S2I3MnJfa0pSUjVIYnI5emhDMWNxQmxSYV9pVTFWdWhJajN0SDhjZDNSdjRXR2E2c3RKeTFQLTk4dXJNU0kxRlpR?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;strong&gt;地域の医療活動：&lt;/strong&gt; 静岡県沼津市の&lt;strong&gt;「沼津グルメ街道クリニック」&lt;/strong&gt;の森沢友博氏による幅広い知識を活かした&lt;strong&gt;訪問診療&lt;/strong&gt;の取り組みが紹介されています。&lt;br&gt;
+      &lt;strong&gt;沼津グルメ街道クリニック（静岡県沼津市）：&lt;/strong&gt; 森沢友博氏による幅広い知識を活かした&lt;strong&gt;訪問診療&lt;/strong&gt;など、地域密着型の医療活動が紹介されています。
       &lt;a href="https://news.google.com/rss/articles/CBMiTkFVX3lxTE1LMlJPU2ZSN2h2Uk9vZnpFQ091cHFqZVFXekdhRHI2RHlpa0R1VWRJS3M1SEM4T3NUZ0hWTjdiQ2wzelVwR1JKU2tibng4UQ?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
     &lt;li&gt;
-      &lt;strong&gt;開業支援・ツール・セミナー：&lt;/strong&gt; ビルオーナー向けの無料セミナー「クリニック×不動産 医療テナント誘致のポイント」（9月16日開催）や、無料診療圏調査ツール「Med CATCH」のβ公開など、開業をサポートする動きが行われています。&lt;br&gt;
+      &lt;strong&gt;医療開業・テナント支援の動き：&lt;/strong&gt; ビルオーナー向けの「クリニック×不動産 医療テナント誘致のポイント」に関する無料セミナーの開催（9月16日）や、無料診療圏調査ツール「Med CATCH」のβ公開など、開業をサポートするサービスや情報提供が活発化しています。
       &lt;a href="https://news.google.com/rss/articles/CBMiT0FVX3lxTFBQc1lyeUlaXzNVX0g0UkdCeWZtbXNMU0lFN05LU1YtajdJVG1WMkY4TGsxN3ZNOXlhR3IyTTdFTUJIQVktNlAxank1alY3Sk0?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt; / 
       &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5fbkU0cUtMYl81SVdXY0pFbUNjMFkyN1NNdElrT09ySTFFOUdubGs2b2pxTWV6YWdCVFJ3Z2lNeERKRmpKTHJBTGNDT1JHZGxxdFJidUlka3FGWTBJUjdvbzA4Zk5DNXpYNjFIdVRNZw?oc=5" target="_blank"&gt;記事を読む&lt;/a&gt;
     &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</description>
-      <guid>📍 地域医療ニュース（和歌山/大阪南部）-2026-08-29</guid>
-      <pubDate>Sat, 29 Aug 2026 14:49:51 GMT</pubDate>
+      <guid>📍 地域医療ニュース（和歌山/大阪南部）-2026-08-29-150402</guid>
+      <pubDate>Sat, 29 Aug 2026 15:04:02 GMT</pubDate>
     </item>
   </channel>
 </rss>
