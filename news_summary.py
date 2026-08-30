@@ -67,8 +67,9 @@ def generate_summary(prompt_text, retries=3):
 def get_all_summaries():
     summaries = []
     
+    # 共通デザイン・3行まとめ・重要度指示プロンプト
     style_instruction = (
-        "【重要：出力スタイルおよび重複排除の指示】\n"
+        "【重要：出力形式および要約ルールの厳守】\n"
         "回答はすべてシンプルかつ標準的なHTML形式のみで出力してください。\n"
         "- Markdown記法（**太字** や # 見出し、- 箇条書き など）は厳禁です。\n"
         "- style属性（colorやbackground-colorなど）は使用しないでください。\n"
@@ -76,8 +77,14 @@ def get_all_summaries():
         "- 箇条書きには <ul> と <li> を使用してください。\n"
         "- 重要語句や施設名・企業名・制度名は <strong> タグで太字にしてください。\n"
         "- 記事のリンクは <p>🔗 <a href=\"URL\" target=\"_blank\">元記事を読む</a></p> の形式に統一してください。\n"
-        "- 絵文字（📌, 💡, 🏥, 🤖, 📍, 📋）を活用して視認性を高めてください。\n"
-        "- 【Duplicate Detection】複数の記事が同じ話題・同一発表を扱っている場合は、必ず1つのトピックにまとめて要約し、リンクを併記してください。\n\n"
+        "- 【Duplicate Detection】複数記事が同一トピックを扱っている場合は1つにまとめて要約し、リンクを併記してください。\n\n"
+        "【構成指定】\n"
+        "冒頭に必ず以下の構成で『今日の3行まとめ』と『重要度スコア』を出力してください。\n"
+        "<p>⚡ <strong>今日の3行まとめ</strong><br>\n"
+        "・（1点目の重要ポイント）<br>\n"
+        "・（2点目の重要ポイント）<br>\n"
+        "・（3点目の重要ポイント）</p>\n"
+        "各トピック（<h3>）の横には、業界への影響度に応じた重要度スコア（例: 【重要度: ★★★★☆】）を付与してください。\n\n"
     )
 
     # 1. AIトレンド
@@ -89,13 +96,13 @@ def get_all_summaries():
     ai_prompt = (
         f"{style_instruction}"
         "以下は指定メディアからの最新AIニュース一覧です。\n"
-        "前置きは不要です。「LLM・基盤モデルの動向」「産業・ビジネス応用」「ガバナンス・技術動向」などに分け、主要記事を要約してください。\n\n"
+        "前置きは不要です。指示通り冒頭に『今日の3行まとめ』を配置し、「LLM・基盤モデルの動向」「産業・ビジネス応用」「ガバナンス・技術動向」などに分類して要約してください。\n\n"
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
     time.sleep(5)
 
-    # 2. 医療行政・医療DX動向（新規追加）
+    # 2. 医療行政・医療DX動向
     print("Generating Medical Administration & DX summary...")
     dx_sites = ["medical.nikkeibp.co.jp", "m3.com", "carenet.com", "xtech.nikkei.com"]
     dx_query = "診療報酬 OR 厚生労働省 OR ガイドライン OR 医療DX OR 電子カルテ OR マイナ保険証 OR オンライン資格確認"
@@ -104,7 +111,7 @@ def get_all_summaries():
     dx_prompt = (
         f"{style_instruction}"
         "以下は医療行政・診療報酬改定・医療DXに関する最新ニュース一覧です。\n"
-        "前置きは不要です。「電子カルテ・医療DX推進」「診療報酬・制度改正」「厚労省ガイドライン・通知」などのカテゴリに分け、医療現場やシステムへの影響を踏まえて要約してください。\n\n"
+        "前置きは不要です。指示通り冒頭に『今日の3行まとめ』を配置し、「電子カルテ・医療DX推進」「診療報酬・制度改正」「厚労省ガイドライン・通知」などに分類して要約してください。\n\n"
         f"{dx_data}"
     )
     summaries.append(("📋 医療行政・医療DX動向", generate_summary(dx_prompt)))
@@ -113,14 +120,13 @@ def get_all_summaries():
     # 3. 医療・ゲノム・病理・臨床検査
     print("Generating Medical & Clinical Lab summary...")
     med_sites = ["carenet.com", "medical.nikkeibp.co.jp", "bio.nikkeibp.co.jp", "m3.com"]
-    # BML, SRL(HUグループ), LSIメディエンス, 関西圏大手（ファルコ等）をクエリに網羅
     lab_query = "(BML OR SRL OR HUグループ OR LSIメディエンス OR ファルコ OR 江東微生物 OR 臨床検査 OR ゲノム OR 病理)"
     med_data = fetch_rss_news(lab_query, site_list=med_sites, max_items=20)
     
     med_prompt = (
         f"{style_instruction}"
         "以下は専門医療メディアからの最新ニュース（がんゲノム・病理・臨床検査会社動向含む）一覧です。\n"
-        "前置きは不要です。「がんゲノム・遺伝子診療」「臨床検査会社・検査技術の動向」「病理・臨床現場のトピック」などのカテゴリに分けて要約してください。\n"
+        "前置きは不要です。指示通り冒頭に『今日の3行まとめ』を配置し、「がんゲノム・遺伝子診療」「臨床検査会社・検査技術の動向」「病理・臨床現場のトピック」などに分類して要約してください。\n"
         "特に <strong>BML</strong>、<strong>SRL</strong>、<strong>LSIメディエンス</strong>、<strong>ファルコ</strong> などの検査会社に関するニュースがあれば明確に強調してください。\n\n"
         f"{med_data}"
     )
