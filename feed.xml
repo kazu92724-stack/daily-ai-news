@@ -7,141 +7,103 @@
     <language>ja</language>
     <item>
       <title>🤖 AI最新トレンド (2026-08-30)</title>
-      <description>&lt;h3&gt;LLM・基盤モデルの動向&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;
-        🤖 &lt;strong&gt;OpenAI&lt;/strong&gt;のサム・アルトマンCEOは、年末までに「&lt;strong&gt;AGI&lt;/strong&gt;（汎用人工知能）」と呼べる内部システムを構築できる見通しを明らかにしました。同社の次世代システム等に関連するAI研究では、すでにインターン級の能力を発揮しているとされています。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9kUUx5QUNBMFo1cjNmZjM4NGxpNXRzZWdRbFVUb1ZGY3JGRF9ZOUpjTTRuOHg0eGZfRTd2UDdycmJra1JRSnMtdHdaZk9DTnhIOUd2cDd6eW55UFoyQUQ2LVF6MWI?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
+      <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
+・&lt;strong&gt;OpenAI&lt;/strong&gt;のサム・アルトマンCEOが、年末までにAGIと呼べる内部システムが登場する見通しを示した。&lt;br&gt;
+・AIエージェントの普及によりネット通販のビジネスモデルが大きく揺らぎ、新たな購買体験への移行が始まっている。&lt;br&gt;
+・AIデータセンターやストレージ分野において、従来の空冷から液冷技術への移行など熱対策が急務となっている。&lt;/p&gt;
 
-&lt;h3&gt;産業・ビジネス応用&lt;/h3&gt;
+&lt;h3&gt;LLM・基盤モデルの動向【重要度: ★★★★★】&lt;/h3&gt;
 &lt;ul&gt;
-    &lt;li&gt;
-        🛍️ 「&lt;strong&gt;AIエージェント&lt;/strong&gt;」の普及により、ネット通販のビジネスモデルが大きく揺らいでいます。従来のECプラットフォームを仲介しない“アマゾン飛ばし”とも言える購買行動が、今後の商取引のあり方を変える可能性があります。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9qdnFEdHRkYURLd20td0JkZTBEM0pDcFZhTHBaMmNjcFVmcVFrVjdidzk4S0Yyam1yd0F6UnNUNV92ZF9HZFVHR1NJM0VOUGJvSzEycG1fa0J2NVlpVFJtX1FvaXRWZXBYSjlrcGluc1kzQQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;OpenAI&lt;/strong&gt;のサム・アルトマンCEOは、年末までに「AGI」と呼べるレベルの内部システムを保有する見通しを明らかにした。また、同社のプロジェクト「Astra」はすでにAI研究インターン級の能力を備えているとされている。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE9kUUx5QUNBMFo1cjNmZjM4NGxpNXRzZWdRbFVUb1ZGY3JGRF9ZOUpjTTRuOHg0eGZfRTd2UDdycmJra1JRSnMtdHdaZk9DTnhIOUd2cDd6eW55UFoyQUQ2LVF6MWI?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;ガバナンス・技術動向&lt;/h3&gt;
+&lt;h3&gt;産業・ビジネス応用【重要度: ****☆】&lt;/h3&gt;
 &lt;ul&gt;
-    &lt;li&gt;
-        🏥 AIや高性能コンピューティングの発展に伴う熱問題の解決策として、インフラの進化が急ピッチで進んでいます。
-    &lt;/li&gt;
-    &lt;li&gt;
-        🔥 AIデータセンターでは従来の空冷が限界に直面しており、プロセッサーを直接冷却する「&lt;strong&gt;ダイレクト・ツー・チップ液冷&lt;/strong&gt;」への移行が本格化しています。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE0zZUstQXEydVhTTUNuNllvVzlPZ3hLTTB4NFRHUnpTSDExQ2R4SGc1VW9lYVhBZzF4aG1tU3l0TEp6eDU1Nk9jaEdEVEJpVzZQX0UzLW5fck9NM0kyYzlmQVc0M3BCWENfYUVz?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        💾 ストレージ分野においてもAI前提の進化が見られ、&lt;strong&gt;キオクシア&lt;/strong&gt;がGPUだけでなくSSD自体を冷却する「SSDでも液冷」技術を初めて打ち出し、AI時代の熱問題に対応する取り組みを進めています。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTFAwUDJKMXFOWlJWY0V6ZkVZc0p4U1B4MWZCVXBhcTBfQUp0aGxKSzFXbUpXVUFreEl2Y0tEQWc4ZXMteFRRSTN5eV9mSllpSmViaUZfVG1oQS13OTNDMVJuU0Qxc2IzM3l0UkhaTElwUDlRQQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid>🤖 AI最新トレンド-2026-08-30-115439</guid>
-      <pubDate>Sun, 30 Aug 2026 11:54:39 GMT</pubDate>
+  &lt;li&gt;「&lt;strong&gt;AIエージェント&lt;/strong&gt;」の台頭によりネット通販の仕組みが激変しており、いわゆる“アマゾン飛ばし”のような新しい購買行動が企業のビジネスモデルを大きく揺るがしている。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5fUDZfNXRkY0ZtQWQwQVhSV0VpczNKb0ZmMDAtZ3lSYjhpTHk4UVdDVXoyLVNMdjNmOGlZRXdScFV1UmU1d01iMDk5U09CTFRhd19tU01tTlNzZ3hydXVwSHB0Y2ZWc1MwMURV?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;ガバナンス・技術動向【重要度: ★★★★☆】&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;空冷の限界に直面しているAIデータセンターは、ダイレクト・ツー・チップ液冷などの冷却方式への舵切りを急進させている。また、&lt;strong&gt;キオクシア&lt;/strong&gt;がSSD向けの液冷技術を発表するなど、GPUだけでなくストレージ領域においてもAI時代の深刻な熱問題への対策が進む。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE0zZUstQXEydVhTTUNuNllvVzlPZ3hLTTB4NFRHUnpTSDExQ2R4SGc1VW9lYVhBZzF4aG1tU3l0TEp6eDU1Nk9jaEdEVEJpVzZQX0UzLW5fck9NM0kyYzlmQVc0M3BCWENfYUVz?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTFAwUDJKMXFOWlJWY0V6ZkVZc0p4U1B4MWZCVXBhcTBfQUp0aGxKSzFXbUpXVUFreEl2Y0tEQWc4ZXMteFRRSTN5eV9mSllpSmViaUZfVG1oQS13OTNDMVJuU0Qxc2IzM3l0UkhaTElwUDlRQQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>🤖 AI最新トレンド-2026-08-30-120152</guid>
+      <pubDate>Sun, 30 Aug 2026 12:01:52 GMT</pubDate>
     </item>
     <item>
       <title>📋 医療行政・医療DX動向 (2026-08-30)</title>
-      <description>&lt;h3&gt;🤖 電子カルテ・医療DX推進&lt;/h3&gt;
-&lt;ul&gt;
-    &lt;li&gt;
-        &lt;strong&gt;20代勤務医の87％が業務で生成AIを活用&lt;/strong&gt;していることが明らかになり、医療現場におけるAIや先進的なデジタルツールの導入と活用が急速に進展しています。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE9OOXVOZWZoOXVuWVE4QVYyOWczYTU3aFVzTkd1REpYWjNldF90TE04VzRXYXM1NmJoNzBaX2RlMmJiSWd2UkdtWUR6ampwa09WREE?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;
+      <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
+・&lt;strong&gt;医療費総額&lt;/strong&gt;が49兆2000億円に達し、5年連続で過去最高を更新しました。&lt;br&gt;
+・&lt;strong&gt;診療報酬改定&lt;/strong&gt;に関して現場の医師の78.4％が「実態を捉えていない」と回答しています。&lt;br&gt;
+・全国で&lt;strong&gt;廃止・休止&lt;/strong&gt;となる医療機関や事業継承問題に関する動向が注目されています。&lt;/p&gt;
 
-&lt;h3&gt;📋 診療報酬・制度改正&lt;/h3&gt;
+&lt;h3&gt;電子カルテ・医療DX推進 【重要度: ★★★☆☆】&lt;/h3&gt;
 &lt;ul&gt;
-    &lt;li&gt;
-        2025年度の&lt;strong&gt;医療費総額が49兆2,000億円&lt;/strong&gt;に達し、5年連続で過去最高を更新しました。これに伴い、&lt;strong&gt;診療報酬改定&lt;/strong&gt;においては&lt;strong&gt;ケサンラ&lt;/strong&gt;の価格調整（介護費用含めず）など、薬剤費や関連制度の厳格化が議論されています。一方、医師へのアンケートでは&lt;strong&gt;78.4％が「改定は現場の実態を捉えていない」と回答&lt;/strong&gt;しており、制度と現場の乖離が課題となっています。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNMnExWWFfa2R5VjdtSEZvX0NCaTlVcVFRVm43UnRGa3lyeGV4MFZvRUM5bGllRUJCUWhubUxleW5jbDdCWjNsNC15YzFpRDE5TzRJcjI0RXZSV2lFT01mcl9JLXdtb1lVTzJkeU5aUXlCOEM0OWZ1elZGU0RLNldrWjBVUVp4Umhxb3c?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9qNURZd25fT2d0QWM3Z0NBVVVWWFQyUUNFcHcyOG1LM002eUducUJzM25sbDRlY3BoWDF4XzN4R1Rtb1hFOUVWOURUUE5ibzBxbWh3?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE01SkpZa2w2ZW01TEtnVVJ4ZnVhNFoyZWh6U3kwQXY1TFhRWUZfbVlvNjNsWWgxaDZGRW1QVmZ6Z3dmSVNhZTJtOTVtT1RzSkYtbmtN?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-    &lt;li&gt;
-        全国で&lt;strong&gt;廃止・休止となった医療機関が206件&lt;/strong&gt;（2026年6月時点）に上り、後継者不在による医院の「継がない」選択や経営難が、地域の医療提供体制に深刻な影響を与えています。
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE0tdWI0Vm1oTHM4UVo4RUVjTXpSX09sbkdZSWdzOUJ0TmZZLXdjVEVRMWdYRFFxWlR3Slc0LVhTRGZZUHRoVGRsMmQ2eWlQZDN4cGJj?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-        &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE9JNUJ2VGRLUUkyNmdFZGJCODltX09jam1YeFFiSnByeGZWYlM3OHB5MG5zYmpRV0NtUFR4TVI4S1VVT0lTZnZRU1BLSEo?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-    &lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid>📋 医療行政・医療DX動向-2026-08-30-115439</guid>
-      <pubDate>Sun, 30 Aug 2026 11:54:39 GMT</pubDate>
+  &lt;li&gt;20代勤務医の87％が業務で&lt;strong&gt;AIを活用&lt;/strong&gt;していることが明らかになり、医療現場におけるデジタルツールの利用が進んでいます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE9OOXVOZWZoOXVuWVE4QVYyOWczYTU3aFVzTkd1REpYWjNldF90TE04VzRXYXM1NmJoNzBaX2RlMmJiSWd2UkdtWUR6ampwa09WREE?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;診療報酬・制度改正 【重要度: ★★★★★】&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;2025年度の&lt;strong&gt;医療費総額&lt;/strong&gt;が49兆2000億円となり、5年連続で過去最高を更新しました。&lt;/li&gt;
+  &lt;li&gt;最新の&lt;strong&gt;診療報酬改定&lt;/strong&gt;に対し、現場の医師の78.4％が「実態を捉えていない」と感じているという調査結果が発表されました。&lt;/li&gt;
+  &lt;li&gt;ケサンラの価格調整など、&lt;strong&gt;診療報酬改定&lt;/strong&gt;に関する新たな動きが見られます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE01SkpZa2w2ZW01TEtnVVJ4ZnVhNFoyZWh6U3kwQXY1TFhRWUZfbVlvNjNsWWgxaDZGRW1QVmZ6Z3dmSVNhZTJtOTVtT1RzSkYtbmtN?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE9qNURZd25fT2d0QWM3Z0NBVVVWWFQyUUNFcHcyOG1LM002eUducUJzM25sbDRlY3BoWDF4XzN4R1Rtb1hFOUVWOURUUE5ibzBxbWh3?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxNMnExWWFfa2R5VjdtSEZvX0NCaTlVcVFRVm43UnRGa3lyeGV4MFZvRUM5bGllRUJCUWhubUxleW5jbDdCWjNsNC15YzFpRDE5TzRJcjI0RXZSV2lFT01mcl9JLXdtb1lVTzJkeU5aUXlCOEM0OWZ1elZGU0RLNldrWjBVUVp4Umhxb3c?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;厚労省ガイドライン・通知・医療動向 【重要度: ★★★★☆】&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;全国で&lt;strong&gt;廃止・休止&lt;/strong&gt;となる医療機関が多数存在し、医院を継ぎない選択や経営継続に関する課題が浮き彫りになっています。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE0tdWI0Vm1oTHM4UVo4RUVjTXpSX09sbkdZSWdzOUJ0TmZZLXdjVEVRMWdYRFFxWlR3Slc0LVhTRGZZUHRoVGRsMmQ2eWlQZDN4cGJj?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiTEFVX3lxTE9JNUJ2VGRLUUkyNmdFZGJCODltX09jam1YeFFiSnByeGZWYlM3OHB5MG5zYmpRV0NtUFR4TVI4S1VVT0lTZnZRU1BLSEo?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>📋 医療行政・医療DX動向-2026-08-30-120152</guid>
+      <pubDate>Sun, 30 Aug 2026 12:01:52 GMT</pubDate>
     </item>
     <item>
       <title>🏥 医療・ゲノム・病理・検体検査 (2026-08-30)</title>
-      <description>&lt;h3&gt;🤖 医療・調剤関連ニュース&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;
-    &lt;strong&gt;株式会社マウントフィールド オハナ薬局&lt;/strong&gt;（大阪府大阪市中央区）に関する記事および求人情報が公開されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE5wT3dqTk9KMXdGZmxzRmhfTmhhM1lHb3VPQjJHOW5lbXhQWEhNcjVVblNYOTM4NEdzR2dyVjZhRC16RnF3SUtVb3byb2xsga3U4ZW5TMW9YZ280dXVuTkhRX3NpZlE?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;strong&gt;西梅田静脈瘤・痛みのクリニック&lt;/strong&gt;（大阪府大阪市北区）に関する情報が掲載されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NQ251TkxIM2FZTlI2andfUVJQVTBNc0paOE9PVUFYQXhzNmJfS2tEbmo3bm9GMTh4YU0wMHp5NmJXdXZVQy1obVoyQTkxMTFfcnFRZE9XLWw3dXdKUk1iMzJUOEhVUQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;strong&gt;宮下耳鼻咽喉科医院&lt;/strong&gt;（東京都大田区）の最新記事・求人情報が更新されました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE9NWjBFZDRCYkJMdTR6OWw3ajNyNHFYRWdDZXRmN3ZUeU81QU92SU94aEVtNmFJWUxFd3cyYloxSDNVempzeWlGVjVfXzdxM0MtWGNBekp0eEY3WjlVVzBoYmRMS2c4Zw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    医学系学会・学術大会・イベントを検索できる&lt;strong&gt;学会・研究会カレンダー&lt;/strong&gt;が案内されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiogFBVV95cUxObnlkSWR6QnZoc0NCY3lfQ3RYQWVFZkV1V0l2WEZtN2F3dmFKTWkzYzRPNkgzOTNxZWUzYV9iZ2N2eG9zTkdocGRWN3FYN3lobWxQN1BGV0xmbnlSN2V5ckRZdlhoVkNJU00ya1ZMR09KM3U5TzNiLVpfS1B3NFllLU1ndXgySDV5d3pxNU1tNTd0Y21HdklFYklnem8tdE5SYkE?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;
+      <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
+・医療分野のニュースおよび薬剤情報に関する最新の動向が更新されています。&lt;br&gt;
+・がんゲノム・遺伝子診療、および主要な&lt;strong&gt;臨床検査会社&lt;/strong&gt;に関する直接的な新規トピックはこのデータ内には含まれていません。&lt;br&gt;
+・各種薬剤や医療機関・求人に関する情報が公開されています。&lt;/p&gt;
 
-&lt;h3&gt;📋 医師・医療従事者向け求人情報&lt;/h3&gt;
+&lt;h3&gt;医療機関・求人・臨床現場のトピック 【重要度: ★★☆☆☆】&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    東京都八王子市における外来&lt;strong&gt;皮膚科&lt;/strong&gt;の常勤医師求人情報（出来高実績に関する記載あり）が公開されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiiwFBVV95cUxNYm1COTRtOHcxdk1CaVpKZFF2UkF0U2pVbFQ1NXFOWFVoQ0lHOTJ2aERRUGl3TWMtaXRTRGJpM0V3X0h3b00xNjdKcGFvbmNlOE9GTU1EaldpcUFwakxFMUQ4NUY5a2pVNFc3bFd3aERCVVE1QmJBMmJVS2Z2VWZLY3ZteXo0V0dNTThJ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;strong&gt;沖縄県&lt;/strong&gt;の常勤医師求人および医師転職に関する情報が紹介されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiakFVX3lxTE1DdlZDNENaNkhfbFBnXzd1cVdjVlJlTlltVFNLVE9tUmNycWNPQ3hpZXdPT29MTlh5Y3lzemhFZU9ZdjkwT0RrbDQ1VnVvLW1Dc1h6MXhDNGM1dWZLcDdaakVjbWlMWGpHM2c?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    医師向けの&lt;strong&gt;非常勤求人検索&lt;/strong&gt;ページが提供されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiWkFVX3lxTFBSNnI1V0ViQmlhN01VMExrNkZqZ0tZYjNkREw4WTJvMTRLV1o3WDRxQW94YjRWb0FqX2VFSDdWckJGUUlSeWR0djBWcU12YjBOOWpGaFg4VldCZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+    &lt;li&gt;大阪府大阪市中央区の&lt;strong&gt;株式会社マウントフィールド オハナ薬局&lt;/strong&gt;や、大阪市北区の&lt;strong&gt;西梅田静脈瘤・痛みのクリニック&lt;/strong&gt;、東京都大田区の&lt;strong&gt;宮下耳鼻咽喉科医院&lt;/strong&gt;などに関する記事や求人情報が公開されています。&lt;/li&gt;
+    &lt;li&gt;薬学生向けの就職情報サイト&lt;strong&gt;《薬キャリ1st》&lt;/strong&gt;の情報や、埼玉県久喜市における心療内科・精神科の非常勤医師求人情報、沖縄県の常勤医師求人情報などが提供されています。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiZkFVX3lxTE5wT3dqTk9KMXdGZmxzRmhfTmhhM1lHb3VPQjJHOW5lbXhQWEhNcjVVblNYOTM4NEdzR2dyVjZhRC16RnF3SUtVb3byb0xsYTF1OGU1OWUwWGdvNHV1bk5IUXFTaWZR?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;🏥 薬剤・処方薬に関するトピック&lt;/h3&gt;
+&lt;h3&gt;薬剤情報・処方薬の動向 【重要度: ★★☆☆☆】&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;
-    &lt;strong&gt;ミチグリニドＣａ・ＯＤ錠１０ｍｇ「ＴＣＫ」&lt;/strong&gt;に関する基本情報が公開されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE8wQkZsQlh0UE5OaDdMdU9seVI0QkVoV1dvaGlOZXlwMEhINmRlLWNKTm5Ga1FxU2EwS0RGUW9fN25qbzFUU1pDTVhLbTREWkNNb3VzLXZCSU5wQ2YwTGQ2OEVUSHA4SzZYcVNhU3lSZTQzY1NTdDNIY1BSZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;strong&gt;ジョイクル関節注30mg&lt;/strong&gt;の薬効分類、副作用、添付文書などの基本情報が掲載されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBqd01LRFNnY3RBZ0VOWElfTlhWLXU5el8wQ3B0cTFoYjdwTUxSbDhMM18tVm9SblpCZzNSUnQxZWwtTFlOSGZSZ3RqN0UwTUlfRnRnRFNvRm0xYjFldXNSZzBpTGdtTUxCWFFfVmJ0b3V3dFh5Y19Cbm0tcw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    新薬である&lt;strong&gt;リブロファズ配合皮下注&lt;/strong&gt;の基本情報（薬効分類や副作用など）が発表されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFAwOV9XaXlJTUg4YU5pbDFHWndCdmtQajVQdWVUWlRGVXBiU2pNWnBJUkFON3F2a3o3LXRoOVhDTTJDZFIwbUtHNHRzUG1QVnd3a2NwS21FbndFalozY240ZFVod01mTmFZWlNYaEtmTm9RSm9kWms4SHNMbw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;strong&gt;トラゼンタ錠５ｍｇ&lt;/strong&gt;に関する情報が提供されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE5uVWw4Q3l3MUVjaTIwdWg2UTJCdkZLNHRwdF9RX2hVQjFNWXYtLXdlQ3RyYTNhYktrcHViQV9jYW9MSHpYR20tZFBHYy04czY5eEc0aGFwOTJ5d1lhWnN6ZzhNa05MSXd2bndUTTdRUVRZTzZybm1IQlhSOA?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;strong&gt;ビラスチンOD錠20mg「EP」&lt;/strong&gt;の処方薬事典における基本情報が更新されました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE1iUDV6TFQtYk1FR29ZbWtxb2ZHejNGYjByT2p2Ri1ieUkwR3p2ZHI1NHE4a2xUMV9vQlBGdWVKMVZITWNuSXpVNVZGc05kaHplR1ZfYXJhVUtGYlRNdXNHYjZDbDE3Y3Izc1g3dHBDMHVERGswN2g1UlZSSQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid>🏥 医療・ゲノム・病理・検体検査-2026-08-30-115439</guid>
-      <pubDate>Sun, 30 Aug 2026 11:54:39 GMT</pubDate>
+    &lt;li&gt;&lt;strong&gt;ミチグリニドＣａ・ＯＤ錠１０ｍｇ「ＴＣＫ」&lt;/strong&gt;や&lt;strong&gt;トラゼンタ錠５ｍｇ&lt;/strong&gt;などの糖尿病治療薬に関する情報が掲載されています。&lt;/li&gt;
+    &lt;li&gt;&lt;strong&gt;ジョイクル関節注30mg&lt;/strong&gt;、&lt;strong&gt;リブロファズ配合皮下注&lt;/strong&gt;、&lt;strong&gt;ビラスチンOD錠20mg「EP」&lt;/strong&gt;などの基本情報（薬効分類や副作用、添付文書など）が確認できます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE8wQkZsQlh0UE5OaDdMdU9seVI0QkVoV1dvaGlOZXlwMEhINmRlLWNKTm5Ga1FxU2EwS0RGUW9fN25qbzFUU1pDTVhLbTREWkNNb3VzLXZCSU5wQ2YwTGQ2OEVUSHA4SzZYcVNhU3lSZTQzY1NTdDNIY1BSZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>🏥 医療・ゲノム・病理・検体検査-2026-08-30-120152</guid>
+      <pubDate>Sun, 30 Aug 2026 12:01:52 GMT</pubDate>
     </item>
     <item>
       <title>📍 地域医療ニュース（和歌山県／大阪府南部地域） (2026-08-30)</title>
-      <description>&lt;h3&gt;📍 &lt;strong&gt;和歌山市&lt;/strong&gt;：がん克服支援の24時間イベントを開催&lt;/h3&gt;
-&lt;p&gt;📋 &lt;strong&gt;和歌山市&lt;/strong&gt;において、がんを乗り越えようとする人々を支援するための24時間イベントが開始されました。&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5jTVpkWUpzb3VLU0hOWk12Wkk1M3hZR2dUSTdqVHhiTVdSLWRldEhGbUxoaVpQbWlNUzlNSUd1akIzZHM?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+      <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
+・南海線&lt;strong&gt;羽倉崎駅&lt;/strong&gt;の踏切で電車と軽自動車が接触する事故が発生し、負傷者2人が病院に搬送されました。&lt;br&gt;
+・&lt;strong&gt;和歌山市&lt;/strong&gt;において、がんを乗り越えるための24時間イベントが開始されました。&lt;br&gt;
+・和歌山県および大阪府南部地域におけるその他の直近の医療関連トピックはありません。&lt;/p&gt;
 
-&lt;h3&gt;🤖 交通情報：&lt;strong&gt;羽倉崎駅&lt;/strong&gt;付近の踏切事故と影響&lt;/h3&gt;
-&lt;p&gt;📋 南海線・&lt;strong&gt;羽倉崎駅&lt;/strong&gt;の踏切で電車と軽自動車が接触する事故が発生し、2人が病院に搬送されました。この影響でなんば駅～羽倉崎駅間で折り返し運転が行われ、空港線のダイヤに乱れが生じています。&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE5xcEJjbjdncnl3Rk5qb2dmTDZkQTdabTUybDFSbWFMRkpaLWZQT3RDdExEQ2NKOExPazlRMXJhdC1GRU1rQWRvYlFYRGxJc2ctTFE1UQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
-      <guid>📍 地域医療ニュース（和歌山県／大阪府南部地域）-2026-08-30-115439</guid>
-      <pubDate>Sun, 30 Aug 2026 11:54:39 GMT</pubDate>
+&lt;h3&gt;南海線・羽倉崎駅の踏切事故と病院搬送 【重要度: ★★★☆☆】&lt;/h3&gt;
+&lt;p&gt;南海線&lt;strong&gt;羽倉崎駅&lt;/strong&gt;の踏切にて、電車と軽自動車が接触する事故が発生しました。この事故により2人が&lt;strong&gt;病院&lt;/strong&gt;に搬送され、なんば駅～羽倉崎駅間で折り返し運転が行われるなど、空港線のダイヤに乱れが生じました。&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiVEFVX3lxTE8xcEJjbjdncnl3Rk5qb2dmTDZkQTdabTUybDFSbWFMRkpaLWZQT3RDdExEQ2NKOExPazlRMXJhdC1GRU1rQWRvYlFYRGxJc2ctTFE1UQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3&gt;和歌山市でがん克服に向けた24時間イベント開催 【重要度: ★★☆☆☆】&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;和歌山市&lt;/strong&gt;において、がんを乗り越えようとする人々を支援し、連帯を深めるための24時間イベントが開始されました。&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5jTVpkWUpzb3VLU0hOWk12Wkk1M3hZR2dUSTdqVHhiTVdSLWRldEhGbUxoaVpQbWlNUzlNSUd1akIzZHM?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>📍 地域医療ニュース（和歌山県／大阪府南部地域）-2026-08-30-120152</guid>
+      <pubDate>Sun, 30 Aug 2026 12:01:52 GMT</pubDate>
     </item>
   </channel>
 </rss>
