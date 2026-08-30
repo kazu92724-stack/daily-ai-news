@@ -19,12 +19,10 @@ NEGATIVE_WORDS = "-株価 -PRTIMES -IR -決算 -PR"
 
 # --- RSS取得関数（サイト指定・重複排除・過去2日以内） ---
 def fetch_rss_news(query, site_list=None, max_items=20):
-    # サイト指定がある場合は OR で結合
     site_query = ""
     if site_list:
         site_query = "(" + " OR ".join([f"site:{s}" for s in site_list]) + ")"
     
-    # 検索クエリの組み立て (メインクエリ + サイト指定 + ネガティブワード + 期間制限)
     full_query = f"{query} {site_query} {NEGATIVE_WORDS} when:2d".strip()
     encoded_query = urllib.parse.quote(full_query)
     url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
@@ -34,11 +32,9 @@ def fetch_rss_news(query, site_list=None, max_items=20):
     seen_titles = set()
     
     for entry in feed.entries:
-        # メディア名の除去とタイトルの正規化
         title = re.sub(r"\s-\s[^-]+$", "", entry.title).strip()
         
-        # --- Python側 Duplicate Detection (タイトルの簡易重複排除) ---
-        # タイトル先頭15文字がほぼ同じニュースは重複とみなしてスキップ
+        # タイトル先頭15文字による簡易重複排除
         title_key = re.sub(r"[^\w]", "", title)[:15]
         if title_key in seen_titles:
             continue
@@ -52,7 +48,7 @@ def fetch_rss_news(query, site_list=None, max_items=20):
             
     return "\n".join(items) if items else "※直近2日以内の該当ニュースは見つかりませんでした。"
 
-# --- Gemini要約関数（503エラー時の自動再試行つき） ---
+# --- Gemini要約関数 ---
 def generate_summary(prompt_text, retries=3):
     payload = {"contents": [{"parts": [{"text": prompt_text}]}]}
     for attempt in range(retries):
@@ -71,7 +67,6 @@ def generate_summary(prompt_text, retries=3):
 def get_all_summaries():
     summaries = []
     
-    # 共通デザイン・重複統合プロンプト指示
     style_instruction = (
         "【重要：出力スタイルおよび重複排除の指示】\n"
         "回答はすべてシンプルかつ標準的なHTML形式のみで出力してください。\n"
@@ -79,13 +74,13 @@ def get_all_summaries():
         "- style属性（colorやbackground-colorなど）は使用しないでください。\n"
         "- トピックの見出しには <h3> や <h4> を使用してください。\n"
         "- 箇条書きには <ul> と <li> を使用してください。\n"
-        "- 重要語句や施設名・メディア名は <strong> タグで太字にしてください。\n"
+        "- 重要語句や施設名・企業名・制度名は <strong> タグで太字にしてください。\n"
         "- 記事のリンクは <p>🔗 <a href=\"URL\" target=\"_blank\">元記事を読む</a></p> の形式に統一してください。\n"
-        "- 絵文字（📌, 💡, 🏥, 🤖, 📍）を活用して視認性を高めてください。\n"
+        "- 絵文字（📌, 💡, 🏥, 🤖, 📍, 📋）を活用して視認性を高めてください。\n"
         "- 【Duplicate Detection】複数の記事が同じ話題・同一発表を扱っている場合は、必ず1つのトピックにまとめて要約し、リンクを併記してください。\n\n"
     )
 
-    # 1. AIトレンド（指定サイト: ITmedia AI+, Ledge.ai, 日経クロステック等 ＋ 一般AI）
+    # 1. AIトレンド
     print("Generating AI summary...")
     ai_sites = ["itmedia.co.jp", "ledge.ai", "xtech.nikkei.com", "aipicks.jp"]
     ai_query = "AI 人工知能 (LLM OR 開発 OR ロボット OR 医療AI OR エージェント OR 生成AI)"
@@ -93,29 +88,46 @@ def get_all_summaries():
     
     ai_prompt = (
         f"{style_instruction}"
-        "以下は指定メディア（ITmedia, Ledge.ai, 日経クロステック, AIPICKS等）から取得した直近2日以内の最新AIニュース一覧です。\n"
-        "前置きは一切不要です。「LLM・基盤モデルの動向」「産業・ビジネス応用」「ガバナンス・技術動向」などに分け、主要記事をわかりやすく要約してください。\n\n"
+        "以下は指定メディアからの最新AIニュース一覧です。\n"
+        "前置きは不要です。「LLM・基盤モデルの動向」「産業・ビジネス応用」「ガバナンス・技術動向」などに分け、主要記事を要約してください。\n\n"
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
     time.sleep(5)
 
-    # 2. 医療・ゲノム・病理（指定サイト: CareNet, 日経メディカル, 日経バイオテク, m3等）
-    print("Generating Medical summary...")
+    # 2. 医療行政・医療DX動向（新規追加）
+    print("Generating Medical Administration & DX summary...")
+    dx_sites = ["medical.nikkeibp.co.jp", "m3.com", "carenet.com", "xtech.nikkei.com"]
+    dx_query = "診療報酬 OR 厚生労働省 OR ガイドライン OR 医療DX OR 電子カルテ OR マイナ保険証 OR オンライン資格確認"
+    dx_data = fetch_rss_news(dx_query, site_list=dx_sites, max_items=20)
+    
+    dx_prompt = (
+        f"{style_instruction}"
+        "以下は医療行政・診療報酬改定・医療DXに関する最新ニュース一覧です。\n"
+        "前置きは不要です。「電子カルテ・医療DX推進」「診療報酬・制度改正」「厚労省ガイドライン・通知」などのカテゴリに分け、医療現場やシステムへの影響を踏まえて要約してください。\n\n"
+        f"{dx_data}"
+    )
+    summaries.append(("📋 医療行政・医療DX動向", generate_summary(dx_prompt)))
+    time.sleep(5)
+
+    # 3. 医療・ゲノム・病理・臨床検査
+    print("Generating Medical & Clinical Lab summary...")
     med_sites = ["carenet.com", "medical.nikkeibp.co.jp", "bio.nikkeibp.co.jp", "m3.com"]
-    med_query = "医療 OR ゲノム OR 病理 OR 検査 OR がんゲノム OR ガイドライン"
-    med_data = fetch_rss_news(med_query, site_list=med_sites, max_items=20)
+    # BML, SRL(HUグループ), LSIメディエンス, 関西圏大手（ファルコ等）をクエリに網羅
+    lab_query = "(BML OR SRL OR HUグループ OR LSIメディエンス OR ファルコ OR 江東微生物 OR 臨床検査 OR ゲノム OR 病理)"
+    med_data = fetch_rss_news(lab_query, site_list=med_sites, max_items=20)
     
     med_prompt = (
         f"{style_instruction}"
-        "以下は専門医療メディア（CareNet, 日経メディカル, 日経バイオテク, m3等）および学会・コンソーシアムの動向を含む最新医療ニュース一覧です。\n"
-        "前置きは不要です。「がんゲノム・遺伝子診療」「対象疾患・新検査技術」「臨床・学会ガイドライン動向」などのカテゴリに分けて要約してください。\n\n"
+        "以下は専門医療メディアからの最新ニュース（がんゲノム・病理・臨床検査会社動向含む）一覧です。\n"
+        "前置きは不要です。「がんゲノム・遺伝子診療」「臨床検査会社・検査技術の動向」「病理・臨床現場のトピック」などのカテゴリに分けて要約してください。\n"
+        "特に <strong>BML</strong>、<strong>SRL</strong>、<strong>LSIメディエンス</strong>、<strong>ファルコ</strong> などの検査会社に関するニュースがあれば明確に強調してください。\n\n"
         f"{med_data}"
     )
-    summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
+    summaries.append(("🏥 医療・ゲノム・病理・検体検査", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 3. 地域医療（和歌山県／大阪府南部地域）
+    # 4. 地域医療（和歌山県／大阪府南部地域）
     print("Generating Local Medical summary...")
     local_query = (
         "医療 OR 病院 OR クリニック OR 開業 "
@@ -144,7 +156,7 @@ def generate_rss_xml(summaries):
     
     ET.SubElement(channel, "title").text = "Daily AI & Medical News Summary"
     ET.SubElement(channel, "link").text = "https://kazu92724-stack.github.io/daily-ai-news/"
-    ET.SubElement(channel, "description").text = "Geminiによる毎日の医療・AI・地域ニュース要約フィード"
+    ET.SubElement(channel, "description").text = "Geminiによる毎日の医療行政・電子カルテ・AI・地域ニュース要約フィード"
     ET.SubElement(channel, "language").text = "ja"
 
     for title, content in summaries:
