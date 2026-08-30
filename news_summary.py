@@ -87,7 +87,7 @@ def get_all_summaries():
     summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 3. 地域医療（和歌山・大阪南部）
+    # 3. 地域医療（和歌山・大阪南部地域）
     print("Generating Local Medical summary...")
     local_query = (
         "医療 OR 病院 OR クリニック OR 開業 "
