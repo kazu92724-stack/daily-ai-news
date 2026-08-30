@@ -44,7 +44,7 @@ def generate_summary(prompt_text, retries=3):
 def get_all_summaries():
     summaries = []
     
-    # 1. AIトレンド（※検索キーワードはここで変更可能）
+    # 1. AIトレンド
     print("Generating AI summary...")
     ai_data = fetch_rss_news("AI 人工知能 (開発 OR ロボット OR 画像生成 OR エージェント)", max_items=10)
     ai_prompt = (
@@ -78,21 +78,25 @@ def get_all_summaries():
     summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 3. 地域医療（和歌山・大阪南部）
+    # 3. 地域医療（和歌山県・大阪府泉州地域/阪南・泉南・田尻・熊取・泉佐野・岸和田・貝塚）
     print("Generating Local Medical summary...")
-    local_data = fetch_rss_news("和歌山 医療 OR 大阪 病院 開業", max_items=8)
+    local_query = (
+        "医療 OR 病院 OR クリニック OR 開業 "
+        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市)"
+    )
+    local_data = fetch_rss_news(local_query, max_items=12)
     local_prompt = (
-        "以下は和歌山・大阪南部の医療ニュース一覧です。\n"
-        "前置きは不要です。施設名や地域の動き、新規開業等のポイントを簡潔にまとめてください。\n\n"
+        "以下は和歌山県および大阪府南部地域（阪南市、泉南市、泉南郡、泉佐野市、岸和田市、貝塚市）の医療関連ニュース一覧です。\n"
+        "前置きは不要です。対象自治体や医療機関・施設の名称、新規開業・医療連携・地域医療の動向などのポイントを簡潔にまとめてください。\n\n"
         "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
         "- 見出しには <h3> や <h4> を使用する\n"
         "- 箇条書きには <ul> と <li> を使用する\n"
-        "- 強調したいキーワードは <strong> を使用する\n"
+        "- 強調したいキーワード（市町村名や病院名）は <strong> を使用する\n"
         "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
         "- Markdown記法は絶対に使用しないこと\n\n"
         f"{local_data}"
     )
-    summaries.append(("📍 地域医療ニュース（和歌山/大阪南部）", generate_summary(local_prompt)))
+    summaries.append(("📍 地域医療ニュース（和歌山県／大阪府南部地域）", generate_summary(local_prompt)))
 
     return summaries
 
