@@ -51,17 +51,18 @@ def fetch_rss_news(query, site_list=None, max_items=20):
             
     return "\n".join(items) if items else "※直近2日以内の該当ニュースは見つかりませんでした。"
 
-# --- Gemini要約関数 ---
+# --- Gemini要約関数（タイムアウト延長・ReadTimeout自動再試行つき） ---
 def generate_summary(prompt_text, retries=3):
     payload = {"contents": [{"parts": [{"text": prompt_text}]}]}
     for attempt in range(retries):
         try:
-            res = requests.post(API_URL, json=payload, timeout=60)
+            # タイムアウト時間を120秒（2分）に延長
+            res = requests.post(API_URL, json=payload, timeout=120)
             res.raise_for_status()
             return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        except requests.exceptions.HTTPError as e:
+        except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
             if attempt < retries - 1:
-                print(f"API呼び出し一時エラー (試行 {attempt + 1}/{retries}): {e}. 10秒後に再試行します...")
+                print(f"API呼び出し一時エラー・タイムアウト (試行 {attempt + 1}/{retries}): {e}. 10秒後に再試行します...")
                 time.sleep(10)
             else:
                 raise e
@@ -140,7 +141,7 @@ def get_all_summaries():
     summaries.append(("🏥 医療・ゲノム・病理・検体検査", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 4. 地域医療（和歌山県／大阪府南部：開院・新規クリニック・検査技師募集の動きを補足）
+    # 4. 地域医療（和歌山県／大阪府南部地域）
     print("Generating Local Medical summary...")
     local_query = (
         "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市) "
