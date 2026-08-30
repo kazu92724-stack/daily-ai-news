@@ -14,16 +14,21 @@ API_URL = (
     f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
 )
 
-# --- RSS取得関数 ---
-def fetch_rss_news(query, max_items=10):
-    encoded_query = urllib.parse.quote(query)
+# --- RSS取得関数（過去2日以内＆取得件数を拡大） ---
+def fetch_rss_news(query, max_items=15):
+    time_bounded_query = f"{query} when:2d"
+    encoded_query = urllib.parse.quote(time_bounded_query)
     url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
+    
     feed = feedparser.parse(url)
     items = []
+    
     for entry in feed.entries[:max_items]:
         title = re.sub(r"\s-\s[^-]+$", "", entry.title)
-        items.append(f"- タイトル: {title}\n  URL: {entry.link}")
-    return "\n".join(items)
+        pub_date = getattr(entry, "published", "日時不明")
+        items.append(f"- タイトル: {title}\n  公開日時: {pub_date}\n  URL: {entry.link}")
+        
+    return "\n".join(items) if items else "※直近2日以内の該当ニュースは見つかりませんでした。"
 
 # --- Gemini要約関数（503エラー時の自動再試行つき） ---
 def generate_summary(prompt_text, retries=3):
@@ -44,56 +49,57 @@ def generate_summary(prompt_text, retries=3):
 def get_all_summaries():
     summaries = []
     
-    # 1. AIトレンド
+    # 共通デザインプロンプト指示
+    style_instruction = (
+        "【重要：出力スタイルの完全指定】\n"
+        "回答はすべてリッチなHTML形式のみで出力してください。\n"
+        "- Markdown記法（**太字** や # 見出し、- 箇条書き など）は厳禁です。\n"
+        "- デザインを視覚的（ビジュアライズ）に美しくするため、背景色つきのカード風デザインを適用してください。\n"
+        "- 各トピックやニュース枠は以下のようなスタイル付きdivタグで囲んでください：\n"
+        "  <div style=\"background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 12px; margin-bottom: 15px; border-radius: 4px;\">\n"
+        "  <h3>📌 [トピックタイトル]</h3>\n"
+        "  <p>要約文章...</p>\n"
+        "  <p><a href=\"URL\" target=\"_blank\" style=\"background-color: #007bff; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;\">🔗 記事を読む</a></p>\n"
+        "  </div>\n"
+        "- 適宜 <strong> タグや <ul><li> タグ、絵文字（💡, 🏥, 🤖, 📍 など）を使って見やすく装飾してください。\n\n"
+    )
+
+    # 1. AIトレンド（取得数 15件）
     print("Generating AI summary...")
-    ai_data = fetch_rss_news("AI 人工知能 (開発 OR ロボット OR 画像生成 OR エージェント)", max_items=10)
+    ai_data = fetch_rss_news("AI 人工知能 (開発 OR ロボット OR 画像生成 OR エージェント)", max_items=15)
     ai_prompt = (
-        "以下は最新のAIニュース一覧（タイトルとURL）です。\n"
-        "前置きは一切不要です。開発動向・ビジネス事例・ガバナンスに分けて要約してください。\n\n"
-        "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
-        "- 見出しには <h3> や <h4> を使用する\n"
-        "- 箇条書きには <ul> と <li> を使用する\n"
-        "- 強調したいキーワードは <strong> を使用する\n"
-        "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
-        "- Markdown記法（**太字** や [リンク](URL) など）は絶対に含めないこと\n\n"
+        f"{style_instruction}"
+        "以下は直近2日以内に公開された最新のAIニュース一覧です。\n"
+        "前置きは一切不要です。「開発・モデル動向」「ビジネス・産業応用」「ガバナンス・社会影響」のセクションに分け、できるだけ多くの主要記事を盛り込んでわかりやすく要約・ビジュアライズしてください。\n\n"
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
     time.sleep(5)
 
-    # 2. 医療・ゲノム・病理
+    # 2. 医療・ゲノム・病理（取得数 15件）
     print("Generating Medical summary...")
-    med_data = fetch_rss_news("医療 ゲノム 病理 検査", max_items=10)
+    med_data = fetch_rss_news("医療 ゲノム 病理 検査", max_items=15)
     med_prompt = (
-        "以下は最新の医療・ゲノム・病理ニュース一覧です。\n"
-        "前置きは不要です。「対象疾患・検査手技」「臨床的変化」「医局・現場への提案」を含めて詳細に要約してください。\n\n"
-        "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
-        "- 見出しには <h3> や <h4> を使用する\n"
-        "- 箇条書きには <ul> と <li> を使用する\n"
-        "- 強調したいキーワードは <strong> を使用する\n"
-        "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
-        "- Markdown記法は絶対に使用しないこと\n\n"
+        f"{style_instruction}"
+        "以下は直近2日以内に公開された最新の医療・ゲノム・病理ニュース一覧です。\n"
+        "前置きは不要です。「対象疾患・検査技術」「臨床現場の変化」「現場・経営への提案」を含めてカード形式でわかりやすく要約してください。\n\n"
         f"{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 3. 地域医療（和歌山県・大阪府泉州地域/阪南・泉南・田尻・熊取・泉佐野・岸和田・貝塚）
+    # 3. 地域医療（和歌山・大阪南部 / 取得数 15件）
     print("Generating Local Medical summary...")
     local_query = (
         "医療 OR 病院 OR クリニック OR 開業 "
-        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市)"
+        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 贝塚市)"
     )
-    local_data = fetch_rss_news(local_query, max_items=12)
+    local_data = fetch_rss_news(local_query, max_items=15)
     local_prompt = (
-        "以下は和歌山県および大阪府南部地域（阪南市、泉南市、泉南郡、泉佐野市、岸和田市、貝塚市）の医療関連ニュース一覧です。\n"
-        "前置きは不要です。対象自治体や医療機関・施設の名称、新規開業・医療連携・地域医療の動向などのポイントを簡潔にまとめてください。\n\n"
-        "【重要】出力は必ずリッチなHTML形式で記述してください。\n"
-        "- 見出しには <h3> や <h4> を使用する\n"
-        "- 箇条書きには <ul> と <li> を使用する\n"
-        "- 強調したいキーワード（市町村名や病院名）は <strong> を使用する\n"
-        "- URLは必ず <a href=\"URL\" target=\"_blank\">記事を読む</a> のようなクリッカブルリンクにする\n"
-        "- Markdown記法は絶対に使用しないこと\n\n"
+        f"{style_instruction}"
+        "以下は直近2日以内に公開された和歌山県および大阪府南部地域（阪南市、泉南市、泉南郡、泉佐野市、岸和田市、貝塚市）の医療ニュース一覧です。\n"
+        "前置きは不要です。対象市町村名や病院・クリニック名を強調（<strong>）し、カード形式で読みやすくまとめてください。\n"
+        "※該当する最新ニュースがない場合は『※直近2日以内の地域医療トピックはありません』と1行で記載してください。\n\n"
         f"{local_data}"
     )
     summaries.append(("📍 地域医療ニュース（和歌山県／大阪府南部地域）", generate_summary(local_prompt)))
