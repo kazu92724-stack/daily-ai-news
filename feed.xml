@@ -7,105 +7,85 @@
     <language>ja</language>
     <item>
       <title>🤖 AI最新トレンド (2026-08-30)</title>
-      <description>&lt;div&gt;
-  &lt;h2 style="color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-top: 0;"&gt;🤖 開発・モデル動向&lt;/h2&gt;
+      <description>&lt;h3&gt;🤖 LLM・基盤モデルの動向&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;strong&gt;KT&lt;/strong&gt;が韓国のソウル大学およびKAISTと共同で、&lt;strong&gt;AIエージェントの推論能力&lt;/strong&gt;と&lt;strong&gt;巨大言語モデル（LLM）の処理効率&lt;/strong&gt;を向上させる技術の研究成果を発表しました。今後は自社のAIモデルやプラットフォームへ順次適用される予定です。
+    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE01QVRPNzI1ZzcxRWV0dENOb3lDVVlzN3NWSElxSkphQ3lqUnlRTEhSLUFyT2dQMXBpVGlSZHA2ekgwZUtNRkhTY1Zfaw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    LLMの親切な応答姿勢を逆手にとって安全性バイパスを狙う新たなジェイルブレイク手法&lt;strong&gt;「HILL」&lt;/strong&gt;が確認され、現在のAIモデルにおける防御の限界や課題が浮き彫りになっています。
+    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE1WLURkYXVVc2VpOHlvUU5XQU4tMTVqZ25VVmlqZU1VWWxVclAxRU5pbEp0UllLbFJDUUd2YXJleVZjTGN6VDdIQ3BtVQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 KT、ソウル大学・KAISTとAI推論とLLM効率化を共同研究&lt;/h3&gt;
-    &lt;p&gt;韓国のKTは、ソウル大学およびKAIST（韓国科学技術院）と共同で、AIエージェントの推論能力向上と巨大言語モデル（LLM）の処理効率を高める技術の研究開発を実施。成果は自社のAIモデルやプラットフォームへ順次適用される予定です。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE01QVRPNzI1ZzcxRWV0dENOb3lDVVlzN3NWSElxSkphQ3lqUnlRTEhSLUFyT2dQMXBpVGlSZHA2ekgwZUtNRkhTY1Zfaw?oc=5" target="_blank" style="background-color: #007bff; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
+&lt;h3&gt;🏭 産業・ビジネス応用&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    日本国内では、人手不足が深刻化する製造現場の「職人技」を継承するため、ロボット向け人工知能の開発同盟および&lt;strong&gt;国産フィジカルAI&lt;/strong&gt;の企業連合が結成され、新たな拡張期を迎えています。
+    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMinwFBVV95cUxPZlpWYlBhN2J6YkhDMDdxdC1oZHlKMlJRSzBBbi1yc1V1eTRxV1V5ZTI1NjhSNlYyNXJFaEZVdm9iZFRxdWZiTXY2dEJqQndGcGRmTmtrZ1lsZjQzX1FpUGw1MmtjdFVNcFJpeDR0VzZQSDUwMFlSNHZJbTZCSS1sUFRrZm1lSUZ6eURMZkdvNEx0SzI4OGVVU2U1eDFNcFE?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    自律的に動く&lt;strong&gt;「AIエージェント」&lt;/strong&gt;の台頭により、ネット通販業界の構造が大きく変わりつつあり、既存の大手プラットフォームを介さない“アマゾン飛ばし”のような新しいビジネスモデルへの移行が注目されています。また、乱立するエージェントを制御するための管理ツールに関する議論も活発化しています。
+    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9qdnFEdHRkYURLd20td0JkZTBEM0pDcFZhTHBaMmNjcFVmcVFrVjdidzk4S0Yyam1yd0F6UnNUNV92ZF9HZFVHR1NJM0VOUGJvSzEycG1fa0J2NVlpVFJtX1FvaXRWZXBYSjlrcGluc1kzQQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    産総研と厚労省の研究班は、AIを活用した希少難病の診断支援において、&lt;strong&gt;人工データ&lt;/strong&gt;を用いて診断精度の底上げを行う取り組みを進めています。さらに、AI科学者による論文作成の試みや、18社におけるAI時代の新たな新人教育の模索など、幅広い分野で導入が進んでいます。
+    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE5TaUpFVWlxaVdWRFZQemlOdkRGTlk5Z0s1ZFVFUlRESTlucWlFZGNMRmk3aUR6UG1tZHdIR1VBZ2xZTnZNYldRdWV2OGp1LXlLZ24zeEdGd2U?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
 
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 乱立するAIエージェントの管理ツール徹底解剖&lt;/h3&gt;
-    &lt;p&gt;次世代の主役として注目を集める各種AIエージェント。その運用や管理を効率化するための最新ツール群について、機能や特徴を多角的に解説する動きが活発化しています。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTE1vUjJTcHZJRnNadkhlZHFhWnFLSHk1aWFYUHprYzRxQUt3NVBPbWlkUFpWWjNWMXNPOUQwTzVncHhLZXU5N09Zd0laUlNwTVYtMmp1MVpkb3FJVTdMazFj?oc=5" target="_blank" style="background-color: #007bff; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;h2 style="color: #28a745; border-bottom: 2px solid #28a745; padding-bottom: 5px; margin-top: 25px;"&gt;💼 ビジネス・産業応用&lt;/h2&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #28a745; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 日本、産業用ロボット向けフィジカルAI開発で同盟結成&lt;/h3&gt;
-    &lt;p&gt;人手不足が深刻化する製造現場の救世主として、「職人技」の継承を担う国産フィジカルAIの開発に向けた企業連合が結成されました。産業用ロボットの高度化と現場への実装が加速します。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiXkFVX3lxTE9vdGFiSTFqdWpfX19DOFJ1bk15LU5sbC1DQXZxX0o2S0tlWWo5czFudFVoWi1QelYyTTU3bjd0Rk5XMFlnenBMTUdhR2pXUFR0V0VMN09FeVhkNm9qc1E?oc=5" target="_blank" style="background-color: #28a745; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #28a745; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 産総研・厚労省研究班、AIで希少難病の診断支援&lt;/h3&gt;
-    &lt;p&gt;医療分野では、産総研と厚労省の研究班がAIを用いた希少難病の診断支援技術を発表。人工データを活用して学習データの不足を補い、診断精度の底上げを実現しています。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiWEFVX3lxTE5TaUpFVWlxaVdWRFZQemlOdkRGTlk5Z0s1ZFVFUlRESTlucWlFZGNMRmk3aUR6UG1tZHdIR1VBZ2xZTnZNYldRdWV2OGp1LXlLZ24zeEdGd2U?oc=5" target="_blank" style="background-color: #28a745; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #28a745; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 企業におけるAIの「社員」化とリーダーズ会議&lt;/h3&gt;
-    &lt;p&gt;AIを単なるツールではなく「社員」として捉える活用論が浸透しつつあります。ビジネスの現場における導入戦略や組織変革について議論する「AIリーダーズ会議2026 Spring」のリポートも公開されました。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiZEFVX3lxTE0ta3JCNDNFOU4yUEN6ZmNqVS0wZUxXcHMxZTFsdWtBZGh2Y3hOMnJEamlpUnJHLUUyOVJoTFV6Y25jamNid1Y5alA0cjB6ZDVEUkVyYkpMX1pBbC1NOE5nWWlDMVQ?oc=5" target="_blank" style="background-color: #28a745; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-
-&lt;div&gt;
-  &lt;h2 style="color: #dc3545; border-bottom: 2px solid #dc3545; padding-bottom: 5px; margin-top: 25px;"&gt;⚖️ ガバナンス・社会影響&lt;/h2&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #dc3545; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 アンソロピック、米国防総省のリスク指定訴訟で一審勝訴&lt;/h3&gt;
-    &lt;p&gt;AI安全性の評価をめぐり、アンソロピックが米政府（国防総省）によるリスク指定の撤廃を求めていた裁判で一審勝訴。裁判所は国防総省の指定に違法判決を下しました。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5Ib3dIZnhWbmN0U1ZJcVBOajg1Qm9MYS1iSGF6dkgtUDhGWDJCcmlJcF8wQm5ENFhFdHBodWFRUHBqZXJzUVVRLVpLN3BKRzctS2JZN3BKcmkyWnNkN3luLTdJbkhmS0E?oc=5" target="_blank" style="background-color: #dc3545; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #dc3545; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 韓国、AI開発への「生データ」活用を容認へ法改正&lt;/h3&gt;
-    &lt;p&gt;韓国政府はAI開発競争の加速を狙い、個人情報保護法を改正して「生データ」の活用を容認する方針へ転換。厳格な審査を条件に企業への追い風となる法整備が進められています。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiUkFVX3lxTE1Zd1hfdWN0VjJMQ1J3ZTI2dDR3eXBTUzNsN1NPZ2RMekYwb0pfa2w4dEdublprVzRIQTJuTzJjV3V3aWFteEpmOHE5eWRycm9DY0HSAVRBVV95cUxNNEg1NjU1VUduUXdCT1FCU1BIM3BJWDhBaVhGSFRadDFmeWQ5VEZTem5vYlFDVWJWNThXOVgyV1FkNlZZQ1pBNmFmbGVObVcwQmE0UkM?oc=5" target="_blank" style="background-color: #dc3545; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #dc3545; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 日本：行政データを認定制で民間に開放、デジタル庁が法改正案&lt;/h3&gt;
-    &lt;p&gt;デジタル庁は、行政データを認定制で民間に開放するための法改正案を推進。AI開発などのイノベーションを強力に促進するためのデータ開放インフラ整備が急ピッチで進んでいます。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1HYVBEamdYVVJqQWFNUDRDZ3BlaDNxMk9fVmlNRWt4Zy13NWllc0xyQ3hSM3NQTkNBelVDdnQzZVIybk5wS0NpLTk4TVI1dWpaU1I1WGFDRXY1Z2FITlFJakNETXE5enM?oc=5" target="_blank" style="background-color: #dc3545; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-
-  &lt;div style="background-color: #f9f9f9; border-left: 4px solid #dc3545; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-    &lt;h3&gt;📌 ベトナム、アジアAIトップ10入りへ国家戦略を承認&lt;/h3&gt;
-    &lt;p&gt;ベトナムでは、2030年までの人工知能に関する国家戦略（2045年までの展望を含む）が承認されました。研究開発能力とAI技術の習熟度を高め、アジアにおけるトップ10の先進国入りを目指す姿勢を鮮明にしています。&lt;/p&gt;
-    &lt;p&gt;&lt;a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNT0hSNkplV0ZWOXp1OGZSZ2JzUjRNMGJaWlhyYmxwWU5NMTFfUnZZTTNBbjIwVHNMdGxzbmNGRkxmdmJHcUt5XzYzZjhyMEd6WDBURzJoTU9KYzRYZkZpczd0WTViZVpZbjQ1RG93MzNlUEdNR05qb1NxZkFOeUZ2aGd6WVNqanNXdmg3RHo5WnZTM2hLOUVpTG5HNHA4eF9NU3RubA?oc=5" target="_blank" style="background-color: #dc3545; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;"&gt;🔗 記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/div&gt;</description>
-      <guid>🤖 AI最新トレンド-2026-08-30-095018</guid>
-      <pubDate>Sun, 30 Aug 2026 09:50:18 GMT</pubDate>
+&lt;h3&gt;🌐 ガバナンス・社会影響&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    ベトナム政府は、研究開発能力の向上とAI技術の習熟度においてアジアのトップ10先進国入りを目指す方針を示し、2030年までの人工知能に関する国家戦略（2045年までの展望を含む）を承認しました。国家レベルでの中長期的な開発体制の整備が加速しています。
+    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMipAFBVV95cUxNT0hSNkplV0ZWOXp1OGZSZ2JzUjRNMGJaWlhyYmxwWU5NMTFfUnZZTTNBbjIwVHNMdGxzbmNGRkxmdmJHcUt5XzYzZjhyMEd6WDBURzJoTU9KYzRYZkZpczd0WTViZVpZbjQ1RG93MzNlUEdNR05qb1NxZkFOeUZ2aGd6WVNqanNXdmg3RHo5WnZTM2hLOUVpTG5HNHA4eF9NU3RubA?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid>🤖 AI最新トレンド-2026-08-30-103418</guid>
+      <pubDate>Sun, 30 Aug 2026 10:34:18 GMT</pubDate>
     </item>
     <item>
       <title>🏥 医療・ゲノム・病理ニュース (2026-08-30)</title>
-      <description>&lt;div style="background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 16px; margin-bottom: 15px; border-radius: 6px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);"&gt;
-  &lt;h3 style="margin-top: 0; color: #333;"&gt;📌 直近の医療・ゲノム・病理ニュースに関するお知らせ&lt;/h3&gt;
-  &lt;p&gt;ご指定いただいた直近2日以内（48時間以内）に公開された&lt;strong&gt;医療・ゲノム・病理分野&lt;/strong&gt;の該当ニュースは、現在データベース上に見つかりませんでした。&lt;/p&gt;
-  &lt;p&gt;代わりに、医療およびゲノム医療の現場における一般的な今後の展望と、日常的な臨床・経営へのアプローチについて以下の通りまとめました。&lt;/p&gt;
-  
-  &lt;ul style="padding-left: 20px; color: #555;"&gt;
-    &lt;li&gt;&lt;strong&gt;対象疾患・検査技術：&lt;/strong&gt; ゲノム医療の領域では、がんゲノムプロファイリング検査やリキッドバイオプシーなど、網羅的な遺伝子解析技術の精度向上が日々進んでいます。&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;臨床現場の変化：&lt;/strong&gt; バイオマーカーに基づく個別化治療（プレシジョン・メディシン）の普及に伴い、診療科の垣根を超えた分子腫瘍ボード（MTB）の重要性が増しています。&lt;/li&gt;
-    &lt;li&gt;&lt;strong&gt;現場・経営への提案：&lt;/strong&gt; 新規検査の導入や院内体制の整備には、コスト対効果の検証や多職種連携の強化、スタッフ向けの継続的な教育体制の構築が不可欠です。&lt;/li&gt;
-  &lt;/ul&gt;
+      <description>&lt;h3&gt;対象疾患・検査技術&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;📌 直近2日以内に対象となる新規の&lt;strong&gt;医療・ゲノム・病理ニュース&lt;/strong&gt;は検出されませんでした。&lt;/li&gt;
+    &lt;li&gt;💡 新しい&lt;strong&gt;検査技術&lt;/strong&gt;や&lt;strong&gt;ゲノム解析&lt;/strong&gt;に関するアップデートが入り次第、こちらに情報を追加いたします。&lt;/li&gt;
+&lt;/ul&gt;
 
-  &lt;p style="margin-bottom: 0;"&gt;💡 &lt;strong&gt;今後の対応：&lt;/strong&gt; 新しいニュースやプレスリリースが公開され次第、順次こちらのフォーマットで最新情報をお届けいたします。&lt;/p&gt;
-&lt;/div&gt;</description>
-      <guid>🏥 医療・ゲノム・病理ニュース-2026-08-30-095018</guid>
-      <pubDate>Sun, 30 Aug 2026 09:50:18 GMT</pubDate>
+&lt;h3&gt;臨床現場の変化&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;🏥 現在、臨床現場における特筆すべき新たな&lt;strong&gt;ガイドライン改訂&lt;/strong&gt;や&lt;strong&gt;承認情報&lt;/strong&gt;等の報告はありません。&lt;/li&gt;
+    &lt;li&gt;🤖 日常診療や&lt;strong&gt;病理診断&lt;/strong&gt;のワークフローにおける直近の変更点についても該当データはありません。&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;現場・経営への提案&lt;/h3&gt;
+&lt;ul&gt;
+    &lt;li&gt;📍 医療機関の&lt;strong&gt;経営管理&lt;/strong&gt;や&lt;strong&gt;現場の運用体制&lt;/strong&gt;において、直近2日間の特段のニュースに基づく変更・対策の必要性は確認されていません。&lt;/li&gt;
+    &lt;li&gt;💡 定期的な&lt;strong&gt;情報収集&lt;/strong&gt;を行い、最新の動向に備えることを推奨します。&lt;/li&gt;
+&lt;/ul&gt;</description>
+      <guid>🏥 医療・ゲノム・病理ニュース-2026-08-30-103418</guid>
+      <pubDate>Sun, 30 Aug 2026 10:34:18 GMT</pubDate>
     </item>
     <item>
       <title>📍 地域医療ニュース（和歌山県／大阪府南部地域） (2026-08-30)</title>
-      <description>&lt;div style="background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 12px; margin-bottom: 15px; border-radius: 4px;"&gt;
-  &lt;h3&gt;📌 直近の地域医療トピックに関するお知らせ&lt;/h3&gt;
-  &lt;p&gt;※指定された対象地域（和歌山県および大阪府南部地域：&lt;strong&gt;阪南市&lt;/strong&gt;、&lt;strong&gt;泉南市&lt;/strong&gt;、&lt;strong&gt;泉南郡&lt;/strong&gt;、&lt;strong&gt;泉佐野市&lt;/strong&gt;、&lt;strong&gt;岸和田市&lt;/strong&gt;、&lt;strong&gt;貝塚市&lt;/strong&gt;）における直近2日以内の医療関連ニュースは該当ありませんでした。&lt;/p&gt;
-  &lt;p&gt;なお、近隣エリアや関連する広域ニュースとしては、以下のような動きが報じられています。&lt;/p&gt;
+      <description>&lt;div&gt;
+  &lt;h3&gt;📍 &lt;strong&gt;大阪府&lt;/strong&gt;・&lt;strong&gt;和歌山県&lt;/strong&gt;の地域医療・関連トピック&lt;/h3&gt;
   &lt;ul&gt;
-    &lt;li&gt;🏥 &lt;strong&gt;大阪府&lt;/strong&gt;では、大阪IRの先駆けとして整備される依存症対策センターの基本構想案が判明し、ギャンブルやアルコール、薬物などの相談を受け医療や自助グループにつなぐ取り組みが進められています。&lt;/li&gt;
-    &lt;li&gt;🏥 &lt;strong&gt;和歌山市&lt;/strong&gt;では、がんを乗り越えようとする24時間のイベントや、「診療看護師」の役割を考えるシンポジウムが開催されました。&lt;/li&gt;
+    &lt;li&gt;
+      &lt;h4&gt;🤖 &lt;strong&gt;和歌山市&lt;/strong&gt;でのがん支援イベント&lt;/h4&gt;
+      &lt;p&gt;がんを乗り越えようと&lt;strong&gt;和歌山市&lt;/strong&gt;で24時間のイベントが開催されました。&lt;/p&gt;
+      &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiQ0FVX3lxTE5jTVpkWUpzb3VLU0hOWk12Wkk1M3hZR2dUSTdqVHhiTVdSLWRldEhGbUxoaVpQbWlNUzlNSUd1akIzZHM?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
+    &lt;li&gt;
+      &lt;h4&gt;🏥 大阪府・市の依存症対策センター&lt;/h4&gt;
+      &lt;p&gt;「&lt;strong&gt;大阪IR&lt;/strong&gt;」の先駆けとして、&lt;strong&gt;大阪府&lt;/strong&gt;市が整備する「&lt;strong&gt;依存症対策センター&lt;/strong&gt;」の基本構想案が判明しました。相談を受けて医療や自助グループにつなぐ場所として、ギャンブルやアルコール、薬物などに対応します。&lt;/p&gt;
+      &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTFBkUTUzdjNMeWxac2dOa29QWUFxVll5V3hEWGRyV1p5RGh2cTlOZ0xTNnc5ZUozVXJvOUlrbktOZFR2bElwODZnYjFwaFRuUUxXc0ZxZnhXQmxjRUhGUmJYcEI2aTVRN1luVUQ2RWVqLVU3QQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+    &lt;/li&gt;
   &lt;/ul&gt;
 &lt;/div&gt;</description>
-      <guid>📍 地域医療ニュース（和歌山県／大阪府南部地域）-2026-08-30-095018</guid>
-      <pubDate>Sun, 30 Aug 2026 09:50:18 GMT</pubDate>
+      <guid>📍 地域医療ニュース（和歌山県／大阪府南部地域）-2026-08-30-103418</guid>
+      <pubDate>Sun, 30 Aug 2026 10:34:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
