@@ -14,10 +14,13 @@ API_URL = (
     f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
 )
 
-# ネガティブワード（共通ノイズ除去）
-NEGATIVE_WORDS = "-株価 -PRTIMES -IR -決算 -PR"
+# 共通ノイズ除外（株価・プレスリリース・他職種の大量求人などを排除）
+NEGATIVE_WORDS = (
+    "-株価 -PRTIMES -IR -決算 -PR -看護師募集 -薬剤師求人 -医師求人 -派遣 "
+    "-自主回収 -包装変更 -添付文書 -記載整備 -処方"
+)
 
-# --- RSS取得関数（サイト指定・重複排除・過去2日以内） ---
+# --- RSS取得関数 ---
 def fetch_rss_news(query, site_list=None, max_items=20):
     site_query = ""
     if site_list:
@@ -67,9 +70,8 @@ def generate_summary(prompt_text, retries=3):
 def get_all_summaries():
     summaries = []
     
-    # 共通デザイン・3行まとめ・重要度指示プロンプト
     style_instruction = (
-        "【重要：出力形式および要約ルールの厳守】\n"
+        "【重要：出力形式および要約ルール】\n"
         "回答はすべてシンプルかつ標準的なHTML形式のみで出力してください。\n"
         "- Markdown記法（**太字** や # 見出し、- 箇条書き など）は厳禁です。\n"
         "- style属性（colorやbackground-colorなど）は使用しないでください。\n"
@@ -77,7 +79,8 @@ def get_all_summaries():
         "- 箇条書きには <ul> と <li> を使用してください。\n"
         "- 重要語句や施設名・企業名・制度名は <strong> タグで太字にしてください。\n"
         "- 記事のリンクは <p>🔗 <a href=\"URL\" target=\"_blank\">元記事を読む</a></p> の形式に統一してください。\n"
-        "- 【Duplicate Detection】複数記事が同一トピックを扱っている場合は1つにまとめて要約し、リンクを併記してください。\n\n"
+        "- 【Duplicate Detection】複数記事が同一トピックを扱っている場合は1つにまとめて要約し、リンクを併記してください。\n"
+        "- 軽微なマイナーチェンジや無関係な記事は要約から排除してください。\n\n"
         "【構成指定】\n"
         "冒頭に必ず以下の構成で『今日の3行まとめ』と『重要度スコア』を出力してください。\n"
         "<p>⚡ <strong>今日の3行まとめ</strong><br>\n"
@@ -120,31 +123,37 @@ def get_all_summaries():
     # 3. 医療・ゲノム・病理・臨床検査
     print("Generating Medical & Clinical Lab summary...")
     med_sites = ["carenet.com", "medical.nikkeibp.co.jp", "bio.nikkeibp.co.jp", "m3.com"]
-    lab_query = "(BML OR SRL OR HUグループ OR LSIメディエンス OR ファルコ OR 江東微生物 OR 臨床検査 OR ゲノム OR 病理)"
+    lab_query = (
+        "(がんゲノム OR 病理検査 OR BML OR SRL OR HUグループ OR LSIメディエンス OR ファルコ OR 江東微生物 OR "
+        "新薬承認 OR 保険適用 OR 臨床検査技師)"
+    )
     med_data = fetch_rss_news(lab_query, site_list=med_sites, max_items=20)
     
     med_prompt = (
         f"{style_instruction}"
-        "以下は専門医療メディアからの最新ニュース（がんゲノム・病理・臨床検査会社動向含む）一覧です。\n"
-        "前置きは不要です。指示通り冒頭に『今日の3行まとめ』を配置し、「がんゲノム・遺伝子診療」「臨床検査会社・検査技術の動向」「病理・臨床現場のトピック」などに分類して要約してください。\n"
-        "特に <strong>BML</strong>、<strong>SRL</strong>、<strong>LSIメディエンス</strong>、<strong>ファルコ</strong> などの検査会社に関するニュースがあれば明確に強調してください。\n\n"
+        "以下は専門医療メディアからの最新ニュース（がんゲノム・病理・臨床検査会社・技師動向）一覧です。\n"
+        "【ルール】単なる処方・包装変更等の細かい医薬品ニュースは無視し、新薬承認・薬価収載・保険適用などの重要ニュースのみを取り上げてください。\n"
+        "前置きは不要です。冒頭に『今日の3行まとめ』を配置し、「がんゲノム・遺伝子診療・病理」「臨床検査会社・検査技術」「注目新薬・保険適用動向」等に分類して要約してください。\n"
+        "BML、SRL、LSIメディエンス、ファルコ等の検査会社動向があれば強調してください。\n\n"
         f"{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理・検体検査", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 4. 地域医療（和歌山県／大阪府南部地域）
+    # 4. 地域医療（和歌山県／大阪府南部：開院・新規クリニック・検査技師募集の動きを補足）
     print("Generating Local Medical summary...")
     local_query = (
-        "医療 OR 病院 OR クリニック OR 開業 "
-        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市)"
+        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市) "
+        "(クリニック OR 診療所 OR 病院 OR 医院) "
+        "(開業 OR 開設 OR 新設 OR 移転 OR 臨床検査技師 OR 募集)"
     )
     local_data = fetch_rss_news(local_query, site_list=None, max_items=15)
     local_prompt = (
         f"{style_instruction}"
-        "以下は直近2日以内に公開された和歌山県および大阪府南部地域の医療ニュース一覧です。\n"
-        "前置きは不要です。対象市町村名や病院・クリニック名を <strong> で強調し、見やすくまとめてください。\n"
-        "※該当する最新ニュースがない場合は『※直近2日以内の地域医療トピックはありません』と1行で記載してください。\n\n"
+        "以下は直近2日以内に公開された和歌山県および大阪府南部地域（泉州地域）の医療ニュース一覧です。\n"
+        "【ルール】対象エリア（和歌山・大阪南部）における「クリニック・診療所の新設・開業・移転」や「臨床検査技師の新規・新規オープニング募集」などの医療動向を取り上げてください。\n"
+        "前置きは不要です。対象市町村名や病院・クリニック名・施設名を <strong> で強調し、見やすくまとめてください。\n"
+        "※該当する最新ニュースがない場合は『※直近2日以内の対象地域（和歌山・大阪南部）の地域医療トピックはありません』と1行で記載してください。\n\n"
         f"{local_data}"
     )
     summaries.append(("📍 地域医療ニュース（和歌山県／大阪府南部地域）", generate_summary(local_prompt)))
