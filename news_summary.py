@@ -14,7 +14,7 @@ API_URL = (
     f"gemini-3.5-flash-lite:generateContent?key={GEMINI_API_KEY}"
 )
 
-# --- RSS取得関数（過去2日以内＆取得件数を拡大） ---
+# --- RSS取得関数（過去2日以内＆最大15件） ---
 def fetch_rss_news(query, max_items=15):
     time_bounded_query = f"{query} when:2d"
     encoded_query = urllib.parse.quote(time_bounded_query)
@@ -49,56 +49,55 @@ def generate_summary(prompt_text, retries=3):
 def get_all_summaries():
     summaries = []
     
-    # 共通デザインプロンプト指示
+    # 共通デザインプロンプト指示（ダークモード・ライトモード完全対応）
     style_instruction = (
         "【重要：出力スタイルの完全指定】\n"
-        "回答はすべてリッチなHTML形式のみで出力してください。\n"
+        "回答はすべてシンプルかつ標準的なHTML形式のみで出力してください。\n"
         "- Markdown記法（**太字** や # 見出し、- 箇条書き など）は厳禁です。\n"
-        "- デザインを視覚的（ビジュアライズ）に美しくするため、背景色つきのカード風デザインを適用してください。\n"
-        "- 各トピックやニュース枠は以下のようなスタイル付きdivタグで囲んでください：\n"
-        "  <div style=\"background-color: #f9f9f9; border-left: 4px solid #007bff; padding: 12px; margin-bottom: 15px; border-radius: 4px;\">\n"
-        "  <h3>📌 [トピックタイトル]</h3>\n"
-        "  <p>要約文章...</p>\n"
-        "  <p><a href=\"URL\" target=\"_blank\" style=\"background-color: #007bff; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; display: inline-block;\">🔗 記事を読む</a></p>\n"
-        "  </div>\n"
-        "- 適宜 <strong> タグや <ul><li> タグ、絵文字（💡, 🏥, 🤖, 📍 など）を使って見やすく装飾してください。\n\n"
+        "- style属性（colorやbackground-colorなど）は使用しないでください（背景消滅を防ぐため）。\n"
+        "- トピックの見出しには <h3> や <h4> を使用してください。\n"
+        "- 箇条書きには <ul> と <li> を使用してください。\n"
+        "- 重要語句や施設名は <strong> タグで太字にしてください。\n"
+        "- 記事のリンクは <p>🔗 <a href=\"URL\" target=\"_blank\">元記事を読む</a></p> の形式に統一してください。\n"
+        "- 絵文字（📌, 💡, 🏥, 🤖, 📍）を活用して視認性を高めてください。\n\n"
     )
 
-    # 1. AIトレンド（取得数 15件）
+    # 1. AIトレンド（LLM・基盤モデル ＋ 応用技術全般）
     print("Generating AI summary...")
-    ai_data = fetch_rss_news("AI 人工知能 (開発 OR ロボット OR 画像生成 OR エージェント)", max_items=15)
+    ai_query = "AI 人工知能 (LLM OR 開発 OR ロボット OR 医療AI OR エージェント OR 生成AI)"
+    ai_data = fetch_rss_news(ai_query, max_items=15)
     ai_prompt = (
         f"{style_instruction}"
         "以下は直近2日以内に公開された最新のAIニュース一覧です。\n"
-        "前置きは一切不要です。「開発・モデル動向」「ビジネス・産業応用」「ガバナンス・社会影響」のセクションに分け、できるだけ多くの主要記事を盛り込んでわかりやすく要約・ビジュアライズしてください。\n\n"
+        "前置きは一切不要です。「LLM・基盤モデルの動向」「産業・ビジネス応用」「ガバナンス・社会影響」などのカテゴリに分け、主要記事をわかりやすく要約してください。\n\n"
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
     time.sleep(5)
 
-    # 2. 医療・ゲノム・病理（取得数 15件）
+    # 2. 医療・ゲノム・病理
     print("Generating Medical summary...")
     med_data = fetch_rss_news("医療 ゲノム 病理 検査", max_items=15)
     med_prompt = (
         f"{style_instruction}"
         "以下は直近2日以内に公開された最新の医療・ゲノム・病理ニュース一覧です。\n"
-        "前置きは不要です。「対象疾患・検査技術」「臨床現場の変化」「現場・経営への提案」を含めてカード形式でわかりやすく要約してください。\n\n"
+        "前置きは不要です。「対象疾患・検査技術」「臨床現場の変化」「現場・経営への提案」のカテゴリに分けて要約してください。\n\n"
         f"{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理ニュース", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 3. 地域医療（和歌山・大阪南部 / 取得数 15件）
+    # 3. 地域医療（和歌山・大阪南部）
     print("Generating Local Medical summary...")
     local_query = (
         "医療 OR 病院 OR クリニック OR 開業 "
-        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 贝塚市)"
+        "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市)"
     )
     local_data = fetch_rss_news(local_query, max_items=15)
     local_prompt = (
         f"{style_instruction}"
         "以下は直近2日以内に公開された和歌山県および大阪府南部地域（阪南市、泉南市、泉南郡、泉佐野市、岸和田市、貝塚市）の医療ニュース一覧です。\n"
-        "前置きは不要です。対象市町村名や病院・クリニック名を強調（<strong>）し、カード形式で読みやすくまとめてください。\n"
+        "前置きは不要です。対象市町村名や病院・クリニック名を <strong> で強調し、見やすくまとめてください。\n"
         "※該当する最新ニュースがない場合は『※直近2日以内の地域医療トピックはありません』と1行で記載してください。\n\n"
         f"{local_data}"
     )
