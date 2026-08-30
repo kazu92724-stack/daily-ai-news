@@ -46,7 +46,8 @@ def get_all_summaries():
     
     # 1. AIトレンド
     print("Generating AI summary...")
-    ai_data = fetch_rss_news("AI LLM 開発", max_items=10)
+ai_data = fetch_rss_news("AI obsidian github 人工知能 (ロボット OR 画像生成 OR エージェント)", max_items=10)
+
     ai_prompt = (
         "以下は最新のAIニュース一覧（タイトルとURL）です。\n"
         "前置きは一切不要です。開発動向・ビジネス事例・ガバナンスに分けて要約してください。\n\n"
