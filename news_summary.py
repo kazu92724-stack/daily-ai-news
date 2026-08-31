@@ -17,16 +17,16 @@ API_URL = (
 # 共通ノイズ除外（株価・プレスリリース・新薬・製薬・無関係な求人を排除）
 NEGATIVE_WORDS = (
     "-株価 -PRTIMES -IR -決算 -PR -看護師募集 -薬剤師求人 -医師求人 -派遣 "
-    "-新薬 -製薬 -処方 -薬価 -添付文書 -自主回収"
+    "-新薬 -製薬 -処方 -药価 -添付文書 -自主回収 -治験 -創薬"
 )
 
 # --- RSS取得関数 ---
-def fetch_rss_news(query, site_list=None, max_items=20):
+def fetch_rss_news(query, site_list=None, max_items=20, extra_negative=""):
     site_query = ""
     if site_list:
         site_query = "(" + " OR ".join([f"site:{s}" for s in site_list]) + ")"
     
-    full_query = f"{query} {site_query} {NEGATIVE_WORDS} when:2d".strip()
+    full_query = f"{query} {site_query} {NEGATIVE_WORDS} {extra_negative} when:2d".strip()
     encoded_query = urllib.parse.quote(full_query)
     url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
     
@@ -51,15 +51,21 @@ def fetch_rss_news(query, site_list=None, max_items=20):
             
     return "\n".join(items) if items else "※直近2日以内の該当ニュースは見つかりませんでした。"
 
-# --- Gemini要約関数 ---
+# --- Gemini要約関数（Google Search Grounding搭載：Perplexity化） ---
 def generate_summary(prompt_text, retries=3):
-    payload = {"contents": [{"parts": [{"text": prompt_text}]}]}
+    # Google Search Grounding を有効化してAIに自律検索を行わせる
+    payload = {
+        "contents": [{"parts": [{"text": prompt_text}]}],
+        "tools": [{"google_search": {}}]  # Perplexity的自律リサーチの核心
+    }
     for attempt in range(retries):
         try:
             res = requests.post(API_URL, json=payload, timeout=120)
             res.raise_for_status()
-            return res.json()["candidates"][0]["content"]["parts"][0]["text"].strip()
-        except (requests.exceptions.RequestException, requests.exceptions.HTTPError) as e:
+            
+            candidate = res.json()["candidates"][0]
+            return candidate["content"]["parts"][0]["text"].strip()
+        except (requests.exceptions.RequestException, requests.exceptions.HTTPError, KeyError, IndexError) as e:
             if attempt < retries - 1:
                 print(f"API呼び出し一時エラー・タイムアウト (試行 {attempt + 1}/{retries}): {e}. 10秒後に再試行します...")
                 time.sleep(10)
@@ -79,8 +85,7 @@ def get_all_summaries():
         "- 箇条書きには <ul> と <li> を使用してください。\n"
         "- 重要語句や施設名・企業名・制度名は <strong> タグで太字にしてください。\n"
         "- 記事のリンクは <p>🔗 <a href=\"URL\" target=\"_blank\">元記事を読む</a></p> の形式に統一してください。\n"
-        "- 【Duplicate Detection】複数記事が同一トピックを扱っている場合は1つにまとめて要約し、リンクを併記してください。\n"
-        "- 指定条件に合致しないノイズ記事や無関係な地域の情報は出力から完全に排除してください。\n\n"
+        "- 【Duplicate Detection】複数記事が同一トピックを扱っている場合は1つにまとめて要約し、リンクを併記してください。\n\n"
         "【構成指定】\n"
         "冒頭に必ず以下の構成で『今日の3行まとめ』と『重要度スコア』を出力してください。\n"
         "<p>⚡ <strong>今日の3行まとめ</strong><br>\n"
@@ -98,6 +103,7 @@ def get_all_summaries():
     
     ai_prompt = (
         f"{style_instruction}"
+        "あなたは最新AI動向を追うリサーチエージェントです。必要に応じてWeb検索を活用し、背景情報を補足してください。\n"
         "以下は指定メディアからの最新AIニュース一覧です。\n"
         "前置きは不要です。指示通り冒頭に『今日の3行まとめ』を配置し、「LLM・基盤モデルの動向」「産業・ビジネス応用」「ガバナンス・技術動向」などに分類して要約してください。\n\n"
         f"{ai_data}"
@@ -131,39 +137,48 @@ def get_all_summaries():
         "(病理検査 OR 細胞診 OR がんゲノム OR ゲノム医療 OR "
         "BML OR SRL OR HUグループ OR LSIメディエンス OR ファルコ OR メディック OR 日本臨床)"
     )
-    med_data = fetch_rss_news(lab_query, site_list=lab_sites, max_items=20)
+    lab_negative = "-製薬 -新薬 -薬価 -添付文書 -処方薬 -ワクチン -治験"
+    med_data = fetch_rss_news(lab_query, site_list=lab_sites, max_items=20, extra_negative=lab_negative)
     
     med_prompt = (
         f"{style_instruction}"
-        "以下は指定メディアおよび主要臨床検査会社公式サイトからの最新情報一覧です。\n"
-        "【厳格ルール】\n"
-        "- 対象企業: BML、SRL、HUグループ、LSIメディエンス、ファルコ、メディック、日本臨床（日本医学臨床検査研究所）\n"
-        "- 対象分野: 「上記企業の経営・事業動向」「病理検査」「細胞診」「がんゲノム」のみ\n"
-        "- 製薬会社、新薬、薬価、一般の処方薬関連ニュースは【完全に排除】してください。\n"
-        "前置きは不要です。冒頭に『今日の3行まとめ』を配置して要約してください。\n\n"
-        f"{med_data}"
+        "あなたは最新情報を自律調査する専門キュレーターです。提示された情報が少ない場合は【Google検索ツール】を自律実行し、企業のIRや最新リリース情報を検索・補完した上で判定してください。\n\n"
+        "【採点・厳格フィルタールール】\n"
+        "1. 対象範囲:\n"
+        "   - 指定7社（BML、SRL、HUグループ、LSIメディエンス、ファルコ、メディック、日本臨床）の経営・事業動向・リリース\n"
+        "   - 「病理検査」「細胞診」「がんゲノム」に関する専門ニュース\n"
+        "2. 【絶対除外（即棄却）】:\n"
+        "   - 製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、製薬主導の治験に関する話題は【タイトル・本文に関わらず1件も出力しないこと】。\n"
+        "   - 江東微生物に関する話題は除外すること。\n"
+        "3. 適合記事がない場合は『※直近2日以内の対象トピック（病理・細胞診・がんゲノム・検査会社動向）はありません』とだけ出力してください。\n\n"
+        f"【最新取得ニュース】\n{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理・検体検査", generate_summary(med_prompt)))
     time.sleep(5)
 
-    # 4. 地域医療（指定エリア限定：和歌山県／大阪府南部[阪南市・泉南市・田尻町・熊取町・泉佐野市・岸和田市・貝塚市]）
+    # 4. 地域医療（指定エリア限定：和歌山県／大阪府南部）
     print("Generating Local Medical summary...")
     local_query = (
         "(和歌山 OR 阪南市 OR 泉南市 OR 泉南郡 OR 田尻町 OR 熊取町 OR 泉佐野市 OR 岸和田市 OR 貝塚市) "
         "(クリニック OR 診療所 OR 医院 OR 病院) "
         "(開業 OR 開設 OR 新設 OR 移転 OR 臨床検査技師)"
     )
-    local_data = fetch_rss_news(local_query, site_list=None, max_items=15)
+    local_negative = "-大阪市 -堺市 -吹田市 -豊中市 -枚方市 -八尾市 -東大阪市 -兵庫 -京都 -奈良"
+    local_data = fetch_rss_news(local_query, site_list=None, max_items=15, extra_negative=local_negative)
+    
     local_prompt = (
         f"{style_instruction}"
-        "以下は直近2日以内に公開された地域医療関連ニュース一覧です。\n"
-        "【絶対厳守ルール】\n"
-        "1. 対象エリアは『和歌山県全域』および『大阪府（阪南市・泉南市・泉南郡・田尻町・熊取町・泉佐野市・岸和田市・貝塚市）』のみです。\n"
-        "2. 上記以外の地域（大阪市内、堺市、他府県など）のニュースや求人は【絶対に掲載しないでください】。\n"
-        "3. 対象エリア内における『診療所・クリニックの新規開業・開設・移転』および『臨床検査技師の募集・動向』に限定して掲載してください。\n"
-        "前置きは不要です。対象自治体名や施設名を <strong> で強調してください。\n"
-        "※条件に適合する最新ニュースがない場合は『※直近2日以内の対象地域（和歌山・大阪府南部指定市町）のトピックはありません』と1行で記載してください。\n\n"
-        f"{local_data}"
+        "あなたは地理精査を行うリサーチエージェントです。掲載候補の市町村や施設が対象地域内にあるか不安な場合は【Google検索ツール】を起動して正確な位置情報を確認（ファクトチェック）してください。\n\n"
+        "【厳格な地域ルール】\n"
+        "1. 対象エリア（以下のいずれかに限定）:\n"
+        "   - 和歌山県全域\n"
+        "   - 大阪府南部8市町（阪南市、泉南市、泉南郡、田尻町、熊取町、泉佐野市、岸和田市、貝塚市）\n"
+        "2. 【絶対禁止（即棄却）】:\n"
+        "   - 大阪市内、堺市、北摂地域、その他他府県のニュース・求人は【絶対に含めないでください】。\n"
+        "3. 対象内容:\n"
+        "   - 上記対象エリア内の「診療所・クリニックの新規開業・開設・移転」および「臨床検査技師の募集・動向」のみ。\n"
+        "4. 該当記事がない場合は『※直近2日以内の対象地域（和歌山・大阪府南部指定市町）のトピックはありません』と1行で記載してください。\n\n"
+        f"【最新取得ニュース】\n{local_data}"
     )
     summaries.append(("📍 地域医療ニュース（和歌山県／大阪府南部指定地域）", generate_summary(local_prompt)))
 
