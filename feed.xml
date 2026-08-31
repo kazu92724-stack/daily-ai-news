@@ -6,139 +6,115 @@
     <description>Geminiによる毎日の医療行政・電子カルテ・AI・地域ニュース要約フィード</description>
     <language>ja</language>
     <item>
-      <title>🤖 AI最新トレンド (2026-08-30)</title>
+      <title>🤖 AI最新トレンド (2026-08-31)</title>
       <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
-・&lt;strong&gt;タイミー&lt;/strong&gt;と&lt;strong&gt;ジールス&lt;/strong&gt;が協業し、ヒューマノイドの現場データ収集を行う取り組みなどフィジカルAIの社会実装が加速しています。&lt;br&gt;
-・&lt;strong&gt;日立&lt;/strong&gt;や&lt;strong&gt;NTT&lt;/strong&gt;などによる、サプライチェーン調整や材料開発におけるAIを活用した業務効率化技術が相次いで発表されています。&lt;br&gt;
-・&lt;strong&gt;キオクシア&lt;/strong&gt;と&lt;strong&gt;サンディスク&lt;/strong&gt;による日本国内での大規模なメモリ生産増強投資など、AI需要を背景としたインフラ基盤の強化が進んでいます。&lt;/p&gt;
+・&lt;strong&gt;パナソニックHD&lt;/strong&gt;や&lt;strong&gt;AIRoA&lt;/strong&gt;などによるフィジカルAI・ロボティクス分野の開発体制強化や研究拠点の新設が相次いでいます。&lt;br&gt;
+・&lt;strong&gt;日立&lt;/strong&gt;や&lt;strong&gt;横浜ゴム&lt;/strong&gt;などによるサプライチェーン効率化やRAGを活用した意思決定高度化など、製造業でのAI活用が加速しています。&lt;br&gt;
+・&lt;strong&gt;Apple&lt;/strong&gt;と&lt;strong&gt;IBM&lt;/strong&gt;の協業拡大やAIエージェントの台頭など、ビジネスモデルやモバイルアプリ開発への影響が注目されています。&lt;/p&gt;
 
-&lt;h3&gt;フィジカルAI・ロボティクスの動向 【重要度: ★★★★★】&lt;/h3&gt;
+&lt;h3&gt;LLM・基盤モデルの動向【重要度: ★★★☆☆】&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;&lt;strong&gt;AIRoA&lt;/strong&gt;が研究開発と法人機能を平和島拠点に集約し、&lt;strong&gt;フィジカルAI&lt;/strong&gt;の開発体制を強化しています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBTZ3lJX051OTk3NElIWENFdUw4WWJNSXBEb0tnWVpVY1VnSUtDam9jVW5zU0dGZk1NYl80Ylc4WVlPOXU3czd1bmtqOThOYUdCZ2NXOUJvSjNOZXhEQkRocUVSQzg5bWpockdrc2M2SQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;フィジカルAIスタートアップの&lt;strong&gt;RLWRLD&lt;/strong&gt;が、現場実装可能なロボット技術の共通点について語っています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1DZENaUVktcG92dWZLWk5oS25aSzVqRFRhSXN2R2lBTzRlb0Q3NHo0UnhvZkE4bFlackVKeS1HUGR1c28zS0NiYTBKVUtjSFVkenl5V3pTZVFORjczU0pDaU1GbWc5QWxCNTBCaDBtZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;民間コンソーシアムがヒューマノイドが人の動きを学習する&lt;strong&gt;フィジカルAI&lt;/strong&gt;の研究拠点を公開しました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1hZXN0Q25jcWJMM2xXdGQxSWU1WU9BdmU0ekN2ZlE2cVRTY2dPTDZ2U00zeDhlMHpoYmg0UXNmaFZhLVBaZjFUZlBCbjY3ZlV3SjZKclpaVlFxSTE4SlNIQk1yVmxVa3FETHl0WVQtMWNBR29sZjJ6Y2U2S3hTdw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;タイミー&lt;/strong&gt;と&lt;strong&gt;ジールス&lt;/strong&gt;が協業し、ヒューマノイドを育てるための現場データ収集事業を開始します。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE04Zm0zZzBpclhzTTk2NExib1MxM2lYekhRRE9xM3czTnRudGFKdHgzLThTX2M1WlVkeWNIMFUyaHdreVZWS2J6NzNwdnJhVk8wUVcyZGZQRGdxUFBfQTdxQkNjTXoyUHo3M1h1bFV1MA?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;日本精工が国産ヒューマノイド開発に向けてアトム等の事例から得られる知見について発信しています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBRSjFiQXhSR0t3NEllZ2VqOVhmbk01dUVvQU8zaE5mOTVSSGJOazNCVDFseHNEcGJWZnlRWmgxNDBDTHBYOUlZdjAyTjNQS1lTRWtmRHQyWXBOWUN6UDVhN2JSMDZmUnBJSkUwc2M3TQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Apple&lt;/strong&gt;と&lt;strong&gt;IBM&lt;/strong&gt;が人工知能分野での協業を拡大し、iOS向けのAIアプリ開発が加速する見通しです。&lt;/li&gt;
+  &lt;li&gt;エッジ生成AIのリアルタイム処理を可能にする&lt;strong&gt;NVIDIA&lt;/strong&gt;の&lt;strong&gt;Jetson Orin Nano 2&lt;/strong&gt;が登場し、推論性能が2倍に向上しています。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxOTHFtLU5NVHVweDFOZjhxOGxrUS0tRzlZcVB5by1pQnJwSkxkTU5SUWdscUN1alFWYTIxR281bTQ2azF5ZmtCX2FObDhpSGdPczVCQ09udkl6WThKWFNOOXQxcTdHU0stNGd5VUJJVmlnWlFUTlhKbnF4TnJaWWhKZA?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5mV3ZYSjYtZGpKV3ZzUzRsU2xWZFhKUkZuM1o5bGkxNmNhUVFZalVSX2ZpVTVuSkkteEE0Z0dYS1JyUXpWRm9ON3JsT09IaFVSeVlJVDdBLWFpVUpGQmp5QzJPTklkTmlZRDZqRTd3cw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;産業・ビジネス応用 【重要度: ★★★★☆】&lt;/h3&gt;
+&lt;h3&gt;産業・ビジネス応用【重要度: ★★★★★】&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;独自の調査から、日本国内における&lt;strong&gt;生成AI&lt;/strong&gt;活用のリアルな実態が浮き彫りになっています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZVlaQXpGZGJ0LVZLS1lKcURZN1JSSVJhR2tIRGtmSFVDQnR1OGdscmZlV2NUQTlnc21uQ3doOVhpRjVyME1NVk0zSUtodEI1ZjlsSWJ4TVpNTVR3amZjVktOSUloWW5NbTFON3p0Q2VMTWllR2U4SThFVE9GZzA4RGR6UjZQVzZ0MEZJM2pSZ1IxT282SXVoendGZHp2Qzlrdkx4M3FrR1ZMbnpkSEljT2NFN1ZHRUFqS3poU3RVSmpBWnZseFdKZnFnemlwT1JHS3kxWQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;日立&lt;/strong&gt;がサプライチェーンにおける部門間調整を効率化する新しい&lt;strong&gt;AI技術&lt;/strong&gt;を開発しました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBlM1ZNd1BycG9JNjVRMjBacFZ5TjRYYlRVeW8tbkM0U1pIdHhHa3J4OTkwRFNCUjk5YWRqX0dPSUlTdDJVNEJNMzE1ZkR6bHpnckJCazgtaThYQlRwa0JWTUxXcS1QdnBWeFhMVDFuVQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;AIエージェントを活用したCAE（コンピュータ支援エンジニアリング）の進化と、人間の役割についての考察が示されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5uejNCLTlVX2xEaS04UHpIbUJQYzBRS092ZEFIMnFDY2dSRHdlVE5FV1JlY0tfZ1FzN1JKZ1E2RnRoSHhVamhzVjN4QThyVUo5S0NWdnpKUUdTR3lFXzVxdnJEZkMweGFpN2tpckFDVQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;「&lt;strong&gt;AIエージェント&lt;/strong&gt;」の台頭によるネット通販市場への影響や、流通ビジネスモデルの変化について報じられています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTE9qdnFEdHRkYURLd20td0JkZTBEM0pDcFZhTHBaMmNjcFVmcVFrVjdidzk4S0Yyam1yd0F6UnNUNV92ZF9HZFVHR1NJM0VOUGJvSzEycG1fa0J2NVlpVFJtX1FvaXRWZXBYSjlrcGluc1kzQQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;NVIDIAの支援を受けて開発された、約30秒で口腔がんの疑いを検出する歯科用&lt;strong&gt;AI&lt;/strong&gt;が紹介されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFB5ZmhVM2NGbHpjOW5oZ2hyQ2Y0QjJ5c3N6cGU2QzBoT2JtMkNSVVRnUWRnUUlNNHFCcllMX1VzQUU5bmpXd3JfY3J5UUY5bDNUc0hxVVlwYk1JUTRyY29TMThjazFKb21mYktBMW4yWQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;生成AI時代におけるコンサルティング業務の価値や人間の役割に関する議論が展開されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMickFVX3lxTE02RzlnTThsV192YlM0WE9xSWExcjlla2RMRDRNS2JOVEtRM3BlY2lqeWlUZmtzTzBUaHVGc05GMnBFaFFJSjFhREhpdzYzRlJKTzlNblFDUHpNZy1KV0RNenZ5Ql82UFItOVFEVkFSaHhPZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;製造業におけるSaaSのあり方の変化と、業務システムにおける&lt;strong&gt;AI&lt;/strong&gt;の役割について解説されています。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE9kdHJBVzYtYWRQRmViUUFoYjRyR2RVbVFfb0lEQU9oM29ab3VGX0NWXzZOYVA4UWhMYWVVUkhkaWNNb3MzREJQa3dZd240blhPRnRWdWFtMzdOWjRsdW9mV1Z0M1JGQm52Z1JzdUdfQQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;パナソニックHD&lt;/strong&gt;がAI・ロボティクス研究開発本部を新設し、CAIOの榊原氏がトップに就任しました。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;日立&lt;/strong&gt;がサプライチェーンにおける部門間調整を効率化する新しいAI技術を開発しました。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;横浜ゴム&lt;/strong&gt;が&lt;strong&gt;RAG&lt;/strong&gt;を活用した生成AIシステムを開発し、タイヤ開発の意思決定を高度化させています。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;矢崎総業&lt;/strong&gt;が熟練工の技能継承のピークに対応するため、AIを使った次世代&lt;strong&gt;FA&lt;/strong&gt;の開発拠点を設立しました。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;タイミー&lt;/strong&gt;と&lt;strong&gt;ジールス&lt;/strong&gt;が協業し、ヒューマノイドの現場データ収集のためのアルバイト募集など育成に向けた取り組みを開始しています。&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE03Q3pGZW1OVFFBRTRvY2JON0ZIZ2NtdjUwc3pRWVlvRllYQ3hHNW9mMmlMeDNDVjFwbzdDVVI3NkxidHduZldWS3RrZjlWRm42NkM2MF9fcTdaaWFjSDJlSTJORDF4UG1lX2ZTanpIbw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBlM1ZNd1BycG9JNjVRMjBacFZ5TjRYYlRVeW8tbkM0U1pIdHhHa3J4OTkwRFNCUjk5YWRqX0dPSUlTdDJVNEJNMzE1ZkR6bHpnckJCazgtaThYQlRwa0JWTUxXcS1QdnBWeFhMVDFuVQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE1WR0t3TGs4NE9lZ20yOVAzWmJzc0pIelNELUFYbWQwbzhIZ2ljb2VtbW4tS203S0dtT2FRVmdnU21IcC1wZUswQVluLURsM3k1MlJ2MU5TZTduLUZZeFVGTWVrS08wRHBzc0xVdjJMbw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMigAFBVV95cUxNc3lrTTBiYWVuOTBqTWhGMW9FNGh0anZpUDd2TVZvLVZrS0tlS2lPTkg3NnppaWttalV5a2gwVlA1OHlrY0N5Z2Rodmc4YmEzTXg0c1BRUmVHeXRGaUlIZjFOU3N0bDE0MmRvQnNJN3pyRklVVGF6UDl1d3Rkb0I2Tw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE04Zm0zZzBpclhzTTk2NExib1MxM2lYekhRRE9xM3czTnRudGFKdHgzLThTX2M1WlVkeWNIMFUyaHdreVZWS2J6NzNwdnJhVk8wUVcyZGZQRGdxUFBfQTdxQkNjTXoyUHo3M1h1bFV1MA?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;ガバナンス・技術動向 【重要度: ★★★☆☆】&lt;/h3&gt;
+&lt;h3&gt;ガバナンス・技術動向【重要度: ★★★★☆】&lt;/h3&gt;
 &lt;ul&gt;
-  &lt;li&gt;エッジデバイス向けに推論性能が2倍となりリアルタイム処理が可能な「&lt;strong&gt;Jetson Orin Nano 2&lt;/strong&gt;」が発表されました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE5mV3ZYSjYtZGpKV3ZzUzRsU2xWZFhKUkZuM1o5bGkxNmNhUVFZalVSX2ZpVTVuSkkteEE0Z0dYS1JyUXpWRm9ON3JsT09IaFVSeVlJVDdBLWFpVUpGQmp5QzJPTklkTmlZRDZqRTd3cw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;キオクシア&lt;/strong&gt;と&lt;strong&gt;サンディスク&lt;/strong&gt;が日本国内で約5兆円を投資し、AI需要を支えるメモリ生産の増強を発表しました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE90Sk11STJfVmZ5bXk2R2Y3c1lBYU5GNXlNYWNHVDZ4OXB2b05pTFFHbmpucFdOSlc3NFlsWTdVNUs5anhpS2ZkeElGNWk0QWhGXzNmTVVueDM0Wlk2dHFRRzdBMlJwVi0tcnVucnROVQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;NTT&lt;/strong&gt;が解釈可能な自律成膜技術を実現し、成膜・評価サイクルを約3倍に高速化させる研究成果を公表しました。
-    &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTE51SXYwcEhWNEFtWEJST0YxbXAtNk16TjBSY3otTlN1c3BGeDFPZURGeWZxNHNtREtXWHIxN0k1cmI3NFA3Vjc5MXVKYUhYWTd4Wk1uc3hLSjlvQWVWZC1yUEJDV2x5Wi1zWFV0VHN0VQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid>🤖 AI最新トレンド-2026-08-30-133927</guid>
-      <pubDate>Sun, 30 Aug 2026 13:39:27 GMT</pubDate>
+  &lt;li&gt;&lt;strong&gt;AIRoA&lt;/strong&gt;が研究開発と法人機能を平和島拠点に集約し、フィジカルAIの開発体制を強化しています。&lt;/li&gt;
+  &lt;li&gt;民間コンソーシアムがヒューマノイドが人の動きを学習するための&lt;strong&gt;「フィジカルAI」研究拠点&lt;/strong&gt;を公開しました。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;NVIDIA&lt;/strong&gt;の開発支援を受け、約30秒で口腔がんの疑いを検出する歯科用AIが発表されました。&lt;/li&gt;
+  &lt;li&gt;生成AIの普及による労働市場への影響や貧富の差の拡大、AIエージェントによるネット通販のビジネスモデル変革に関する議論が活発化しています。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFBTZ3lJX051OTk3NElIWENFdUw4WWJNSXBEb0tnWVpVY1VnSUtDam9jVW5zU0dGZk1NYl80Ylc4WVlPOXU3czd1bmtqOThOYUdCZ2NXOUJvSjNOZXhEQkRocUVSQzg5bWpockdrc2M2SQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMifkFVX3lxTE1hZXN0Q25jcWJMM2xXdGQxSWU1WU9BdmU0ekN2ZlE2cVRTY2dPTDZ2U00zeDhlMHpoYmg0UXNmaFZhLVBaZjFUZlBCbjY3ZlV3SjZKclpaVlFxSTE4SlNIQk1yVmxVa3FETHl0WVQtMWNBR29sZjJ6Y2U2S3hTdw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMib0FVX3lxTFB5ZmhVM2NGbHpjOW5oZ2hyQ2Y0QjJ5c3N6cGU2QzBoT2JtMkNSVVRnUWRnUUlNNHFCcllMX1VzQUU5bmpXd3JfY3J5UUY5bDNUc0hxVVlwYk1JUTRyY29TMThjazFKb21mYktBMW4yWQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMihAFBVV95cUxObHlWOEhmTmJNNzBMdXRVa2FYVlB3bEgxeFdYZy1RaTdmdHN4MDMyZFZGd2Z1Yng5VC1PTV9zQWZweW5yUXVKUGhiVWhFQTZRZlhpam5FeFAteU8zQ3BVdjVycE9fQWFjLWxoVERrNWl3RkdoZUYzd21valVPYjVGYnl6a2c?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMia0FVX3lxTE5fUDZfNXRkY0ZtQWQwQVhSV0VpczNKb0ZmMDAtZ3lSYjhpTHk4UVdDVXoyLVNMdjNmOGlZRXdScFV1UmU1d01iMDk5U09CTFRhd19tU01tTlNzZ3hydXVwSHB0Y2ZWc1MwMURV?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>🤖 AI最新トレンド-2026-08-31-010555</guid>
+      <pubDate>Mon, 31 Aug 2026 01:05:55 GMT</pubDate>
     </item>
     <item>
-      <title>📋 医療行政・医療DX動向 (2026-08-30)</title>
+      <title>📋 医療行政・医療DX動向 (2026-08-31)</title>
       <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
-・&lt;strong&gt;厚生労働省&lt;/strong&gt;は&lt;strong&gt;2030年末&lt;/strong&gt;までに&lt;strong&gt;電子カルテ普及率100％&lt;/strong&gt;を目指す方針を掲げました。&lt;br&gt;
-・&lt;strong&gt;ロキソプロフェン&lt;/strong&gt;の&lt;strong&gt;指定第2類医薬品&lt;/strong&gt;への変更に向けたパブリックコメントが開始されました。&lt;br&gt;
-・新医薬品として&lt;strong&gt;ペムブロリズマブ皮下注製剤&lt;/strong&gt;や膵癌向けの&lt;strong&gt;オプチューンパクス&lt;/strong&gt;などが部会を通過しました。&lt;/p&gt;
+・&lt;strong&gt;厚生労働省&lt;/strong&gt;は&lt;strong&gt;2030年末&lt;/strong&gt;までに&lt;strong&gt;電子カルテ&lt;/strong&gt;の普及率100パーセントを目指す方針を示し、&lt;strong&gt;医療DX&lt;/strong&gt;の推進が加速しています。&lt;br&gt;
+・&lt;strong&gt;ドンペリドン&lt;/strong&gt;や&lt;strong&gt;葛根湯&lt;/strong&gt;などに重大な副作用が追加され、&lt;strong&gt;厚労省&lt;/strong&gt;および関連機関が注意を呼びかけています。&lt;br&gt;
+・インフルエンザが全国で流行入りし、昨シーズンより約1カ月早い拡大となっています。&lt;/p&gt;
 
 &lt;h3&gt;電子カルテ・医療DX推進 【重要度: ★★★★★】&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;厚労省&lt;/strong&gt;は&lt;strong&gt;2030年末&lt;/strong&gt;までに&lt;strong&gt;電子カルテ普及率100％&lt;/strong&gt;を目指す方針を示し、医療現場での導入推進が進められています。&lt;/li&gt;
-&lt;li&gt;一方で、多くの開業医からは導入における費用対効果に対する悩みの声も上がっています。&lt;/li&gt;
-&lt;li&gt;また、政府や関連機関からはシステムの円滑な導入・運用に向けた&lt;strong&gt;発注者ビューガイドライン&lt;/strong&gt;なども公開されています。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;厚生労働省&lt;/strong&gt;は&lt;strong&gt;2030年末&lt;/strong&gt;までに全国の&lt;strong&gt;電子カルテ&lt;/strong&gt;普及率100パーセントを目指す目標を打ち出しました。一方で、開業医の間では&lt;strong&gt;医療DX&lt;/strong&gt;導入に伴う費用対効果への悩みや懸念も根強く存在しています。&lt;/li&gt;
+  &lt;li&gt;また、関連するシステム開発や調達において&lt;strong&gt;発注者ビューガイドライン&lt;/strong&gt;が公開されるなど、環境整備が進められています。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE1lZHVkdk0tOHkzVmFuakZLXzhXQVgwVTM3aUFkUzQ2WHA4OW9DQl9ZTFdQV3F5VGhRUkVfZHcwaDlTckxkWXN4NndnQm1fbzJDZHJN?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiS0FVX3lxTE1qMW1NU1lBUFljQkYxSGRRV2JpY3FvVnM3dVB4NlBPNHVvVDVfSk1qWFVTY0NnNWJRQVVBZExBRUh0RFFCOExvMWVYZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiygFBVV95cUxPTl9VMjFObkt6VkpGMWZoSURaRGNSY09RUGxjY1pPYkNheTFsQlRFZU9JYjdtVVhCSVJJRlhMX09DYnhtVkNjN096M2ZPSHVWdV9MdEo1cXc1Wko4TmNOaWxkWmVaWThiWTV0akxYcFJBZ3lFLVhMYjJGWWxMU29YV09WOW53Ujdpb3RYUXphbl81cGpPOVhoR1RNSnRKcHJyQ3VfbENfbGhpcDE2ZUJyd0tRTnJDOTNoNm9VQ25fY2FXM01DVmdSNml3?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;診療報酬・制度改正・薬事情報 【重要度: ★★★★☆】&lt;/h3&gt;
+&lt;h3&gt;診療報酬・制度改正 【重要度: ★★★★☆】&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;ロキソプロフェン&lt;/strong&gt;の&lt;strong&gt;指定第2類医薬品&lt;/strong&gt;への変更をめぐり、&lt;strong&gt;厚労省&lt;/strong&gt;がパブリックコメントの募集を開始しました。薬剤師の間では賛否や有害事象に対する懸念が示されています。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ドンペリドン&lt;/strong&gt;や&lt;strong&gt;葛根湯&lt;/strong&gt;などに重大な副作用が追加されるなど、安全性情報が更新されています。&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;ペムブロリズマブ皮下注製剤&lt;/strong&gt;、乳癌向けの&lt;strong&gt;トラスツズマブ デルクステカン&lt;/strong&gt;、膵癌向けの&lt;strong&gt;オプチューンパクス&lt;/strong&gt;などの新医薬品・適応拡大が厚労省部会を通過しました。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;ロキソプロフェン&lt;/strong&gt;の&lt;strong&gt;指定第2類医薬品&lt;/strong&gt;への変更に向けたパブリックコメントの募集が開始されました。薬剤師の間では賛成意見が多数を占める一方で、安全性や有害事象に対する懸念の声も上がっています。&lt;/li&gt;
+  &lt;li&gt;また、&lt;strong&gt;ペムブロリズマブ皮下注製剤&lt;/strong&gt;や&lt;strong&gt;トラスツズマブ デルクステカン&lt;/strong&gt;（HER2陽性進行・再発乳癌の1次治療）、腫瘍治療電場療法&lt;strong&gt;オプチューンパクス&lt;/strong&gt;（膵癌対象）などの新薬・新適応が&lt;strong&gt;厚生労働省&lt;/strong&gt;の部会を通過しました。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE1qUmhZR3pDaUZ3ZVpXaHNObXNMVnltczl4RDh2Tk1rclRDd3ZvQzBFaGtkU2NqVlJCS3lUWmZXcWxhRVBhVVVESDAyQ2VaLWI4ZUpwc05ZaE4tTTA1Uko2alNfV2xLeWo4b2lJZzRGLW9qLUtTaU9NaHJjZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTFBPbWtoUVh3TVZodWJEX2tGVk1oaUUwS2t1WGxxUjUyOGREMHhFUl9udFlQSlQwcGtjaS0yVFNtOXZpN210UlNoZktGNDNMRlZ2MUNrNlFaQ3BmTWU2d0UzMmtTSklUaXhDdXRWMk5pcmZnLUFHWS15V01iRQ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBJRnkxQUtxV2EtVHl4ZWoyWlpXRkxRM2ZCZlN0THZQTWRMdGpJOTExN1RhSlItSW0tcmZkd2tNbTkzSk01cVRLTWNwU0dfbm1mRTBuaURmSnZucTdrZWJn?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxPTW9PUmhEZHpyVHJXVE9Dc1o1R1JXRDNMbUctYkplTnQ2ODJtRDZyemtBdTF1Smx5eTJydV9MT2JaRTRDaElFUS0waGs3Wkl4QUpHQWxjeXRIQ2M5Ul9OcFR3MkFIR2tka0F4X0oyODZnN29QWU1WdnEtOWg0REFsb0lMUnB2MDVi?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiiAFBVV95cUxOYU1HaGpNc3pHSDFDenRGQ0tVUHlVblNXN0N5NkNkSHJkYnptVjh4clF3V1Y0VHFLVWhZX1dydUtxQXlsdVB6NnlxSjc3RmdHdzJybGtGR1EtQlNsRzhOTW9UcWoyTlljR19Id0tZTEJEdHV2b0RNbnBOVDRDVWFGTXpIZ3AyVDFZ?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 
-&lt;h3&gt;薬局・地域医療の動向 【重要度: ★★★☆☆】&lt;/h3&gt;
+&lt;h3&gt;厚労省ガイドライン・通知 【重要度: ★★★☆☆】&lt;/h3&gt;
 &lt;ul&gt;
-&lt;li&gt;地域を支える認定薬局の新たな役割や、人生の最終段階における医療・ケアを話し合う&lt;strong&gt;ACP（アドバンス・ケア・プランニング）&lt;/strong&gt;の導入拠点としての薬局の活用が注目されています。&lt;/li&gt;
-&lt;li&gt;一方で、医療機関や薬局の経営においては、給与アップを行ってもスタッフから不満が噴出するなど、人材確保や労務管理の課題が浮き彫りになっています。&lt;/li&gt;
-&lt;li&gt;また、梅毒治療で使用される&lt;strong&gt;ステルイズ&lt;/strong&gt;の供給制限長期化に対する懸念や、全国的な医療機関の廃止・休止動向に関するデータも報告されています。&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;厚生労働省&lt;/strong&gt;より、&lt;strong&gt;ドンペリドン&lt;/strong&gt;や&lt;strong&gt;葛根湯&lt;/strong&gt;などの医薬品について重大な副作用が新たに追加されたことが発表され、臨床現場での注意が求められています。&lt;/li&gt;
+  &lt;li&gt;また、精神科領域では&lt;strong&gt;うつ病診療ガイドライン&lt;/strong&gt;が大幅に改訂され、臨床上の重要なポイントに注目が集まっています。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiigFBVV95cUxPaEY5RS1EV2VTdk1CLTJoUWRScEhKaUwyQXZZWExpQi1nNUFfYlpvY0Q3ejUzWXZaREl6SjRscGJwSjZ3YmxGd0Vmc0toYWZxNzFrRXBrYUJ5TzNjZEFSMlBleHlYQ0hQeS0yUnFMUlptd0VMWWVBU0xqQUVyZ2N2M1FWblVfSkJ1WlE?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMie0FVX3lxTE54UW9ZSVVScEhBaHVuTWNsSFRadWNoNjJralM4T1RFcGowcElDVzl5N1NGR0JIMU5Ibm5pS3JnTm9pVEx6S1Jmc05DVGJ2RzJFMnFPMW5mV19WZXIyQlBuYXM0ZnAzZEtQZXZGdHFiYUpQRm1hWGpocHg2aw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMihgFBVV95cUxOanhTYWhPWHpQRURMWWVXT2dCaXlEQmlpNkdLLTY1OWZMV1ZTeHFTbDdMX0hJQTZhUE9Yd2MtNjhmcUEwaGI4dkxTX2JwMklkbDRWSzJoeC1kZGdnQm40b0F3X1k3SUhEQXkxRlhMY1YxX1dhZkJqYmFQUm40RmowVTJHODJKZw?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiU0FVX3lxTE0tdWI0Vm1oTHM4UVo4RUVjTXpSX09sbkdZSWdzOUJ0TmZZLXdjVEVRMWdYRFFxWlR3Slc0LVhTRGZZUHRoVGRsMmQ2eWlQZDN4cGJj?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE9UOHhwdnYzQmlxMWN6ZkV5cEc1T05YdXdKWVJrRUFmS2NtSTZycUg1S2NVZGpOcVhiT2dYMy04TTZpbmNncFlHN01SdEJlRFZtM2Y5OU1RaGQ4NEUzSHdNNjNJcE95dU90djNhSlc1RU5wY2dTdm1BLXBJQmRYa3M?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
-      <guid>📋 医療行政・医療DX動向-2026-08-30-133927</guid>
-      <pubDate>Sun, 30 Aug 2026 13:39:27 GMT</pubDate>
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiX0FVX3lxTFBJRnkxQUtxV2EtVHl4ZWoyWlpXRkxRM2ZCZlN0THZQTWRMdGpJOTExN1RhSlItSW0tcmZkd2tNbTkzSk01cVRLTWNwU0dfbm1mRTBuaURmSnZucTdrZWJn?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMif0FVX3lxTE0zVkhpTTlVakZ4aENFQm9MQkFhSkxadmR1U0lEcnZNSFBEdHByQVBHTVQ5QmxuenBlcTNkY1lzcHA4MlR1Qk8zTExvS1RyTjVoeGI5cHJYX0oxYTdXMGROYlZoYU1Db2I3RzNxUlJvMGpYVVh5d2Nvb2s0MlZsa1E?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>📋 医療行政・医療DX動向-2026-08-31-010555</guid>
+      <pubDate>Mon, 31 Aug 2026 01:05:55 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 (2026-08-30)</title>
+      <title>🏥 医療・ゲノム・病理・検体検査 (2026-08-31)</title>
       <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
 ・子宮頸がん検診において&lt;strong&gt;HPV検査&lt;/strong&gt;は従来の&lt;strong&gt;細胞診&lt;/strong&gt;と比較して前癌病変の検出率が高いことが示されています。&lt;br&gt;
-・閉経後女性の&lt;strong&gt;HPV陽性&lt;/strong&gt;かつ細胞診正常例におけるCIN2+病変のリスクに関する知見が報告されています。&lt;br&gt;
-・子宮頸部高度異形成の生検後に発見される子宮頸がんのリスク因子が特定されています。&lt;/p&gt;
+・閉経後女性のHPV陽性・細胞診正常例におけるCIN2+病変のリスクに関する知見が報告されています。&lt;br&gt;
+・子宮頸部高度異形成の生検後に発見されるがんのリスク因子についても特定が進んでいます。&lt;/p&gt;
 
-&lt;h3&gt;子宮頸がん検診におけるHPV検査の有用性と最新知見 【重要度: ★★★★☆】&lt;/h3&gt;
-&lt;p&gt;近年の臨床研究において、子宮頸がん検診における&lt;strong&gt;HPV検査&lt;/strong&gt;は、従来の&lt;strong&gt;細胞診&lt;/strong&gt;と比較して前癌病変の検出率が2.17倍優れていることが示されています。また、閉経後女性における&lt;strong&gt;HPV陽性&lt;/strong&gt;かつ&lt;strong&gt;細胞診&lt;/strong&gt;正常例でのCIN2+病変リスクや、生検後に発見される子宮頸がんのリスク因子特定に関する研究が進められており、精度の高い病理・細胞診検査の重要性が高まっています。&lt;/p&gt;
+&lt;h3&gt;子宮頸がん検診におけるHPV検査と細胞診の比較に関する最新動向 【重要度: ★★★★☆】&lt;/h3&gt;
+&lt;p&gt;子宮頸がん検診において、&lt;strong&gt;HPV検査&lt;/strong&gt;が従来の&lt;strong&gt;細胞診&lt;/strong&gt;よりも前癌病変の検出率において優れた成績を示すことが複数報告されています。検出能が細胞診の数倍に達するとのデータもあり、検査手法の移行や精度の向上に向けた取り組みが注目されています。&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;HPV検査&lt;/strong&gt;は&lt;strong&gt;細胞診&lt;/strong&gt;と比較して前癌病変の検出率で優位性が確認されています。&lt;/li&gt;
+  &lt;li&gt;閉経後女性におけるHPV陽性・細胞診正常例の病変リスク評価など、より詳細な臨床データが蓄積されています。&lt;/li&gt;
+  &lt;li&gt;子宮頸部高度異形成の生検後におけるリスク因子の特定も進められています。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOWnk5ZnFqOVd0YXRtYlFCMGI5a1JYUW81ZmxLYWxXaFpuZFBTNF9Nc0I0Tm54Q1NkbEptUWY1UHRVSnh2cDFOTi03SnF2WjdubTVvRDh5LWppa2kzVTM0VmF5RHVmaDNoRVNncGZINXd6VGxMWVU5WEQySnd6Wlp4bjJR?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOallXTWRIRUhMTWhjSi12ZjdWN2xpSk9Ndk1neE53OVN4SVFiN2ZBVVltVGdUcm83a1hKa3c4SGEzNXF4THE0UHFIS3BMVm5KQm1YSXMzMUhkamhGMW1lRlBtQ1plX0dTaFBtRGI4eFE4N0JaZ1Jrcm00LTQ5RktjOGtn?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNY1pSYy1UZVZxczJGcWJKTmd0OFRVWm5nR2VDV2MwOElCaG96SEpMY2Z5ek5FckdoTU5WaVZFZzBOVlE1bGdwc0NuQmI0azA5Z1Z3YUZCa2dtMDZpQVhiZjI4c20yN0dWSnBoTTBWdTRwVW0xcVpuYkVHYWlURl84LUFn?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxOWnk5ZnFqOVd0YXRtYlFCMGI5a1JYUW81ZmxLYWxXaFpuZFBTNF9Nc0I0Tm54Q1NkbEptUWY1UHRVSnh2cDFOTi03SnF2WjdubTVvRDh5LWppa2kzVTM0VmF5RHVmaDNoRVNncGZINXd6VGxMWVU5WEQySnd6Wlp4bjJR?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
-      <guid>🏥 医療・ゲノム・病理・検体検査-2026-08-30-133927</guid>
-      <pubDate>Sun, 30 Aug 2026 13:39:27 GMT</pubDate>
+&lt;p&gt;🔗 &lt;a href="https://news.google.com/rss/articles/CBMiggFBVV95cUxNY1pSYy1UZVZxczJGcWJKTmd0OFRVWm5nR2VDV2MwOElCaG96SEpMY2Z5ek5FckdoTU5WaVZFZzBOVlE1bGdwc0NuQmI0azA5Z1Z3YUZCa2dtMDZpQVhiZjI4c20yN0dWSnBoTTBWdTRwVW0xcVpuYkVHYWlURl84LUFn?oc=5" target="_blank"&gt;元記事を読む&lt;/a&gt;&lt;/p&gt;</description>
+      <guid>🏥 医療・ゲノム・病理・検体検査-2026-08-31-010555</guid>
+      <pubDate>Mon, 31 Aug 2026 01:05:55 GMT</pubDate>
     </item>
     <item>
-      <title>📍 地域医療ニュース（和歌山県／大阪府南部指定地域） (2026-08-30)</title>
+      <title>📍 地域医療ニュース（和歌山県／大阪府南部指定地域） (2026-08-31)</title>
       <description>&lt;p&gt;⚡ &lt;strong&gt;今日の3行まとめ&lt;/strong&gt;&lt;br&gt;
-・直近2日以内の対象地域（和歌山県・大阪府南部指定市町）における新規開業・移転等の条件に合致するニュースはありません。&lt;br&gt;
-・指定エリア外の病院移転や自治体取り組みなどの情報のみ確認されています。&lt;br&gt;
-・条件に適合する最新情報の発表を引き続き注視します。&lt;/p&gt;
+・直近2日以内の対象地域（和歌山県・大阪府南部指定市町）における新規開業・開設・移転および臨床検査技師に関連するニュースはありません。&lt;br&gt;
+・条件に合致するデータが確認できなかったため、対象トピックは非掲載となります。&lt;br&gt;
+・引き続き最新の地域医療動向を注視してまいります。&lt;/p&gt;
 
 &lt;p&gt;※直近2日以内の対象地域（和歌山・大阪府南部指定市町）のトピックはありません&lt;/p&gt;</description>
-      <guid>📍 地域医療ニュース（和歌山県／大阪府南部指定地域）-2026-08-30-133927</guid>
-      <pubDate>Sun, 30 Aug 2026 13:39:27 GMT</pubDate>
+      <guid>📍 地域医療ニュース（和歌山県／大阪府南部指定地域）-2026-08-31-010555</guid>
+      <pubDate>Mon, 31 Aug 2026 01:05:55 GMT</pubDate>
     </item>
   </channel>
 </rss>
