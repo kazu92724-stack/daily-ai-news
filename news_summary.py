@@ -11,8 +11,8 @@ import google.generativeai as genai
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-# モデル名を安定版の名称に変更
-MODEL_NAME = "gemini-2.5-flash"
+# 最新の推奨モデルに変更
+MODEL_NAME = "gemini-3.6-flash"
 JST = timezone(timedelta(hours=9))
 
 # フィルタリング定義
