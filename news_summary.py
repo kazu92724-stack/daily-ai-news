@@ -17,7 +17,7 @@ API_URL = (
 # 共通ノイズ除外（株価・プレスリリース・新薬・製薬・無関係な求人を排除）
 NEGATIVE_WORDS = (
     "-株価 -PRTIMES -IR -決算 -PR -看護師募集 -薬剤師求人 -医師求人 -派遣 "
-    "-新薬 -製薬 -処方 -药価 -添付文書 -自主回収 -治験 -創薬"
+    "-新薬 -製薬 -処方 -薬価 -添付文書 -自主回収 -治験 -創薬"
 )
 
 # --- RSS取得関数 ---
@@ -51,24 +51,33 @@ def fetch_rss_news(query, site_list=None, max_items=20, extra_negative=""):
             
     return "\n".join(items) if items else "※直近2日以内の該当ニュースは見つかりませんでした。"
 
-# --- Gemini要約関数（Google Search Grounding搭載：Perplexity化） ---
-def generate_summary(prompt_text, retries=3):
-    # Google Search Grounding を有効化してAIに自律検索を行わせる
+# --- Gemini要約関数（Google Search Grounding搭載 ＋ 429レートリミット対策強化） ---
+def generate_summary(prompt_text, retries=5):
     payload = {
         "contents": [{"parts": [{"text": prompt_text}]}],
-        "tools": [{"google_search": {}}]  # Perplexity的自律リサーチの核心
+        "tools": [{"google_search": {}}]  # Perplexity的リアルタイムWeb検索
     }
+    
     for attempt in range(retries):
         try:
             res = requests.post(API_URL, json=payload, timeout=120)
-            res.raise_for_status()
             
+            # 429 Too Many Requests (レートリミット) 検知時の個別処理
+            if res.status_code == 429:
+                wait_time = (attempt + 1) * 20  # 20秒、40秒、60秒... と待機時間を延長
+                print(f"⚠️ 429 Rate Limit検知 (試行 {attempt + 1}/{retries}). {wait_time}秒待機して再試行します...")
+                time.sleep(wait_time)
+                continue
+                
+            res.raise_for_status()
             candidate = res.json()["candidates"][0]
             return candidate["content"]["parts"][0]["text"].strip()
-        except (requests.exceptions.RequestException, requests.exceptions.HTTPError, KeyError, IndexError) as e:
+            
+        except (requests.exceptions.RequestException, KeyError, IndexError) as e:
             if attempt < retries - 1:
-                print(f"API呼び出し一時エラー・タイムアウト (試行 {attempt + 1}/{retries}): {e}. 10秒後に再試行します...")
-                time.sleep(10)
+                wait_time = (attempt + 1) * 15
+                print(f"APIエラー (試行 {attempt + 1}/{retries}): {e}. {wait_time}秒後に再試行します...")
+                time.sleep(wait_time)
             else:
                 raise e
 
@@ -109,7 +118,7 @@ def get_all_summaries():
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
-    time.sleep(5)
+    time.sleep(15)  # レートリミット回避のため15秒待機
 
     # 2. 医療行政・医療DX動向
     print("Generating Medical Administration & DX summary...")
@@ -124,7 +133,7 @@ def get_all_summaries():
         f"{dx_data}"
     )
     summaries.append(("📋 医療行政・医療DX動向", generate_summary(dx_prompt)))
-    time.sleep(5)
+    time.sleep(15)  # レートリミット回避のため15秒待機
 
     # 3. 医療・ゲノム・病理・検体検査（7社・公式HP＋病理・細胞診・ゲノム限定）
     print("Generating Medical & Clinical Lab summary...")
@@ -154,7 +163,7 @@ def get_all_summaries():
         f"【最新取得ニュース】\n{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理・検体検査", generate_summary(med_prompt)))
-    time.sleep(5)
+    time.sleep(15)  # レートリミット回避のため15秒待機
 
     # 4. 地域医療（指定エリア限定：和歌山県／大阪府南部）
     print("Generating Local Medical summary...")
@@ -174,10 +183,10 @@ def get_all_summaries():
         "   - 和歌山県全域\n"
         "   - 大阪府南部8市町（阪南市、泉南市、泉南郡、田尻町、熊取町、泉佐野市、岸和田市、貝塚市）\n"
         "2. 【絶対禁止（即棄却）】:\n"
-        "   - 大阪市内、堺市、北摂地域、その他他府県のニュース・求人は【絶対に含めないでください】。\n"
+        "   - 大阪市内、堺市、北摂地域、その他他府県のニュース・求人は【絶対に含めないでください】 me\n"
         "3. 対象内容:\n"
-        "   - 上記対象エリア内の「診療所・クリニックの新規開業・開設・移転」および「臨床検査技師の募集・動向」のみ。\n"
-        "4. 該当記事がない場合は『※直近2日以内の対象地域（和歌山・大阪府南部指定市町）のトピックはありません』と1行で記載してください。\n\n"
+        "   - 上記対象エリア内の「診療所・クリニックの新規開業・開設・移転」および「スタッフ、臨床検査技師の募集・動向」のみ。\n"
+        "4. 該当記事がない場合は『※直近1日以内の対象地域（和歌山・大阪府南部指定市町）のトピックはありません』と1行で記載してください。\n\n"
         f"【最新取得ニュース】\n{local_data}"
     )
     summaries.append(("📍 地域医療ニュース（和歌山県／大阪府南部指定地域）", generate_summary(local_prompt)))
