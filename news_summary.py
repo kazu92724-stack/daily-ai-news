@@ -11,7 +11,6 @@ import google.generativeai as genai
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-# 最も安定しているモデル指定
 MODEL_NAME = "gemini-1.5-flash"
 JST = timezone(timedelta(hours=9))
 
@@ -95,14 +94,23 @@ def summarize_with_gemini(category, entries):
 
     genai.configure(api_key=api_key)
     
+    # Groundingツールの指定方式を公式標準に修正
     try:
         model = genai.GenerativeModel(
             model_name=MODEL_NAME,
-            tools=[{"google_search": {}}]
+            tools="google_search"
         )
     except Exception as e:
-        print(f"Failed to initialize GenerativeModel: {e}")
-        return "モデルの初期化に失敗しました。"
+        print(f"Primary tool setup failed ({e}), retrying with fallback dict...")
+        try:
+            model = genai.GenerativeModel(
+                model_name=MODEL_NAME,
+                tools=[{"google_search": {}}]
+            )
+        except Exception as e2:
+            print(f"Failed to initialize GenerativeModel completely: {e2}")
+            # 万が一Grounding機能自体がエラーになる場合は通常モデルで救済
+            model = genai.GenerativeModel(model_name=MODEL_NAME)
 
     articles_text = "\n".join([f"- タイトル: {e.title}\n  リンク: {e.link}" for e in entries])
     
@@ -111,7 +119,7 @@ def summarize_with_gemini(category, entries):
 以下の記事リストを元に、【{category['name']}】に関する要約レポートを作成してください。
 
 規則:
-1. 検索機能（Google Search）を活用し、事実関係を補足・精査した上で箇条書きで要約してください。
+1. 事実関係を補足・精査した上で箇条書きで要約してください。
 2. 簡潔で読みやすい文章（300〜500文字程度）にまとめてください。
 
 記事リスト:
@@ -123,7 +131,7 @@ def summarize_with_gemini(category, entries):
             response = model.generate_content(prompt_text)
             return response.text
         except Exception as e:
-            print(f"Attempt {attempt+1} - Gemini API Exception details: {type(e).__name__}: {e}")
+            print(f"Attempt {attempt+1} - Gemini API Exception: {type(e).__name__}: {e}")
             if "429" in str(e):
                 wait = 15 * (attempt + 1)
                 print(f"429 Rate Limit detected. Retrying after {wait} seconds...")
