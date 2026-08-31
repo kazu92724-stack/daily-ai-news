@@ -11,7 +11,8 @@ import google.generativeai as genai
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-MODEL_NAME = "gemini-2.5-flash"
+# 最も安定しているモデル指定
+MODEL_NAME = "gemini-1.5-flash"
 JST = timezone(timedelta(hours=9))
 
 # フィルタリング定義
@@ -48,25 +49,21 @@ CATEGORIES = [
 ]
 
 # ==========================================
-# 2. 事前フィルタリング（高速化の要）
+# 2. 事前フィルタリング
 # ==========================================
 def pre_filter_entry(entry, category_id):
     title = entry.get("title", "")
     
     if category_id == "lab_testing":
-        # 絶対除外ワードの判定
         if any(w in title for w in EXCLUDE_WORDS_MEDICAL):
             return False
-        # 指定会社または検査関連キーワードが含まれるか
         has_company = any(c in title for c in TARGET_COMPANIES)
         has_kw = any(k in title for k in ["病理検査", "細胞診", "がんゲノム", "臨床検査"])
         return has_company or has_kw
 
     if category_id == "local_medical":
-        # エリア除外判定
         if any(a in title for a in EXCLUDE_AREAS):
             return False
-        # 対象エリアが含まれるか
         return any(a in title for a in KANSAI_SOUTH_AREAS)
 
     return True
@@ -83,7 +80,7 @@ def fetch_and_filter_rss(category):
     for entry in feed.entries:
         if pre_filter_entry(entry, category["id"]):
             valid_entries.append(entry)
-            if len(valid_entries) >= 5:  # トークン削減のため上位5件に絞り込み
+            if len(valid_entries) >= 5:
                 break
     return valid_entries
 
@@ -93,16 +90,19 @@ def summarize_with_gemini(category, entries):
 
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
-        print("Error: GEMINI_API_KEY is not set.")
+        print("CRITICAL ERROR: GEMINI_API_KEY is missing in environment variables.")
         sys.exit(1)
 
     genai.configure(api_key=api_key)
     
-    # Google Search Grounding設定
-    model = genai.GenerativeModel(
-        model_name=MODEL_NAME,
-        tools=[{"google_search": {}}]
-    )
+    try:
+        model = genai.GenerativeModel(
+            model_name=MODEL_NAME,
+            tools=[{"google_search": {}}]
+        )
+    except Exception as e:
+        print(f"Failed to initialize GenerativeModel: {e}")
+        return "モデルの初期化に失敗しました。"
 
     articles_text = "\n".join([f"- タイトル: {e.title}\n  リンク: {e.link}" for e in entries])
     
@@ -118,27 +118,25 @@ def summarize_with_gemini(category, entries):
 {articles_text}
 """
 
-    # 429エラーリトライ処理
     for attempt in range(3):
         try:
             response = model.generate_content(prompt_text)
             return response.text
         except Exception as e:
+            print(f"Attempt {attempt+1} - Gemini API Exception details: {type(e).__name__}: {e}")
             if "429" in str(e):
                 wait = 15 * (attempt + 1)
-                print(f"429 Rate Limit. Waiting {wait} seconds...")
+                print(f"429 Rate Limit detected. Retrying after {wait} seconds...")
                 time.sleep(wait)
             else:
-                print(f"Gemini API Error: {e}")
                 break
-    return "要約の生成に失敗しました（レート制限またはエラー）。"
+    return "要約の生成に失敗しました。"
 
 # ==========================================
 # 4. RSS 2.0 (feed.xml) 出力生成
 # ==========================================
 def generate_rss_xml(results):
     now = datetime.now(JST)
-    now_str = now.strftime("%Y-%m-%d %H:%M")
     time_prefix = now.strftime("[%H:%M]")
     epoch_time = int(now.timestamp())
 
@@ -153,11 +151,8 @@ def generate_rss_xml(results):
 
     for cat_id, cat_name, summary in results:
         item = ET.SubElement(channel, "item")
-        
-        # 新着検知を確実にするユニークタイトルとGUID
         ET.SubElement(item, "title").text = f"{time_prefix} {cat_name} ({now.strftime('%Y-%m-%d')})"
         
-        # 404を回避するため安全なエスケープを適用したリンク構造
         clean_link = f"https://github.com/kazu92724-stack/daily-ai-news#{cat_id}_{epoch_time}"
         ET.SubElement(item, "link").text = clean_link
         
@@ -166,7 +161,6 @@ def generate_rss_xml(results):
         
         ET.SubElement(item, "pubDate").text = now.strftime("%a, %d %b %Y %H:%M:%S +0900")
         
-        # 本文HTMLエスケープ
         description_html = f"<div><h3>{html.escape(cat_name)}</h3><p>{html.escape(summary).replace(chr(10), '<br>')}</p></div>"
         ET.SubElement(item, "description").text = description_html
 
@@ -189,8 +183,6 @@ def main():
         
         summary = summarize_with_gemini(cat, entries)
         results.append((cat["id"], cat["name"], summary))
-        
-        # カテゴリ間に短時間の安全ウェイト（5秒）
         time.sleep(5)
 
     generate_rss_xml(results)
