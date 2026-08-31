@@ -112,16 +112,26 @@ def summarize_with_gemini(category, entries):
     for attempt in range(3):
         try:
             response = model.generate_content(prompt_text)
-            return response.text
+            
+            # 安全ブロック等のレスポンス理由をログ表示
+            if response.candidates and len(response.candidates) > 0:
+                finish_reason = response.candidates[0].finish_reason
+                print(f"  Gemini response finish_reason: {finish_reason}")
+
+            if response.text:
+                return response.text
+
         except Exception as e:
-            print(f"Error details (Attempt {attempt+1}): {type(e).__name__} - {e}")
+            print(f"Gemini API Error ({category['id']}) Attempt {attempt+1}: {type(e).__name__} - {e}")
             if "429" in str(e):
                 wait = 15 * (attempt + 1)
-                print(f"Waiting {wait} seconds due to 429...")
+                print(f"Waiting {wait} seconds due to 429 rate limit...")
                 time.sleep(wait)
             else:
-                break
-    return "要約の生成に失敗しました（エラーログを確認してください）。"
+                # 429以外の即時エラー（APIキー異常、権限エラー、安全ブロック等）は即時例外を発生させて終了
+                raise e
+
+    raise RuntimeError(f"Failed to generate summary for category '{category['id']}' after 3 attempts.")
 
 # ==========================================
 # 4. RSS 2.0 (feed.xml) 出力生成
