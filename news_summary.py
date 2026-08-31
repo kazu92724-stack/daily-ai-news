@@ -93,24 +93,7 @@ def summarize_with_gemini(category, entries):
         sys.exit(1)
 
     genai.configure(api_key=api_key)
-    
-    # Groundingツールの指定方式を公式標準に修正
-    try:
-        model = genai.GenerativeModel(
-            model_name=MODEL_NAME,
-            tools="google_search"
-        )
-    except Exception as e:
-        print(f"Primary tool setup failed ({e}), retrying with fallback dict...")
-        try:
-            model = genai.GenerativeModel(
-                model_name=MODEL_NAME,
-                tools=[{"google_search": {}}]
-            )
-        except Exception as e2:
-            print(f"Failed to initialize GenerativeModel completely: {e2}")
-            # 万が一Grounding機能自体がエラーになる場合は通常モデルで救済
-            model = genai.GenerativeModel(model_name=MODEL_NAME)
+    model = genai.GenerativeModel(model_name=MODEL_NAME)
 
     articles_text = "\n".join([f"- タイトル: {e.title}\n  リンク: {e.link}" for e in entries])
     
@@ -131,14 +114,14 @@ def summarize_with_gemini(category, entries):
             response = model.generate_content(prompt_text)
             return response.text
         except Exception as e:
-            print(f"Attempt {attempt+1} - Gemini API Exception: {type(e).__name__}: {e}")
+            print(f"Error details (Attempt {attempt+1}): {type(e).__name__} - {e}")
             if "429" in str(e):
                 wait = 15 * (attempt + 1)
-                print(f"429 Rate Limit detected. Retrying after {wait} seconds...")
+                print(f"Waiting {wait} seconds due to 429...")
                 time.sleep(wait)
             else:
                 break
-    return "要約の生成に失敗しました。"
+    return "要約の生成に失敗しました（エラーログを確認してください）。"
 
 # ==========================================
 # 4. RSS 2.0 (feed.xml) 出力生成
