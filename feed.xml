@@ -1,37 +1,38 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily AI &amp; Medical News Summary</title>
-    <link>https://kazu92724-stack.github.io/daily-ai-news/</link>
-    <description>Geminiによる毎日の医療行政・電子カルテ・AI・地域ニュース要約フィード</description>
+    <title>Daily AI &amp; Medical News Summary (2026-09-01)</title>
+    <link>https://github.com/kazu92724-stack/daily-ai-news</link>
+    <description>Gemini APIを活用した日次医療・AIニュース自動要約</description>
     <language>ja</language>
+    <lastBuildDate>Tue, 01 Sep 2026 01:21:18 +0900</lastBuildDate>
     <item>
-      <title>[14:43] 🤖 AI最新トレンド (2026-08-31)</title>
-      <description />
-      <link>https://kazu92724-stack.github.io/daily-ai-news/#item-2026-08-31-0-1788187380</link>
-      <guid isPermaLink="false">daily-news-2026-08-31-0-1788187380</guid>
-      <pubDate>Mon, 31 Aug 2026 14:43:00 GMT</pubDate>
+      <title>[01:21] 🤖 AI最新トレンド (2026-09-01)</title>
+      <link>https://github.com/kazu92724-stack/daily-ai-news#ai_1788193278</link>
+      <guid isPermaLink="false">daily-ai-news-ai-1788193278</guid>
+      <pubDate>Tue, 01 Sep 2026 01:21:18 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;🤖 AI最新トレンド&lt;/h3&gt;&lt;p&gt;モデルの初期化に失敗しました。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>[14:43] 📋 医療行政・医療DX動向 (2026-08-31)</title>
-      <description />
-      <link>https://kazu92724-stack.github.io/daily-ai-news/#item-2026-08-31-1-1788187380</link>
-      <guid isPermaLink="false">daily-news-2026-08-31-1-1788187380</guid>
-      <pubDate>Mon, 31 Aug 2026 14:43:00 GMT</pubDate>
+      <title>[01:21] 📋 医療行政・医療DX動向 (2026-09-01)</title>
+      <link>https://github.com/kazu92724-stack/daily-ai-news#medical_admin_1788193278</link>
+      <guid isPermaLink="false">daily-ai-news-medical_admin-1788193278</guid>
+      <pubDate>Tue, 01 Sep 2026 01:21:18 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;📋 医療行政・医療DX動向&lt;/h3&gt;&lt;p&gt;モデルの初期化に失敗しました。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>[14:43] 🏥 医療・ゲノム・病理・検体検査 (2026-08-31)</title>
-      <description />
-      <link>https://kazu92724-stack.github.io/daily-ai-news/#item-2026-08-31-2-1788187380</link>
-      <guid isPermaLink="false">daily-news-2026-08-31-2-1788187380</guid>
-      <pubDate>Mon, 31 Aug 2026 14:43:00 GMT</pubDate>
+      <title>[01:21] 🏥 医療・ゲノム・病理・検体検査 (2026-09-01)</title>
+      <link>https://github.com/kazu92724-stack/daily-ai-news#lab_testing_1788193278</link>
+      <guid isPermaLink="false">daily-ai-news-lab_testing-1788193278</guid>
+      <pubDate>Tue, 01 Sep 2026 01:21:18 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;🏥 医療・ゲノム・病理・検体検査&lt;/h3&gt;&lt;p&gt;モデルの初期化に失敗しました。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>[14:43] 📍 地域医療ニュース（和歌山県／大阪府南部指定地域） (2026-08-31)</title>
-      <description />
-      <link>https://kazu92724-stack.github.io/daily-ai-news/#item-2026-08-31-3-1788187380</link>
-      <guid isPermaLink="false">daily-news-2026-08-31-3-1788187380</guid>
-      <pubDate>Mon, 31 Aug 2026 14:43:00 GMT</pubDate>
+      <title>[01:21] 📍 地域医療ニュース (2026-09-01)</title>
+      <link>https://github.com/kazu92724-stack/daily-ai-news#local_medical_1788193278</link>
+      <guid isPermaLink="false">daily-ai-news-local_medical-1788193278</guid>
+      <pubDate>Tue, 01 Sep 2026 01:21:18 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;📍 地域医療ニュース&lt;/h3&gt;&lt;p&gt;モデルの初期化に失敗しました。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>
