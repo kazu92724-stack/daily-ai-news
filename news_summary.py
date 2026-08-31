@@ -119,7 +119,7 @@ def get_all_summaries():
         f"{ai_data}"
     )
     summaries.append(("🤖 AI最新トレンド", generate_summary(ai_prompt)))
-    time.sleep(20)  # カテゴリ間の安全待機時間を20秒へ
+    time.sleep(20)  # カテゴリ間の安全待機時間
 
     # 2. 医療行政・医療DX動向
     print("Generating Medical Administration & DX summary...")
@@ -134,7 +134,7 @@ def get_all_summaries():
         f"{dx_data}"
     )
     summaries.append(("📋 医療行政・医療DX動向", generate_summary(dx_prompt)))
-    time.sleep(20)  # カテゴリ間の安全待機時間を20秒へ
+    time.sleep(20)  # カテゴリ間の安全待機時間
 
     # 3. 医療・ゲノム・病理・検体検査（7社・公式HP＋病理・細胞診・ゲノム限定）
     print("Generating Medical & Clinical Lab summary...")
@@ -164,7 +164,7 @@ def get_all_summaries():
         f"【最新取得ニュース】\n{med_data}"
     )
     summaries.append(("🏥 医療・ゲノム・病理・検体検査", generate_summary(med_prompt)))
-    time.sleep(20)  # カテゴリ間の安全待機時間を20秒へ
+    time.sleep(20)  # カテゴリ間の安全待機時間
 
     # 4. 地域医療（指定エリア限定：和歌山県／大阪府南部）
     print("Generating Local Medical summary...")
@@ -194,11 +194,11 @@ def get_all_summaries():
 
     return summaries
 
-# --- RSS (feed.xml) の生成関数 ---
+# --- RSS (feed.xml) の生成関数（RSSリーダーアプリでの新着強制検知仕様） ---
 def generate_rss_xml(summaries):
     today_str = datetime.now().strftime("%Y-%m-%d")
     now_rfc822 = datetime.now(timezone.utc).strftime("%a, %d %b %Y %H:%M:%S GMT")
-    now_time_str = datetime.now().strftime("%Y-%m-%d-%H%M%S")
+    timestamp = int(time.time())
 
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
@@ -208,11 +208,23 @@ def generate_rss_xml(summaries):
     ET.SubElement(channel, "description").text = "Geminiによる毎日の医療行政・電子カルテ・AI・地域ニュース要約フィード"
     ET.SubElement(channel, "language").text = "ja"
 
-    for title, content in summaries:
+    for idx, (title, content) in enumerate(summaries):
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = f"{title} ({today_str})"
+        
+        # タイトルに時刻表示を追加してタイトルレベルの重複を防止
+        time_display = datetime.now().strftime("%H:%M")
+        ET.SubElement(item, "title").text = f"[{time_display}] {title} ({today_str})"
+        
         ET.SubElement(item, "description").text = content
-        ET.SubElement(item, "guid").text = f"{title}-{now_time_str}"
+        
+        # 個別パーマリンクを設定
+        item_link = f"https://kazu92724-stack.github.io/daily-ai-news/#item-{today_str}-{idx}-{timestamp}"
+        ET.SubElement(item, "link").text = item_link
+        
+        # GUIDをisPermaLink="false"で絶対ユニーク化
+        guid = ET.SubElement(item, "guid", isPermaLink="false")
+        guid.text = f"daily-news-{today_str}-{idx}-{timestamp}"
+        
         ET.SubElement(item, "pubDate").text = now_rfc822
 
     tree = ET.ElementTree(rss)
