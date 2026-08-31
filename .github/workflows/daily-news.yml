@@ -2,8 +2,8 @@ name: Daily AI & Medical News Summary
 
 on:
   schedule:
-    # 毎日 朝8:00 (JST) に自動実行
-    - cron: '0 21 * * *'
+    # 毎日 朝10:00 (JST) に自動実行 (UTC 01:00)
+    - cron: '0 1 * * *'
   workflow_dispatch: # 手動実行用
 
 jobs:
