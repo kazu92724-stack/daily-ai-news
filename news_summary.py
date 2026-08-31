@@ -11,7 +11,8 @@ import google.generativeai as genai
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-MODEL_NAME = "gemini-1.5-flash"
+# モデル名を安定版の名称に変更
+MODEL_NAME = "gemini-2.5-flash"
 JST = timezone(timedelta(hours=9))
 
 # フィルタリング定義
@@ -113,7 +114,6 @@ def summarize_with_gemini(category, entries):
         try:
             response = model.generate_content(prompt_text)
             
-            # 安全ブロック等のレスポンス理由をログ表示
             if response.candidates and len(response.candidates) > 0:
                 finish_reason = response.candidates[0].finish_reason
                 print(f"  Gemini response finish_reason: {finish_reason}")
@@ -128,7 +128,6 @@ def summarize_with_gemini(category, entries):
                 print(f"Waiting {wait} seconds due to 429 rate limit...")
                 time.sleep(wait)
             else:
-                # 429以外の即時エラー（APIキー異常、権限エラー、安全ブロック等）は即時例外を発生させて終了
                 raise e
 
     raise RuntimeError(f"Failed to generate summary for category '{category['id']}' after 3 attempts.")
