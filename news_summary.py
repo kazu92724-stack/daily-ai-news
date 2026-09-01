@@ -13,7 +13,8 @@ from google.genai import types
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-MODEL_NAME = "gemini-2.5-flash"
+# API側の指定に従い最新モデル「gemini-3.6-flash」に更新
+MODEL_NAME = "gemini-3.6-flash"
 JST = timezone(timedelta(hours=9))
 
 # 429/503対策（引き継ぎ書要件厳守）
@@ -56,7 +57,7 @@ CATEGORIES = [
 ]
 
 # ==========================================
-# 2. 事前フィルタリング（厳密ルールの維持と緩和）
+# 2. 事前フィルタリング
 # ==========================================
 def pre_filter_entry(entry, category_id):
     title = entry.get("title", "")
@@ -93,7 +94,7 @@ def fetch_and_filter_rss(category):
     for entry in feed.entries:
         if pre_filter_entry(entry, category["id"]):
             valid_entries.append(entry)
-            if len(valid_entries) >= 10:  # 情報量を確保するため上位10件まで保持
+            if len(valid_entries) >= 10:  # 上位10件まで保持
                 break
     return valid_entries
 
@@ -177,20 +178,16 @@ def generate_rss_xml(results):
     for cat_id, cat_name, summary in results:
         item = ET.SubElement(channel, "item")
         
-        # 新着検知用タイトル [HH:MM] 🤖 カテゴリ名 (YYYY-MM-DD)
         ET.SubElement(item, "title").text = f"{time_prefix} {cat_name} ({now.strftime('%Y-%m-%d')})"
 
-        # 一意のパーマリンク指定
         clean_link = f"https://github.com/kazu92724-stack/daily-ai-news#{cat_id}_{epoch_time}"
         ET.SubElement(item, "link").text = clean_link
 
-        # RSSリーダー新着検知用のGUID
         guid = ET.SubElement(item, "guid", isPermaLink="false")
         guid.text = f"daily-ai-news-{cat_id}-{epoch_time}"
 
         ET.SubElement(item, "pubDate").text = now.strftime("%a, %d %b %Y %H:%M:%S +0900")
 
-        # HTML整形（改行の保持と要約本文内のリンク表記を有効化）
         formatted_summary = html.escape(summary).replace(chr(10), '<br>')
         description_html = f"<div><h3>{html.escape(cat_name)}</h3><div>{formatted_summary}</div></div>"
         ET.SubElement(item, "description").text = description_html
