@@ -8,7 +8,6 @@ import xml.etree.ElementTree as ET
 import feedparser
 
 from google import genai
-from google.genai.types import GenerateContentConfig, GoogleSearch, Tool
 
 # ==========================================
 # 1. 定数・設定
@@ -16,7 +15,7 @@ from google.genai.types import GenerateContentConfig, GoogleSearch, Tool
 MODEL_NAME = "gemini-3.6-flash"
 JST = timezone(timedelta(hours=9))
 
-# 429対策 定数（引き継ぎ仕様通り）
+# 429対策 定数
 MAX_RETRIES = 5
 BASE_WAIT_SECONDS = 60
 WAIT_STEP_SECONDS = 30
@@ -100,29 +99,25 @@ def summarize_with_gemini(client, category, entries):
         [f"- タイトル: {e.title}\n  リンク: {e.link}" for e in entries]
     )
 
+    # Search Groundingは無料枠だと使えないため、記事リストの情報のみで要約する
     prompt_text = f"""
 あなたはニュース要約アシスタントです。
 以下の記事リストを元に、【{category['name']}】に関する要約レポートを作成してください。
-必要に応じてGoogle検索を使い、背景情報の補足・企業プレスリリースの確認・地理情報のファクトチェックを自律的に行ってください。
 
 規則:
-1. 事実関係を補足・精査した上で箇条書きで要約してください。
-2. 簡潔で読みやすい文章（300〜500文字程度）にまとめてください。
+1. 記事のタイトル・内容から分かる事実関係を箇条書きで要約してください。
+2. 記事に無い情報を断定的に補足しないでください（推測は「〜と見られる」等で表現）。
+3. 簡潔で読みやすい文章（300〜500文字程度）にまとめてください。
 
 記事リスト:
 {articles_text}
 """
-
-    grounding_tool = Tool(google_search=GoogleSearch())
 
     for attempt in range(MAX_RETRIES):
         try:
             response = client.models.generate_content(
                 model=MODEL_NAME,
                 contents=prompt_text,
-                config=GenerateContentConfig(
-                    tools=[grounding_tool],
-                ),
             )
 
             if getattr(response, "candidates", None):
@@ -205,7 +200,6 @@ def main():
         summary = summarize_with_gemini(client, cat, entries)
         results.append((cat["id"], cat["name"], summary))
 
-        # カテゴリ間ウェイト（最後のカテゴリの後は不要）
         if i < len(CATEGORIES) - 1:
             print(f"  Sleeping {CATEGORY_INTERVAL_SECONDS}s before next category...")
             time.sleep(CATEGORY_INTERVAL_SECONDS)
