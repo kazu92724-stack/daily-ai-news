@@ -12,15 +12,15 @@ from google import genai
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-# 無料枠で最も制限が緩く安定しているモデル
-MODEL_NAME = "gemini-1.5-flash"
+# 現在アクティブな正当モデル
+MODEL_NAME = "gemini-3.6-flash"
 JST = timezone(timedelta(hours=9))
 
-# 429/503対策
+# 429対策（安全な待機時間設定）
 MAX_RETRIES = 5
 BASE_WAIT_SECONDS = 30
 WAIT_STEP_SECONDS = 15
-CATEGORY_INTERVAL_SECONDS = 10
+CATEGORY_INTERVAL_SECONDS = 15
 
 # フィルタリング定義
 TARGET_COMPANIES = ["BML", "SRL", "HUグループ", "LSIメディエンス", "ファルコ", "メディック", "日本臨床"]
@@ -79,7 +79,7 @@ def pre_filter_entry(entry, category_id):
 # 3. RSS収集 & Gemini処理
 # ==========================================
 def fetch_and_filter_rss(category):
-    # 最新ニュース限定（直近2日）
+    # 直近2日の最新ニュースに絞って情報量・トークンを調整
     search_query = f"{category['query']} when:2d"
     encoded_query = urllib.parse.quote(search_query)
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
@@ -89,7 +89,7 @@ def fetch_and_filter_rss(category):
     for entry in feed.entries:
         if pre_filter_entry(entry, category["id"]):
             valid_entries.append(entry)
-            if len(valid_entries) >= 5:  # トークン消費を抑えるため上位5件に調整
+            if len(valid_entries) >= 5:
                 break
     return valid_entries
 
@@ -117,7 +117,7 @@ def summarize_with_gemini(client, category, entries):
 
     for attempt in range(MAX_RETRIES):
         try:
-            # 429回避のため Grounding なしの軽量リクエストを実行
+            # 検索機能(tools)を外し純粋なプロンプト処理のみで通信量を最小化
             response = client.models.generate_content(
                 model=MODEL_NAME,
                 contents=prompt_text
