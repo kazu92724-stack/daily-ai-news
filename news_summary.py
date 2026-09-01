@@ -15,7 +15,7 @@ from google import genai
 MODEL_NAME = "gemini-3.6-flash"
 JST = timezone(timedelta(hours=9))
 
-# 429対策 定数
+# 429/503対策 定数
 MAX_RETRIES = 5
 BASE_WAIT_SECONDS = 60
 WAIT_STEP_SECONDS = 30
@@ -99,7 +99,6 @@ def summarize_with_gemini(client, category, entries):
         [f"- タイトル: {e.title}\n  リンク: {e.link}" for e in entries]
     )
 
-    # Search Groundingは無料枠だと使えないため、記事リストの情報のみで要約する
     prompt_text = f"""
 あなたはニュース要約アシスタントです。
 以下の記事リストを元に、【{category['name']}】に関する要約レポートを作成してください。
@@ -128,10 +127,16 @@ def summarize_with_gemini(client, category, entries):
                 return response.text
 
         except Exception as e:
+            err_str = str(e)
             print(f"Gemini API Error ({category['id']}) Attempt {attempt + 1}: {type(e).__name__} - {e}")
-            if "429" in str(e):
+
+            if "429" in err_str:
                 wait_time = BASE_WAIT_SECONDS + (attempt * WAIT_STEP_SECONDS)
                 print(f"Waiting {wait_time} seconds due to 429 rate limit...")
+                time.sleep(wait_time)
+            elif "503" in err_str or "UNAVAILABLE" in err_str:
+                wait_time = 20 + (attempt * 15)
+                print(f"Waiting {wait_time} seconds due to 503 server overload...")
                 time.sleep(wait_time)
             else:
                 raise e
