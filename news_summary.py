@@ -166,7 +166,9 @@ def generate_rss_xml(results):
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = f"{time_prefix} {cat_name} ({now.strftime('%Y-%m-%d')})"
 
-        clean_link = f"https://github.com/kazu92724-stack/daily-ai-news#{cat_id}_{epoch_time}"
+        # GitHubトップページではなく、feed.xml自体を指すようにする
+        # → 「フルコンテンツ取得」機能があるリーダーでも、意味のないrepoページを拾わなくなる
+        clean_link = "https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml"
         ET.SubElement(item, "link").text = clean_link
 
         guid = ET.SubElement(item, "guid", isPermaLink="false")
