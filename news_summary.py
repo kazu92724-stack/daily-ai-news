@@ -8,20 +8,19 @@ import xml.etree.ElementTree as ET
 import feedparser
 
 from google import genai
-from google.genai import types
 
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-# API側の指定に従い最新モデル「gemini-3.6-flash」に更新
-MODEL_NAME = "gemini-3.6-flash"
+# 無料枠で最も制限が緩く安定しているモデル
+MODEL_NAME = "gemini-1.5-flash"
 JST = timezone(timedelta(hours=9))
 
-# 429/503対策（引き継ぎ書要件厳守）
+# 429/503対策
 MAX_RETRIES = 5
-BASE_WAIT_SECONDS = 60
-WAIT_STEP_SECONDS = 30
-CATEGORY_INTERVAL_SECONDS = 20
+BASE_WAIT_SECONDS = 30
+WAIT_STEP_SECONDS = 15
+CATEGORY_INTERVAL_SECONDS = 10
 
 # フィルタリング定義
 TARGET_COMPANIES = ["BML", "SRL", "HUグループ", "LSIメディエンス", "ファルコ", "メディック", "日本臨床"]
@@ -63,19 +62,15 @@ def pre_filter_entry(entry, category_id):
     title = entry.get("title", "")
 
     if category_id == "lab_testing":
-        # 絶対除外ルール
         if any(w in title for w in EXCLUDE_WORDS_MEDICAL):
             return False
-        # 指定キーワードまたは社名
         has_company = any(c in title for c in TARGET_COMPANIES)
         has_kw = any(k in title for k in ["病理", "細胞診", "ゲノム", "検査", "ラボ", "臨床"])
         return has_company or has_kw
 
     if category_id == "local_medical":
-        # 絶対除外地域ルール
         if any(a in title for a in EXCLUDE_AREAS):
             return False
-        # 指定地域キーワード
         return any(a in title for a in KANSAI_SOUTH_AREAS)
 
     return True
@@ -84,7 +79,7 @@ def pre_filter_entry(entry, category_id):
 # 3. RSS収集 & Gemini処理
 # ==========================================
 def fetch_and_filter_rss(category):
-    # 最新ニュースに限定するため when:2d (過去2日以内) を付与
+    # 最新ニュース限定（直近2日）
     search_query = f"{category['query']} when:2d"
     encoded_query = urllib.parse.quote(search_query)
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
@@ -94,7 +89,7 @@ def fetch_and_filter_rss(category):
     for entry in feed.entries:
         if pre_filter_entry(entry, category["id"]):
             valid_entries.append(entry)
-            if len(valid_entries) >= 10:  # 上位10件まで保持
+            if len(valid_entries) >= 5:  # トークン消費を抑えるため上位5件に調整
                 break
     return valid_entries
 
@@ -112,10 +107,9 @@ def summarize_with_gemini(client, category, entries):
 以下の最新記事リストをもとに、【{category['name']}】に関する高品質な要約レポートを作成してください。
 
 【厳格ルール】
-1. 必要に応じて Google Search（自律検索機能）を併用し、企業プレスリリースや背景情報を補足・ファクトチェックしてください。
-2. 「医療・ゲノム」カテゴリの場合、製薬会社・新薬・薬価・処方薬・ワクチンに関する話題が含まれていた場合は要約から完全に排除してください。
-3. 「地域医療」カテゴリの場合、和歌山県全域および大阪府南部8市町（阪南・泉南・田尻・熊取・泉佐野・岸和田・貝塚）以外の話題（大阪市内・堺市・北摂等）は除外してください。
-4. 各ニュース項目には、元の記事タイトルと参照URLを明記し、読みやすい構造化フォーマット（箇条書き・見出し）で出力してください。
+1. 「医療・ゲノム」カテゴリの場合、製薬会社・新薬・薬価・処方薬・ワクチンに関する話題が含まれていた場合は要約から完全に排除してください。
+2. 「地域医療」カテゴリの場合、和歌山県全域および大阪府南部8市町（阪南・泉南・田尻・熊取・泉佐野・岸和田・貝塚）以外の話題（大阪市内・堺市・北摂等）は除外してください。
+3. 各ニュース項目には、元の記事タイトルと参照URLを明記し、読みやすい構造化フォーマット（箇条書き・見出し）で出力してください。
 
 記事リスト:
 {articles_text}
@@ -123,13 +117,10 @@ def summarize_with_gemini(client, category, entries):
 
     for attempt in range(MAX_RETRIES):
         try:
-            # 新SDK(google-genai)におけるGoogle Search Grounding設定
+            # 429回避のため Grounding なしの軽量リクエストを実行
             response = client.models.generate_content(
                 model=MODEL_NAME,
-                contents=prompt_text,
-                config=types.GenerateContentConfig(
-                    tools=[{"google_search": {}}]
-                )
+                contents=prompt_text
             )
 
             if getattr(response, "candidates", None):
@@ -148,7 +139,7 @@ def summarize_with_gemini(client, category, entries):
                 print(f"Waiting {wait_time} seconds due to 429 rate limit...")
                 time.sleep(wait_time)
             elif "503" in err_str or "UNAVAILABLE" in err_str:
-                wait_time = 20 + (attempt * 15)
+                wait_time = 15 + (attempt * 10)
                 print(f"Waiting {wait_time} seconds due to 503 server overload...")
                 time.sleep(wait_time)
             else:
