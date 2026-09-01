@@ -5,34 +5,34 @@
     <link>https://github.com/kazu92724-stack/daily-ai-news</link>
     <description>Gemini APIを活用した日次医療・AIニュース自動要約</description>
     <language>ja</language>
-    <lastBuildDate>Tue, 01 Sep 2026 20:42:30 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 01 Sep 2026 21:43:02 +0900</lastBuildDate>
     <item>
-      <title>[20:42] 🤖 AI最新トレンド (2026-09-01)</title>
-      <link>https://github.com/kazu92724-stack/daily-ai-news#ai_1788262950</link>
-      <guid isPermaLink="false">daily-ai-news-ai-1788262950</guid>
-      <pubDate>Tue, 01 Sep 2026 20:42:30 +0900</pubDate>
-      <description>&lt;div&gt;&lt;h3&gt;🤖 AI最新トレンド&lt;/h3&gt;&lt;p&gt;【🤖 AI最新トレンド 要約レポート】&lt;br&gt;&lt;br&gt;提供されたニュース記事に基づき、ロボットとAIの融合技術（フィジカルAI／エンボディドAI）や、自治体・個人におけるAI活用の最新動向を以下の通り要約します。&lt;br&gt;&lt;br&gt;* **フィジカルAI・エンボディドAIとロボット活用の進展**&lt;br&gt;  * **リコーの技術開発**: 動画像から人間の動きを学習し、さまざまなロボットに適用できる「フィジカルAI技術」を開発。&lt;br&gt;  * **作業代替ロボット**: ManmaruAIが低価格ロボットを活用し、現場における反復作業の代替を推進。&lt;br&gt;  * **中国・北京の産業成長**: 北京市がエンボディドAI関連で7社のユニコーン企業を輩出し、ロボット産業で全国首位の規模に成長。&lt;br&gt;&lt;br&gt;* **自治体における生成AI活用の普及支援**&lt;br&gt;  * **無償研修の提供**: ガイアックスが10自治体を対象に生成AI活用研修の無償提供を開始。地域行政での生成AI導入・利活用が進むと見られます。&lt;br&gt;&lt;br&gt;* **個人環境でのローカルLLM活用**&lt;br&gt;  * **プライベート環境での運用**: 自宅のPC環境などでローカルLLMを稼働させ、独自のこだわりや用途に応じたカスタマイズを楽しむ取り組みが注目を集めています。&lt;/p&gt;&lt;/div&gt;</description>
+      <title>[21:43] 🤖 AI最新トレンド (2026-09-01)</title>
+      <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
+      <guid isPermaLink="false">daily-ai-news-ai-1788266582</guid>
+      <pubDate>Tue, 01 Sep 2026 21:43:02 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;🤖 AI最新トレンド&lt;/h3&gt;&lt;p&gt;【🤖 AI最新トレンド 要約レポート】&lt;br&gt;&lt;br&gt;提供された記事リストより判明した主な事実関係は以下の通りです。&lt;br&gt;&lt;br&gt;・**ロボット・フィジカルAI分野の進展**&lt;br&gt;  - 北京市がエンボディドAI（身体性AI）のユニコーン企業7社を擁し、ロボット産業において中国全国首位となっています。&lt;br&gt;  - リコーが、動画像から人の動きを学習してさまざまなロボットへ適用可能な「フィジカルAI技術」を開発しました。&lt;br&gt;  - ManmaruAIが、低価格ロボットを活用した反復作業の代替を行っています。&lt;br&gt;&lt;br&gt;・**自治体における生成AIの活用支援**&lt;br&gt;  - ガイアックスが、自治体向けに生成AI活用研修を無償提供するため、10自治体の募集を開始しています。&lt;br&gt;&lt;br&gt;・**個人環境におけるローカルLLMの活用**&lt;br&gt;  - クラウドに依存せず、自宅環境でローカルLLM（大規模言語モデル）を構築・動作させ、独自の工夫や利用を楽しむ動きが見られます。&lt;br&gt;&lt;br&gt;ロボットと融合した実体を持つAI（フィジカル／エンボディドAI）の産業応用から、自治体での研修導入、個人によるローカルAI環境の構築まで、AI活用の幅が多角的に広がりを見せていると推測されます。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>[20:42] 📋 医療行政・医療DX動向 (2026-09-01)</title>
-      <link>https://github.com/kazu92724-stack/daily-ai-news#medical_admin_1788262950</link>
-      <guid isPermaLink="false">daily-ai-news-medical_admin-1788262950</guid>
-      <pubDate>Tue, 01 Sep 2026 20:42:30 +0900</pubDate>
-      <description>&lt;div&gt;&lt;h3&gt;📋 医療行政・医療DX動向&lt;/h3&gt;&lt;p&gt;【📋 医療行政・医療DX動向 要約レポート】&lt;br&gt;&lt;br&gt;提供された記事リストに基づく、医療行政および医療DXに関する動向は以下の通りです。&lt;br&gt;&lt;br&gt;* **医療DXの推進と自治体の取り組み**&lt;br&gt;  * 厚労省の予算概算要求において、医療DX推進に向けた「標準型電子カルテ」の普及や、新地域医療構想を踏まえた病院の建て替え施策が進められています。&lt;br&gt;  * 自治体（佐野市）では、マイナ保険証を「こども医療費受給資格者証」として利用できるよう導入準備が行われています。&lt;br&gt;&lt;br&gt;* **診療報酬改定と患者・事業者への影響**&lt;br&gt;  * 診療報酬改定への対応を背景に、サンウェルズが希望退職者の募集を行うなど、医療関連事業者の再編・対応の動きが出ています。&lt;br&gt;  * 全国保険医団体連合会は、患者の追加負担増の中止を求めて厚労省へ要請を行い、署名を提出しました。&lt;br&gt;&lt;br&gt;* **災害対応と医療人材への配慮**&lt;br&gt;  * 文部科学省および厚生労働省は、熊本地震の影響を受けた理学療法士・作業療法士・言語聴覚士（PT・OT・ST）の受験資格や実習に関し、配慮を行う取り扱いを通知しました。&lt;/p&gt;&lt;/div&gt;</description>
+      <title>[21:43] 📋 医療行政・医療DX動向 (2026-09-01)</title>
+      <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
+      <guid isPermaLink="false">daily-ai-news-medical_admin-1788266582</guid>
+      <pubDate>Tue, 01 Sep 2026 21:43:02 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;📋 医療行政・医療DX動向&lt;/h3&gt;&lt;p&gt;【📋 医療行政・医療DX動向】&lt;br&gt;&lt;br&gt;提供された記事リストより、医療行政および医療DXに関する主な動向を以下の通り要約します。&lt;br&gt;&lt;br&gt;・**医療DXの推進と自治体の取り組み**&lt;br&gt;厚生労働省の概算要求において、医療DX推進に向けた「標準型電子カルテ」の普及や、新地域医療構想を踏まえた病院建て替えなどが盛り込まれています。また自治体動向として、佐野市ではマイナ保険証をこども医療費受給資格者証として利用できるよう導入準備が進められています。&lt;br&gt;&lt;br&gt;・**医療制度・政策の動向**&lt;br&gt;厚労省の検討委員会にて、指定難病へ新たに2疾患を追加することが了承されました。一方で、全国保険医団体連合会は患者の追加負担中止を求め、厚労省への要請および署名提出を実施しました。&lt;br&gt;&lt;br&gt;・**診療報酬改定が与える影響**&lt;br&gt;サンウェルズが診療報酬改定への対応を理由に希望退職者の募集を行うなど、制度改定が医療関連企業の経営活動や組織体制にも影響を与えていると見られます。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>[20:42] 🏥 医療・ゲノム・病理・検体検査 (2026-09-01)</title>
-      <link>https://github.com/kazu92724-stack/daily-ai-news#lab_testing_1788262950</link>
-      <guid isPermaLink="false">daily-ai-news-lab_testing-1788262950</guid>
-      <pubDate>Tue, 01 Sep 2026 20:42:30 +0900</pubDate>
-      <description>&lt;div&gt;&lt;h3&gt;🏥 医療・ゲノム・病理・検体検査&lt;/h3&gt;&lt;p&gt;【🏥 医療・ゲノム・病理・検体検査に関する要約レポート】&lt;br&gt;&lt;br&gt;提示された記事に基づく、医療・ゲノム・病理・検体検査分野の主な動向は以下の通りです。&lt;br&gt;&lt;br&gt;- **がんゲノム医療体制の整備・拡充**&lt;br&gt;  がんゲノム拠点病院指定要件WGにおいて、がんゲノム医療拠点病院を全都道府県に整備する方針が示されました。がん拠点病院以外の医療機関であっても「ゲノム連携病院」への指定を認める検討が進められています。&lt;br&gt;&lt;br&gt;- **ゲノム検査における分析の効率化**&lt;br&gt;  治療選択肢を広げる「遺伝子パネル検査」の活用が進む中、広島大学ががんゲノム検査で検出される「意義不明バリアント」の判定を効率化する仕組みを構築しました。&lt;br&gt;&lt;br&gt;- **がん検診の進展と病理検査の事例**&lt;br&gt;  肺がん検診では、喀痰（かくたん）細胞診の廃止を含む新たな検診の考え方が示されています。また、タレントの新内眞衣氏が緊急検査で大きめの大腸ポリープが発見され、病理検査を行っていることを明かしました。&lt;/p&gt;&lt;/div&gt;</description>
+      <title>[21:43] 🏥 医療・ゲノム・病理・検体検査 (2026-09-01)</title>
+      <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
+      <guid isPermaLink="false">daily-ai-news-lab_testing-1788266582</guid>
+      <pubDate>Tue, 01 Sep 2026 21:43:02 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;🏥 医療・ゲノム・病理・検体検査&lt;/h3&gt;&lt;p&gt;【🏥 医療・ゲノム・病理・検体検査に関する要約レポート】&lt;br&gt;&lt;br&gt;提供された記事より、がんゲノム医療の体制強化や技術開発、検診・検査に関する以下の事実が確認できます。&lt;br&gt;&lt;br&gt;- **がんゲノム医療の全国的な体制整備と効率化**&lt;br&gt;  - 全都道府県への「がんゲノム医療拠点病院」の整備が進められており、がん拠点病院以外の医療機関であっても「ゲノム連携病院」への指定を認める方針が示されています。&lt;br&gt;  - 治療の可能性を広げる「遺伝子パネル検査」の活用が進む中、広島大学は検査時に検出される「意義不明バリアント」の判定を効率化する仕組みを構築しました。&lt;br&gt;&lt;br&gt;- **検診制度の見直しと検査事例**&lt;br&gt;  - 肺がん検診において、喀痰（かくたん）細胞診の廃止をはじめとする新しい検診の考え方が示されています。&lt;br&gt;  - タレントの新内眞衣さんが緊急検査を受けた際、大きめの大腸ポリープが発見され、病理検査を実施したことを告白しました。&lt;br&gt;&lt;br&gt;全国的なゲノム医療連携体制の拡充や解析技術の改善が進む一方で、身近な検診・病理検査への関心を示す事例が報告されています。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
     <item>
-      <title>[20:42] 📍 地域医療ニュース (2026-09-01)</title>
-      <link>https://github.com/kazu92724-stack/daily-ai-news#local_medical_1788262950</link>
-      <guid isPermaLink="false">daily-ai-news-local_medical-1788262950</guid>
-      <pubDate>Tue, 01 Sep 2026 20:42:30 +0900</pubDate>
-      <description>&lt;div&gt;&lt;h3&gt;📍 地域医療ニュース&lt;/h3&gt;&lt;p&gt;【📍 地域医療ニュース】&lt;br&gt;&lt;br&gt;和歌山県内を中心とした医療施設やヘルスケア関連の最新動向をお伝えします。&lt;br&gt;&lt;br&gt;* **「健診クリニック・キタデ」の内覧会が開催**&lt;br&gt;  ロイネットにて来月開業予定の「健診クリニック・キタデ」の内覧会が行われました。地域における予防医療や健康管理の新たな拠点になると見られます。&lt;br&gt;* **JR和歌山駅前の複合ビル名称が「A TOWER」に決定**&lt;br&gt;  JR和歌山駅前で進められている「医療×商業×住宅」の複合再開発ビルの名称が「A TOWER」に決まりました。医療機能を含む街のシンボルとして期待されます。&lt;br&gt;* **犬猫以外を診療する動物病院が開業**&lt;br&gt;  和歌山県にて、一般的な犬や猫以外の「珍ペット（エキゾチックアニマル等）」に特化した動物病院が開業しました。&lt;br&gt;* **医師の健康管理と「農」に関わる事例**&lt;br&gt;  和歌山県において、自身の不養生や過労に直面した医師が農業を取り入れて健康維持・回復を図るなど、医療従事者の働き方や健康に関する話題が注目されています。&lt;/p&gt;&lt;/div&gt;</description>
+      <title>[21:43] 📍 地域医療ニュース (2026-09-01)</title>
+      <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
+      <guid isPermaLink="false">daily-ai-news-local_medical-1788266582</guid>
+      <pubDate>Tue, 01 Sep 2026 21:43:02 +0900</pubDate>
+      <description>&lt;div&gt;&lt;h3&gt;📍 地域医療ニュース&lt;/h3&gt;&lt;p&gt;【📍 地域医療ニュース】&lt;br&gt;&lt;br&gt;和歌山県内における医療施設や健康、診療体制に関連する主な動向は以下の通りです。&lt;br&gt;&lt;br&gt;* **複合再開発ビル「A TOWER」の名称決定**：JR和歌山駅前にて開発が進む「医療×商業×住宅」を備えた複合再開発ビルの名称が「A TOWER」に決まりました。医療機能を含む駅前の新たな拠点になると見られます。&lt;br&gt;* **「健診クリニック・キタデ」内覧会の実施**：ロイネットに来月開業を予定している「健診クリニック・キタデ」にて、オープンに先立ち内覧会が開催されました。&lt;br&gt;* **「珍ペット」特化型の動物病院が開業**：和歌山県にて、一般的な犬や猫以外のペット診療に特化した動物病院が開業しました。多様化するペットの医療ニーズに対応する取り組みです。&lt;br&gt;* **医師の健康管理と農業**：過労などの不養生に直面した和歌山県内の医師が、農業を通じて体調を回復させた事例が取り上げられました。医療従事者の健康維持のあり方としても注目されます。&lt;br&gt;&lt;br&gt;地域医療の拠点整備から専門分野の開拓、予防医療まで、県内では多様な医療関連の動きが進んでいます。&lt;/p&gt;&lt;/div&gt;</description>
     </item>
   </channel>
 </rss>
