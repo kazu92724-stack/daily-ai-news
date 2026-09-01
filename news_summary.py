@@ -12,11 +12,10 @@ from google import genai
 # ==========================================
 # 1. 定数・設定
 # ==========================================
-# 現在アクティブな正当モデル
 MODEL_NAME = "gemini-3.6-flash"
 JST = timezone(timedelta(hours=9))
 
-# 429対策（安全な待機時間設定）
+# 429対策
 MAX_RETRIES = 5
 BASE_WAIT_SECONDS = 30
 WAIT_STEP_SECONDS = 15
@@ -33,25 +32,21 @@ CATEGORIES = [
         "id": "ai",
         "name": "🤖 AI最新トレンド",
         "query": "生成AI OR LLM OR 医療AI OR ロボット",
-        "prompt": "最新のAI・LLM・医療AIトレンドについて、背景情報や技術的影響を含めてわかりやすく要約・考察してください。"
     },
     {
         "id": "medical_admin",
         "name": "📋 医療行政・医療DX動向",
         "query": "診療報酬改定 OR 厚労省 OR 電子カルテ OR マイナ保険証",
-        "prompt": "医療行政、診療報酬改定、マイナ保険証や医療DXの最新政策動向・議論について詳細に要約してください。"
     },
     {
         "id": "lab_testing",
         "name": "🏥 医療・ゲノム・病理・検体検査",
         "query": "病理検査 OR 細胞診 OR がんゲノム OR BML OR SRL OR HUグループ OR LSIメディエンス OR ファルコ OR メディック OR 日本臨床",
-        "prompt": "検体検査、病理診、がんゲノム医療、および大手臨床検査ラボ（BML, SRL等）の最新動向を要約してください。"
     },
     {
         "id": "local_medical",
         "name": "📍 地域医療ニュース",
         "query": "和歌山 医療 OR 和歌山 病院 OR 泉佐野 病院 OR 岸和田 医療 OR 泉州 医療",
-        "prompt": "和歌山県全域および大阪府南部（泉州地域等）における病院・クリニックの新規開業、移転、医療再編、求人動向などを要約してください。"
     }
 ]
 
@@ -79,7 +74,6 @@ def pre_filter_entry(entry, category_id):
 # 3. RSS収集 & Gemini処理
 # ==========================================
 def fetch_and_filter_rss(category):
-    # 直近2日の最新ニュースに絞って情報量・トークンを調整
     search_query = f"{category['query']} when:2d"
     encoded_query = urllib.parse.quote(search_query)
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
@@ -89,27 +83,28 @@ def fetch_and_filter_rss(category):
     for entry in feed.entries:
         if pre_filter_entry(entry, category["id"]):
             valid_entries.append(entry)
-            if len(valid_entries) >= 5:
+            if len(valid_entries) >= 8:
                 break
     return valid_entries
 
 
 def summarize_with_gemini(client, category, entries):
     if not entries:
-        return "直近48時間以内に該当する主要な最新ニュースはありませんでした。"
+        return "<p>直近48時間以内に該当する主要な最新ニュースはありませんでした。</p>"
 
     articles_text = "\n".join(
         [f"- タイトル: {e.title}\n  URL: {e.link}" for e in entries]
     )
 
     prompt_text = f"""
-あなたは専門のニュースアナリストです。
-以下の最新記事リストをもとに、【{category['name']}】に関する高品質な要約レポートを作成してください。
+以下の記事リストをもとに、【{category['name']}】に関する要約レポートを作成してください。
 
-【厳格ルール】
-1. 「医療・ゲノム」カテゴリの場合、製薬会社・新薬・薬価・処方薬・ワクチンに関する話題が含まれていた場合は要約から完全に排除してください。
-2. 「地域医療」カテゴリの場合、和歌山県全域および大阪府南部8市町（阪南・泉南・田尻・熊取・泉佐野・岸和田・貝塚）以外の話題（大阪市内・堺市・北摂等）は除外してください。
-3. 各ニュース項目には、元の記事タイトルと参照URLを明記し、読みやすい構造化フォーマット（箇条書き・見出し）で出力してください。
+【出力形式・HTML装飾ルール（厳格）】
+1. 前置き、挨拶、自己紹介、まとめの言葉（「〜として要約します」「以上です」等）は一切出力禁止。1文字目から本文を開始すること。
+2. 各ニュース項目は、HTMLタグ（<b>, <ul>, <li>, <a href="..."> 等）を使って綺麗に装飾すること。
+3. 長いURLを本文中に直接文字として書き出すことは絶対に禁止。必ず記事タイトルや関連テキストに `<a href="URL" target="_blank">記事タイトル</a>` の形でハイパーリンクを埋め込むこと。
+4. 「医療・ゲノム」カテゴリ：製薬会社、新薬、薬価、処方薬、ワクチン関連の話題は要約から完全に排除すること。
+5. 「地域医療」カテゴリ：和歌山県全域および大阪府南部8市町（阪南・泉南・田尻・熊取・泉佐野・岸和田・貝塚）以外の話題（大阪市内・堺市・北摂等）は除外すること。
 
 記事リスト:
 {articles_text}
@@ -117,7 +112,6 @@ def summarize_with_gemini(client, category, entries):
 
     for attempt in range(MAX_RETRIES):
         try:
-            # 検索機能(tools)を外し純粋なプロンプト処理のみで通信量を最小化
             response = client.models.generate_content(
                 model=MODEL_NAME,
                 contents=prompt_text
@@ -179,7 +173,8 @@ def generate_rss_xml(results):
 
         ET.SubElement(item, "pubDate").text = now.strftime("%a, %d %b %Y %H:%M:%S +0900")
 
-        formatted_summary = html.escape(summary).replace(chr(10), '<br>')
+        # HTMLをそのまま生かしてリッチテキスト化
+        formatted_summary = summary.replace("\n", "<br>")
         description_html = f"<div><h3>{html.escape(cat_name)}</h3><div>{formatted_summary}</div></div>"
         ET.SubElement(item, "description").text = description_html
 
