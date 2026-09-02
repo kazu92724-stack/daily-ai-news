@@ -22,7 +22,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 1. ニュース収集関数
+# 1. 各種ニュース収集関数
 # ==========================================
 def fetch_google_news(query):
     """Google News RSSから直近2日限定(when:2d)の記事を取得"""
@@ -32,7 +32,7 @@ def fetch_google_news(query):
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
-        for entry in feed.entries[:10]:
+        for entry in feed.entries[:8]:  // 記事数を少し絞って軽量化
             articles.append({"title": entry.title, "link": entry.link})
         return articles
     except Exception as e:
@@ -51,7 +51,6 @@ def fetch_official_company_news():
     headers = {"User-Agent": "Mozilla/5.0"}
     for comp in companies:
         try:
-            print(f"[{comp['name']}] 公式HP取得中...")
             res = requests.get(comp["url"], headers=headers, timeout=(3, 5))
             soup = bs4.BeautifulSoup(res.text, "html.parser")
             for a in soup.find_all("a", href=True)[:3]:
@@ -64,17 +63,17 @@ def fetch_official_company_news():
                         {"title": f"[{comp['name']}] {title}", "link": href}
                     )
         except Exception as e:
-            print(f"[{comp['name']}] スキップ (タイムアウト/接続失敗): {e}")
+            print(f"{comp['name']} スクレイピングスキップ: {e}")
     return official_articles
 
 
 # ==========================================
 # 2. Discord送信関数
 # ==========================================
-def send_to_discord(category_name, summary_text):
+def send_to_discord(title_name, summary_text):
     """HTML形式のリンクをDiscord用Markdown形式に自動変換して送信"""
     if not DISCORD_WEBHOOK_URL:
-        print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
+        return
 
     discord_text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
@@ -88,7 +87,7 @@ def send_to_discord(category_name, summary_text):
     payload = {
         "embeds": [
             {
-                "title": f"📰 {category_name}",
+                "title": f"📰 {title_name}",
                 "description": discord_text[:4000],
                 "color": 3447003,
                 "footer": {"text": "Daily AI & Medical News • 自動配信"},
@@ -101,9 +100,9 @@ def send_to_discord(category_name, summary_text):
             DISCORD_WEBHOOK_URL, data=json.dumps(payload), headers=headers, timeout=10
         )
         if res.status_code in [200, 204]:
-            print(f"[{category_name}] Discord送信成功")
+            print(f"[{title_name}] Discord送信成功")
         else:
-            print(f"[{category_name}] Discord送信失敗: {res.status_code} - {res.text}")
+            print(f"[{title_name}] Discord送信失敗: {res.status_code}")
     except Exception as e:
         print(f"Discord送信時例外発生: {e}")
 
@@ -112,7 +111,6 @@ def send_to_discord(category_name, summary_text):
 # 3. feed.xml 生成関数
 # ==========================================
 def generate_rss_xml(all_summaries, output_path="feed.xml"):
-    """feed.xmlを出力"""
     now = datetime.now(timezone.utc)
     time_str = now.strftime("%H:%M")
     epoch_time = int(now.timestamp())
@@ -137,97 +135,64 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（API失敗時は自動でリンク集に切り替え）
+# 4. メイン処理（API呼び出しは1回に凝縮）
 # ==========================================
 def main():
-    tasks = [
-        {
-            "id": "ai",
-            "name": "🤖 AI最新トレンド",
-            "fetch_func": lambda: fetch_google_news("生成AI LLM 医療AI"),
-            "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
-        },
-        {
-            "id": "medical",
-            "name": "🏥 医療・ゲノム・病理・検体検査",
-            "fetch_func": lambda: fetch_google_news("臨床検査 病理 ゲノム医療"),
-            "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
-【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、治験。
-【限定ターゲット】臨床検査・病理関連に限定。
-記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
-        },
-        {
-            "id": "company",
-            "name": "🏢 臨床検査会社 公式ニュース",
-            "fetch_func": fetch_official_company_news,
-            "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。大手臨床検査会社（SRL, BML, LSIメディエンス）の公式情報を整理し、記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
-        },
-        {
-            "id": "local",
-            "name": "🗾 地域医療（和歌山・大阪南部）",
-            "fetch_func": lambda: fetch_google_news("地域医療 和歌山 泉佐野 岸和田"),
-            "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
-【対象エリア】和歌山県全域および大阪府南部8市町（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に限定。
-【絶対除外】大阪市内、堺市、北摂地域。
-記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
-        },
-    ]
+    print("=== 各種ニュースの収集を開始 ===")
+    
+    # 1. データの収集
+    ai_articles = fetch_google_news("生成AI LLM 医療AI")
+    medical_articles = fetch_google_news("臨床検査 病理 ゲノム医療")
+    company_articles = fetch_official_company_news()
+    local_articles = fetch_google_news("地域医療 和歌山 泉佐野 岸和田")
 
-    all_summaries = []
-    max_retries = 3
+    # 2. まとめてプロンプト用テキストを作成
+    combined_context = f"""
+【AI最新トレンド】
+{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in ai_articles])}
 
-    for task in tasks:
-        print(f"\n=== {task['name']} の処理開始 ===")
+【医療・ゲノム・病理】
+{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in medical_articles])}
 
-        articles = task["fetch_func"]()
-        if not articles:
-            print(f"[{task['name']}] 記事が取得できなかったためスキップします。")
-            continue
+【臨床検査会社公式】
+{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in company_articles])}
 
-        context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
-        if len(context) > 4000:
-            context = context[:4000] + "\n...（省略）"
+【地域医療（和歌山・大阪南部）】
+{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in local_articles])}
+"""
 
-        prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
+    system_instruction = """あなたはプロのニュース編集者です。提供された4つのカテゴリのニュース記事リストを基に、それぞれのカテゴリごとに要約を作成してください。
+出力形式は以下の通りに分割し、それぞれのセクションごとに見出しをつけてください。
+各記事の紹介部分では、必ず <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んでください。
+前置き、挨拶、二重タイトルは一切出力禁止です。"""
 
-        summary_text = None
+    prompt = f"以下のニュース全体をカテゴリ別に整理して要約してください。\n\n{combined_context}"
 
-        for attempt in range(1, max_retries + 1):
-            try:
-                print(f"[gemini-3.6-flash] API呼び出し中 (試行 {attempt}/{max_retries}) ...")
-                response = client.models.generate_content(
-                    model="gemini-3.6-flash",
-                    contents=f"{task['system_instruction']}\n\n{prompt}",
-                )
-                summary_text = response.text
-                print("[gemini-3.6-flash] 生成完了！")
-                break 
-            except Exception as e:
-                print(f"[gemini-3.6-flash] エラー: {e}")
-                if attempt < max_retries:
-                    wait_time = attempt * 10
-                    print(f"サーバー混雑のため、{wait_time}秒後に再試行します...")
-                    time.sleep(wait_time)
+    print("=== Gemini APIを呼び出し中（1回のみ） ===")
+    summary_text = None
 
-        # ★【フォールバック機能】APIが完全にダメだった場合、生データのリンク集を代わりに作成する
-        if not summary_text:
-            print("API混雑により要約をスキップ。代わりに最新ニュースのリンク集を作成します。")
-            fallback_lines = ["⚠️ 一時的なAPI混雑のため要約をスキップしました。以下の最新リンク集をご活用ください：\n"]
-            for a in articles[:5]: # 上位5件のリンクを表示
-                fallback_lines.append(f"・<a href='{a['link']}' target='_blank'>{a['title']}</a>")
-            summary_text = "\n".join(fallback_lines)
+    try:
+        response = client.models.generate_content(
+            model="gemini-3.6-flash",
+            contents=f"{system_instruction}\n\n{prompt}",
+        )
+        summary_text = response.text
+        print("API要約の生成に成功しました！")
+    except Exception as e:
+        print(f"APIエラー (上限超過/混雑): {e}")
+        # 万が一制限に達した場合は、生データのリンク集にフォールバック
+        summary_text = "⚠️ 無料枠の制限または混雑のため要約をスキップしました。最新のリンク集をご確認ください。"
 
-        all_summaries.append({
-            "id": task["id"],
-            "category": task["name"],
-            "content": summary_text,
-        })
+    # DiscordおよびRSSへの出力（全体をまとめたもの、またはカテゴリごとに分割送信）
+    # ここでは1つのまとめレポートとしてDiscordに送信
+    send_to_discord("Daily AI & Medical News", summary_text)
 
-        send_to_discord(task["name"], summary_text)
-
-        print("API制限防止のため20秒待機中...")
-        time.sleep(20)
-
+    # RSS用データ
+    all_summaries = [{
+        "id": "daily-bundle",
+        "category": "総合ニュース要約",
+        "content": summary_text,
+    }]
     generate_rss_xml(all_summaries)
 
 
