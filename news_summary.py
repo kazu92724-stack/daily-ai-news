@@ -15,7 +15,6 @@ import requests
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-# 無料枠の日次クォータに余裕があるFlash-Liteに変更
 MODEL_NAME = "gemini-3.5-flash-lite"
 
 if not GEMINI_API_KEY:
@@ -23,24 +22,51 @@ if not GEMINI_API_KEY:
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
+# フィルタリング用の定数（Python側で事前に絞り込む）
+TARGET_COMPANIES = ["BML", "SRL", "HUグループ", "LSIメディエンス", "ファルコ", "メディック", "日本臨床"]
+EXCLUDE_WORDS_MEDICAL = ["製薬", "新薬", "薬価", "処方薬", "添付文書", "ワクチン", "治験"]
+LAB_KEYWORDS = ["病理検査", "細胞診", "がんゲノム", "臨床検査", "検体検査", "ゲノム医療"]
+
+KANSAI_SOUTH_AREAS = ["和歌山", "阪南", "泉南", "田尻", "熊取", "泉佐野", "岸和田", "貝塚"]
+EXCLUDE_AREAS = ["大阪市", "堺市", "北摂"]
+
 
 # ==========================================
 # 1. ニュース収集関数
 # ==========================================
-def fetch_google_news(query):
-    """Google News RSSから直近2日限定(when:2d)の記事を取得"""
+def fetch_google_news(query, pre_filter=None):
+    """Google News RSSから直近2日限定(when:2d)の記事を取得し、必要ならPython側で事前フィルタリング"""
     encoded_query = requests.utils.quote(f"{query} when:2d")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
     try:
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
-        for entry in feed.entries[:10]:
-            articles.append({"title": entry.title, "link": entry.link})
+        for entry in feed.entries[:15]:
+            title = entry.title
+            if pre_filter and not pre_filter(title):
+                continue
+            articles.append({"title": title, "link": entry.link})
+            if len(articles) >= 10:
+                break
         return articles
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
         return []
+
+
+def filter_medical(title):
+    if any(w in title for w in EXCLUDE_WORDS_MEDICAL):
+        return False
+    has_company = any(c in title for c in TARGET_COMPANIES)
+    has_kw = any(k in title for k in LAB_KEYWORDS)
+    return has_company or has_kw
+
+
+def filter_local(title):
+    if any(a in title for a in EXCLUDE_AREAS):
+        return False
+    return any(a in title for a in KANSAI_SOUTH_AREAS)
 
 
 def fetch_official_company_news():
@@ -80,7 +106,6 @@ def send_to_discord(category_name, summary_text):
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
         return
 
-    # Discord用にリンク形式を変換
     discord_text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
@@ -142,22 +167,24 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（文字数リミッター＆リトライ最適化）
+# 4. メイン処理
 # ==========================================
 def main():
     categories = [
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            "query": "生成AI LLM 医療AI",
+            "query": "生成AI OR LLM OR 医療AI",
             "extra_fetch": None,
+            "pre_filter": None,
             "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
-            "query": "臨床検査 病理 ゲノム医療",
+            "query": "臨床検査 OR 病理検査 OR がんゲノム OR ゲノム医療 OR BML OR SRL OR HUグループ",
             "extra_fetch": fetch_official_company_news,
+            "pre_filter": filter_medical,
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、治験。
 【限定ターゲット】指定7社（BML, SRL, HU, LSIメディエンス, ファルコ, メディック, 日本臨床）および臨床検査・病理関連に限定。
@@ -166,8 +193,9 @@ def main():
         {
             "id": "local",
             "name": "🗾 地域医療（和歌山・大阪南部）",
-            "query": "地域医療 和歌山 泉佐野 岸和田",
+            "query": "和歌山 病院 OR 泉佐野 病院 OR 岸和田 医療 OR 阪南 医療 OR 泉南 医療",
             "extra_fetch": None,
+            "pre_filter": filter_local,
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【対象エリア】和歌山県全域および大阪府南部8市町（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に限定。
 【絶対除外】大阪市内、堺市、北摂地域。
@@ -176,55 +204,54 @@ def main():
     ]
 
     all_summaries = []
-
-    # 試行回数を減らし、無駄な長待ちを回避
     max_retries = 3
 
     for cat in categories:
         print(f"\n=== {cat['name']} の処理開始 ===")
 
-        articles = fetch_google_news(cat["query"])
+        articles = fetch_google_news(cat["query"], pre_filter=cat["pre_filter"])
         if cat["extra_fetch"]:
             articles.extend(cat["extra_fetch"]())
 
-        # コンテキストを作成
+        print(f"  収集記事数: {len(articles)}件")
+
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
 
-        # データ量（文字数）のリミッターを設定
         if len(context) > 5000:
             print(f"データ量超過 ({len(context)}文字) のため、5000文字に制限します。")
             context = context[:5000] + "\n...（データ量超過のため省略）"
 
-        prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
+        if not articles:
+            summary_text = "本日は該当条件に一致する記事が見つかりませんでした。"
+        else:
+            prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
+            summary_text = None
 
-        summary_text = None
-
-        for attempt in range(1, max_retries + 1):
-            try:
-                print(f"[{MODEL_NAME}] API呼び出し中 (試行 {attempt}/{max_retries}) ...")
-                response = client.models.generate_content(
-                    model=MODEL_NAME,
-                    contents=f"{cat['system_instruction']}\n\n{prompt}",
-                )
-                summary_text = response.text
-                print(f"[{MODEL_NAME}] 生成完了！")
-                break
-            except Exception as e:
-                err_str = str(e)
-                print(f"[{MODEL_NAME}] エラー: {e}")
-
-                # 日次クォータ超過はリトライしても無意味なので即諦めて次のカテゴリへ
-                if "PerDay" in err_str or "generate_content_free_tier_requests" in err_str:
-                    print("日次クォータ超過を検知。このカテゴリはリトライせずスキップします。")
+            for attempt in range(1, max_retries + 1):
+                try:
+                    print(f"[{MODEL_NAME}] API呼び出し中 (試行 {attempt}/{max_retries}) ...")
+                    response = client.models.generate_content(
+                        model=MODEL_NAME,
+                        contents=f"{cat['system_instruction']}\n\n{prompt}",
+                    )
+                    summary_text = response.text
+                    print(f"[{MODEL_NAME}] 生成完了！")
                     break
+                except Exception as e:
+                    err_str = str(e)
+                    print(f"[{MODEL_NAME}] エラー: {e}")
 
-                if attempt < max_retries:
-                    wait_time = attempt * 10
-                    print(f"サーバー混雑のため、{wait_time}秒後に再試行します...")
-                    time.sleep(wait_time)
+                    if "PerDay" in err_str or "generate_content_free_tier_requests" in err_str:
+                        print("日次クォータ超過を検知。このカテゴリはリトライせずスキップします。")
+                        break
 
-        if not summary_text:
-            summary_text = "APIの混雑またはクォータ超過のため、要約をスキップしました。"
+                    if attempt < max_retries:
+                        wait_time = attempt * 10
+                        print(f"サーバー混雑のため、{wait_time}秒後に再試行します...")
+                        time.sleep(wait_time)
+
+            if not summary_text:
+                summary_text = "APIの混雑またはクォータ超過のため、要約をスキップしました。"
 
         all_summaries.append({
             "id": cat["id"],
@@ -234,7 +261,6 @@ def main():
 
         send_to_discord(cat["name"], summary_text)
 
-        # 429エラー防止ウェイト
         print("API制限防止のため20秒待機中...")
         time.sleep(20)
 
