@@ -28,15 +28,21 @@ def fetch_google_news(query):
     """Google News RSSから直近2日限定(when:2d)の記事を取得"""
     encoded_query = requests.utils.quote(f"{query} when:2d")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
-    feed = feedparser.parse(rss_url)
-    articles = []
-    for entry in feed.entries[:10]:
-        articles.append({"title": entry.title, "link": entry.link})
-    return articles
+    try:
+        # タイムアウト付きで取得
+        res = requests.get(rss_url, timeout=10)
+        feed = feedparser.parse(res.content)
+        articles = []
+        for entry in feed.entries[:10]:
+            articles.append({"title": entry.title, "link": entry.link})
+        return articles
+    except Exception as e:
+        print(f"Google News取得エラー ({query}): {e}")
+        return []
 
 
 def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング"""
+    """大手臨床検査会社公式HPの直撃スクレイピング（タイムアウト強化）"""
     companies = [
         {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
         {"name": "BML", "url": "https://www.bml.co.jp/"},
@@ -46,7 +52,9 @@ def fetch_official_company_news():
     headers = {"User-Agent": "Mozilla/5.0"}
     for comp in companies:
         try:
-            res = requests.get(comp["url"], headers=headers, timeout=10)
+            print(f"[{comp['name']}] 公式HP取得中...")
+            # connect timeout 3秒, read timeout 5秒に設定して停止を防止
+            res = requests.get(comp["url"], headers=headers, timeout=(3, 5))
             soup = bs4.BeautifulSoup(res.text, "html.parser")
             for a in soup.find_all("a", href=True)[:3]:
                 title = a.get_text(strip=True)
@@ -58,7 +66,7 @@ def fetch_official_company_news():
                         {"title": f"[{comp['name']}] {title}", "link": href}
                     )
         except Exception as e:
-            print(f"{comp['name']} スクレイピングエラー: {e}")
+            print(f"[{comp['name']}] スキップ (アクセス失敗/タイムアウト): {e}")
     return official_articles
 
 
@@ -66,16 +74,26 @@ def fetch_official_company_news():
 # 2. Discord送信関数
 # ==========================================
 def send_to_discord(category_name, summary_text):
-    """DiscordのWebhookに埋め込み(Embed)形式で送信"""
+    """HTML形式のリンクをDiscord用Markdown形式に自動変換して送信"""
     if not DISCORD_WEBHOOK_URL:
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
         return
+
+    # HTMLタグ <a href='URL'>タイトル</a> を Discord用 [タイトル](URL) に変換
+    discord_text = re.sub(
+        r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
+        r"[\2](\1)",
+        summary_text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    discord_text = re.sub(r"</p>|<br\s*/?>", "\n", discord_text)
+    discord_text = re.sub(r"<p>", "", discord_text)
 
     payload = {
         "embeds": [
             {
                 "title": f"📰 {category_name}",
-                "description": summary_text[:4000],
+                "description": discord_text[:4000],
                 "color": 3447003,
                 "footer": {"text": "Daily AI & Medical News • 自動配信"},
             }
@@ -84,7 +102,7 @@ def send_to_discord(category_name, summary_text):
     headers = {"Content-Type": "application/json"}
     try:
         res = requests.post(
-            DISCORD_WEBHOOK_URL, data=json.dumps(payload), headers=headers
+            DISCORD_WEBHOOK_URL, data=json.dumps(payload), headers=headers, timeout=10
         )
         if res.status_code in [200, 204]:
             print(f"[{category_name}] Discord送信成功")
@@ -97,10 +115,10 @@ def send_to_discord(category_name, summary_text):
 
 
 # ==========================================
-# 3. feed.xml (RSS 2.0) 生成関数
+# 3. feed.xml 生成関数
 # ==========================================
 def generate_rss_xml(all_summaries, output_path="feed.xml"):
-    """HTML整形済みのfeed.xmlを出力（guidエポックタイム付与）"""
+    """feed.xmlを出力"""
     now = datetime.now(timezone.utc)
     time_str = now.strftime("%H:%M")
     epoch_time = int(now.timestamp())
@@ -134,7 +152,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（Gemini API連携・要約・リトライ付き）
+# 4. メイン処理
 # ==========================================
 def main():
     categories = [
@@ -187,27 +205,24 @@ def main():
 """
 
         summary_text = None
-        max_retries = 3  # 最大3回までリトライ
+        max_retries = 2  # リトライは2回までに短縮
 
         for attempt in range(1, max_retries + 1):
             try:
+                print(f"Gemini API 呼び出し中 ({attempt}/{max_retries}回目)...")
                 response = client.models.generate_content(
                     model="gemini-3.6-flash",
                     contents=f"{cat['system_instruction']}\n\n{prompt}",
                 )
                 summary_text = response.text
-                break  # 成功したらループを抜ける
+                break
             except Exception as e:
-                print(
-                    f"Gemini API 呼び出し失敗 ({attempt}/{max_retries}回目): {e}"
-                )
+                print(f"Gemini API 失敗: {e}")
                 if attempt < max_retries:
-                    wait_time = attempt * 10  # 10秒、20秒と待機時間を伸ばす
-                    print(f"{wait_time}秒後に再試行します...")
-                    time.sleep(wait_time)
+                    time.sleep(5)
 
         if not summary_text:
-            summary_text = "<p>混雑のため要約の生成に失敗しました。</p>"
+            summary_text = "<p>要約の生成に失敗しました。</p>"
 
         all_summaries.append(
             {
@@ -217,11 +232,9 @@ def main():
             }
         )
 
-        # Discordへ送信
         send_to_discord(cat["name"], summary_text)
 
-        # 429エラー防止ウェイト
-        print("429エラー防止のため15秒待機中...")
+        print("15秒待機中...")
         time.sleep(15)
 
     generate_rss_xml(all_summaries)
