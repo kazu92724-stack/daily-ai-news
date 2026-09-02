@@ -15,7 +15,9 @@ import requests
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-# google-genai SDKの初期化
+if not GEMINI_API_KEY:
+    print("エラー: GEMINI_API_KEY が設定されていません。")
+
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
@@ -34,7 +36,7 @@ def fetch_google_news(query):
 
 
 def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング（簡易実装）"""
+    """大手臨床検査会社公式HPの直撃スクレイピング"""
     companies = [
         {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
         {"name": "BML", "url": "https://www.bml.co.jp/"},
@@ -73,8 +75,8 @@ def send_to_discord(category_name, summary_text):
         "embeds": [
             {
                 "title": f"📰 {category_name}",
-                "description": summary_text[:4000],  # Discord上限対策
-                "color": 3447003,  # 青色
+                "description": summary_text[:4000],
+                "color": 3447003,
                 "footer": {"text": "Daily AI & Medical News • 自動配信"},
             }
         ]
@@ -132,7 +134,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（Gemini API連携・要約）
+# 4. メイン処理（Gemini API連携・要約・リトライ付き）
 # ==========================================
 def main():
     categories = [
@@ -184,16 +186,28 @@ def main():
 {context}
 """
 
-        try:
-            response = client.models.generate_content(
-                model="gemini-3.6-flash",
-                contents=prompt,
-                config={"system_instruction": cat["system_instruction"]},
-            )
-            summary_text = response.text
-        except Exception as e:
-            print(f"Gemini API エラー: {e}")
-            summary_text = "<p>要約の生成に失敗しました。</p>"
+        summary_text = None
+        max_retries = 3  # 最大3回までリトライ
+
+        for attempt in range(1, max_retries + 1):
+            try:
+                response = client.models.generate_content(
+                    model="gemini-3.6-flash",
+                    contents=f"{cat['system_instruction']}\n\n{prompt}",
+                )
+                summary_text = response.text
+                break  # 成功したらループを抜ける
+            except Exception as e:
+                print(
+                    f"Gemini API 呼び出し失敗 ({attempt}/{max_retries}回目): {e}"
+                )
+                if attempt < max_retries:
+                    wait_time = attempt * 10  # 10秒、20秒と待機時間を伸ばす
+                    print(f"{wait_time}秒後に再試行します...")
+                    time.sleep(wait_time)
+
+        if not summary_text:
+            summary_text = "<p>混雑のため要約の生成に失敗しました。</p>"
 
         all_summaries.append(
             {
