@@ -41,7 +41,7 @@ def fetch_google_news(query):
 
 
 def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング"""
+    """大手臨床検査会社公式HPの直撃スクレイピング（単独枠）"""
     companies = [
         {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
         {"name": "BML", "url": "https://www.bml.co.jp/"},
@@ -77,7 +77,6 @@ def send_to_discord(category_name, summary_text):
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
         return
 
-    # Discord用にリンク形式を変換
     discord_text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
@@ -139,32 +138,36 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（待機＆リトライ強化）
+# 4. メイン処理（4分割・独立タスク実行）
 # ==========================================
 def main():
-    categories = [
+    # 処理を4つの独立した枠に分割し、1回あたりのデータ量と負荷を激減させる
+    tasks = [
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            "query": "生成AI LLM 医療AI",
-            "extra_fetch": None,
+            "fetch_func": lambda: fetch_google_news("生成AI LLM 医療AI"),
             "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
-            "query": "臨床検査 病理 ゲノム医療",
-            "extra_fetch": fetch_official_company_news,
+            "fetch_func": lambda: fetch_google_news("臨床検査 病理 ゲノム医療"),
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、治験。
-【限定ターゲット】指定7社（BML, SRL, HU, LSIメディエンス, ファルコ, メディック, 日本臨床）および臨床検査・病理関連に限定。
+【限定ターゲット】臨床検査・病理関連に限定。
 記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
+        },
+        {
+            "id": "company",
+            "name": "🏢 臨床検査会社 公式ニュース",
+            "fetch_func": fetch_official_company_news,
+            "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。大手臨床検査会社（SRL, BML, LSIメディエンス）の公式情報を整理し、記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
         },
         {
             "id": "local",
             "name": "🗾 地域医療（和歌山・大阪南部）",
-            "query": "地域医療 和歌山 泉佐野 岸和田",
-            "extra_fetch": None,
+            "fetch_func": lambda: fetch_google_news("地域医療 和歌山 泉佐野 岸和田"),
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【対象エリア】和歌山県全域および大阪府南部8市町（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に限定。
 【絶対除外】大阪市内、堺市、北摂地域。
@@ -173,38 +176,41 @@ def main():
     ]
 
     all_summaries = []
-    
-    # 試行回数と待機時間の設定
-    max_retries = 4
+    max_retries = 3
 
-    for cat in categories:
-        print(f"\n=== {cat['name']} の処理開始 ===")
+    for task in tasks:
+        print(f"\n=== {task['name']} の処理開始 ===")
 
-        articles = fetch_google_news(cat["query"])
-        if cat["extra_fetch"]:
-            articles.extend(cat["extra_fetch"]())
+        # 独立した取得関数を実行
+        articles = task["fetch_func"]()
+        if not articles:
+            print(f"[{task['name']}] 記事が取得できなかったためスキップします。")
+            continue
 
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
+        
+        # 安全のための文字数リミッター
+        if len(context) > 4000:
+            context = context[:4000] + "\n...（省略）"
+
         prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
 
         summary_text = None
 
-        # 混雑時(503)を考慮し、時間をおいて複数回リトライ
         for attempt in range(1, max_retries + 1):
             try:
                 print(f"[gemini-3.6-flash] API呼び出し中 (試行 {attempt}/{max_retries}) ...")
                 response = client.models.generate_content(
                     model="gemini-3.6-flash",
-                    contents=f"{cat['system_instruction']}\n\n{prompt}",
+                    contents=f"{task['system_instruction']}\n\n{prompt}",
                 )
                 summary_text = response.text
                 print("[gemini-3.6-flash] 生成完了！")
-                break # 成功したらループを抜ける
+                break 
             except Exception as e:
                 print(f"[gemini-3.6-flash] エラー: {e}")
                 if attempt < max_retries:
-                    # 混雑解消を待つため、15秒 ➔ 30秒 ➔ 45秒 と待機時間を延ばす
-                    wait_time = attempt * 15
+                    wait_time = attempt * 10
                     print(f"サーバー混雑のため、{wait_time}秒後に再試行します...")
                     time.sleep(wait_time)
 
@@ -212,16 +218,16 @@ def main():
             summary_text = "APIの混雑が解消されないため、要約をスキップしました。"
 
         all_summaries.append({
-            "id": cat["id"],
-            "category": cat["name"],
+            "id": task["id"],
+            "category": task["name"],
             "content": summary_text,
         })
 
-        # Discordへ送信（青文字リンクに自動変換）
-        send_to_discord(cat["name"], summary_text)
+        # Discordへ個別に送信（青文字リンク対応）
+        send_to_discord(task["name"], summary_text)
 
-        print("API制限防止のため15秒待機中...")
-        time.sleep(15)
+        print("API制限防止のため20秒待機中...")
+        time.sleep(20)
 
     generate_rss_xml(all_summaries)
 
