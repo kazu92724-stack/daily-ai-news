@@ -1,14 +1,54 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [15:20]</title>
+    <title>Daily Medical &amp; AI News [15:28]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>総合ニュース要約 [15:20]</title>
-      <description>⚠️ 無料枠の制限または混雑のため要約をスキップしました。最新のリンク集をご確認ください。</description>
-      <guid isPermaLink="false">news-daily-bundle-1788362405</guid>
-      <pubDate>Wed, 02 Sep 2026 15:20:05 GMT</pubDate>
+      <title>🤖 AI最新トレンド [15:28]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE03U19fMHl2NkU0TE1TMmZvcGpiTVREUVp6bFFkanBRaG9ndmZ4MFJDZlJ4eTZFU3lydDdyY3FoUkNwS1M3LWN4TERvRm4zdS1ESy1MMnlYaGYybFkzOWJhR1gtVGhKbGltYkNRUm5PeTN0N3R0b3BtR3JsMA?oc=5' target='_blank'&gt;国産LLMにはどんなものがある？主要モデルの比較と企業の選び方【2026年版】 - 株式会社エクサウィザーズ&lt;/a&gt;
+2026年版における国産大規模言語モデル（LLM）の主要モデルの比較と、企業が自社に合ったモデルを選ぶ際のポイントを解説しています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE5hMmlZSjhvdTd3WTUxZ2w1eUZ1dzgzdl9PRzYxNW9BWGU0bzF2YVQwdnVzZWhHb3ZKN0lwd19jX2JUUzN1amdjSUswVU9HUjdOUDRnanRpeXFWZHF4WHdTLXlxUHNWQi1hZ251cEFR?oc=5' target='_blank'&gt;【2026最新】AIエージェントとは？生成AIとの違いや種類、選び方を解説 - AIsmiley&lt;/a&gt;
+自律的にタスクを遂行する「AIエージェント」について、従来の生成AIとの違いや主な種類、導入時の選び方を分かりやすくまとめています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMijAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF9jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl90WFNJdF9TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5b9IBjAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF9jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl90WFNJdF9TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5bw?oc=5' target='_blank'&gt;新興市場銘柄ダイジェスト:ジェイファーマが大幅反発、ダイナミクマップがストップ高 - ｄメニューニュース&lt;/a&gt;
+新興市場における注目銘柄の動向を伝えており、ジェイファーマの大幅反発やダイナミクマップのストップ高などが報じられています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE15MlVVbGUydGltMFR0ZUVZc0Z4ZjdQUzEtU2RockxyUzcxZmFodkpPbmZQcWZHOEV5cE9NLXJmd1pBb29QZlRXSXFzOWZXVHp3a3hyYWRWSDJTLUNYUDRZ?oc=5' target='_blank'&gt;フィジカルAIの次、「プロテインAI」 - 日経クロステック&lt;/a&gt;
+現実世界で動作する「フィジカルAI」のトレンドに続く新たな概念として、タンパク質関連技術に特化した「プロテインAI」の動向に注目しています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE0yMTZodGtVSFNiYTNhSTkzR1RXWlVXSEUxNjdMWFE0S3U1ZHh3TC1XdVFYbXh1bGJDUzZ2Qm92X2daZXMwTEwxb3FOTXBYT1NTVWQxU01IMXFQc3pjd1hNNE9memVCYTFHcGc?oc=5' target='_blank'&gt;松尾研究所が提供する社会人向け「Deep Learning 基礎講座」が、日本ディープラーニング協会（JDLA）の「E資格」認定プログラムに - PR TIMES&lt;/a&gt;
+松尾研究所の社会人向けディープラーニング基礎講座が、日本ディープラーニング協会（JDLA）のE資格認定プログラムに新たに認定されたというニュースです。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE1sWHpYSVlDLWg0aHYwLVNHRXNiSzlXX2p2U3FVRmc5UmM4R0pRcVJRMDJpbTJhdVR1ajMwZkhZc3RwdUhqWllyUF92MkxMRS1XYnk1OUlabFlKbUlXSVVN?oc=5' target='_blank'&gt;オプティム、病院向け生成AI&lt;b&gt;「OPTiM AI ホスピタル」&lt;/b&gt;新版 AI出力の根拠表示に対応 - 医療テックニュース&lt;/a&gt;
+オプティムが提供する病院向け生成AIの新バージョンにおいて、AIが生成した出力結果の根拠を表示する機能への対応が発表されました。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE55OUxWcmlyZWFINTloRmNyLVJncFlVdHE1Vk5EMFhtUzQwTXFpZDZuWEpRbU9SM3UyM0FxMDl2X2pQUGF6SmJXRmFsbDFuVzZGcjZxalJTeGpiWlRCdVVGTExnVGY0aVFCRkZOMTVMMmNfdw?oc=5' target='_blank'&gt;暴走するAIエージェントにどう気づくか 挙動の異常を捉える「ABA」という新しい行動分析 - ITmedia&lt;/a&gt;
+複雑化するAIエージェントの暴走や予期せぬ挙動の異常を早期に検知するための新しい手法として、「ABA（行動分析）」の仕組みが紹介されています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE54LTM4dFhOcHIwSHkzSnVoNUY5dUhtamN0SWNjWVhrWG1ackJKMFNLMjBaTC1kbDJZODRLNDZUejd5a3paSG93c1Z2eVlWVlJOX2NCcklZNU1nbGVBWWZkU1NuZGVyZEY0NVpiVHlwd29LZktSRG4zVU5OUQ?oc=5' target='_blank'&gt;Voice AI Agent Platform（VAAP）構想に基づくオンプレミス型議事録作成基盤『ZBOX - ニコニコニュース&lt;/a&gt;
+音声AIエージェントプラットフォーム構想に基づき、セキュリティ面で有利なオンプレミス環境で動作する議事録作成基盤「ZBOX」についての情報です。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTE5ZVXpuN3BNOU53YlUtNjZJLVAwenZrT1pVdEVycWQ0ZkN0d094anluclI2REdXc1FURC1tS1ZqMGhNU1dJenkzcGpJcHgtT3k2SWIzYzE0dVNHQTQyQVVycFUxMGRaZWtNeWgw?oc=5' target='_blank'&gt;「日本語コピーライティング特化型生成AI」の開発に向けた共同研究成果を公表 - 時事ドットコム&lt;/a&gt;
+日本国内の市場や文化に最適化したコピーライティングを自動生成するための、特化型生成AI開発に向けた共同研究の成果が発表されました。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiYEFVX3lxTFBNaXhWUWlVUU14VnJSMm0xdlBpUzlWWjFyLVlEaGx0QjhQd3psaEtFSndBNVNicE1GdndiUVpCOXBUX3hTMEk3QldjOTZXdGE5NlpMMk4temZzamhCdzFEWg?oc=5' target='_blank'&gt;【明日の好悪材料】を開示情報でチェック！ (9月1日発表分) - 株探&lt;/a&gt;
+9月1日に発表された企業の開示情報を基に、株式市場における明日の株価変動につながる好材料・悪材料の銘柄情報がまとめられています。</description>
+      <guid isPermaLink="false">news-ai-1788362905</guid>
+      <pubDate>Wed, 02 Sep 2026 15:28:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>🏥 医療・ゲノム・病理・検体検査 [15:28]</title>
+      <description>&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] 臨床検査とは&lt;/a&gt;では、患者の身体から採取した血液や尿などの検体を用いる検体検査と、心電図や超音波といった直接身体を測定する生理学的人体検査の二大領域を通じて、病気の診断や治療効果の判定、健康状態の把握に欠かせない客観的データを提供する臨床検査の基本的な役割と重要性について解説している。</description>
+      <guid isPermaLink="false">news-medical-1788362905</guid>
+      <pubDate>Wed, 02 Sep 2026 15:28:25 GMT</pubDate>
+    </item>
+    <item>
+      <title>🗾 地域医療（和歌山・大阪南部） [15:28]</title>
+      <description>記事リストが入力されていないため、要約を作成することができません。対象となる記事をご提示いただければ、指定されたルール（和歌山県全域および大阪南部8市町に限定、大阪市内・堺市・北摂を除外、タイトルに指定のHTMLリンクを埋め込み、前置き・挨拶・二重タイトルなし）に従って直ちに要約を作成いたします。</description>
+      <guid isPermaLink="false">news-local-1788362905</guid>
+      <pubDate>Wed, 02 Sep 2026 15:28:25 GMT</pubDate>
     </item>
   </channel>
 </rss>
