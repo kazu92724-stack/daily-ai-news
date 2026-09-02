@@ -41,7 +41,7 @@ def fetch_google_news(query):
 
 
 def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング（単独枠）"""
+    """大手臨床検査会社公式HPの直撃スクレイピング"""
     companies = [
         {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
         {"name": "BML", "url": "https://www.bml.co.jp/"},
@@ -75,7 +75,6 @@ def send_to_discord(category_name, summary_text):
     """HTML形式のリンクをDiscord用Markdown形式に自動変換して送信"""
     if not DISCORD_WEBHOOK_URL:
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
-        return
 
     discord_text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
@@ -138,10 +137,9 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（4分割・独立タスク実行）
+# 4. メイン処理（API失敗時は自動でリンク集に切り替え）
 # ==========================================
 def main():
-    # 処理を4つの独立した枠に分割し、1回あたりのデータ量と負荷を激減させる
     tasks = [
         {
             "id": "ai",
@@ -181,15 +179,12 @@ def main():
     for task in tasks:
         print(f"\n=== {task['name']} の処理開始 ===")
 
-        # 独立した取得関数を実行
         articles = task["fetch_func"]()
         if not articles:
             print(f"[{task['name']}] 記事が取得できなかったためスキップします。")
             continue
 
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
-        
-        # 安全のための文字数リミッター
         if len(context) > 4000:
             context = context[:4000] + "\n...（省略）"
 
@@ -214,8 +209,13 @@ def main():
                     print(f"サーバー混雑のため、{wait_time}秒後に再試行します...")
                     time.sleep(wait_time)
 
+        # ★【フォールバック機能】APIが完全にダメだった場合、生データのリンク集を代わりに作成する
         if not summary_text:
-            summary_text = "APIの混雑が解消されないため、要約をスキップしました。"
+            print("API混雑により要約をスキップ。代わりに最新ニュースのリンク集を作成します。")
+            fallback_lines = ["⚠️ 一時的なAPI混雑のため要約をスキップしました。以下の最新リンク集をご活用ください：\n"]
+            for a in articles[:5]: # 上位5件のリンクを表示
+                fallback_lines.append(f"・<a href='{a['link']}' target='_blank'>{a['title']}</a>")
+            summary_text = "\n".join(fallback_lines)
 
         all_summaries.append({
             "id": task["id"],
@@ -223,7 +223,6 @@ def main():
             "content": summary_text,
         })
 
-        # Discordへ個別に送信（青文字リンク対応）
         send_to_discord(task["name"], summary_text)
 
         print("API制限防止のため20秒待機中...")
