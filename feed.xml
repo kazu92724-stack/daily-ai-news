@@ -1,26 +1,54 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [14:41]</title>
+    <title>Daily Medical &amp; AI News [15:01]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [14:41]</title>
-      <description>一時的なAPI混雑のため、要約の生成に失敗しました。後ほど再実行してください。</description>
-      <guid isPermaLink="false">news-ai-1788360076</guid>
-      <pubDate>Wed, 02 Sep 2026 14:41:16 GMT</pubDate>
+      <title>🤖 AI最新トレンド [15:01]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE03U19fMHl2NkU0TE1TMmZvcGpiTVREUVp6bFFkanBRaG9ndmZ4MFJDZlJ4eTZFU3lydDdyY3FoUkNwS1M3LWN4TERvRm4zdS1ESy1MMnlYaGYybFkzOWJhR1gtVGhKbGltYkNRUm5PeTN0N3R0b3BtR3JsMA?oc=5' target='_blank'&gt;国産LLMにはどんなものがある？主要モデルの比較と企業の選び方【2026年版】 - 株式会社エクサウィザーズ&lt;/a&gt;
+  日本国内で開発が進む主要な大規模言語モデル（LLM）の特徴や比較軸を整理し、自社のビジネス課題に応じた最適なモデルの選定方法を解説しています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE5hMmlZSjhvdTd3WTUxZ2w1eUZ1dzgzdl_PRzYxNW9BWGU0bzF2YVQwdnVzZWhHb3ZKN0lwd1_c_bTS3ujgcIK0UOGR7NP4gjtiyqVdqxXwS-yqPsVB-agnupAQ?oc=5' target='_blank'&gt;【2026年最新】AIエージェントとは？生成AIとの違いや種類、選び方を解説 - aismiley.co.jp&lt;/a&gt;
+  自律的に指示を実行するAIエージェントの基礎知識をはじめ、従来の生成AIとの違いや用途別の種類、実際の導入におけるツールの選び方を分かりやすくまとめています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMijAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF_c1liDNXOeXSWHwhQqAmtbICeSJla25KSgsg2iYb0K6gKU__-kMizmTwpFtGwqH6Wv_tXSIt_SF5hhh9U3LHG7N4fqtDjUQnTJ7u9oIBjAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF_c1liDNXOeXSWHwhQqAmtbICeSJla25KSgsg2iYb0K6gKU__-kMizmTwpFtGwqH6Wv_tXSIt_SF5hhh9U3LHG7N4fqtDjUQnTJ7u9o?oc=5' target='_blank'&gt;新興市場銘柄ダイジェスト:ジェイファーマが大幅反発、ダイナミクマップがストップ高 - ｄメニューニュース&lt;/a&gt;
+  株式市場における最新の新興市場動向として、大幅な反発を見せたジェイファーマやストップ高まで買われたダイナミックマップなど、注目の個別銘柄の動きを掲載しています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE15MlVVbGUydGltMFR0ZUVZc0Z4ZjdQUzEtU2RockxyUzcxZmFodkpPbmZQcWZHOEV5cE9NLXJmd1pBb29QZlRXSXFzOWZXVHp3a3hyYWRWSDJTLUNYUDRZ?oc=5' target='_blank'&gt;フィジカルAIの次、「プロテインAI」 - 日経クロステック&lt;/a&gt;
+  ロボティクスなどの身体性を持つ「フィジカルAI」に続く新たな潮流として、タンパク質の構造予測やバイオテクノロジー、創薬分野に革新をもたらす「プロテインAI」の最前線に迫っています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE0yMTZodGtVSFNiYTNhSTkzR1RXWlVXSEUxNjdMWFE0S3U1ZHh3TC1XdVFYbXh1bGJDUzZ2Qm92X2daZXMwTEwxb3FOTXBYT1NTVWQxU01IMXFQc3pjd1hNNE9memVCYTFHcGc?oc=5' target='_blank'&gt;松尾研究所が提供する社会人向け「Deep Learning 基礎講座」が、日本ディープラーニング協会（JDLA）の「E資格」認定プログラムに - PR TIMES&lt;/a&gt;
+  松尾研究所による社会人向け講座がJDLAの「E資格」認定を受けたことで、受講者は実践的なディープラーニング技術の習得と同時にエンジニア資格の取得を目指せるようになります。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE54LTM4dFhOcHIwSHkzSnVoNUY5dUhtamN0SWNjWVhrWG1ackJKMFNLMjBaTC1kbDJZODRLNDZUejd5a3paSG93c1Z2eVlWVlJOX2NCcklZNU1nbGVBWWZkU1NuZGVyZEY0NVpiVHlwd29LZktSRG4zVU5OUQ?oc=5' target='_blank'&gt;Voice AI Agent Platform（VAAP）構想に基づくオンプレミス型議事録作成基盤『ZBOX - ニコニコニュース&lt;/a&gt;
+  高度なセキュリティ環境を求める企業に向け、ローカル環境で機密データを安全に処理しながら音声をテキスト化・要約するオンプレミス型議事録基盤「ZBOX」を紹介しています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTE5ZVXpuN3BNOU53YlUtNjZJLVAwenZrT1pVdEVycWQ0ZkN0d094anluclI2REdXc1FURC1tS1ZqMGhNU1dJenkzcGpJcHgtT3k2SWIzYzE0dVNHQTQyQVVycFUxMGRaZWtNeWgw?oc=5' target='_blank'&gt;「日本語コピーライティング特化型生成AI」の開発に向けた共同研究成果を公表 - 時事ドットコム&lt;/a&gt;
+  日本語特有の魅力的なコピー生成や広告クリエイティブに特化した生成AIの開発において、共同研究で得られた成果と実用化に向けた進捗が公表されました。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiYEFVX3lxTFBNaXhWUWlVUU14VnJSMm0xdlBpUzlWWjFyLVlEaGx0QjhQd3psaEtFSndBNVNicE1GdndiUVpCOXBUX3hTMEk3QldjOTZXdGE5NlpMMk4temZzamhCdzFEWg?oc=5' target='_blank'&gt;【明日の好悪材料】を開示情報でチェック！ (9月1日発表分) - 株探&lt;/a&gt;
+  上場企業が9月1日に適時開示した情報の中から、翌日の株式市場で材料視されやすい業績修正や業務提携などの重要トピックを一覧形式でまとめています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMiUkFVX3lxTE1kTlZXNXpfWDFTdmFDbjJMeFZBUWwweDJxbTJ5N0dieGpCVmJqaUNNMk9xOE90NGZtYi16QUs3ZnJMVTd3SFVLSUZsM200N3dZNGc?oc=5' target='_blank'&gt;嶺南理工大学校（李在鎔総長）は、就職の強い大学を越え、未来産業を先導する大学に跳躍している。 最近4年連続で新入生登録率100%を達成し、大邱慶北地域の入学定員2000人以上の一般大学と専門大学の中で.. - 매일경제&lt;/a&gt;
+  韓国の嶺南理工大学校が未来産業を牽引する教育体制を構築し、高い就職力と4年連続となる新入生登録率100%を達成した実績をレポートしています。
+
+- &lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE42UTNRSnpLdGdUNGN6NE1FVkp4dTQwdVdjanl4aldnU2FmeEF4cFFSaFJXclctMjAtS21zenBJZVZRbEVpUE9RSGRnX1JBaWJvUkstY3FUQ05nX1ZibjR6cnJQekJJV0RONEtyeWxpcEl0TldrLXc?oc=5' target='_blank'&gt;AppBank、AIが企業を評価するメディア「AI BANK」を公開。ランキングとAI診断で"AIに選ばれる企業"を可視化 - ニコニコニュース&lt;/a&gt;
+  AppBankが開設したWebメディア「AI BANK」は、独自アルゴリズムとAI診断によって企業価値を客観的に可視化し、AI時代において選ばれる企業像を浮き彫りにします。</description>
+      <guid isPermaLink="false">news-ai-1788361287</guid>
+      <pubDate>Wed, 02 Sep 2026 15:01:27 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [14:41]</title>
-      <description>一時的なAPI混雑のため、要約の生成に失敗しました。後ほど再実行してください。</description>
-      <guid isPermaLink="false">news-medical-1788360076</guid>
-      <pubDate>Wed, 02 Sep 2026 14:41:16 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [15:01]</title>
+      <description>APIの混雑が解消されないため、要約をスキップしました。</description>
+      <guid isPermaLink="false">news-medical-1788361287</guid>
+      <pubDate>Wed, 02 Sep 2026 15:01:27 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [14:41]</title>
-      <description>一時的なAPI混雑のため、要約の生成に失敗しました。後ほど再実行してください。</description>
-      <guid isPermaLink="false">news-local-1788360076</guid>
-      <pubDate>Wed, 02 Sep 2026 14:41:16 GMT</pubDate>
+      <title>🗾 地域医療（和歌山・大阪南部） [15:01]</title>
+      <description>APIの混雑が解消されないため、要約をスキップしました。</description>
+      <guid isPermaLink="false">news-local-1788361287</guid>
+      <pubDate>Wed, 02 Sep 2026 15:01:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
