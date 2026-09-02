@@ -18,6 +18,7 @@ DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 if not GEMINI_API_KEY:
     print("エラー: GEMINI_API_KEY が設定されていません。")
 
+# google-genai SDK 初期化
 client = genai.Client(api_key=GEMINI_API_KEY)
 
 
@@ -29,7 +30,7 @@ def fetch_google_news(query):
     encoded_query = requests.utils.quote(f"{query} when:2d")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
     try:
-        # タイムアウト付きで取得
+        # タイムアウト付きで取得 (ハングアップ防止)
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
@@ -42,7 +43,7 @@ def fetch_google_news(query):
 
 
 def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング（タイムアウト強化）"""
+    """大手臨床検査会社公式HPの直撃スクレイピング（タイムアウト保護付き）"""
     companies = [
         {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
         {"name": "BML", "url": "https://www.bml.co.jp/"},
@@ -53,7 +54,7 @@ def fetch_official_company_news():
     for comp in companies:
         try:
             print(f"[{comp['name']}] 公式HP取得中...")
-            # connect timeout 3秒, read timeout 5秒に設定して停止を防止
+            # 接続3秒、読み込み5秒で強制タイムアウト（フリーズ完全防止）
             res = requests.get(comp["url"], headers=headers, timeout=(3, 5))
             soup = bs4.BeautifulSoup(res.text, "html.parser")
             for a in soup.find_all("a", href=True)[:3]:
@@ -66,7 +67,7 @@ def fetch_official_company_news():
                         {"title": f"[{comp['name']}] {title}", "link": href}
                     )
         except Exception as e:
-            print(f"[{comp['name']}] スキップ (アクセス失敗/タイムアウト): {e}")
+            print(f"[{comp['name']}] スキップ (タイムアウト/接続失敗): {e}")
     return official_articles
 
 
@@ -79,22 +80,25 @@ def send_to_discord(category_name, summary_text):
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
         return
 
-    # HTMLタグ <a href='URL'>タイトル</a> を Discord用 [タイトル](URL) に変換
+    # ★最重要: HTMLの <a href="URL">タイトル</a> を Discord用の [タイトル](URL) に変換
     discord_text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
         summary_text,
         flags=re.IGNORECASE | re.DOTALL,
     )
+    
+    # Discordの表示をきれいに保つため、不要なHTMLタグを改行や空文字に変換
     discord_text = re.sub(r"</p>|<br\s*/?>", "\n", discord_text)
     discord_text = re.sub(r"<p>", "", discord_text)
 
+    # Discord Embed の制限（4000文字）に合わせて切り詰め
     payload = {
         "embeds": [
             {
                 "title": f"📰 {category_name}",
                 "description": discord_text[:4000],
-                "color": 3447003,
+                "color": 3447003, # 青色
                 "footer": {"text": "Daily AI & Medical News • 自動配信"},
             }
         ]
@@ -107,18 +111,16 @@ def send_to_discord(category_name, summary_text):
         if res.status_code in [200, 204]:
             print(f"[{category_name}] Discord送信成功")
         else:
-            print(
-                f"[{category_name}] Discord送信失敗: {res.status_code} - {res.text}"
-            )
+            print(f"[{category_name}] Discord送信失敗: {res.status_code} - {res.text}")
     except Exception as e:
         print(f"Discord送信時例外発生: {e}")
 
 
 # ==========================================
-# 3. feed.xml 生成関数
+# 3. feed.xml (RSS 2.0) 生成関数
 # ==========================================
 def generate_rss_xml(all_summaries, output_path="feed.xml"):
-    """feed.xmlを出力"""
+    """HTML整形済みのfeed.xmlを出力（guidエポックタイム付与）"""
     now = datetime.now(timezone.utc)
     time_str = now.strftime("%H:%M")
     epoch_time = int(now.timestamp())
@@ -128,22 +130,15 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
     ET.SubElement(channel, "title").text = f"Daily Medical & AI News [{time_str}]"
     ET.SubElement(channel, "link").text = "https://github.com"
-    ET.SubElement(channel, "description").text = (
-        "AI・医療・地域ニュースの自動要約フィード"
-    )
+    ET.SubElement(channel, "description").text = "AI・医療・地域ニュースの自動要約フィード"
 
     for item_data in all_summaries:
         item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = (
-            f"{item_data['category']} [{time_str}]"
-        )
+        ET.SubElement(item, "title").text = f"{item_data['category']} [{time_str}]"
+        # RSS用にはHTMLタグをそのまま維持する
         ET.SubElement(item, "description").text = item_data["content"]
-        ET.SubElement(
-            item, "guid", isPermaLink="false"
-        ).text = f"news-{item_data['id']}-{epoch_time}"
-        ET.SubElement(item, "pubDate").text = now.strftime(
-            "%a, %d %b %Y %H:%M:%S GMT"
-        )
+        ET.SubElement(item, "guid", isPermaLink="false").text = f"news-{item_data['id']}-{epoch_time}"
+        ET.SubElement(item, "pubDate").text = now.strftime("%a, %d %b %Y %H:%M:%S GMT")
 
     tree = ET.ElementTree(rss)
     ET.indent(tree, space="  ")
@@ -152,7 +147,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理
+# 4. メイン処理（モデルフォールバック対応）
 # ==========================================
 def main():
     categories = [
@@ -185,58 +180,58 @@ def main():
         },
     ]
 
+    # 混雑時(503)対策：本命モデルがダメならサブモデルに切り替えるリスト
+    models_to_try = ["gemini-3.6-flash", "gemini-2.5-flash"]
+
     all_summaries = []
 
     for cat in categories:
-        print(f"=== {cat['name']} の処理開始 ===")
+        print(f"\n=== {cat['name']} の処理開始 ===")
 
+        # データ収集
         articles = fetch_google_news(cat["query"])
         if cat["extra_fetch"]:
             articles.extend(cat["extra_fetch"]())
 
-        context = "\n".join(
-            [f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles]
-        )
-
-        prompt = f"""以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。
-
-【記事リスト】
-{context}
-"""
+        context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
+        prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
 
         summary_text = None
-        max_retries = 2  # リトライは2回までに短縮
 
-        for attempt in range(1, max_retries + 1):
+        # Gemini API呼び出し（フォールバック処理）
+        for model_name in models_to_try:
             try:
-                print(f"Gemini API 呼び出し中 ({attempt}/{max_retries}回目)...")
+                print(f"[{model_name}] で要約を生成中...")
                 response = client.models.generate_content(
-                    model="gemini-3.6-flash",
+                    model=model_name,
                     contents=f"{cat['system_instruction']}\n\n{prompt}",
                 )
                 summary_text = response.text
-                break
+                print(f"[{model_name}] で生成完了！")
+                break # 成功したらループを抜ける
             except Exception as e:
-                print(f"Gemini API 失敗: {e}")
-                if attempt < max_retries:
-                    time.sleep(5)
+                print(f"[{model_name}] エラー発生: {e}")
+                time.sleep(5) # 次のモデルを試す前に5秒待機
 
+        # すべてのモデルで失敗した場合の予備テキスト
         if not summary_text:
-            summary_text = "<p>要約の生成に失敗しました。</p>"
+            summary_text = "一時的なAPI混雑のため、要約の生成に失敗しました。後ほど再実行してください。"
 
-        all_summaries.append(
-            {
-                "id": cat["id"],
-                "category": cat["name"],
-                "content": summary_text,
-            }
-        )
+        # feed.xml用データの保存
+        all_summaries.append({
+            "id": cat["id"],
+            "category": cat["name"],
+            "content": summary_text,
+        })
 
+        # Discordへ送信
         send_to_discord(cat["name"], summary_text)
 
-        print("15秒待機中...")
+        # 429エラー防止のためカテゴリ間に15秒ウェイト
+        print("API制限防止のため15秒待機中...")
         time.sleep(15)
 
+    # RSSファイルの生成
     generate_rss_xml(all_summaries)
 
 
