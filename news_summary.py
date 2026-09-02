@@ -32,7 +32,7 @@ def fetch_google_news(query):
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
-        for entry in feed.entries[:8]:  // 記事数を少し絞って軽量化
+        for entry in feed.entries[:8]:  # 記事数を少し絞って軽量化
             articles.append({"title": entry.title, "link": entry.link})
         return articles
     except Exception as e:
@@ -135,18 +135,16 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（API呼び出しは1回に凝縮）
+# 4. メイン処理
 # ==========================================
 def main():
     print("=== 各種ニュースの収集を開始 ===")
     
-    # 1. データの収集
     ai_articles = fetch_google_news("生成AI LLM 医療AI")
     medical_articles = fetch_google_news("臨床検査 病理 ゲノム医療")
     company_articles = fetch_official_company_news()
     local_articles = fetch_google_news("地域医療 和歌山 泉佐野 岸和田")
 
-    # 2. まとめてプロンプト用テキストを作成
     combined_context = f"""
 【AI最新トレンド】
 {chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in ai_articles])}
@@ -180,14 +178,10 @@ def main():
         print("API要約の生成に成功しました！")
     except Exception as e:
         print(f"APIエラー (上限超過/混雑): {e}")
-        # 万が一制限に達した場合は、生データのリンク集にフォールバック
         summary_text = "⚠️ 無料枠の制限または混雑のため要約をスキップしました。最新のリンク集をご確認ください。"
 
-    # DiscordおよびRSSへの出力（全体をまとめたもの、またはカテゴリごとに分割送信）
-    # ここでは1つのまとめレポートとしてDiscordに送信
     send_to_discord("Daily AI & Medical News", summary_text)
 
-    # RSS用データ
     all_summaries = [{
         "id": "daily-bundle",
         "category": "総合ニュース要約",
