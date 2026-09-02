@@ -1,26 +1,55 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [14:10]</title>
+    <title>Daily Medical &amp; AI News [14:19]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [14:10]</title>
-      <description>&lt;p&gt;要約の生成に失敗しました。&lt;/p&gt;</description>
-      <guid isPermaLink="false">news-ai-1788358207</guid>
-      <pubDate>Wed, 02 Sep 2026 14:10:07 GMT</pubDate>
+      <title>🤖 AI最新トレンド [14:19]</title>
+      <description>&lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE03U19fMHl2NkU0TE1TMmZvcGpiTVREUVp6bFFkanBRaG9ndmZ4MFJDZlJ4eTZFU3lydDdyY3FoUkNwS1M3LWN4TERvRm4zdS1ESy1MMnlYaGYybFkzOWJhR1gtVGhKbGltYkNRUm5PeTN0N3R0b3BtR3JsMA?oc=5' target='_blank'&gt;国産LLMにはどんなものがある？主要モデルの比較と企業の選び方【2026年版】 - 株式会社エクサウィザーズ&lt;/a&gt;
+国内企業による大規模言語モデル（LLM）の開発状況と主要モデルの比較を行い、自社ニーズに合ったLLMを企業がどのように選定すべきかを解説しています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE5aMmlZSjhvdTd3WTUxZ2w1eUZ1dzgzdl9PRzYxNW9BWGU0bzF2YVQwdnVzZWhHb3ZKN0lwd19jX2JUUzN1amdjSUswVU9HUjdOUDRnanRpeXFWZHF4WHdTLXlxUHNWQi1hZ251cEFR?oc=5' target='_blank'&gt;【2026年最新】AIエージェントとは？生成AIとの違いや種類、選び方を解説 - AIsmiley&lt;/a&gt;
+自律的にタスクを実行する「AIエージェント」について、通常の生成AIとの相違点や多様なモデルの種類、用途に応じた最適な導入方法を解説しています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMijAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF_jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl90WFNJdF_TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5b9IBjAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF_jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl90WFNJdF_TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5bw?oc=5' target='_blank'&gt;新興市場銘柄ダイジェスト:ジェイファーマが大幅反発、ダイナミクマップがストップ高 - ｄメニューニュース&lt;/a&gt;
+新興株式市場における注目銘柄の動向をまとめており、ジェイファーマの株価大幅反発やダイナミックマップのストップ高などの主要な値動きを報じています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE15MlVVbGUydGltMFR0ZUVZc0Z4ZjdQUzEtU2RockxyUzcxZmFodkpPbmZQcWZHOEV5cE9NLXJmd1pBb29QZlRXSXFzOWZXVHp3a3hyYWRWSDJTLUNYUDRZ?oc=5' target='_blank'&gt;フィジカルAIの次、「プロテインAI」 - 日経クロステック&lt;/a&gt;
+実世界で機能するフィジカルAIの次のトレンドとして、タンパク質の構造予測や新薬開発などの生命科学分野で進展する「プロテインAI」の可能性を追っています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE0yMTZodGtVSFNiYTNhSTkzR1RXWlVXSEUxNjdMWFE0S3U1ZHh3TC1XdVFYbXh1bGJDUzZ2Qm92X2daZXMwTEwxb3FOTXBYT1NTVWQxU01IMXFQc3pjd1hNNE9memVCYTFHcGc?oc=5' target='_blank'&gt;松尾研究所が提供する社会人向け「Deep Learning 基礎講座」が、日本ディープラーニング協会（JDLA）の「E資格」認定プログラムに - PR TIMES&lt;/a&gt;
+松尾研究所が提供する社会人向け「Deep Learning 基礎講座」が日本ディープラーニング協会の「E資格」認定プログラムに指定されたことを発表しています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE1sWHpYSVlDLWg0aHYwLVNHRXNiSzlXX2p2U3FVRmc5UmM4R0pRcVJRMDJpbTJhdVR1ajMwZkhZc3RwdUhqWllyUF_vMkxMRS1XYnk1OUlabFlKbUlXSVVN?oc=5' target='_blank'&gt;オプティム、病院向け生成AI「OPTiM AI ホスピタル」新版 AI出力の根拠表示に対応 - 医療テックニュース&lt;/a&gt;
+オプティムが開発する医療機関向け生成AI「OPTiM AI ホスピタル」の最新版において、AIが出力した回答の根拠を表示する新機能を追加し信頼性を向上させました。
+
+&lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE54LTM4dFhOcHIwSHkzSnVoNUY5dUhtamN0SWNjWVhrWG1ackJKMFNLMjBaTC1kbDJZODRLNDZUejd5a3paSG93c1Z2eVlWVlJOX2NCcklZNU1nbGVBWWZkU1NuZGVyZEY0NVpiVHlwd29LZktSRG4zVU5OUQ?oc=5' target='_blank'&gt;Voice AI Agent Platform（VAAP）構想に基づくオンプレミス型議事録作成基盤『ZBOX - ニコニコニュース&lt;/a&gt;
+Voice AI Agent Platform（VAAP）構想をベースに構築された、セキュアなオンプレミス環境で利用可能な自動議事録作成システム「ZBOX」を紹介しています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiUkFVX3lxTE1kTlZXNXpfWDFTdmFDbjJMeFZBUWwweDJxbTJ5N0dieGpCVmJqaUNNMk9xOE90NGZtYi16QUs3ZnJMVTd3SFVLSUZsM200N3dZNGc?oc=5' target='_blank'&gt;嶺南理工大学校（李在鎔総長）は、就職の強い大学を越え、未来産業を先導する大学に跳躍している。 最近4年連続で新入生登録率100%を達成し、大邱慶北地域の入学定員2000人以上の一般大学と専門大学の中で.. - 매일경제&lt;/a&gt;
+韓国の嶺南理工大学校が4年連続で新入生登録率100%を達成し、高い就職実績とともに未来型テクノロジー産業を牽引する教育機関として成長している様子を伝えています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE42UTNRSnpLdGdUNGN6NE1FVkp4dTQwdVdjanl4aldnU2FmeEF4cFFSaFJXclctMjAtS21zenBJZVZRbEVpUE9RSGRnX1JBaWJvUkstY3FUQ05nX1ZibjR6cnJQekJJV0RONEtyeWxpcEl0TldrLXc?oc=5' target='_blank'&gt;AppBank、AIが企業を評価するメディア「AI BANK」を公開。ランキングとAI診断で"AIに選ばれる企業"を可視化 - ニコニコニュース&lt;/a&gt;
+AppBankがAIを用いて企業を評価・診断する新メディア「AI BANK」を開設し、ランキング形式でAIから選ばれやすい企業の条件や評価を可視化しています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiW0FVX3lxTE5EUzNHU0Fxa0RDbk9pLWdWRWF6ZkVpQVViZ0c0amVPY2t2bFpDeGkyRG5CamhENXZlVmRGdzZoTU92dTNfZWdCQVJ0M19ERVkwaE9KOENYanlaSms?oc=5' target='_blank'&gt;【エヌビディア崩壊？】セレブラスがAI半導体市場を支配する「3つの圧倒的優位性」を徹底解説！(CBRS) Aston Villa Vs Arsenal (7F3cU6BCYX) - Mshale&lt;/a&gt;
+AI業界で台頭するセレブラス（Cerebras）の半導体技術における優位性を紐解き、市場を牽引してきたエヌビディアに対抗する要素について述べています。</description>
+      <guid isPermaLink="false">news-ai-1788358744</guid>
+      <pubDate>Wed, 02 Sep 2026 14:19:04 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [14:10]</title>
-      <description>&lt;p&gt;要約の生成に失敗しました。&lt;/p&gt;</description>
-      <guid isPermaLink="false">news-medical-1788358207</guid>
-      <pubDate>Wed, 02 Sep 2026 14:10:07 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [14:19]</title>
+      <description>&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] 臨床検査とは&lt;/a&gt;
+SRLが提供する臨床検査の基礎解説ページです。現代医療において不可欠な役割を果たす臨床検査について、病気の予防、早期発見、正確な診断、治療効果の確認といった目的や、血液・尿・組織などを検体として調べる各種検査の重要性を分かりやすく紹介しています。</description>
+      <guid isPermaLink="false">news-medical-1788358744</guid>
+      <pubDate>Wed, 02 Sep 2026 14:19:04 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [14:10]</title>
-      <description>&lt;p&gt;要約の生成に失敗しました。&lt;/p&gt;</description>
-      <guid isPermaLink="false">news-local-1788358207</guid>
-      <pubDate>Wed, 02 Sep 2026 14:10:07 GMT</pubDate>
+      <title>🗾 地域医療（和歌山・大阪南部） [14:19]</title>
+      <description>&lt;p&gt;混雑のため要約の生成に失敗しました。&lt;/p&gt;</description>
+      <guid isPermaLink="false">news-local-1788358744</guid>
+      <pubDate>Wed, 02 Sep 2026 14:19:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
