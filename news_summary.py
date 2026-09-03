@@ -22,7 +22,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 1. 各種ニュース収集関数
+# 1. 各種ニュース収集関数（件数を5件に削減）
 # ==========================================
 def fetch_google_news(query):
     """Google News RSSから直近2日限定(when:2d)の記事を取得"""
@@ -32,7 +32,7 @@ def fetch_google_news(query):
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
-        for entry in feed.entries[:8]:  # 記事数を絞って軽量化
+        for entry in feed.entries[:5]:  # API負荷軽減のため最大5件に制限
             articles.append({"title": entry.title, "link": entry.link})
         return articles
     except Exception as e:
@@ -53,7 +53,7 @@ def fetch_official_company_news():
         try:
             res = requests.get(comp["url"], headers=headers, timeout=(3, 5))
             soup = bs4.BeautifulSoup(res.text, "html.parser")
-            for a in soup.find_all("a", href=True)[:3]:
+            for a in soup.find_all("a", href=True)[:2]:  # 各社最大2件に制限
                 title = a.get_text(strip=True)
                 if len(title) > 10:
                     href = a["href"]
@@ -135,7 +135,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（API1回呼び出し型）
+# 4. メイン処理（軽量化一括呼び出し）
 # ==========================================
 def main():
     print("=== 各種ニュースの収集を開始 ===")
@@ -159,14 +159,18 @@ def main():
 {chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in local_articles])}
 """
 
-    system_instruction = """あなたはプロのニュース編集者です。提供された4つのカテゴリのニュース記事リストを基に、それぞれのカテゴリごとに要約を作成してください。
+    # 全体文字数を2500文字に制限してAPI負荷を削減
+    if len(combined_context) > 2500:
+        combined_context = combined_context[:2500] + "\n...（文字数制限のため一部省略）"
+
+    system_instruction = """あなたはプロのニュース編集者です。提供された4つのカテゴリのニュース記事リストを基に、それぞれのカテゴリごとに簡潔な要約を作成してください。
 出力形式はそれぞれのセクションごとに見出しをつけてください。
-各記事の紹介部分では、必ず <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んでください。
+各記事の紹介部分では、必ず <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋めてください。
 前置き、挨拶、二重タイトルは一切出力禁止です。"""
 
     prompt = f"以下のニュース全体をカテゴリ別に整理して要約してください。\n\n{combined_context}"
 
-    print("=== Gemini APIを呼び出し中（1回のみ） ===")
+    print("=== Gemini APIを呼び出し中（軽量化1回実行） ===")
     summary_text = None
 
     try:
@@ -177,9 +181,20 @@ def main():
         summary_text = response.text
         print("API要約の生成に成功しました！")
     except Exception as e:
-        print(f"APIエラー (上限超過/混雑): {e}")
-        # フォールバック：万が一制限に達した場合は簡易リンク集を作成
-        summary_text = "⚠️ 無料枠の制限または混雑のため要約をスキップしました。"
+        print(f"APIエラー: {e}")
+        # API失敗時のフォールバックリンク集
+        fallback_lines = ["⚠️ API制限中のため、抽出した記事のリンク一覧を表示します：\n"]
+        for cat_name, art_list in [
+            ("AI", ai_articles),
+            ("医療", medical_articles),
+            ("公式", company_articles),
+            ("地域", local_articles),
+        ]:
+            if art_list:
+                fallback_lines.append(f"**[{cat_name}]**")
+                for a in art_list[:3]:
+                    fallback_lines.append(f"・<a href='{a['link']}' target='_blank'>{a['title']}</a>")
+        summary_text = "\n".join(fallback_lines)
 
     send_to_discord("Daily AI & Medical News", summary_text)
 
