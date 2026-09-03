@@ -1,194 +1,669 @@
+```python
 import json
 import os
 import re
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
+from html import unescape
+from urllib.parse import urljoin
+
 import feedparser
-from google import genai
 import requests
+from bs4 import BeautifulSoup
+from google import genai
+
 
 # ==========================================
-# 0. 環境変数 & クライアント初期化
+# 0. 設定
 # ==========================================
+
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-# クォータ上限に余裕のあるモデル
-MODEL_NAME = "gemini-3.5-flash-lite"
+# 使用するモデル
+# APIで利用可能なモデルに変更してください
+MODEL_NAME = os.environ.get(
+    "GEMINI_MODEL",
+    "gemini-2.5-flash-lite"
+)
+
+# 記事取得数
+AI_LIMIT = 7
+MEDICAL_LIMIT = 10
+LOCAL_LIMIT = 10
+
+REQUEST_TIMEOUT = 15
 
 if not GEMINI_API_KEY:
-    print("エラー: GEMINI_API_KEY が設定されていません。")
+    raise RuntimeError("GEMINI_API_KEY が設定されていません。")
+
+if not DISCORD_WEBHOOK_URL:
+    raise RuntimeError("DISCORD_WEBHOOK_URL が設定されていません。")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
+HEADERS = {
+    "User-Agent": "Mozilla/5.0 (compatible; DailyNewsBot/1.0)"
+}
+
 
 # ==========================================
-# 1. ニュース収集関数（カッコで囲んでクエリ崩れを防止）
+# 1. 指定サイト
 # ==========================================
-def fetch_google_news(query):
-    """Google News RSSから直近2日限定(when:2d)の記事を正確に取得"""
-    raw_query = f"({query}) when:2d"
-    encoded_query = requests.utils.quote(raw_query)
-    rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
-    
+
+AI_SITES = {
+    "AI Watch": "https://ai.watch.impress.co.jp/",
+    "ITmedia AI+": "https://www.itmedia.co.jp/aiplus/",
+}
+
+MEDICAL_SITES = {
+    "G-MED": "https://gemmed.ghc-j.com/?p=54090",
+    "日経メディカル": "https://medical.nikkeibp.co.jp/leaf/all/cancernavi/news/202506/589235.html",
+}
+
+LOCAL_SITES = {
+    "WBS 医療": "https://news.wbs.co.jp/category/medical",
+    "AGARA 医療": "https://www.agara.co.jp/live/medical",
+}
+
+
+# ==========================================
+# 2. 共通関数
+# ==========================================
+
+def clean_text(text):
+    """HTMLタグ・余分な空白を除去"""
+    text = BeautifulSoup(text or "", "html.parser").get_text(" ", strip=True)
+    text = unescape(text)
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def is_valid_url(url):
+    return bool(url and url.startswith("http"))
+
+
+def normalize_url(url):
+    """URL末尾の不要なパラメータなどを整理"""
+    if not url:
+        return ""
+
+    return url.split("#")[0].strip()
+
+
+def is_blood_donation_article(title, description=""):
+    """献血関連の記事を除外"""
+    text = f"{title} {description}".lower()
+
+    keywords = [
+        "献血",
+        "血液センター",
+        "献血ルーム",
+        "献血バス",
+        "blood donation",
+    ]
+
+    return any(keyword.lower() in text for keyword in keywords)
+
+
+def deduplicate_articles(articles):
+    """URLまたはタイトルで重複除去"""
+    seen_urls = set()
+    seen_titles = set()
+    result = []
+
+    for article in articles:
+        url = normalize_url(article.get("link", ""))
+        title = clean_text(article.get("title", ""))
+
+        if not title:
+            continue
+
+        title_key = title.lower()
+
+        if url and url in seen_urls:
+            continue
+
+        if title_key in seen_titles:
+            continue
+
+        seen_urls.add(url)
+        seen_titles.add(title_key)
+
+        article["title"] = title
+        article["link"] = url
+        article["description"] = clean_text(
+            article.get("description", "")
+        )
+
+        result.append(article)
+
+    return result
+
+
+def fetch_html(url):
+    """HTML取得"""
     try:
-        res = requests.get(rss_url, timeout=10)
-        feed = feedparser.parse(res.content)
-        articles = []
-        for entry in feed.entries[:8]:  # 各カテゴリ最大8件取得
-            articles.append({"title": entry.title, "link": entry.link})
-        return articles
+        response = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=REQUEST_TIMEOUT
+        )
+        response.raise_for_status()
+        response.encoding = response.apparent_encoding
+        return response.text
+
     except Exception as e:
-        print(f"Google News取得エラー ({query}): {e}")
+        print(f"HTML取得エラー: {url} / {e}")
+        return ""
+
+
+# ==========================================
+# 3. RSS取得
+# ==========================================
+
+def fetch_rss(url, source_name, limit=10):
+    """RSSから記事を取得"""
+    try:
+        response = requests.get(
+            url,
+            headers=HEADERS,
+            timeout=REQUEST_TIMEOUT
+        )
+        response.raise_for_status()
+
+        feed = feedparser.parse(response.content)
+
+        articles = []
+
+        for entry in feed.entries[:limit]:
+            title = clean_text(entry.get("title", ""))
+            link = entry.get("link", "")
+
+            if not title or not is_valid_url(link):
+                continue
+
+            articles.append({
+                "source": source_name,
+                "title": title,
+                "link": normalize_url(link),
+                "description": clean_text(
+                    entry.get("summary", "")
+                ),
+            })
+
+        return articles
+
+    except Exception as e:
+        print(f"RSS取得エラー: {url} / {e}")
         return []
 
 
 # ==========================================
-# 2. Discord送信関数
+# 4. HTML記事取得
 # ==========================================
-def send_to_discord(title_name, summary_text):
-    """HTML形式のリンクをDiscord用Markdown形式に自動変換して送信"""
-    if not DISCORD_WEBHOOK_URL:
-        print("DISCORD_WEBHOOK_URLが未設定のため送信をスキップします。")
-        return
 
-    discord_text = re.sub(
-        r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
-        r"[\2](\1)",
-        summary_text,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    discord_text = re.sub(r"</p>|<br\s*/?>", "\n", discord_text)
-    discord_text = re.sub(r"<p>", "", discord_text)
+def fetch_html_articles(url, source_name, limit=10):
+    """
+    指定ページから記事リンクを取得。
 
-    payload = {
-        "embeds": [
-            {
-                "title": f"📰 {title_name}",
-                "description": discord_text[:4000],
-                "color": 3447003,
-                "footer": {"text": "Daily AI & Medical News • 自動配信"},
-            }
-        ]
-    }
-    headers = {"Content-Type": "application/json"}
-    try:
-        res = requests.post(
-            DISCORD_WEBHOOK_URL, data=json.dumps(payload), headers=headers, timeout=10
+    サイトごとにHTML構造が異なるため、
+    まずは一般的な article / h2 / h3 / a を対象にする。
+    """
+
+    html = fetch_html(url)
+
+    if not html:
+        return []
+
+    soup = BeautifulSoup(html, "html.parser")
+    articles = []
+    seen = set()
+
+    # 記事らしいリンクを優先
+    selectors = [
+        "article a",
+        "h2 a",
+        "h3 a",
+        ".article a",
+        ".entry-title a",
+        ".post-title a",
+        "a",
+    ]
+
+    for selector in selectors:
+        for a in soup.select(selector):
+
+            title = clean_text(a.get_text(" ", strip=True))
+            href = a.get("href", "")
+
+            if not title or not href:
+                continue
+
+            link = normalize_url(urljoin(url, href))
+
+            if not is_valid_url(link):
+                continue
+
+            # 短すぎるリンク文字列は除外
+            if len(title) < 8:
+                continue
+
+            # ナビゲーション・広告などを除外
+            if any(word in title for word in [
+                "ログイン",
+                "会員登録",
+                "メニュー",
+                "検索",
+                "お問い合わせ",
+                "サイトマップ",
+            ]):
+                continue
+
+            key = (title.lower(), link)
+
+            if key in seen:
+                continue
+
+            seen.add(key)
+
+            articles.append({
+                "source": source_name,
+                "title": title,
+                "link": link,
+                "description": "",
+            })
+
+            if len(articles) >= limit:
+                return articles
+
+    return articles
+
+
+# ==========================================
+# 5. AIニュース取得
+# ==========================================
+
+def fetch_ai_news():
+    """
+    AI Watch と ITmedia AI+ のみ。
+    各サイトから記事を取得し、重複除去。
+    """
+
+    articles = []
+
+    for source_name, url in AI_SITES.items():
+        articles.extend(
+            fetch_html_articles(
+                url,
+                source_name,
+                limit=10
+            )
         )
-        if res.status_code in [200, 204]:
-            print(f"[{title_name}] Discord送信成功")
+
+    articles = deduplicate_articles(articles)
+
+    return articles[:AI_LIMIT]
+
+
+# ==========================================
+# 6. 医療・ゲノムニュース取得
+# ==========================================
+
+def fetch_medical_news():
+    """
+    指定された2サイトのみ。
+    """
+
+    articles = []
+
+    for source_name, url in MEDICAL_SITES.items():
+
+        # 指定URLがRSSの場合はRSS、
+        # それ以外はHTMLとして取得
+        if "rss" in url.lower() or "feed" in url.lower():
+            articles.extend(
+                fetch_rss(
+                    url,
+                    source_name,
+                    limit=10
+                )
+            )
         else:
-            print(f"[{title_name}] Discord送信失敗: {res.status_code}")
-    except Exception as e:
-        print(f"Discord送信時例外発生: {e}")
+            html_articles = fetch_html_articles(
+                url,
+                source_name,
+                limit=10
+            )
+
+            # 指定ページ自体を1記事として扱う
+            if not html_articles:
+                articles.append({
+                    "source": source_name,
+                    "title": source_name,
+                    "link": url,
+                    "description": "",
+                })
+            else:
+                articles.extend(html_articles)
+
+    return deduplicate_articles(articles)[:MEDICAL_LIMIT]
 
 
 # ==========================================
-# 3. feed.xml 生成関数
+# 7. 地域医療ニュース取得
 # ==========================================
-def generate_rss_xml(all_summaries, output_path="feed.xml"):
-    now = datetime.now(timezone.utc)
-    time_str = now.strftime("%H:%M")
-    epoch_time = int(now.timestamp())
 
-    rss = ET.Element("rss", version="2.0")
-    channel = ET.SubElement(rss, "channel")
-    ET.SubElement(channel, "title").text = f"Daily Medical & AI News [{time_str}]"
-    ET.SubElement(channel, "link").text = "https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml"
-    ET.SubElement(channel, "description").text = "AI・医療・地域ニュースの自動要約フィード"
+def fetch_local_news():
+    """
+    WBS・AGARAの医療カテゴリのみ。
+    献血関連の記事は除外。
+    """
 
-    for item_data in all_summaries:
-        item = ET.SubElement(channel, "item")
-        ET.SubElement(item, "title").text = f"{item_data['category']} [{time_str}]"
-        ET.SubElement(item, "description").text = item_data["content"]
-        ET.SubElement(item, "link").text = "https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml"
-        ET.SubElement(item, "guid", isPermaLink="false").text = f"news-{item_data['id']}-{epoch_time}"
-        ET.SubElement(item, "pubDate").text = now.strftime("%a, %d %b %Y %H:%M:%S GMT")
+    articles = []
 
-    tree = ET.ElementTree(rss)
-    ET.indent(tree, space="  ")
-    tree.write(output_path, encoding="utf-8", xml_declaration=True)
-    print(f"[{output_path}] の生成が完了しました。")
+    for source_name, url in LOCAL_SITES.items():
+        articles.extend(
+            fetch_html_articles(
+                url,
+                source_name,
+                limit=15
+            )
+        )
+
+    articles = deduplicate_articles(articles)
+
+    # 献血記事を除外
+    articles = [
+        article
+        for article in articles
+        if not is_blood_donation_article(
+            article["title"],
+            article["description"]
+        )
+    ]
+
+    return articles[:LOCAL_LIMIT]
 
 
 # ==========================================
-# 4. メイン処理
+# 8. Gemini用テキスト作成
 # ==========================================
-def main():
-    print("=== 各種ニュースの収集を開始 ===")
 
-    # 検索クエリをカッコで囲み正しく複数条件で取得
-    ai_articles = fetch_google_news("生成AI OR LLM OR 医療AI")
-    medical_articles = fetch_google_news("臨床検査 OR 病理検査 OR がんゲノム検査")
-    company_articles = fetch_google_news("SRL OR BML OR LSIメディエンス OR 臨床検査 受託")
-    local_articles = fetch_google_news("地域医療 OR 和歌山 医療 OR 泉佐野 医療 OR 岸和田 医療")
+def format_articles(articles):
+    if not articles:
+        return "該当記事なし"
 
-    combined_context = f"""
-【AI最新トレンド】
-{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in ai_articles])}
+    lines = []
 
-【医療・ゲノム・病理】
-{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in medical_articles])}
+    for i, article in enumerate(articles, 1):
+        lines.append(
+            f"{i}. {article['title']}\n"
+            f"   URL: {article['link']}\n"
+            f"   概要: {article['description']}"
+        )
 
-【臨床検査業界・受託情報】
-{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in company_articles])}
+    return "\n".join(lines)
 
-【地域医療（和歌山・大阪南部）】
-{chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in local_articles])}
+
+# ==========================================
+# 9. Gemini要約
+# ==========================================
+
+def generate_summary(ai_articles, medical_articles, local_articles):
+
+    system_instruction = """
+あなたは日本語のニュース編集者です。
+
+以下のニュース一覧をもとに、Discord向けの短いニュース要約を作成してください。
+
+【重要ルール】
+
+- 提供された記事以外のニュースを追加しない。
+- URLを変更しない。
+- 記事の内容を推測しない。
+- 記事が少ないカテゴリは無理に水増ししない。
+- 前置き・挨拶・結論・重複タイトルは禁止。
+- 1文字目から本文を開始する。
+- Markdown形式で出力する。
+- 各記事は箇条書きにする。
+- 各記事の最後に必ず元記事URLを付ける。
+
+【カテゴリ】
+
+## 🤖 AI最新トレンド
+AI Watch・ITmedia AI+の記事から重要なものを7件程度。
+7件に満たない場合は存在する記事だけ。
+
+## 🧬 医療・ゲノム
+G-MED・日経メディカルの記事を要約。
+検査・病理・ゲノム・がん関連を優先。
+
+## 🗾 地域医療
+WBS・AGARAの医療カテゴリの記事を要約。
+和歌山県・大阪府南部に関係する話題を優先。
+献血関連の記事は除外。
+
+【出力例】
+
+## 🤖 AI最新トレンド
+
+- **記事タイトル**
+  要約本文。
+  URL: https://example.com/article
+
+## 🧬 医療・ゲノム
+
+- **記事タイトル**
+  要約本文。
+  URL: https://example.com/article
+
+## 🗾 地域医療
+
+- **記事タイトル**
+  要約本文。
+  URL: https://example.com/article
 """
 
-    system_instruction = """あなたはプロのニュース編集者です。提供されたニュースリストを基に、カテゴリごとに整理された要約を作成してください。
+    prompt = f"""
+【AIニュース】
+{format_articles(ai_articles)}
 
-【各カテゴリの出力ルール】
-1. 各カテゴリの見出し（例: ## 🤖 AI最新トレンド）を明記してください。
-2. 重要なニュースを選定し、箇条書きで分かりやすく要約してください。
-3. 記事タイトル部分には、必ず <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んでください。
-4. 前置き、挨拶、二重タイトルは一切出力禁止です。1文字目から本文を開始してください。
+【医療・ゲノムニュース】
+{format_articles(medical_articles)}
 
-【カテゴリ別の注意点】
-- 医療・ゲノム・病理：製薬・処方薬メインのニュースではなく、検査・病理・ゲノム関連を優先してください。
-- 臨床検査業界：新規受託検査、検査中止、業界の動向に関する話題を中心に扱ってください。
-- 地域医療：和歌山県および大阪府南部（泉佐野、岸和田など）の話題を重点的に扱ってください。"""
-
-    prompt = f"以下のニュース一覧から要約を作成してください。\n\n{combined_context}"
-
-    print(f"=== Gemini API呼び出し中 ({MODEL_NAME}) ===")
-    summary_text = None
+【地域医療ニュース】
+{format_articles(local_articles)}
+"""
 
     try:
         response = client.models.generate_content(
             model=MODEL_NAME,
             contents=f"{system_instruction}\n\n{prompt}",
         )
-        summary_text = response.text
-        print("要約生成完了！")
+
+        if not response.text:
+            raise RuntimeError("Geminiの応答が空です。")
+
+        return response.text.strip()
+
     except Exception as e:
-        print(f"APIエラー: {e}")
-        fallback_lines = ["⚠️ API一時エラーのため、抽出記事のリンク一覧を送信します：\n"]
-        for cat_name, art_list in [
-            ("🤖 AI最新トレンド", ai_articles),
-            ("🏥 医療・ゲノム・病理", medical_articles),
-            ("🏢 臨床検査業界・受託情報", company_articles),
-            ("🗾 地域医療", local_articles),
-        ]:
-            if art_list:
-                fallback_lines.append(f"**{cat_name}**")
-                for a in art_list[:3]:
-                    fallback_lines.append(f"・<a href='{a['link']}' target='_blank'>{a['title']}</a>")
-        summary_text = "\n".join(fallback_lines)
+        print(f"Gemini APIエラー: {e}")
+        return None
 
-    # Discord送信
-    send_to_discord("Daily AI & Medical News", summary_text)
 
-    # feed.xml 生成
-    all_summaries = [{
-        "id": "daily-bundle",
-        "category": "総合ニュース要約",
-        "content": summary_text,
-    }]
-    generate_rss_xml(all_summaries)
+# ==========================================
+# 10. APIエラー時の代替本文
+# ==========================================
+
+def create_fallback_summary(ai_articles, medical_articles, local_articles):
+
+    lines = [
+        "⚠️ Gemini APIエラーのため、記事リンク一覧を送信します。\n"
+    ]
+
+    categories = [
+        ("🤖 AI最新トレンド", ai_articles),
+        ("🧬 医療・ゲノム", medical_articles),
+        ("🗾 地域医療", local_articles),
+    ]
+
+    for category_name, articles in categories:
+
+        lines.append(f"## {category_name}")
+
+        if not articles:
+            lines.append("- 該当記事なし")
+            continue
+
+        for article in articles:
+            lines.append(
+                f"- [{article['title']}]({article['link']})"
+            )
+
+    return "\n".join(lines)
+
+
+# ==========================================
+# 11. Discord送信
+# ==========================================
+
+def send_to_discord(title_name, summary_text):
+
+    if not summary_text:
+        return
+
+    # DiscordのEmbed description上限
+    summary_text = summary_text[:4000]
+
+    payload = {
+        "embeds": [
+            {
+                "title": f"📰 {title_name}",
+                "description": summary_text,
+                "color": 3447003,
+                "footer": {
+                    "text": "Daily AI & Medical News • 自動配信"
+                },
+            }
+        ]
+    }
+
+    try:
+        response = requests.post(
+            DISCORD_WEBHOOK_URL,
+            json=payload,
+            timeout=REQUEST_TIMEOUT
+        )
+
+        if response.status_code in [200, 204]:
+            print("Discord送信成功")
+        else:
+            print(
+                f"Discord送信失敗: "
+                f"{response.status_code} {response.text[:200]}"
+            )
+
+    except Exception as e:
+        print(f"Discord送信エラー: {e}")
+
+
+# ==========================================
+# 12. RSS生成
+# ==========================================
+
+def generate_rss_xml(summary_text, output_path="feed.xml"):
+
+    now = datetime.now(timezone.utc)
+
+    rss = ET.Element("rss", version="2.0")
+    channel = ET.SubElement(rss, "channel")
+
+    ET.SubElement(channel, "title").text = (
+        "Daily Medical & AI News"
+    )
+
+    ET.SubElement(channel, "link").text = (
+        "https://raw.githubusercontent.com/"
+        "kazu92724-stack/daily-ai-news/main/feed.xml"
+    )
+
+    ET.SubElement(channel, "description").text = (
+        "AI・医療・地域ニュースの自動要約フィード"
+    )
+
+    item = ET.SubElement(channel, "item")
+
+    ET.SubElement(item, "title").text = (
+        f"Daily News {now.strftime('%Y-%m-%d %H:%M')}"
+    )
+
+    ET.SubElement(item, "description").text = summary_text
+
+    ET.SubElement(item, "link").text = (
+        "https://raw.githubusercontent.com/"
+        "kazu92724-stack/daily-ai-news/main/feed.xml"
+    )
+
+    ET.SubElement(
+        item,
+        "guid",
+        isPermaLink="false"
+    ).text = f"daily-news-{int(now.timestamp())}"
+
+    ET.SubElement(item, "pubDate").text = (
+        now.strftime("%a, %d %b %Y %H:%M:%S GMT")
+    )
+
+    tree = ET.ElementTree(rss)
+
+    ET.indent(tree, space="  ")
+
+    tree.write(
+        output_path,
+        encoding="utf-8",
+        xml_declaration=True
+    )
+
+    print(f"{output_path} の生成完了")
+
+
+# ==========================================
+# 13. メイン処理
+# ==========================================
+
+def main():
+
+    print("=== ニュース収集開始 ===")
+
+    ai_articles = fetch_ai_news()
+    medical_articles = fetch_medical_news()
+    local_articles = fetch_local_news()
+
+    print(f"AIニュース: {len(ai_articles)}件")
+    print(f"医療ニュース: {len(medical_articles)}件")
+    print(f"地域医療: {len(local_articles)}件")
+
+    summary_text = generate_summary(
+        ai_articles,
+        medical_articles,
+        local_articles
+    )
+
+    if not summary_text:
+        summary_text = create_fallback_summary(
+            ai_articles,
+            medical_articles,
+            local_articles
+        )
+
+    send_to_discord(
+        "Daily AI & Medical News",
+        summary_text
+    )
+
+    generate_rss_xml(summary_text)
 
 
 if __name__ == "__main__":
     main()
+```
