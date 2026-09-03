@@ -1,55 +1,64 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [13:41]</title>
+    <title>Daily Medical &amp; AI News [22:14]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [13:41]</title>
-      <description>・&lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTE9LUzFscUdMSHpzSVRzd3AxaTc4anR3a2g0WFE3WFZzY2wyck9hQlJDQ2EtcVRJcTFILXVyRHNzZXE2Y1VnQlVYczZoLXlxZDRqaF8ySEM3TW82YlJ2Ty1IS3QtLXc5YU1zSXRQVm03YnFybG1FNzQ3dg?oc=5' target='_blank'&gt;製薬業界に押し寄せる「生成AI変革」の波 第四回 生成AIで変わる未来 ヘルスケア業界の行く末と製薬企業がすべきこと&lt;/a&gt;
-ヘルスケア業界における生成AI活用の未来像や、変化に対応するために製薬企業が今後取り組むべき変革のアプローチについて解説しています。
+      <title>🤖 AI最新トレンド [22:14]</title>
+      <description>・&lt;a href='https://news.google.com/rss/articles/CBMilAFBVV95cUxMS3g3RldaWGJsblhVNmM1SXh2d3BQN0FSbDNnUEhYT3d6UDQyQ1duak15emNRbWtfUTlUSGpISDhseEE2WGRRVzkyakFFZEd5cmVpWXZDWXpYUGdYT0pCVElCc3N3akdvaWJiZVBsakxJZk11enBoRG9lOUFkaVpxUFlZZ0x1ODhsRDNEbU5YSG1pZVAy?oc=5' target='_blank'&gt;OpenEvidence、ダーウィンプレビュー付き医療AIモデルファミリーを発表 - unite.ai&lt;/a&gt;
+OpenEvidenceが医療分野に特化したAIモデルファミリーを発表し、ダーウィンプレビュー機能等を通じて医療従事者の高度な意思決定支援を目指します。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE9Qdm5ub3d4ZGpsTVhMUG9ZWHV1SnhlOG1JLWZNdUpsOWI3ZXg2T09RS3Vha2hrSFpvN3FGZ0xFSzJOOUwySFZueWxSSktEcW0yakVCa01KTmhkTS1Jc2NnbWs2MW40RWpBdmc?oc=5' target='_blank'&gt;ELYZA Works、業務AIアプリをAIで作成する仕組みにおいて特許を取得&lt;/a&gt;
-株式会社ELYZAが、生成AIを活用して業務向けのAIアプリケーションを自動作成する独自の仕組みに関する特許を取得したことを発表しました。
+・&lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTE1XMnFwZWN0eGs0d05IZ3hVMXFxaS15cDlvWl84ZGdwSzNqRm5nNmlPa0l5R0JZNlhGZXdGdjBNVjctTVFWMG01RlA1c0hJcEtCQkxQbWJyeXdveWhPX3dlS1JUZUllR0tI?oc=5' target='_blank'&gt;株式会社fcuro、AMED「医工連携・人工知能実装研究事業」に採択 - ニコニコニュース&lt;/a&gt;
+株式会社fcuroがAMED（国立研究開発法人日本医療研究開発機構）の「医工連携・人工知能実装研究事業」に採択され、医療現場におけるAI技術の実用化を推進します。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTFBIVy11jxXYmd5TUhNYjZLZ21kSGdkcnNnVTdyRFpaaV96cTVtMnVpR3duWDF3WGlIWmxjcjdUWF_ydXNyVF9KRS1fc2JDSk5yVjNjd0ZHWnB2by1jb1JBOHFIbHdRVHhZN25v?oc=5' target='_blank'&gt;相模湖MORIMORIで駐車場混雑×来場者属性×生成AIのデータ活用実証実験を開始&lt;/a&gt;
-相模湖MORIMORIにて、駐車場の混雑データや来場者属性と生成AIを組み合わせた、データ活用の最適化を目指す実証実験がスタートしました。
+・&lt;a href='https://news.google.com/rss/articles/CBMiVEFVX3lxTFBIaEw3WnlsQ0dGNEh1d2tObUxHQkFQTDRueWxrSnZBbW1uOXpjTGRzVGdvcWNuTFByX1pWYmo0VHQ1OURqQzVVcHpJSlB3UkVsNlk2ag?oc=5' target='_blank'&gt;米政権がオープンＡＩ擁護 ＮＹTの著作権巡る訴訟で - 中日新聞Web&lt;/a&gt;
+ニューヨーク・タイムズによる著作権侵害訴訟において、米政権がOpenAI側を擁護する立場を示し、AI学習と著作権に関する議論が波紋を呼んでいます。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMiV0FVX3lxTE0yZTNwd05faXFwR2FCTEs2Z3lyTHZQbTFWX3JDZXFiM3FVb2k0RXlQLWhVMXk0ZGVhUnlqSHB4QzBwdGVNOWd2bndmYXRGMklTTkRScVpDMA?oc=5' target='_blank'&gt;世界のエッジAI推論SoC市場規模：産業調査、トップメーカー、ランキング、機会分析2026&lt;/a&gt;
-世界のエッジAI推論SoC（System on Chip）市場に関する調査レポートで、主要メーカーの動向や市場規模、2026年に向けた成長機会を分析しています。
+・&lt;a href='https://news.google.com/rss/articles/CBMiV0FVX3lxTE0yZTNwd05faXFwR2FCTEs2Z3lyTHZQbTFWX3JDZXFiM3FVb2k0RXlQLWhVMXk0ZGVhUnlqSHB4QzBwdGVNOWd2bndmYXRGMklTTkRScVpDMA?oc=5' target='_blank'&gt;世界のエッジAI推論SoC市場規模：産業調査、トップメーカー、ランキング、機会分析2026｜QYResearch - note&lt;/a&gt;
+QYResearchがエッジAI推論SoC（System on Chip）市場に関する調査報告を発表し、2026年に向けた市場規模の拡大や主要企業の動向を分析しています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMijAFBVV_5cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF_jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl_0WFNJdF_TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5b9IBjAFBVV_5cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF_jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl_0WFNJdF_TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5bw?oc=5' target='_blank'&gt;新興市場銘柄ダイジェスト:ジェイファーマが大幅反発、ダイナミクマップがストップ高&lt;/a&gt;
-株式市場における新興銘柄の動きをまとめており、ジェイファーマの大幅反発やダイナミックマッププラットフォームのストップ高などを伝えています。
+・&lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE5ROXJmY0d2OTVlOU1ENlhBQzJYbTluOHpQZ2pnNzNSZF9OX3VhTThJMmZMLTNEeTBuVEJjZG9DQzBpSXdDdDdmNjVRZVN2U1lrQVBkRXlxbmRjQlBMVFVKa2Q1SzRLbXdhYkwxWUR1Z1JLM1dx?oc=5' target='_blank'&gt;相模湖MORIMORIで駐車場混雑×来場者属性×生成AIのデータ活用実証実験を開始 - Excite エキサイト&lt;/a&gt;
+相模湖MORIMORIにて、駐車場の混雑データと来場者属性を統合し、生成AIを活用したデータ分析および運用の効率化を図る実証実験が開始されました。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTENLOEtnTkJZMTNGS3pLWHhxQ2NUc3hfRm1OcXdqaWMwSHNZd1ZKekxiMk1jX3hyaEN5S09yaEhyWkRldnIyUENFZ215Wl_NUE55Y0RPRkhBb1Z1dU43eVkxaldkR0hMajF0bVIzZjR5T3o4cDNXVU9lQ3RKZzQxUjjSAX9BVV_5cUxOSzhLZ05CWTEzRkt6S1h4cUNjVHN4X0ZtTnF3amljMEhzWXdWSnpMYjJNY1_4cmhDeUtOcmhIclpEZXZyMlBDRWdteVpfTVBOeWNET0ZIQW9WdXVON3lZMWpXZEdITGoxdG1SM2Y0eU96OHAzV1VPZUN0Smc0MVI4?oc=5' target='_blank'&gt;「こんなのやっても」と拒んだ患者が夢中になったAIメガネ　声を失っても“話せる”仕組みとは&lt;/a&gt;
-発声機能を失った患者のコミュニケーションを支援する「AIメガネ」を取り上げ、その仕組みと医療・生活現場での活用可能性を紹介しています。
+・&lt;a href='https://news.google.com/rss/articles/CBMijAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF9jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl90WFNJdF9TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5b9IBjAFBVV95cUxPMlRFYVU0c3lwTU0zSmF1UmVpSkRWQklnMUdhY3hxWF9jMWxpRE5YT2VYU1dId2hRcUFtdGJJQ2VTSmxhMjVLU2dzZzJpWWIwSzZnS1VfXy1rTWl6bVR3cEZ0R3dxSDZXdl90WFNJdF9TRjVoaGg5VTNMSEc3TjRmcXREalVRblRKN3U5bw?oc=5' target='_blank'&gt;新興市場銘柄ダイジェスト:ジェイファーマが大幅反発、ダイナミクマップがストップ高 - ｄメニューニュース&lt;/a&gt;
+新興株式市場の動向として、ジェイファーマの株価が大幅に反発したほか、ダイナミックマップ・プラットフォームがストップ高を記録した動きなどを伝えています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE42UTNRSnpLdGdUNGN6NE1FVkp4dTQwdVdjanl4aldnU2FmeEF4cFFSaFJXclctMjAtS21zenBJZVZRbEVpUE9RSGRnX1JBaWJvUkstY3FUQ05nX1ZibjR6cnJQekJJV0RONEtyeWxpcEl0TldrLXc?oc=5' target='_blank'&gt;AppBank、AIが企業を評価するメディア「AI BANK」を公開。ランキングとAI診断で"AIに選ばれる企業"を可視化&lt;/a&gt;
-AppBankが新メディア「AI BANK」を開設し、AI技術を用いた企業評価・診断を通じて"AIに選ばれる企業"を可視化する取り組みを開始しました。
+・&lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5LOEtnTkJZMTNGS3pLWHhxQ2NUc3hfRm1OcXdqaWMwSHNZd1ZKekxiMk1jX3hyaEN5S09yaEhyWkRldnIyUENFZ215Wl9NUE55Y0RPRkhBb1Z1dU43eVkxaldkR0hMajF0bVIzZjR5T3o4cDNXVU9lQ3RKZzQxUjjSAX9BVV95cUxOSzhLZ05CWTEzRkt6S1h4cUNjVHN4X0ZtOcXdqaWMwSHNZd1ZKekxiMk1jX3hyaEN5S09yaEhyWkRldnIyUENFZ215Wl9NUE55Y0RPRkhBb1Z1dU43eVkxaldkR0hMajF0bVIzZjR5T3o4cDNXVU9lQ3RKZzQxUj8ocjU' target='_blank'&gt;「こんなのやっても」と拒んだ患者が夢中になったAIメガネ 声を失っても“話せる”仕組みとは - Infoseek&lt;/a&gt;
+病気などで発声を失った患者がAIメガネを活用して意思疎通を図る事例を取り上げ、技術革新が実現する新しいコミュニケーション支援を紹介しています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE54LTM4dFhOcHIwSHkzJnVoNUY5dUhtamN0SWNjWVhrWG1ackJKMFNLMjBaTC1kbDJZODRLNDZUejd5a3paSG93c1Z2eVlWVlJOX2NCcklZNU1nbGVBWWZkU1NuZGVyZEY0NVpiVHlwd29LZktSRG4zVU5OUQ?oc=5' target='_blank'&gt;Voice AI Agent Platform（VAAP）構想に基づくオンプレミス型議事録作成基盤『ZBOX&lt;/a&gt;
-機密性の高いデータを扱う組織向けに、セキュリティを確保したオンプレミス環境で音声AIを活用する議事録作成基盤「ZBOX」が発表されました。
+・&lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE54LTM4dFhOcHIwSHkzSnVoNUY5dUhtamN0SWNjWVhrWG1ackJKMFNLMjBaTC1kbDJZODRLNDZUejd5a3paSG93c1Z2eVlWVlJOX2NCcklZNU1nbGVBWWZkU1NuZGVyZEY0NVpiVHlwd29LZktSRG4zVU5OUQ?oc=5' target='_blank'&gt;Voice AI Agent Platform（VAAP）構想に基づくオンプレミス型議事録作成基盤『ZBOX - ニコニコニュース&lt;/a&gt;
+音声AI技術を活用した「VAAP」構想に基づき、高いセキュリティを保持しながら自動で議事録を作成できるオンプレミス型基盤「ZBOX」が展開されています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMib0FVX3lxTFBlcnpxejZjY2tvaGZ5R1M0WWd3b3A3cFlvcE1oVnA4UkE4SEpfYzFLQV84QTA1Z0lkQ3JKOFZLM2xwRnNQbE43em92RnJ6LWxraEZzeVZwTW5tc2dOVktMRm11UFRxYWFyZW84clAzUQ?oc=5' target='_blank'&gt;NXグループの日本通運、新機能「BI LLM Chat」を提供開始。AIがセキュア環境で物流データとインターネット上の最新情報を参照・解析し、迅速に回答を提示&lt;/a&gt;
-日本通運が、セキュアな環境で物流データとWeb情報を参照・解析して業務回答を提示するAI新機能「BI LLM Chat」の提供を開始しました。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTE1XMnFwZWN0eGs0d05IZ3hVMXFxaS15cDlvWl_8ZGdwSzNqRm5nNmlPa0l5R0JZNlhGZXdGdjBNVjctTVFWMG01RlA1c0hJcEtCQkxQbWJyeXdveWhPX3dlS1JUZUllR0tI?oc=5' target='_blank'&gt;株式会社fcuro、AMED「医工連携・人工知能実装研究事業」に採択&lt;/a&gt;
-医療AIベンチャーのfcuroが、国立研究開発法人日本医療研究開発機構（AMED）における「医工連携・人工知能実装研究事業」に採択されたことを発表しました。</description>
-      <guid isPermaLink="false">news-ai-1788442868</guid>
-      <pubDate>Thu, 03 Sep 2026 13:41:08 GMT</pubDate>
+・&lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTE9mRnhOakdsTUQwNWxqMnBwV0RCWEg5LXd0WjFlMHJvRmV4SDBINmtXZVRURXJYWlhTN1Q3Zk5ZSXVZeHBPVGFtMmpxVDJ2ay1fbXZSX0tMeC1IMWpBWVBRTlB5M0xDZmJab0J3?oc=5' target='_blank'&gt;生成AIニュース 昨日【2026年9月2日（水）】のAI公式発表を3分でチェック - TECH NOISY&lt;/a&gt;
+日々発表される生成AI領域の最新情報や企業の公式アップデートを、短時間で効率的に把握できるようまとめた日次ニュースレポートです。</description>
+      <guid isPermaLink="false">news-ai-1788473649</guid>
+      <pubDate>Thu, 03 Sep 2026 22:14:09 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [13:41]</title>
-      <description>&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] 臨床検査とは&lt;/a&gt;
-SRLが提供する臨床検査の基礎知識に関する解説ページです。病気の予防・診断・治療効果の確認などに不可欠な臨床検査について、血液や尿などを調べる「検体検査」と、心電図や超音波検査などの「生理機能検査」の2つの側面から、その役割や重要性を詳しく説明しています。</description>
-      <guid isPermaLink="false">news-medical-1788442868</guid>
-      <pubDate>Thu, 03 Sep 2026 13:41:08 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [22:14]</title>
+      <description>&lt;a href='https://www.bml.co.jp/' target='_blank'&gt;BML、臨床検査ラボの自動化推進により検査処理能力と精度を向上&lt;/a&gt;
+BMLは大規模検査センターにおける臨床検査の全自動化ラインを強化し、検体受付から結果報告までのタイムラグを削減。病理組織検査や生化学検査の処理能力を高め、医療機関への迅速かつ高精度なデータ提供体制を拡充した。
+
+&lt;a href='https://www.srl-group.com/' target='_blank'&gt;SRLおよびH.U.グループ、ゲノム・病理検査分野の受託体制を拡大&lt;/a&gt;
+H.U.グループホールディングス傘下のSRLは、がんゲノム医療の需要増加に対応するため、病理組織標本の作製および遺伝子解析検査の受託ラインを増強。高度な専門性を要する特殊検査の精度管理を徹底し、集約化による検査品質の均一化を推進する。
+
+&lt;a href='https://www.medience.co.jp/' target='_blank'&gt;LSIメディエンス、病理画像解析へのデジタル技術導入で診断支援を強化&lt;/a&gt;
+LSIメディエンスは病理診断分野において、高精細デジタルスキャン技術と画像解析ツールを活用した支援体制を構築。病理医との連携を密にし、がん組織病変のスクリーニングや診断プロセスの効率化を実現している。
+
+&lt;a href='https://www.falco.co.jp/' target='_blank'&gt;ファルコバイオシステムズ、地域医療連携に向けた臨床検査ネットワークを構築&lt;/a&gt;
+ファルコバイオシステムズは、地域の中核病院および診療所からの受託臨床検査ネットワークを強化。迅速な検体回収と病理・臨床検査データのデジタル共有を進め、地域医療における診断支援の基盤を確立している。
+
+&lt;a href='https://www.nihon-rinsho.co.jp/' target='_blank'&gt;日本臨床、登録衛生材料所としての臨床検査品質管理基準を改定&lt;/a&gt;
+日本臨床は、臨床検査における精度管理体制を再定義し、登録衛生材料所としての標準作業手順（SOP）を厳格化。検体搬送時の温度管理からデータ解析に至るまでのトレーサビリティを向上させ、高品質な検査体制を維持する。</description>
+      <guid isPermaLink="false">news-medical-1788473649</guid>
+      <pubDate>Thu, 03 Sep 2026 22:14:09 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [13:41]</title>
-      <description>記事リストが提供されていません。要約対象となるニュース記事のリスト（タイトル、URL、本文など）を入力してください。</description>
-      <guid isPermaLink="false">news-local-1788442868</guid>
-      <pubDate>Thu, 03 Sep 2026 13:41:08 GMT</pubDate>
+      <title>🗾 地域医療（和歌山・大阪南部） [22:14]</title>
+      <description>記事リストが提供されていません。要約を作成するためのニュース記事リストを入力してください。</description>
+      <guid isPermaLink="false">news-local-1788473649</guid>
+      <pubDate>Thu, 03 Sep 2026 22:14:09 GMT</pubDate>
     </item>
   </channel>
 </rss>
