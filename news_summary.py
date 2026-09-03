@@ -4,7 +4,6 @@ import re
 import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-import bs4
 import feedparser
 from google import genai
 import requests
@@ -38,34 +37,6 @@ def fetch_google_news(query):
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
         return []
-
-
-def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング"""
-    companies = [
-        {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
-        {"name": "BML", "url": "https://www.bml.co.jp/"},
-        {"name": "LSIメディエンス", "url": "https://www.medience.co.jp/"},
-    ]
-    official_articles = []
-    headers = {"User-Agent": "Mozilla/5.0"}
-    for comp in companies:
-        try:
-            print(f"[{comp['name']}] 公式HP取得中...")
-            res = requests.get(comp["url"], headers=headers, timeout=(3, 5))
-            soup = bs4.BeautifulSoup(res.text, "html.parser")
-            for a in soup.find_all("a", href=True)[:3]:
-                title = a.get_text(strip=True)
-                if len(title) > 10:
-                    href = a["href"]
-                    if not href.startswith("http"):
-                        href = comp["url"].rstrip("/") + "/" + href.lstrip("/")
-                    official_articles.append(
-                        {"title": f"[{comp['name']}] {title}", "link": href}
-                    )
-        except Exception as e:
-            print(f"[{comp['name']}] スキップ (タイムアウト/接続失敗): {e}")
-    return official_articles
 
 
 # ==========================================
@@ -147,24 +118,21 @@ def main():
             "id": "ai",
             "name": "🤖 AI最新トレンド",
             "query": "生成AI LLM 医療AI",
-            "extra_fetch": None,
             "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 病理 ゲノム医療",
-            "extra_fetch": fetch_official_company_news,
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
-【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、治験。
-【限定ターゲット】指定7社（BML, SRL, HU, LSIメディエンス, ファルコ, メディック, 日本臨床）および臨床検査・病理関連を優先。
+【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、治験。
+【限定ターゲット】指定7社（BML, SRL, HU, LSIメディエンス, ファルコ, メディック, 日本臨床）および臨床検査・病理関連に限定。
 記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
         },
         {
             "id": "local",
             "name": "🗾 地域医療（和歌山・大阪南部）",
             "query": "地域医療 和歌山 泉佐野 岸和田",
-            "extra_fetch": None,
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【対象エリア】和歌山県全域および大阪府南部8市町（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に限定。
 【絶対除外】大阪市内、堺市、北摂地域。
@@ -173,7 +141,7 @@ def main():
     ]
 
     all_summaries = []
-    
+
     # 試行回数と待機時間の設定
     max_retries = 4
 
@@ -181,8 +149,6 @@ def main():
         print(f"\n=== {cat['name']} の処理開始 ===")
 
         articles = fetch_google_news(cat["query"])
-        if cat["extra_fetch"]:
-            articles.extend(cat["extra_fetch"]())
 
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
         prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
@@ -199,7 +165,7 @@ def main():
                 )
                 summary_text = response.text
                 print("[gemini-3.6-flash] 生成完了！")
-                break # 成功したらループを抜ける
+                break  # 成功したらループを抜ける
             except Exception as e:
                 print(f"[gemini-3.6-flash] エラー: {e}")
                 if attempt < max_retries:
