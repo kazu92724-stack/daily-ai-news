@@ -1,21 +1,25 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [08:37]</title>
-    <link>https://github.com</link>
+    <title>Daily Medical &amp; AI News [12:15]</title>
+    <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>総合ニュース要約 [08:37]</title>
-      <description>⚠️ API制限中のため、抽出した記事のリンク一覧を表示します：
+      <title>総合ニュース要約 [12:15]</title>
+      <description>### AI最新トレンド
+RIZAPが外部生成AIへの顧客情報アップロードについて、第三者への閲覧や学習利用はないと謝罪しました。また、製薬業界における生成AI活用の未来や、企業での活用率向上に向けた取り組み、実写撮影と組み合わせたMV制作事例が紹介されているほか、ニューヨーク市が中学生以下の生成AI利用を1年間原則禁止にする方針を示したニュースが報じられています。
 
-**[AI]**
-・&lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTE9LUzFscUdMSHpzSVRzd3AxaTc4anR3a2g0WFE3WFZzY2wyck9hQlJDQ2EtcVRJcTFILXVyRHNzZXE2Y1VnQlVYczZoLXlxZDRqaF8ySEM3TW82YlJ2Ty1IS3QtLXc5YU1zSXRQVm03YnFybG1FNzQ3dg?oc=5' target='_blank'&gt;製薬業界に押し寄せる「生成AI変革」の波 第四回 生成AIで変わる未来 ヘルスケア業界の行く末と製薬企業がすべきこと - ブレインパッド&lt;/a&gt;
-・&lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTFBIVy11anhXYmd5TUhNYjZLZ21kSGdkcnNnVTdyRFpaaV96cTVtMnVpR3duWDF3WGlIWmxjcjdUWF9ydXNyVF9KRS1fc2JDSk5yVjNjd0ZHWnB2by1jb1JBOHFIbHdRVHhZN25v?oc=5' target='_blank'&gt;相模湖MORIMORIで駐車場混雑×来場者属性×生成AIのデータ活用実証実験を開始 - 時事ドットコム&lt;/a&gt;
-・&lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTFA0SGQ4Z0tpNThmeUVpVEt2UEtYNU9iMXFQWXk0Uk04SlFzU2hQdVd6X29aOC1rTEp5SHpzaVh5WWhLOGtDVU5VNGFtT3FHaHY5RnpDMkx0cDRHQkJIc1Vsb3pOSDBNSWtBYkE?oc=5' target='_blank'&gt;【AI時代におけるサービスアップデート】『データフォースプロモーション』の提供価値を再定義し、一次情報の獲得と多角的なコンテンツ展開を強化した新パッケージへ進化 | 株式会社PRIZMAのプレスリリース - PR TIMES&lt;/a&gt;
-**[公式]**
-・&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] è¨åºæ¤æ»ã¨ã¯&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-daily-bundle-1788424641</guid>
-      <pubDate>Thu, 03 Sep 2026 08:37:21 GMT</pubDate>
+### 医療・ゲノム・病理
+提供されたリストに該当する記事はありません。
+
+### 臨床検査会社公式
+&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] è‡¨åºŠæ¤œæŸ»ã ¨ã ¯&lt;/a&gt;では、臨床検査に関する基本的な情報や解説が提供されています。
+
+### 地域医療（和歌山・大阪南部）
+慶応大生による稚内の地域医療調査や、岩手県による新たな地域医療「構想区域」指標案の提示、28年度末までの精神医療を含む地域医療構想策定の動きが伝えられています。さらに、医師数が多い一方で医師不足に悩む高知での医学生による地域医療実習など、各地の地域医療の課題と取り組みが報じられています。</description>
+      <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
+      <guid isPermaLink="false">news-daily-bundle-1788437757</guid>
+      <pubDate>Thu, 03 Sep 2026 12:15:57 GMT</pubDate>
     </item>
   </channel>
 </rss>
