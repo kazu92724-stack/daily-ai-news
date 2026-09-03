@@ -1,16 +1,13 @@
-name: Daily News Summary
+name: Daily News Summary & Notification
 
 on:
   schedule:
-    # 混雑を避けるため、毎日朝6:43 JST (21:43 UTC) に設定
-    - cron: '43 21 * * *'
-  workflow_dispatch:
+    - cron: '0 22 * * *' # 毎日 午前7:00 (JST)
+  workflow_dispatch: # 手動実行ボタン
 
 jobs:
   build-and-notify:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write # feed.xml の自動コミット用権限
 
     steps:
       - name: リポジトリのチェックアウト
@@ -24,7 +21,7 @@ jobs:
       - name: 依存ライブラリのインストール
         run: |
           python -m pip install --upgrade pip
-          pip install google-genai requests beautifulsoup4 feedparser
+          pip install google-genai feedparser requests beautifulsoup4
 
       - name: ニュース要約＆Discord配信の実行
         env:
@@ -33,10 +30,9 @@ jobs:
         run: |
           python news_summary.py
 
-      - name: feed.xml の変更を自動コミット
+      - name: 生成された feed.xml をコミットしてPush
         run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add feed.xml
-          git commit -m "Update daily feed.xml [skip ci]" || exit 0
-          git push
+          git diff --quiet && git diff --staged --quiet || (git commit -m "Auto-update feed.xml [skip ci]" && git push)
