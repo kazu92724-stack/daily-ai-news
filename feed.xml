@@ -1,35 +1,14 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [15:33]</title>
+    <title>Daily Medical &amp; AI News [05:13]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [15:33]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE80QkNaOFF1Ty1PczBOS1ZOdnprWm83SFhwMkU2TU80b3pjQlR4SHpfWUJGY05tMFFYMFQtT2tNMzhzVUhhSktvbmlYcVFTZ2Q0ZGhHemJRdXBCcjJhdnBwWFliaW1DVVd4dlRjbg?oc=5' target='_blank'&gt;岡山の玉島信用金庫、生成AIで資料作成やロープレ 人は顧客対話に注力&lt;/a&gt;：業務効率化と顧客対応の強化に向けて生成AIの活用が進められています。
-- &lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTE53UEw1ajduRmxWU0RWMENxWkJyS2dFX3FuWVl6eFZkT1NfZkgtaU56dFpZOEdSM18tWEdmeXFhSmppTktXY2NQRmdaOHpHQjRIMDRz?oc=5' target='_blank'&gt;医療データを秘密分散で安全に転送─医療AIプラットフォーム技術研究組合とZenmuTechが共同事業&lt;/a&gt;：安全なデータ転送技術により、医療分野でのAI活用を支える取り組みが開始されました。
-- &lt;a href='https://news.google.com/rss/articles/CBMiTEFVX3lxTFBzUXlDeXJOZ1BjTTQ1NURIWWFmWDEySDk4dWpDX1NndTVnbXlhajZJRDVKa3QtWVp4aVUyaGJyNjBMeW51V3hKNkpoeTM?oc=5' target='_blank'&gt;【セミナーレポート】生成AI・AI・RPAを使いこなす！ ～事例から学ぶ業務活用と庁内浸透～【Day2】&lt;/a&gt;：自治体における業務効率化や生成AIの庁内浸透に関する事例が紹介されました。
-- &lt;a href='https://news.google.com/rss/articles/CBMirgFBVV95cUxOVTZNUmtXM3hmOTE3RWVsclozVmltS0RrNU5IT2pMbnJVa1MyWmhkSXJOTlhYWTdQNDB4c2pweTJYQVJvQmlXZFpBZTFBOGhRTnFnN1FGWmlJdGtTZjFTdGRia3dRMElRbktxN2FuZE1WZ0RCYy02Z29YemRPLUFPNVhySkhibnpmSkp0TnFFdVk3bkU4VkV2Uml2ZlBvdXdwV2FlS3JvSEF3ZkZ6YUE?oc=5' target='_blank'&gt;研修医の39.4％が診療で生成AIを利用、リテラシーと診療行動に寄与－科学大ほか&lt;/a&gt;：若手医師の間で生成AIが診療現場に浸透し、リテラシー向上にも影響を与えています。
-- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE1CT1ZFRHZKbFJfUTdtY2FBcTFnVjZvaWhTWk1NN3lJVXg2TDhQcmtmSlZuZDVobTVMZ2VMQXczVk81SGlDSWplTGRBUEdObGctME9QVDVwOFcwM1FncDFqNzE4aXFJdUt0M2c?oc=5' target='_blank'&gt;山形新聞生成ＡＩ、地域課題研究に役立てて 谷地高で講習会｜やまがたデジタルニュース&lt;/a&gt;：高校の地域課題研究において生成AIを活用するための講習会が開催されました。
-- &lt;a href='https://news.google.com/rss/articles/CBMihwFBVV95cUxPcFB5bWhhM3lLRXVrRjYzdy15SmRibWxWY1lMejl3UkpWSTBiZUJDWlMwUzRfOXVGSjFOdW1YMUx6bk5JZ0lpMXNQcTRyZkJHQk52LWtvVWZfX2dDS0VWZTdPMXA3cHZFVUNaWUM1RG5jSmdXOUZCQ3hvQjg2R3RnSUg1ZVhRY3c?oc=5' target='_blank'&gt;【生成AIで自動音声ガイド】博物館で活用・4言語に対応 岩手県立大の研究グループが開発 岩手・盛岡市&lt;/a&gt;：多言語対応可能な自動音声ガイドが生成AIを活用して開発されました。
-- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE5jUTg3RXNTRnoyVFMwX0s5bi1Pb0VkaFY1M05KZi1kVHdiR3RNeVU3Y2hCbDhrNDFMZGdGV2FnNU5MWm5lOEZBWnFrT2NFVlVqdTlPSlBISUdwU3k1?oc=5' target='_blank'&gt;Yahoo!ショッピング、生成AIを活用した「AIおまかせコーディネート」を一部ストアで先行提供開始｜LINEヤフー株式会社&lt;/a&gt;：ECサイトにおいて生成AIを活用したコーディネート提案機能の提供が始まっています。
-- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE5JbWVKYi01X0ZEYzBNTmN1aXUxWmpIb3JFTUR3aW96b2xualJEYXhtMjMtZDhPNEd3VTRMVjdUdEZxVlJnY2xfbTR2YUktemJlc0ZSeGZwSV9EZ0x5ZUk4?oc=5' target='_blank'&gt;生成AI時代の学びは?“学校に裁量”で多様な子を包摂へ&lt;/a&gt;：教育現場における生成AIの活用と、学校ごとの柔軟な対応について議論されています。
-- &lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTE1CNjdQWGsxYnZGdm90eUtXMkRWUS1IU0xKTUxJM1g2Ty10Szk2ZTQ2OXJMSkg4akM4clppeUlRa01MQmVmNjN1N0N2VndRaGppY0lV?oc=5' target='_blank'&gt;生成AIの著作権侵害をどう防ぐか｜文化庁ガイドラインから読み解く「AI生成物と著作権侵害」の境界線と法務の審査ルール【前編】&lt;/a&gt;：文化庁のガイドラインを基に、AI生成物に関する著作権の法的課題や審査ルールが解説されています。
-- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE1aczV0eGtyR3o0ZGZFMGc3dFpnUDhfY1dDMi1NcjJWSTlXdE5LUldKRkVzZGdXWi1QWEFPOHpycmVwYWVOR0tHWkpJSVVoaklIOVlEZk9LX2xhb1RQZlFGeEtVcE13d2pvQkE?oc=5' target='_blank'&gt;Uravation、8職務×5つのAI環境で選べる法人向け生成AI研修「全40コース」を提供開始。Claude Codeによる「AIエージェント自動化コース」も全職務に用意&lt;/a&gt;：多様な職種や環境に対応した法人向けの生成AI研修プログラムの提供が開始されました。</description>
-      <guid isPermaLink="false">news-ai-1788363237</guid>
-      <pubDate>Wed, 02 Sep 2026 15:33:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [15:33]</title>
-      <description>モルガン・スタンレーは、中国における臨床検査関連の価格規制の導入後、ウォーターズ社を最有力企業として高く評価している。また、指定7社の一つである&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] 臨床検査とは&lt;/a&gt;では、医療現場における臨床検査の基本的な役割や重要性について分かりやすく解説が行われている。</description>
-      <guid isPermaLink="false">news-medical-1788363237</guid>
-      <pubDate>Wed, 02 Sep 2026 15:33:57 GMT</pubDate>
-    </item>
-    <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [15:33]</title>
-      <description>本日は該当条件に一致する記事が見つかりませんでした。</description>
-      <guid isPermaLink="false">news-local-1788363237</guid>
-      <pubDate>Wed, 02 Sep 2026 15:33:57 GMT</pubDate>
+      <title>総合ニュース要約 [05:13]</title>
+      <description>⚠️ 無料枠の制限または混雑のため要約をスキップしました。</description>
+      <guid isPermaLink="false">news-daily-bundle-1788412428</guid>
+      <pubDate>Thu, 03 Sep 2026 05:13:48 GMT</pubDate>
     </item>
   </channel>
 </rss>
