@@ -1,10 +1,8 @@
 import json
 import os
 import re
-import time
 import xml.etree.ElementTree as ET
 from datetime import datetime, timezone
-import bs4
 import feedparser
 from google import genai
 import requests
@@ -25,49 +23,24 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 1. 各種ニュース収集関数
+# 1. ニュース収集関数（カッコで囲んでクエリ崩れを防止）
 # ==========================================
 def fetch_google_news(query):
-    """Google News RSSから直近2日限定(when:2d)の記事を取得"""
-    encoded_query = requests.utils.quote(f"{query} when:2d")
+    """Google News RSSから直近2日限定(when:2d)の記事を正確に取得"""
+    raw_query = f"({query}) when:2d"
+    encoded_query = requests.utils.quote(raw_query)
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
+    
     try:
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
-        for entry in feed.entries[:8]:
+        for entry in feed.entries[:8]:  # 各カテゴリ最大8件取得
             articles.append({"title": entry.title, "link": entry.link})
         return articles
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
         return []
-
-
-def fetch_official_company_news():
-    """大手臨床検査会社公式HPの直撃スクレイピング"""
-    companies = [
-        {"name": "SRL", "url": "https://www.srl-group.co.jp/"},
-        {"name": "BML", "url": "https://www.bml.co.jp/"},
-        {"name": "LSIメディエンス", "url": "https://www.medience.co.jp/"},
-    ]
-    official_articles = []
-    headers = {"User-Agent": "Mozilla/5.0"}
-    for comp in companies:
-        try:
-            res = requests.get(comp["url"], headers=headers, timeout=(3, 5))
-            soup = bs4.BeautifulSoup(res.text, "html.parser")
-            for a in soup.find_all("a", href=True)[:3]:
-                title = a.get_text(strip=True)
-                if len(title) > 10:
-                    href = a["href"]
-                    if not href.startswith("http"):
-                        href = comp["url"].rstrip("/") + "/" + href.lstrip("/")
-                    official_articles.append(
-                        {"title": f"[{comp['name']}] {title}", "link": href}
-                    )
-        except Exception as e:
-            print(f"{comp['name']} スクレイピングスキップ: {e}")
-    return official_articles
 
 
 # ==========================================
@@ -140,31 +113,31 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（9月2日の高品質指示＋Discord一括転送）
+# 4. メイン処理
 # ==========================================
 def main():
     print("=== 各種ニュースの収集を開始 ===")
 
+    # 検索クエリをカッコで囲み正しく複数条件で取得
     ai_articles = fetch_google_news("生成AI OR LLM OR 医療AI")
-    medical_articles = fetch_google_news("臨床検査 OR 病理検査 OR がんゲノム検査 OR SRL OR BML OR LSIメディエンス")
-    company_articles = fetch_official_company_news()
+    medical_articles = fetch_google_news("臨床検査 OR 病理検査 OR がんゲノム検査")
+    company_articles = fetch_google_news("SRL OR BML OR LSIメディエンス OR 臨床検査 受託")
     local_articles = fetch_google_news("地域医療 OR 和歌山 医療 OR 泉佐野 医療 OR 岸和田 医療")
 
     combined_context = f"""
 【AI最新トレンド】
 {chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in ai_articles])}
 
-【医療・ゲノム・病理・検体検査】
+【医療・ゲノム・病理】
 {chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in medical_articles])}
 
-【臨床検査会社公式】
+【臨床検査業界・受託情報】
 {chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in company_articles])}
 
 【地域医療（和歌山・大阪南部）】
 {chr(10).join([f'- {a["title"]} / URL: {a["link"]}' for a in local_articles])}
 """
 
-    # 9月2日頃のクオリティを再現するシステム指示
     system_instruction = """あなたはプロのニュース編集者です。提供されたニュースリストを基に、カテゴリごとに整理された要約を作成してください。
 
 【各カテゴリの出力ルール】
@@ -175,6 +148,7 @@ def main():
 
 【カテゴリ別の注意点】
 - 医療・ゲノム・病理：製薬・処方薬メインのニュースではなく、検査・病理・ゲノム関連を優先してください。
+- 臨床検査業界：新規受託検査、検査中止、業界の動向に関する話題を中心に扱ってください。
 - 地域医療：和歌山県および大阪府南部（泉佐野、岸和田など）の話題を重点的に扱ってください。"""
 
     prompt = f"以下のニュース一覧から要約を作成してください。\n\n{combined_context}"
@@ -191,12 +165,11 @@ def main():
         print("要約生成完了！")
     except Exception as e:
         print(f"APIエラー: {e}")
-        # 万が一の失敗時のフォールバックリンク一覧
         fallback_lines = ["⚠️ API一時エラーのため、抽出記事のリンク一覧を送信します：\n"]
         for cat_name, art_list in [
             ("🤖 AI最新トレンド", ai_articles),
             ("🏥 医療・ゲノム・病理", medical_articles),
-            ("🏢 臨床検査会社公式", company_articles),
+            ("🏢 臨床検査業界・受託情報", company_articles),
             ("🗾 地域医療", local_articles),
         ]:
             if art_list:
@@ -205,7 +178,7 @@ def main():
                     fallback_lines.append(f"・<a href='{a['link']}' target='_blank'>{a['title']}</a>")
         summary_text = "\n".join(fallback_lines)
 
-    # Discord送信（Markdownハイパーリンクへ自動変換される）
+    # Discord送信
     send_to_discord("Daily AI & Medical News", summary_text)
 
     # feed.xml 生成
