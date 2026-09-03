@@ -1,25 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [12:15]</title>
+    <title>Daily Medical &amp; AI News [12:27]</title>
     <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>総合ニュース要約 [12:15]</title>
-      <description>### AI最新トレンド
-RIZAPが外部生成AIへの顧客情報アップロードについて、第三者への閲覧や学習利用はないと謝罪しました。また、製薬業界における生成AI活用の未来や、企業での活用率向上に向けた取り組み、実写撮影と組み合わせたMV制作事例が紹介されているほか、ニューヨーク市が中学生以下の生成AI利用を1年間原則禁止にする方針を示したニュースが報じられています。
+      <title>総合ニュース要約 [12:27]</title>
+      <description>## 🤖 AI最新トレンド
+- 該当するニュースはありません。
 
-### 医療・ゲノム・病理
-提供されたリストに該当する記事はありません。
+## 🔬 医療・ゲノム・病理・検体検査
+- 該当するニュースはありません。
 
-### 臨床検査会社公式
-&lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] è‡¨åºŠæ¤œæŸ»ã ¨ã ¯&lt;/a&gt;では、臨床検査に関する基本的な情報や解説が提供されています。
+## 🧪 臨床検査会社公式
+- &lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] 臨床検査とは&lt;/a&gt;
+- &lt;a href='https://www.srl-group.co.jp/clinical-laboratory-testing/' target='_blank'&gt;[SRL] 臨床検査とは&lt;/a&gt;
 
-### 地域医療（和歌山・大阪南部）
-慶応大生による稚内の地域医療調査や、岩手県による新たな地域医療「構想区域」指標案の提示、28年度末までの精神医療を含む地域医療構想策定の動きが伝えられています。さらに、医師数が多い一方で医師不足に悩む高知での医学生による地域医療実習など、各地の地域医療の課題と取り組みが報じられています。</description>
+## 🏥 地域医療（和歌山・大阪南部）
+- 該当するニュースはありません。</description>
       <link>https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml</link>
-      <guid isPermaLink="false">news-daily-bundle-1788437757</guid>
-      <pubDate>Thu, 03 Sep 2026 12:15:57 GMT</pubDate>
+      <guid isPermaLink="false">news-daily-bundle-1788438447</guid>
+      <pubDate>Thu, 03 Sep 2026 12:27:27 GMT</pubDate>
     </item>
   </channel>
 </rss>
