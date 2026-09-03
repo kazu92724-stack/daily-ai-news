@@ -15,16 +15,50 @@ import requests
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
+# クォータが厚い軽量モデル（無料枠 約1000RPD程度）
+MODEL_NAME = "gemini-3.5-flash-lite"
+
 if not GEMINI_API_KEY:
     print("エラー: GEMINI_API_KEY が設定されていません。")
 
 client = genai.Client(api_key=GEMINI_API_KEY)
 
+# ==========================================
+# 0-2. 除外ワード（ノイズ記事を弾く）
+# ==========================================
+EXCLUDE_WORDS_MEDICAL = [
+    "製薬", "新薬", "薬価", "処方薬", "添付文書", "ワクチン", "治験",
+    "モルガン・スタンレー", "ウォーターズ", "株式", "決算", "格付け", "証券",
+]
+EXCLUDE_AREAS_LOCAL = ["大阪市", "堺市", "北摂"]
+
+
+def filter_medical(articles):
+    """医療・ゲノム・病理カテゴリのノイズ除去"""
+    filtered = []
+    for a in articles:
+        title = a["title"]
+        if any(bad in title for bad in EXCLUDE_WORDS_MEDICAL):
+            continue
+        filtered.append(a)
+    return filtered
+
+
+def filter_local(articles):
+    """地域医療カテゴリの対象外エリア除去"""
+    filtered = []
+    for a in articles:
+        title = a["title"]
+        if any(bad in title for bad in EXCLUDE_AREAS_LOCAL):
+            continue
+        filtered.append(a)
+    return filtered
+
 
 # ==========================================
-# 1. 各種ニュース収集関数（件数を5件に削減）
+# 1. 各種ニュース収集関数
 # ==========================================
-def fetch_google_news(query):
+def fetch_google_news(query, pre_filter=None):
     """Google News RSSから直近2日限定(when:2d)の記事を取得"""
     encoded_query = requests.utils.quote(f"{query} when:2d")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
@@ -32,9 +66,11 @@ def fetch_google_news(query):
         res = requests.get(rss_url, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
-        for entry in feed.entries[:5]:  # API負荷軽減のため最大5件に制限
+        for entry in feed.entries[:8]:  # フィルタ前は少し多めに取得
             articles.append({"title": entry.title, "link": entry.link})
-        return articles
+        if pre_filter:
+            articles = pre_filter(articles)
+        return articles[:5]  # フィルタ後、最大5件に制限
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
         return []
@@ -118,13 +154,14 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = f"Daily Medical & AI News [{time_str}]"
-    ET.SubElement(channel, "link").text = "https://github.com"
+    ET.SubElement(channel, "link").text = "https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml"
     ET.SubElement(channel, "description").text = "AI・医療・地域ニュースの自動要約フィード"
 
     for item_data in all_summaries:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = f"{item_data['category']} [{time_str}]"
         ET.SubElement(item, "description").text = item_data["content"]
+        ET.SubElement(item, "link").text = "https://raw.githubusercontent.com/kazu92724-stack/daily-ai-news/main/feed.xml"
         ET.SubElement(item, "guid", isPermaLink="false").text = f"news-{item_data['id']}-{epoch_time}"
         ET.SubElement(item, "pubDate").text = now.strftime("%a, %d %b %Y %H:%M:%S GMT")
 
@@ -135,15 +172,21 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（軽量化一括呼び出し）
+# 4. メイン処理（軽量化・503のみ最小限リトライ）
 # ==========================================
 def main():
     print("=== 各種ニュースの収集を開始 ===")
-    
-    ai_articles = fetch_google_news("生成AI LLM 医療AI")
-    medical_articles = fetch_google_news("臨床検査 病理 ゲノム医療")
+
+    ai_articles = fetch_google_news("生成AI OR LLM OR 医療AI")
+    medical_articles = fetch_google_news(
+        "臨床検査 OR 病理検査 OR がんゲノム検査 OR SRLホールディングス OR BMLホールディングス OR LSIメディエンス",
+        pre_filter=filter_medical,
+    )
     company_articles = fetch_official_company_news()
-    local_articles = fetch_google_news("地域医療 和歌山 泉佐野 岸和田")
+    local_articles = fetch_google_news(
+        "地域医療 OR 和歌山 医療 OR 泉佐野 医療 OR 岸和田 医療",
+        pre_filter=filter_local,
+    )
 
     combined_context = f"""
 【AI最新トレンド】
@@ -170,18 +213,37 @@ def main():
 
     prompt = f"以下のニュース全体をカテゴリ別に整理して要約してください。\n\n{combined_context}"
 
-    print("=== Gemini APIを呼び出し中（軽量化1回実行） ===")
+    print(f"=== Gemini APIを呼び出し中（{MODEL_NAME} / 軽量化） ===")
     summary_text = None
 
-    try:
-        response = client.models.generate_content(
-            model="gemini-3.6-flash",
-            contents=f"{system_instruction}\n\n{prompt}",
-        )
-        summary_text = response.text
-        print("API要約の生成に成功しました！")
-    except Exception as e:
-        print(f"APIエラー: {e}")
+    # 429(クォータ超過)は即諦める。503(一時混雑)のみ最小限リトライ。
+    max_retries = 2
+    for attempt in range(1, max_retries + 1):
+        try:
+            response = client.models.generate_content(
+                model=MODEL_NAME,
+                contents=f"{system_instruction}\n\n{prompt}",
+            )
+            summary_text = response.text
+            print("API要約の生成に成功しました！")
+            break
+        except Exception as e:
+            err_str = str(e)
+            print(f"APIエラー: {e}")
+
+            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                print("クォータ超過のため中止します（リトライしません）。")
+                break
+
+            if ("503" in err_str or "UNAVAILABLE" in err_str) and attempt < max_retries:
+                print("サーバー混雑のため15秒後に再試行します...")
+                time.sleep(15)
+                continue
+
+            print("リトライ上限、または回復不能なエラーのため中止します。")
+            break
+
+    if summary_text is None:
         # API失敗時のフォールバックリンク集
         fallback_lines = ["⚠️ API制限中のため、抽出した記事のリンク一覧を表示します：\n"]
         for cat_name, art_list in [
