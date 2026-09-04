@@ -1,54 +1,79 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [13:02]</title>
+    <title>Daily Medical &amp; AI News [13:14]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [13:02]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxNM3ZMUURmVW5DV1NBRDU3bU1nVmZNRXNwMTdGcmpJR096ek54R2drUWxFQW9SWGlNWmNBbkFHV2FXdEV6bEViR3JqREM2M0o5S3RxMnZBUEVLN19RR3B6WUhYcno0eXFnZDVQZjA0dU1wS3lPSS1Bdm5uRFN3WEVFbDNab2g1UGxJ?oc=5' target='_blank'&gt;ヘルスケアにおけるAIとは：ユースケース、データ基盤、ガバナンスの要点&lt;/a&gt;
-  ヘルスケア分野におけるAI活用の具体例をはじめ、効果的なAI活用を支えるデータ基盤の整備手法や、医療データを安全に扱うためのガバナンス構築の重要ポイントを解説しています。
+      <title>🤖 AI最新トレンド [13:14]</title>
+      <description>&lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5oenRsalg2dTNTNTR0TkxVT2VXMllwb29GVHkxNzZTZGx3NGI2TTVuN2JuZy02WjdvOVFHUlNad3BaNHBSMkFmWEJLelFqZzk0QnVVdElKRjRMdnJqOXZPVHRfQjcxUkU?oc=5' target='_blank'&gt;ライザップ、病歴など生成AIに誤送信 保健指導利用者らの2万件か - 朝日新聞&lt;/a&gt;
+RIZAPが保健指導利用者らの病歴を含む個人情報約2万件を外部の生成AIサービスに誤送信していた可能性があることが明らかになりました。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE03U19fMHl2NkU0TE1TMmZvcGpiTVREUVp6bFFkanBRaG9ndmZ4MFJDZlJ4eTZFU3lydDdyY3FoUkNwS1M3LWN4TERvRm4zdS1ESy1MMnlYaGYybFkzOWJhR1gtVGhKbGltYkNRUm5PeTN0N3R0b3BtR3JsMA?oc=5' target='_blank'&gt;国産LLMにはどんなものがある？主要モデルの比較と企業の選び方【2026年版】&lt;/a&gt;
-  国内企業や研究機関が開発する主要な国産大規模言語モデル（LLM）の特徴や性能を比較し、自社の事業課題やセキュリティ要件に適したモデルの選定基準を詳しくまとめています。
+&lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE5jMG1MeC1vX0UtdW1LcUlnpDA4TFk1T3ZMWnBOZDFka3Q5emNvSHRHVE5MMG5JRi1EZUVoWU9rLWVPWVRsc3h2VWQyOXlkcmp5RGdWMU9tT2IwZ1lIcFpkTU9sNEFuVnpHRDVDdA?oc=5' target='_blank'&gt;生成AI、検索手段としての利用5割超に サイバーエージェント調査 - 日本経済新聞&lt;/a&gt;
+サイバーエージェントの調査により、生成AIを情報検索の手段として利用する割合が初めて5割を超え、新たな検索プラットフォームとして定着しつつあります。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTE9LUzFscUdMSHpzSVRzd3AxaTc4anR3a2g0WFE3WFZzY2wyck9hQlJDQ2EtcVRJcTFILXVyRHNzZXE2Y1VnQlVYczZoLXlxZDRqaF8ySEM3TW82YlJ2Ty1IS3QtLXc5YU1zSXRQVm03YnFybG1FNzQ3dg?oc=5' target='_blank'&gt;製薬業界に押し寄せる「生成AI変革」の波 第四回 生成AIで変わる未来 ヘルスケア業界の行く末と製薬企業がすべきこと&lt;/a&gt;
-  生成AIの進展がヘルスケアや製薬業界にもたらす構造変化を分析し、創薬や業務プロセスの効率化に向けて製薬企業が取るべき戦略的取り組みを提示しています。
+&lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTFBFeDJqTEtXVjZaLWNuQmpXand0azA0LTVxOXFtRlFybFlGaHlwNmRJaTNKODg0UV9RQWxoOW9sYTJ6VW0xRFk0LUxab2pLVjVsSVBlbXliQWk5RlNqSjNoTmdSN2p1TGhsNUxUQVZOTk5MVlZfX2c?oc=5' target='_blank'&gt;生成AI：データ、コンテキスト、ガバナンス設計が品質を決める - Snowflake&lt;/a&gt;
+Snowflakeが生成AIの構築・運用において品質を左右するデータ連携、適切なコンテキスト提供、ガバナンス設計の重要性を解説しています。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE1md0VwcUF3UmlUdm9vOXR5ZXpPSWo3eWVmNTNhc0dUS1ZnMUp0RkhzZDVlRmk0RlhDSUo2ekU4c0hxMEdIWWxuSm1rQ0xHUUk?oc=5' target='_blank'&gt;AIガバナンスプラットフォーム市場、2035年75億米ドルへ、CAGR 33.1％で拡大するAIリスク・規制対応基盤&lt;/a&gt;
-  AIの倫理的・法律的リスク管理や世界的な規制強化を背景に、AIガバナンスプラットフォーム市場が年平均成長率（CAGR）33.1％で拡大し、2035年には75億米ドル規模に達するという予測を発表しています。
+&lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTFBEMm1iZ1ZRWXRWTTY5QlFJTzJ6dWlOZlZpTDY2TVdWbVE4V2J3aGZETUZ4MHNsdXMtWW1uWV9BN0t6LWhsN0lodFUwdk9kUFdfZ0xwSlN2WHpJUVZiQ2xxbGlWSy1Jdw?oc=5' target='_blank'&gt;楽天、Z世代における「生成AI利用に関する調査」結果を発表 - 楽天グループ株式会社&lt;/a&gt;
+楽天グループがZ世代を対象に生成AIの利用実態や認識に関する意識調査を実施し、若年層における活用シーンや受容度の最新動向を発表しました。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMilAFBVV95cUxNS3g3RldaWGJsblhVNmM1SXh2d3BQN0FSbDNnUEhYT3d6UDQyQ1duak15emNRbWtfUTlUSGpISDhseEE2WGRRVzkyakFFZEd5cmVpWXZDWXpYUGdYT0pCVElCc3N3akdvaWJiZVBsakxJZk11enBoRG9lOUFkaVpxUFlZZ0x1ODhsRDNEbU5YSG1pZVAy?oc=5' target='_blank'&gt;OpenEvidence、ダーウィンプレビュー付き医療AIモデルファミリーを発表&lt;/a&gt;
-  医療用AIソリューションを提供するOpenEvidenceが、臨床的意思決定をサポートする高度な推論・分析機能を備えた新たな医療特化型AIモデルファミリーを発表しました。
+&lt;a href='https://news.google.com/rss/articles/CBMiZEFVX3lxTE50RWp4Q1FTb0hQZnAzOWhsOFo5bjhzOGRxdW5saHVSTDkxazB3cWVFYUJ5QlJXLW9XazRjUmR4bnBNUnpjY2lPVjZsQTJKdG8zUEJRTVg5MXpTSHZqWUtVN0xQSHM?oc=5' target='_blank'&gt;プログラミングドローン「DRONE STAR PARTY」に生成AIと対話しながら開発できる新機能登場＆無料配布 ORSO - ロボスタ&lt;/a&gt;
+ORSOが学習用ドローンアプリ「DRONE STAR PARTY」において、生成AIと対話しながらプログラミング開発を行える新機能を追加し、無料提供を開始しました。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE15MlVVbGUydGltMFR0ZUVZc0Z4ZjdQUzEtU2RockxyUzcxZmFodkpPbmZQcWZHOEV5cE9NLXJmd1pBb29QZlRXSXFzOWZXVHp3a3hyYWRWSDJTLUNYUDRZ?oc=5' target='_blank'&gt;フィジカルAIの次、「プロテインAI」&lt;/a&gt;
-  ロボット工学などのフィジカルAIに続く次なる潮流として、タンパク質構造解析や創薬・バイオテクノロジーの分野に革新をもたらす「プロテインAI」の可能性を探究しています。
+&lt;a href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBYcW5hWjRXLUdfQXF5ZUM5aGhVY2NfWjFaN0VSWGVIb1haU0RYVFhFSFhYMDF4YjVfTHBxNWk0QTdPZmEyT2hVcDg4RjFKbXFFY1BmNzhOSGtoSjBZRkE?oc=5' target='_blank'&gt;サイバーエージェント GEOラボ「生成AIのユーザー利用実態調査」（2026年8月期）を実施 検索手段としての生成AI利用率が初めて50%を突破、検索エンジンに次ぐ「第二の検索プラットフォーム」に - cyberagent.co.jp&lt;/a&gt;
+サイバーエージェントGEOラボの実態調査により、生成AIの検索利用率が50％を超え、従来の検索エンジンに次ぐ「第二の検索プラットフォーム」へと進化している実態が判明しました。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMiS0FVX3lxTE1WLURkYXVVc2VpOHlvUU5XQU4tMTVqZ25VVmlqZU1VWWxVclAxRU5pbEp0UllLbFJDUUd2YXJleVZjTGN6VDdIQ3BtVQ?oc=5' target='_blank'&gt;LLMの「親切さ」を逆手に取るジェイルブレイク手法「HILL」と防御の限界&lt;/a&gt;
-  大規模言語モデルが持つユーザーに親切に応答しようとする性質を悪用して安全制限を突破するジェイルブレイク手法「HILL」の仕組みと、現在のセキュリティ対策の課題を考察しています。
+&lt;a href='https://news.google.com/rss/articles/CBMiZEFVX3lxTE1rb3FFSXRZQTh2aHY5YzhrXzRPeVRrUk5IN0ktYkRQa21pb25tdTM3RjFfWjFQQmc5U1RaYks1ams3RHJ2eXdwYktSWDNDZm1Ic2M2SHk4d21KWGVhRVlPaGNZRlY?oc=5' target='_blank'&gt;イベント | 第21回DXプレイグラウンド - kobe-u.ac.jp&lt;/a&gt;
+神戸大学などが主催する「第21回DXプレイグラウンド」の開催情報で、DXや最新テクノロジーの活用事例に関するイベント概要が案内されています。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE9fNl9LZFl6c20wTl9oQzAzQTBkWkdsaTNXUThacTJQTzlqOFpDUFh0bHZMcTZZUFViQWNJSGlWTDZvaGtSclJVUUk4Rm1XaG04UTlORDhybERVMDNtMlo0TkhBYkJsQkVBeVNrOXNyRkh2UQ?oc=5' target='_blank'&gt;【AI時代におけるサービスアップデート】『データフォースプロモーション』の提供価値を再定義し、一次情報の獲得と多角的なコンテンツ展開を強化した新パッケージへ進化&lt;/a&gt;
-  AI時代の情報環境に対応するため『データフォースプロモーション』を刷新し、独自の一次情報収集力と多様なメディア展開力を向上させた新しいマーケティングパッケージを提供開始しました。
+&lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE1LSWJtYmRlUm9GNjRkQlU0VjlfNmd1dFNHMVdyeTF4TU5XRmQ0Qi1mRjhaWl93UXlZRTc4Y1Q3TkFwaXVqMmlhcy1ZQVBmRDh0Y3YwWmIwU3AtLXFTVThWRWEyT2xtdw?oc=5' target='_blank'&gt;「半導体関連メーカー」生成AI普及で業績好調 売上トップはキオクシア、TSMC日本子会社は売上高約143倍 - tsr-net.co.jp&lt;/a&gt;
+世界的な生成AI需要の高まりを受け、国内の半導体関連メーカーの業績が急拡大しており、売上上位企業の業績動向がまとめられています。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMiVEFVX3lxTE1aR3g2YWlhU2IxR0R2WWd3X25Sam1hUkxTRUhKcGNNYURnaExnUkJIMkFLSndrc3Z6NGJsUzhDbHphdF9VVks0T1VJdm95UjBHZFFtZg?oc=5' target='_blank'&gt;ネオジャパン、「AI &amp; DX Leaders' Conference 2026：AIエージェント時代に『描く』人・組織・事業の未来」に登壇&lt;/a&gt;
-  ネオジャパンがDXカンファレンスに登壇し、自律的に動作するAIエージェントが一般化する未来において、企業や組織、個人が目指すべき事業変革の姿について発信します。
+&lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE1tQTFwMjI0ejlMbUdLSmlwdHRaai16MFo1X3NwVkZuNGw1M2ZMZDBTWjVKcnd6Sm9UWWpMRFNCbXpCc1JVRVhtcGVyZkozTGc?oc=5' target='_blank'&gt;生成AI市場：世界市場予測、2026年～2032年 - アットプレス&lt;/a&gt;
+2026年から2032年にかけての生成AIの世界市場規模や産業ごとの成長トレンドを分析・予測した調査レポートが発表されました。
 
-- &lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTFBIVy11jxXYmd5TUhNYjZLZ21kSGdkcnNnVTdyRFpaaV96cTVtMnVpR3duWDF3WGlIWmxjcjdUWF_ydXNyVF9KRS1fc2JDSk5yVjNjd0ZHWnB2by1jb1JBOHFIbHdRVHhZN25v?oc=5' target='_blank'&gt;相模湖MORIMORIで駐車場混雑×来場者属性×生成AIのデータ活用実証実験を開始&lt;/a&gt;
-  レジャー施設「相模湖MORIMORI」にて、駐車場の混雑データと来場者属性を生成AIで統合分析し、施設運営の最適化や来場者体験の向上を目指す実証実験が開始されました。</description>
-      <guid isPermaLink="false">news-ai-1788526966</guid>
-      <pubDate>Fri, 04 Sep 2026 13:02:46 GMT</pubDate>
+&lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE50RDZKODR5dHlIa2J6VmJVbzRuQnk0R3p2U05TNE1qeWlJanlKSF9CZDlEQ0ZGUkZXTjVkYWtrUW5RUXdaY25DSmlaeVhtTzhDR3dXaE5USU9senJYLXJCRkJjQTV6cElZTFpkYg?oc=5' target='_blank'&gt;【アンケート実施中】『5年後の未来に関する調査【生成AIの活用動向/海外でのビジネス展開状況】』 - 日経BP&lt;/a&gt;
+日経BPが企業の生成AI活用状況や海外進出計画など、5年後のビジネス展望に関するアンケート調査への協力を呼びかけています。</description>
+      <guid isPermaLink="false">news-ai-1788527680</guid>
+      <pubDate>Fri, 04 Sep 2026 13:14:40 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [13:02]</title>
-      <description>該当するニュース記事リストが提示されていないため、要約を作成できません。記事リストを入力してください。</description>
-      <guid isPermaLink="false">news-medical-1788526966</guid>
-      <pubDate>Fri, 04 Sep 2026 13:02:46 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [13:14]</title>
+      <description>・&lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE5WY1JsdzhWYWpJOEZkREpBYm5nVUdueGlQYUNNTkdIOXB4ZXRtdXlGSnIzTTdONlctdWE2VWh1ZDZsZHVPTmRyWlN0QlFLTVA0enJjRTVGNWNSRlRQSHdPTFh1YmNtc1BQR1E?oc=5' target='_blank'&gt;1回答につき25円を乳がん支援へ。「ピンクリボン月間」に向けて、「自分を知る」ことから乳がんと向き合う意識・行動変化を調査&lt;/a&gt;
+ピンクリボン月間に合わせ、1回答につき25円が乳がん支援に寄付されるアンケート調査が実施され、自分の体の状態を把握することや乳がん予防・早期発見に向けた意識や行動の変化が調査されています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMiVkFVX3lxTE9mSmZfWGJ2RUVhN0RFVmVlbXZJMm5OeWdyZEpBcWdzeTJQSTRmQ1EzVjRueXcyUjg3cHhBNmQyNWJNOWdhd1k4WGt0OVBXc2Rfc0gtd0dn0gFPQVVfeXFMUFRmclFHSl9oT05TS01lUGRtUDNpazVuNHU2eGloTzBraXRHMXZGR0xrZVM0cFkwSTZUeWFkS21nM1JsQjBEVDBHY0taM05idw?oc=5' target='_blank'&gt;【大腸がん】元プロ野球選手の妻が振り返る夫の闘病…口内炎すら不安に「芸能人のニュースでチャンネル変えた」&lt;/a&gt;
+大腸がんを経験した元プロ野球選手の妻が当時の闘病生活を振り返り、口内炎のようなわずかな体調変化にも不安を感じていたことや、闘病中の家族の心理的負担について語っています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTlR2bzNHZE9mNDhyNXhRRTM5LVNlSk9VN3o4VW54cjIxNkZUWUQtelNuS1luU2dIOVpTcEV2VlAzQzRFTTAwdTN0WFFHY2RIRFhWeFJhYlpEeXZFMmdJRF_FUzZlaHRha1JWeExKQl_GqqoICPnOvkSXb67OYlv5xcYpfzHN8H2rED89W3YCtwodPhpGHc5HcDskBnahIg770jt4BhEWi9jp3L4Rn5hTDFTWUdfRDZ6ZTVo?oc=5' target='_blank'&gt;「陸軍における戦死兵士の遺体特定のためのDNA検査能力強化」プロジェクトの実施&lt;/a&gt;
+ベトナムにおいて、陸軍の戦死した兵士の遺体を特定し身元を確認するためのDNA検査能力を向上・強化するプロジェクトが推進されています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5KRE51eGk0blp3QWQ4VENXSGtoZjVCRmJrMDBHanZ4Vk52SUQzWW9RM3BQSFhtRFd6azJVR1_4TnBHcm9pYUdqNHhaaUtKMG1ka2JjTWRnWTRWVG1JTWE1cDFLRjlZSmhNTnFvRVBYZVJySHZFdGNDRnVQWVVJMlk?oc=5' target='_blank'&gt;ネパール土石流、身元確認を待たず埋葬も…ＤＮＡ検査キットや冷蔵安置設備が不足（読売新聞オンライン）&lt;/a&gt;
+ネパールで発生した大規模な土石流災害において、DNA検査キットや遺体冷却設備の不足により、犠牲者の身元確認が完了しないまま埋葬を行わざるを得ない状況が生じています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMiVEFVX3lxTE5ESHgzeVJVMXpTUzNWZlZaOTBIVjdkdEVVUXIyWF_5pCHRenlybDVtMUNJXzZwbWlub1RzTjJpLW04RXlYSWdYc1FZbG1hTWtyMVE?oc=5' target='_blank'&gt;碧南市民病院が劇物ホルマリン液の瓶１本を紛失 使用者が台帳記入怠ったか&lt;/a&gt;
+碧南市民病院にて劇物に指定されているホルマリン液1瓶の紛失が判明し、使用者が管理台帳への記帳を怠っていた可能性を含めて原因調査が行われています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMiR0FVX3lxTE9RaW90ZnIyTkxYX0Nxa3ZxWDlrUEVIdDllZUxwREktdjI3RTNiN1g2WU5ua0NUOXZCOVAzR0lNV081SHJEVEE4?oc=5' target='_blank'&gt;桂二葉さんの検査結果は？人気落語家と学ぶ、血液検査にまつわるハナシ。&lt;/a&gt;
+人気落語家の桂二葉さんが実際に血液検査を受け、その検査結果をもとに血液検査の項目や健康管理における重要性をわかりやすく紹介しています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE5EaHBXRzc5V1hZRzB0SmdzV3pQZExzUkl6M3dBNGRaUVRfaHM3eERqSXJDcHBLV3FCY3hUV2wyOUdJRVV4ZDNwNFVFWEd2N2c?oc=5' target='_blank'&gt;プレスリリース詳細ページ&lt;/a&gt;
+ママ向け情報メディア「mamagirl」に掲載された最新の各種プレスリリース情報一覧です。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE50M0xtbmJnQXhIMjMxZHpMdlJ6OU4zcGpWUkt1OFktREVicTNDWDlZTElmcnpOOWpNUXhEVW93MFdTTEZfVml0aGlFYTdVM3M0IVI2NzA0X3NFbnRnWEhRazE1TnY5b0N5bWhzRUhB?oc=5' target='_blank'&gt;画像98 / 159＞「お前、今患者を殺したからな？」臨床検査技師を目指す学生が東大病院で実習に臨む！仕事×青春ストーリーに注目！【作者に聞く】&lt;/a&gt;
+臨床検査技師を目指す学生が東京大学医学部附属病院で受ける厳しい実習の現場を描いた漫画作品について、作者インタビューとともに見どころが解説されています。
+
+・&lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTE0zT0RGRW5VUnV2dFlTbHlYS3VFb09JdlhfaktNSkpJdmV4a1A2bjRSMFphWXNZZUxNTFNNYk12OUkyLTk4YWlab3ZzU1FMc2hmck9zMTdGX2JKSkY0OVZpX2pRUVd0XzI2UWJ4dWxiZ1E?oc=5' target='_blank'&gt;カラ・バイオ、バイロテックの遺伝子検査における米国独占権を取得 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース&lt;/a&gt;
+カラ・バイオ社が、バイロテック社の持つ遺伝子検査技術の全米における独占的ライセンス権を獲得したことが報じられています。</description>
+      <guid isPermaLink="false">news-medical-1788527680</guid>
+      <pubDate>Fri, 04 Sep 2026 13:14:40 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [13:02]</title>
-      <description>記事リストが提供されていません。要約対象となるニュース記事の情報（タイトル、URL、本文など）を入力してください。</description>
-      <guid isPermaLink="false">news-local-1788526966</guid>
-      <pubDate>Fri, 04 Sep 2026 13:02:46 GMT</pubDate>
+      <title>🗾 地域医療（和歌山・大阪南部） [13:14]</title>
+      <description>該当する対象エリア（和歌山県全域および大阪府南部8市町）に関するニュース記事はありませんでした。</description>
+      <guid isPermaLink="false">news-local-1788527680</guid>
+      <pubDate>Fri, 04 Sep 2026 13:14:40 GMT</pubDate>
     </item>
   </channel>
 </rss>
