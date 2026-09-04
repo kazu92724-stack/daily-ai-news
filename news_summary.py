@@ -25,7 +25,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 # ==========================================
 def fetch_google_news(query):
     """Google News RSSから直近2日限定(when:2d)の記事を取得"""
-    encoded_query = requests.utils.quote(f"{query} when:2d")
+    encoded_query = requests.utils.quote(f"({query}) when:2d")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
     try:
         res = requests.get(rss_url, timeout=10)
@@ -110,20 +110,20 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（待機＆リトライ強化）
+# 4. メイン処理（クエリすべてOR条件＆追加キーワード）
 # ==========================================
 def main():
     categories = [
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            "query": "生成AI LLM 医療AI",
+            "query": "生成AI OR LLM OR 医療AI",
             "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
-            "query": "臨床検査 病理 ゲノム医療",
+            "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、治験。
 記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
@@ -131,7 +131,7 @@ def main():
         {
             "id": "local",
             "name": "🗾 地域医療（和歌山・大阪南部）",
-            "query": "地域医療 和歌山 泉佐野 岸和田",
+            "query": "地域医療 OR 和歌山 医療 OR 泉佐野 医療 OR 岸和田 医療",
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【対象エリア】和歌山県全域および大阪府南部8市町（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に限定。
 【絶対除外】大阪市内、堺市、北摂地域。
