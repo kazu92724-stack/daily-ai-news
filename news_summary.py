@@ -126,7 +126,6 @@ def main():
             "query": "臨床検査 病理 ゲノム医療",
             "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
 【絶対除外】製薬会社、新薬、薬価、処方薬、添付文書、ワクチン、治験。
-【限定ターゲット】指定7社（BML, SRL, HU, LSIメディエンス, ファルコ, メディック, 日本臨床）および臨床検査・病理関連に限定。
 記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
         },
         {
@@ -169,7 +168,6 @@ def main():
             except Exception as e:
                 print(f"[gemini-3.6-flash] エラー: {e}")
                 if attempt < max_retries:
-                    # 混雑解消を待つため、15秒 ➔ 30秒 ➔ 45秒 と待機時間を延ばす
                     wait_time = attempt * 15
                     print(f"サーバー混雑のため、{wait_time}秒後に再試行します...")
                     time.sleep(wait_time)
