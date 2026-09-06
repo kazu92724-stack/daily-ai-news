@@ -1,79 +1,71 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [02:45]</title>
+    <title>Daily Medical &amp; AI News [22:12]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動要約フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [02:45]</title>
-      <description>・&lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTFBncTM5bEhqVUJjOEF6aEhwd2d3UVlfUkdKS0txZE11UDlEdlVlRTdhd2p5Y3Z6MzlFanItclFuS1RyUVY5ZzVxZER0elNYSTRCYXJlaHJmM3otdTJUUWJac2JxdURWOFE?oc=5' target='_blank'&gt;楽天調査、Z世代の約4割が生成AIを「ほぼ毎日」利用&lt;/a&gt;
-楽天の意識調査により、Z世代の約4割が生成AIを日常的に利用している実態が浮き彫りとなりました。
+      <title>🤖 AI最新トレンド [22:12]</title>
+      <description>&lt;a href='https://news.google.com/rss/articles/CBMiXkFVX3lxTFBWWmpvaDdoZjVOUm1DanFEaDVPdGxTUDA2UkFvOFdPbFJYN3FhSlhLQUR5U0dvZ3R4ZmUzd3M1RVh0ZzU4OUVYdUlmSXVuMnBEZUN0OWZWRlBXeWxHS2c?oc=5' target='_blank'&gt;がん患者の７％、生成ＡＩ利用 相談や情報収集で、家族も８％&lt;/a&gt;
+がん患者の7%やその家族の8%が、病気に関する相談や医療情報の収集に生成AIを活用していることが分かりました。医療現場におけるAI利用の広がりが示される一方、正確な情報の見極めなど適切な活用への注意が求められています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMiVkFVX3lxTE15ZTVNWXVVOVN1STVjNXZLLVFkbHpfdFN2QXhtc0dtYWE5LUM5TE81SmFoVDRZcUc5cHZTS08wOE5CUHd1bzl6Q0ltanFmSDlpWXFfVV9B?oc=5' target='_blank'&gt;横須賀市とNTT東日本、生成AIが災害対策の意思決定をどう支援できるか検証を開始&lt;/a&gt;
-横須賀市とNTT東日本が連携し、災害時における迅速な意思決定や情報処理を支援する生成AIの活用検証をスタートしました。
+&lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1fZVB4eTVaV1JxYWRpbXRTQVZ1TVVBMVRzWEZQcHlqR0tPa19yZlVXRlBiLUJsVU0wN29FczV1a0dRaDU3Wk92aUthYThyWVdOQWdIYzVYalRBRVFuVWM1cjJXQzBPWm1yYlRsTTZVS2dzeXVYU1NvRmZQN1oyLW8?oc=5' target='_blank'&gt;ビル・ゲイツが警鐘を鳴らす「生成AI」3つのリスク…増える仕事と減る仕事、最も影響を受けるのは誰か？&lt;/a&gt;
+ビル・ゲイツ氏が生成AI普及に伴う3つの大きなリスクを指摘し、労働市場に及ぼす影響について警鐘を鳴らしています。AIの台頭によって代替される職種と新たに発生する職種を整理し、労働環境の変化に備える重要性を提言しています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1TV1JJMzNUdXU3cDlSNTNZdUJqRUFrU2k1SzZaQU45WUNTc0o3YWd4bHh3LW9famd5aFdLcldfNWxRTy1Gbi1fMzVFY2VMS1JybnlKekxac3hrNlU3Ni1hamFXZmhmclppdEJNV3QtcFBPU1R6STE2YlpTVnotN1U?oc=5' target='_blank'&gt;ＲＩＺＡＰ子会社社員、顧客情報を生成ＡＩに誤送信…特定保健指導対象者の疾患情報など含まれる&lt;/a&gt; / &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5oenRsalg2dTNTNTR0TkxVT2VXMllwb29GVHkxNzZTZGx3NGI2TTVuN2JuZy02WjdvOVFHUlNad3BaNHBSMkFmWEJLelFqZzk0QnVVdElKRjRMdnJqOXZPVHRfQjcxUkU?oc=5' target='_blank'&gt;ライザップ、病歴など生成AIに誤送信 保健指導利用者らの2万件か&lt;/a&gt;
-RIZAPの子会社にて、特定保健指導の対象者に関する疾患情報や病歴など、約2万件の個人情報が生成AIサービスに誤送信されたことが判明しました。
+&lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE9uY2l4Znl1emswYWx2YmQwV0Rpb0NtcnBxaE95MS1pY0FCYlFWTmROaTk3MWdiV19NMV9VcWJXY2JodmZRUVJnRTktVHZGUE9tQXJwOGx5UHhQSGdiVWNSMElsVG04QQ?oc=5' target='_blank'&gt;生成AIの事業成果への貢献を実感は24％どまり マーケター1000人調査&lt;/a&gt;
+マーケター1,000人を対象に行った調査によると、業務で生成AIを活用しつつも「事業成果への貢献」を実感している割合は24％にとどまりました。ツールの導入から具体的な業績向上へ結びつけるプロセスに課題がある現状が判明しました。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMiV0FVX3lxTE5DNDNOUzRnQmlkbERZTVFQaUNrNGJkdFlXR1ZaNkxQcTE3UDhYcjlsWTNOSXJGd2YzNTV0eDJMQ3ZFb0dtc2RQNnhtSDVIWldBUlZMUmE0MA?oc=5' target='_blank'&gt;「生成AI」の進化で賞やコンテストはどうなる？（3）アート・イラスト編【調査情報デジタル】&lt;/a&gt;
-画像生成AIの技術向上に伴い、アートやイラストのコンテストにおける作品規定や審査方法のあり方が問われています。
+&lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE8zelBQYk12bl9rM3ozNVJJbXc1WHBGdHRaQ21HSi1fcDVMM0tGaFJYbHz3bDJmQmtnZzQ5c3VNNGt0NUFRM2FWaWs0c2ZaNmc?oc=5' target='_blank'&gt;2027年問題で急浮上「脱SAP」という選択肢、生成AI×ERPが起こす「3つの業務変革」&lt;/a&gt;
+基幹システムのサポート終了に伴う「2027年問題」を背景に、「脱SAP」という新たな選択肢が注目を集めています。生成AIとERPを組み合わせることで実現する業務効率化やシステム運用の改革について解説しています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMiY0FVX3lxTE8zRkhYQVNzZC1qcjExSzhfMEp0clRjWlpva0V4V2FOeHhlRU52V21Cdi1UYkVwWHh4dFcybTg3cDh1Sk5IX0xXS19aVWtJWlhqck1wa2VraThoY1lSMU9sQnl3cw?oc=5' target='_blank'&gt;米オープンAI 生成AIの次世代モデル投入&lt;/a&gt;
-米OpenAIが性能を一段と強化した新たな次世代生成AIモデルの投入を発表しました。
+&lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTFB3TkM5M2FuWXI2bmVkdkVpbGZZNHRXLXJYa3VnMlNaUEZUWlBNNVNtXzN4ampTYTNNZURSX3hhZ3pEV2JmSTFuaHhsM2lsZ0lPdmRkaHdZQXdGakdrZG5rTkx3ZDdMN0VBc3c2Zw?oc=5' target='_blank'&gt;RIZAP、外部生成AIサービスへの顧客情報アップロードを謝罪&lt;/a&gt;
+RIZAPは、外部の生成AIサービスに顧客情報を誤ってアップロードした事案について謝罪を発表しました。第三者による情報閲覧やAI学習データへの流用がないことを確認したとし、管理体制の再徹底を進めています。
 
-・&lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTFBFeDJqTEtXVjZaLWNuQmpXand0azA0LTVxOXFtRlFybFlGaHlwNmRJaTNKODg0UV9RQWxoOW9sYTJ6VW0xRFk0LUxab2pLVjVsSVBlbXliQWk5RlNqSjNoTmdSN2p1TGhsNUxUQVZOTk5MVlZfX2c?oc=5' target='_blank'&gt;生成AI：データ、コンテキスト、ガバナンス設計が品質を決める&lt;/a&gt;
-Snowflakeが、ビジネスにおける生成AIの活用品質を高めるためには高精度なデータとガバナンスの構築が重要であると論じています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE1EZWlaY3VpV2NQSkNINHc4LWtwWHA0YVBnNGVGVHFPQjFPMEJqQkVIQ1dCWWZuVW5uOXVvcE5NSGlySmFMeVRtbVY3ek5DZnJvQ29fbWVCalRBQ2NXVVVn?oc=5' target='_blank'&gt;生成AIの教育利用 各国で対応が分かれています【神戸市北区】兵庫県議会議員 大塚公彦&lt;/a&gt;
-学校教育の現場における生成AIの導入について、制限を図る国と活用を推進する国で対応が分かれている現状が解説されています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9XMjdzRlNsY0NUVFdtQWI4aS1aendkMGU4SXdlUE1TUV9MSDJpRWQyMjNBc0tDVWZORDREM21CT3NxU0ludTdPQm9LWFBRTXlGbGlTSFpDWGxKcUxTSlV6Rnl4SWQwLUE?oc=5' target='_blank'&gt;中国AI勢が怒涛のリリース、Z.ai開発の「GLM-5.3-Flash」、アリババ開発の「Qwen3.8-Flash-Next」、テンセント開発の「Hy4 preview」など生成AI技術5つを解説（生成AIウィークリー）&lt;/a&gt;
-アリババやテンセントなど、中国のIT大手が相次いで高性能な最新生成AIモデルを発表し開発競争を加速させています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiYEFVX3lxTE5yWDI0MWFnUWxiMEY2bzhHRG1KcVo1MUxkMUpZc29aOU5BMGxiMmQ2dTNJWFpRRkF5QVV5MzNnRWhLb0Y5aUdaS2hLXzNxMTM2SzJmX0hmVEJsRlBXbFlwdA?oc=5' target='_blank'&gt;急増する生成AI関連本、オリコンランキングから紐解く変遷といま読むべきおすすめ本【オリコンBizトーク】&lt;/a&gt;
-書籍市場で急増している生成AI関連本について、オリコンのランキングデータを基に関心の変遷とおすすめの書籍をまとめています。</description>
-      <guid isPermaLink="false">news-ai-1788662722</guid>
-      <pubDate>Sun, 06 Sep 2026 02:45:22 GMT</pubDate>
+&lt;a href='https://news.google.com/rss/articles/CBMiR0FVX3lxTE9yTk1UdExiREdJZ3RJdDNrQ1NxalRQalVSZjM4RVhfQUozYWZ4bElFZTNweUhuWDV6N0k2T1VuWHZNOEdvMzFz?oc=5' target='_blank'&gt;生成AI時代にあえて「妄想」を 木村鋳造所が伊豆箱根鉄道をポスタージャック&lt;/a&gt;
+木村鋳造所は、AI技術が急速に普及する現代において人間の「妄想」や発想力の価値を訴求するため、伊豆箱根鉄道の車両をジャックしたユニークなポスター広告を展開し注目を集めています。</description>
+      <guid isPermaLink="false">news-ai-1788732730</guid>
+      <pubDate>Sun, 06 Sep 2026 22:12:10 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [02:45]</title>
-      <description>&lt;a href='https://news.google.com/rss/articles/CBMigwFBVV95cUxQaUtUWGpYbEg0bHhPYURTZ1kyMkplWkJLT2pTRkctelJ4bUg5STZMbHZ4RE1qSnhfNWFZQzl4MUJKcEVGczdqT1JJcVBwY200T3FTMkpOdzJNUFlxZ1VpMjhCa2Q5eFF5U0NkNXZYZFJYZm1lODd2QU9ZWkM4R0IteU00aw?oc=5' target='_blank'&gt;臨床現場での即時検査が可能な遺伝子検査機器（画像）（1/2枚目）&lt;/a&gt;
-医療現場での迅速な判断を可能にする現場即時検査（POCT）対応の遺伝子検査機器についての画像ニュースです。
+      <title>🏥 医療・ゲノム・病理・検体検査 [22:12]</title>
+      <description>&lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxQQVpRcGo2WHNjbU5UbUxYNEZ1WXdqeU9jbUVNcmdZMkZ0dVRlMGVQNG5UTEpOMFYtX1FzaFZlbDAwWVhoZjFFWWFPOXJ6ZkdWVEJmcjByMmNNakNiejZDS3Y3LVN1ZzRlWUtvRVVnclJqNWY1Z0dlR1ltb0R4UEhVMjkzdksyQVlN?oc=5' target='_blank'&gt;【大腸がん】元プロ野球選手の妻が振り返る夫の闘病…口内炎すら不安に「芸能人のニュースでチャンネル変えた」&lt;/a&gt;
+大腸がんを発症した元プロ野球選手とその妻の闘病体験談。些細な体調変化への不安や、メディアの闘病報道に対する精神的な負担など当時の過酷な心境が語られています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiVkFVX3lxTE9peU01RzhVZ01Fak9QRHltUW93VnBxRmpqTDBvXzlJUGJySkhCQU01TDRSRndKSDlYY0EtZ0xVdTJ0aVBxTkhnM2pwTkkwcGtHNk14elRB?oc=5' target='_blank'&gt;徳島大学病院がん診療連携センターフォーラム「がん個別化医療の最前線」 11月3日・徳島大学大塚講堂 聴講者募集&lt;/a&gt;
+徳島大学病院が11月3日に開催する「がん個別化医療の最前線」に関する市民公開フォーラムの聴講者募集案内です。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiS0FVX3lxTFA2MHV5VGJnN2pTTDFEWjVrRnBFMHlLLVo1T3BQNzdEbTVNSmxJWHRRUURiSDk3bXN0V0Z5RlJXbUFVenFjSXpLY3JqMA?oc=5' target='_blank'&gt;妊娠、妊娠中の健康管理キーワードで生成AIが作ったイメージ。 [ジェミナイ]&lt;/a&gt;
+対話型AI「Gemini」を用いて「妊娠」や「妊娠中の健康管理」をテーマに作成されたイメージ画像が紹介されています。
 
 &lt;a href='https://news.google.com/rss/articles/CBMiR0FVX3lxTE4wbmpCb2VYVmttVUpGa2Zyb2xDbDM3RUZPZDRNcnRFUUV5NW9hMTRWZnR3QzN0TGNyRXZ1QVdlclJfRk5ZRjNn?oc=5' target='_blank'&gt;デジタル病理学市場は2035年85億米ドル、CAGR 18.9％へ成長｜一次診断・病院導入を加速するデジタル化&lt;/a&gt;
-デジタル病理学市場が2035年までに85億米ドル規模へ拡大する予測が発表され、一次診断や病院への導入拡大による診断効率化が進むと期待されています。
+デジタル病理学のグローバル市場が2035年に85億米ドル規模へ急増するという市場調査報告。病院での一次診断導入や病理診断のデジタル化が急速に進んでいます。
 
-&lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE5WY1JsdzhWYWpJOEZkREpBYm5nVUdueGlQYUNNTkdIOXB4ZXRtdXlGSnIzTTdONlctdWE2VWh1ZDZsZHVPTmRyWlN0QlFLTVA0enJjRTVGNWNSRlRQSHdPTFh1YmNtc1BQR1E?oc=5' target='_blank'&gt;1回答につき25円を乳がん支援へ。「ピンクリボン月間」に向けて、「自分を知る」ことから乳がんと向き合う意識・行動変化を調査&lt;/a&gt;
-ピンクリボン月間に合わせ、1回答につき25円が支援活動に寄付されるアンケート調査が実施され、自身の体と向き合う大切さや検診受診の意識啓発が行われています。
+&lt;a href='https://news.google.com/rss/articles/CBMimgFBVV95cUxObl_YNkVrRFRuaU16TVczWkZVNUYzYTJEN2JZSmpuLWpDUkFDQUpRMjYtbUc0cVQ3QzhOX2FOeWhLSUJwczB6S0w0MzE4aDRXc1haS3FDS3RLSVlCZGVBOU9QOFlSVDJZN1d3eV_jZjNuQTFSRWxiTW5IdUhTdmNrOGV2RzMta2xvdGhCTzRxQlcyQW5ReS1GaXN3?oc=5' target='_blank'&gt;チュオンサ（スプラトリー）諸島地域で健康上の問題を抱えた漁師に対し、緊急医療支援が提供された。&lt;/a&gt;
+スプラトリー諸島周辺で急な体調不良を起こした漁師に対し、現地での迅速な緊急医療処置および搬送支援が行われたニュースです。
+
+&lt;a href='https://news.google.com/rss/articles/CBMiTEFVX3lxTE5aSjA0YXRWRmNTeWdaNC1HbzRuZFhncl_aZmg3U1BFT0hlYW1lazMyOUNFbFdWZWtIYURGQkZGZ2lVbzZ5clZKaVpYTDg?oc=5' target='_blank'&gt;スマートリングは「コンピュータ」になるのか？ Ultrahumanが7,000万ドル調達、クアルコムが出資して指輪でソフトを動かす構想【海外ニュース】&lt;/a&gt;
+ヘルスケア系スマートリング企業のUltrahumanが約7,000万ドルを調達し、デバイス上で直接アプリを動作させる次世代のウェアラブル構想を発表しました。
+
+&lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE9Fa3RLYm40eE1oRHRvb292Yzd5MXFZaXNYbUE4cFZ6WTZfT09JakplWXh3QTVlbE1NR0VPRlhyU3M4c3JJbmRyRnY4dVQyT0toaUFoTXNDMkpBclpVNU53SXNHaWRYemJRbERDU0VPX3V4d9IBckFVX3lxTE9Fa3RLYm40eE1oRHRvb292Yzd5MXFZaXNYbUE4cFZ6WTZfT09JakplWXh3QTVlbE1NR0VPRlhyU3M4c3JJbmRyRnY4dVQyT0toaUFoTXNDMkpBclpVNU53SXNHaWRYemJRbERDU0VPX3V4dw?oc=5' target='_blank'&gt;長野久義氏またも“たくみ愛”さく裂！　大城卓三は巨人で4番を打っても「準レギュラーです」&lt;/a&gt;
+プロ野球・読売ジャイアンツの長野久義氏が、チームメイトの大城卓三選手に対する信頼と親しみを込めたコメントを寄せて話題を呼んでいます。
+
+&lt;a href='https://news.google.com/rss/articles/CBMijgFBVV95cUxPMFBiV0Y4Ums4Z0NkeUxhdllhTnhVcm5Lc3hWY2U1YTZjZzdWNWxrdVVoVDlheFFTWE9jaTlpa1_lellsblhXMmpmdEY2VDdQU2NWV1RfVFhXbUxZbHdmTVAxc1B3TExSeW9tQW10cnNGUlY4dTRIX3l6cE4tLWd2WlZPalF1aEMzSFVGeDl3?oc=5' target='_blank'&gt;心不全と脳梗塞との関連～cardio-cerebral syndrome～&lt;/a&gt;
+心臓疾患と脳血管障害が互いに悪影響を及ぼし合う「心脳症候群（cardio-cerebral syndrome）」について、心不全から脳梗塞に至る病態やメカニズムを解説しています。
+
+&lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE9GdDhXMHd1QUF4bTByTTRiaXpqOU5LNk5tNFhwVmJoRkpkRkJDbnlzUUxXd1ZnRDRRQmRsTWN1V2JFdVRuMjlERE1zMVlkME4tZlEzZm9pVEVpUWFVVHNQdDVxdXRKS05oV0k5WVRR?oc=5' target='_blank'&gt;画像71 / 159＞「お前、今患者を殺したからな？」臨床検査技師を目指す学生が東大病院で実習に臨む！仕事×青春ストーリーに注目！【作者に聞く】&lt;/a&gt;
+臨床検査技師を目指す学生たちの過酷な病院実習と成長を描いた医療漫画作品の紹介と、作者へのインタビュー記事です。
 
 &lt;a href='https://news.google.com/rss/articles/CBMiywFBVV95cUxOUVFkWlBySnY4dGwwOGJqNVY2ekh0TG9YSFRuZUd2NkpuS0pjYlZROG1xVnBaRWRBeXRacUhEWUxyejBQQVZPN0x0dzNLNHpMYklzMk1SSlAteXE3UGRrSC1vNzNudTVFaHlTZzdlaDNrTWhEYkV5ZUJvcFVEd0RfeWNzMk5kV1NtakZhZnNMaUx6Z0VrTzFRV0hHTVFtQVdHbDdaZnJFNHlPRzJSQnhoSnFmdTVjdWJwWllJS2tBU2ZMbUtoU1RZYlVOaw?oc=5' target='_blank'&gt;高いRBCは何を意味する？脱水と再検査&lt;/a&gt;
-赤血球数（RBC）が高値を示す要因として脱水の影響などを解説し、数値異常がみられた際の注意点や再検査の重要性を解説しています。
-
-&lt;a href='https://news.google.com/rss/articles/CBMi0AFBVV95cUxQTlR2bzNHZE9mNDhyNXhRRTM5LVNlSk9VN3o4VW54cjIxNkZUWUQtelNuS1luU2dIOVpTcEV2VlAzQzRFTTAwdTN0WFFHY2RIRFhWeFJhYlpEeXZFMmdJRF_FUzZlaHRha1JWeExKQl_GcXFvSUNQbk92a1NYYjY3T1lsdjV4Y1lwZnpITjhIMnJFRDg5VzNZQ3R3b2RQaHBhR0hjNUhjRHNrQm5haElnNzcwanQ0QmhFV2k5anAzTDRSbjVoVDFTWUdfRDZ6ZTVo?oc=5' target='_blank'&gt;「陸軍における戦死兵士の遺体特定のためのDNA検査能力強化」プロジェクトの実施&lt;/a&gt;
-ベトナムにおいて身元不明の戦死兵士の識別を可能にするため、DNA検査技術や体制の高度化を図るプロジェクトが展開されています。
-
-&lt;a href='https://news.google.com/rss/articles/CBMiVkFVX3lxTE9mSmZfWGJ2RUVhN0RFVmVlbXZJMm5OeWdyZEpBcWdzeTJQSTRmQ1EzVjRueXcyUjg3cHhBNmQyNWJNOWdhd1k4WGt0OVBXc2Rfc0gtd0dn0gFPQVVfeXFMUFRmclFHSl_oT05TS01lUGRmUDNpazVuNHU2eGloTzBraXRHMXZGR0xrZVM0cFkwSTZUeWFkS21nM1JsQjBEVDBHY0taM3Nidw?oc=5' target='_blank'&gt;【大腸がん】元プロ野球選手の妻が振り返る夫の闘病…口内炎すら不安に「芸能人のニュースでチャンネル変えた」&lt;/a&gt;
-大腸がんを発症した元プロ野球選手を支えた妻が、日常の些細な不調に対する不安や家族の葛藤、闘病の道のりを述べています。
-
-&lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE52N2w4V1J6cGpNWWVrdzFyTlpFZ1VWcGV4bWJkd3hLanF6UTBrTjY0UmV1bmtPclh4eUY0ODI2X2VWR3hwMVFydXdlM1NQYnU0UXlnNkR6N1d3dVdVZGppcDRoaVc2Z1pnY0dCZTV3?oc=5' target='_blank'&gt;画像42 / 159＞「お前、今患者を殺したからな？」臨床検査技師を目指す学生が東大病院で実習に臨む！仕事×青春ストーリーに注目！【作者に聞く】&lt;/a&gt;
-臨床検査技師を目指して大学病院での厳しい実習に挑む学生たちの成長を描いた医療漫画について、作者のインタビューを交えて紹介しています。
-
-&lt;a href='https://news.google.com/rss/articles/CBMiVEFVX3lxTE5ESHgzeVJVMXpTUzNWZlZaOTBIVjdkdEVVUXIyWF81cENIUmVubHliNW0xQ0lfNnBtaW5vVHNOMmktbThFeVhJZ1hzUVlsbWFNa3IxUQ?oc=5' target='_blank'&gt;碧南市民病院が劇物ホルマリン液の瓶１本を紛失 使用者が台帳記入怠ったか&lt;/a&gt;
-碧南市民病院において劇物に指定されているホルマリン液1本が紛失し、管理台帳の記載漏れなど管理体制の課題と再発防止策が報じられています。
-
-&lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE5EaHBXRzc5V1hZRzB0SmdzW3pQZExzUkl6M3dBNGRaUVRfaHM3eERqSXJDcHBLV3FCY3hUV2wyOUdJRVV4ZDNwNFVFWEd2N2c?oc=5' target='_blank'&gt;プレスリリース詳細ページ - mamagirl [ママガール]&lt;/a&gt;
-ママ層やファミリー向けに展開される最新ライフスタイル情報やイベントに関するプレスリリース概要です。
-
-&lt;a href='https://news.google.com/rss/articles/CBMiqgJBVV95cUxPWlRaY1hONkNtUkxsWjJHbmJZR0dKMlg1ZDZWLVJ2bXVNbVlldGtIQk9yVWhqM1lBZFhMbkF4X2tLVHQ3YTVtWk1RR2xmZnU1bGlsb2twQWNsMnVxZHhaa0gtYXFXcHlUVTFaNzQyY1pYaGh3MXZuaUNFSFBzS2hXTFlfczZ6OHpXdXpBNk5ya0c4X3FKRnFxaWZTVHRnblpQVk5velJ2cFJnWndsX0pTSVN2Ym9mdGlKNWlhLWI5Z3pOMEJaN1BLY3FOM19tWWFSUnNCV1lIR1NjcGJSRE1mYlJEeU9ZeVFHZVEzeF_INmNyT2pvVnRNSDNlbXNTekZ4U0hidUFiVmtDRHdraUlfWFFUUGI5VlB5TUs4T3l1dEVKdDUyaW16SDhR?oc=5' target='_blank'&gt;肝硬変の症状：初期兆候と血液検査のヒント&lt;/a&gt;
-肝硬変における初期の身体的兆候や、進行を見逃さないために確認すべき血液検査項目のポイントを解説しています。</description>
-      <guid isPermaLink="false">news-medical-1788662722</guid>
-      <pubDate>Sun, 06 Sep 2026 02:45:22 GMT</pubDate>
+血液検査における赤血球数（RBC）の数値が上昇する原因や、脱水症状が及ぼす影響、数値異常時の再検査の重要性についての解説記事です。</description>
+      <guid isPermaLink="false">news-medical-1788732730</guid>
+      <pubDate>Sun, 06 Sep 2026 22:12:10 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [02:45]</title>
-      <description>指定された対象エリア（和歌山県全域および大阪府南部8市町：阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に関連するニュース記事はありません。</description>
-      <guid isPermaLink="false">news-local-1788662722</guid>
-      <pubDate>Sun, 06 Sep 2026 02:45:22 GMT</pubDate>
+      <title>🗾 地域医療（和歌山・大阪南部） [22:12]</title>
+      <description>&lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE1wUUtFbWVlSEVMci1tc1hMdkR4VHFiOHVscTZVZ0czQlJIdnFSNWE4Sno3cmVTbVNMWE4tdWc1RjVDVlRZcDFSc2tBUk41Wk5uRzlnRl9Na1JNSk1ZTXlmMTBYam83ZmJKUU1vcWIxam1XRmxG?oc=5' target='_blank'&gt;和歌山：最新医療 紹介する一冊&lt;/a&gt;
+和歌山県内の医療機関における最新の医療技術や取り組み、地域医療の高度な診療体制などをまとめた書籍の紹介に関するニュースです。地域住民が県内で受けられる医療の選択肢や先進的な医療情報を深く知るためのガイドとして活用されることが期待されています。</description>
+      <guid isPermaLink="false">news-local-1788732730</guid>
+      <pubDate>Sun, 06 Sep 2026 22:12:10 GMT</pubDate>
     </item>
   </channel>
 </rss>
