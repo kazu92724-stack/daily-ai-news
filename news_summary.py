@@ -117,7 +117,8 @@ def main():
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            "query": "生成AI OR LLM OR 医療AI",
+            # 主要ツール（Grok, Qwen, Rikyu等）を直接追加して漏れを完全に防止
+            "query": "生成AI OR LLM OR ChatGPT OR OpenAI OR Claude OR Gemini OR Perplexity OR Grok OR Qwen OR Rikyu OR AI新機能 OR AIアプデ",
             "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
         },
         {
