@@ -1,79 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [01:12]</title>
+    <title>Daily Medical &amp; AI News [15:34]</title>
     <link>https://github.com</link>
-    <description>AI・医療・地域ニュースの自動要約フィード</description>
+    <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [01:12]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE1HOHhUMk15LVFNQXBKakRqN1I4dTdJbHZualkwNnNCandmWTNGam5SbmRxRl9udUNQaXVPUU9ZbmVKbXhDSnF5R2RfRTBRXzRSSWk1Z3VwWW1CYVR6?oc=5' target='_blank'&gt;生成AIを商品販売のポスターやPOP作りに活用。都城きりしま支援学校で「AIチャレンジ」教室 - ソフトバンク&lt;/a&gt;
-ソフトバンクが支援学校にて「AIチャレンジ」教室を開催し、生徒たちが生成AIを活用して商品販売向けのポスターやPOPを作成する実践的な取り組みを行いました。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE5PX1Y4S3ZMV212M2ZsMFZMMXAzb2xuSzRxU1hTbHU4VnE0OGpMa0ZHZFBqdWVzbC16SFdlYndoS2tveWhnMmMzeGZRdUdtY0FSYUdxSEdpSjhTVkl4QVhrTXF4eklNUQ?oc=5' target='_blank'&gt;PDF編集に生成AI使ってる？ 文書自動化23％にとどまる現状を調査で解明 - kn.itmedia.co.jp&lt;/a&gt;
-  文書作成や編集における生成AIの活用実態に関する調査結果が公開され、PDF編集や業務プロセスの自動化までAIを活用している割合は23％にとどまる現状が明らかになりました。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE9TejQ5Mkl0Qm1vOC1wVEN1M2lKQloxaENqNjU4aWZqMk51MktmV08tWVZNeFBqR3hXRU5fZlBRMlhKS243RmFhUnZOMmFMN2M2QnZEekduRjA0Sml0UWlHekVMVzVXRmJvbkE?oc=5' target='_blank'&gt;就活生向けに「ユーザーローカル エントリーシート作成AI」を無料で公開 - prtimes.jp&lt;/a&gt;
-ユーザーローカルが就職活動生を支援するため、生成AIを用いてエントリーシートの作成や推敲・推敲のアドバイスを効率化する無料ツールの提供を開始しました。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTFBWWXdVdlFQNXlxaklJV3FieDFCS2R6aEF1YkdQSkl5d1A1NkotWFdFNXQ3a0ZuUmNEOV8yV2U4WnN4UzJIUVlDMmpiSDhrVGs5eGQxXzAxWndUTFQwNWdF?oc=5' target='_blank'&gt;生成AIの検索利用率、初の50％超え 約6割がAIの推奨から購入・利用 - AdverTimes.（アドタイ） by 宣伝会議&lt;/a&gt;
-検索行動における生成AIの利用率が初めて50％を突破し、さらにAIが提案・推奨した商品やサービスを実際に購入・利用したユーザーが約6割に達したことが調査でわかりました。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMifEFVX3lxTE5nNTNuZDBFSzBkdW4ySnZUY3BIdVI0LXNibHlGTmJua2prbFo3Y2Zxa01WZHM5V0JNOHBHZDlyTHBnSjdyQ09oSzhCczA4U2htSTA3cFg5SjhWT21KVmhJeWZPdU84UWFEWHRHbjJtX0YyWmZGNGtjRjVMVGLSAXxBVV95cUxOZzUzbmQwRUswZHVuMkp2VGNwSHVSNC1zYmx5Rk5ibmtqa2xaN2NmcWtNVmRzOVdCTThwR2Q5ckxwZ0o3ckNPaEs4QnMwOFNobUkwN3BYOUo4Vk9tSlZoSXlmT3VPOFFhRFh0R24ybV9GMlpmRjRrY0Y1TFRi?oc=5' target='_blank'&gt;生成AIはなぜ単純な質問を間違えるのか - LLMが「見慣れたパターン」に頼る理由 - ｄメニューニュース&lt;/a&gt;
-大規模言語モデル（LLM）が一見簡単な問題で誤答してしまう背景について、学習データ内の頻出パターンに頼ってしまう仕組みや文脈理解の課題を解説しています。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE9KWkJFQjlDOGdTZGh1RnhVN2xRNUdrSTlRNk9HSlFSdVZFRi12Nm9OelM0VDlLTVJCLWFQVVNVSGp4UE53THM5XzdFWDZKZ1NfOHB2X1ZZS1o3UEpq?oc=5' target='_blank'&gt;生成ＡＩ導入でＤＸ推進へ – 宮古毎日新聞社ホームページ -宮古島の最新ニュースが満載！- - 宮古毎日新聞社ホームページ&lt;/a&gt;
-宮古島において、地域課題の解決やDX（デジタルトランスフォーメーション）のさらなる加速を目指し、業務への生成AI導入を進める動きを取り上げています。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMipgFBVV95cUxNMWJTNHNDNUkzeEhaZnc3YjMyeGFUZk9JUEYtSzNxd0pZT3JLOXBCNHdZMTZFbURLQzY4WXJ4ekFqSkRGOXgwNW5WVUJtTU5JSW9aVTcxN0RIMGZwTUhXREVGWHFpSjRlUGhjMnU4RTdrSUJ2w3JnZkRXeEFOQmZxQmZ5aXU0TVpMd2Y4d0lhcjUwdXg0TENIUldwWEJpLXlpTFJxQUJ3?oc=5' target='_blank'&gt;生成AI活用 - 公明党&lt;/a&gt;
-公明党による行政手続きの効率化や政策立案の支援、公務のデジタル化に向けた生成AI活用の提案や取り組み状況について伝えています。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE5WZ29vd2RtSE1MNmF4RHBDTXF0TlFvNmYteldqN09OOW9Nd0c2WkcxdG0weVB3VFgxM05Ux3E3a0ZuUmNEOV8yV2U4WnN4UzJIUVlDMmpiSDhrVGs5eGQxXzAxWndUTFQwNWdF?oc=5' target='_blank'&gt;生成AIに選ばれるホテルモントレ ChatGPTの推奨率を2倍超に高めた秘策 - 日経クロストレンド&lt;/a&gt;
-ホテルモントレがAIによる検索・選定時代に対応するため実施した情報最適化策を取り上げ、ChatGPTからの推奨率を2倍以上に向上させた具体的なアプローチを紹介しています。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE16OWozWkpCbTV0dVdsSllzWXhTVGltdWhNbWw3OXBBX0kybHdTT1g4YnNXelh2c2tIUEg4RmZJRmZDOFU1QlNGbm45REFRRjQ?oc=5' target='_blank'&gt;実写撮影ゼロ・最短10日間で、企業の「物語」をアニメーションに 生成AIフル活用の「物語アニメーション」制作モデルを確立 - Newscast.jp&lt;/a&gt;
-実写撮影を行わず生成AIをフル活用することで、企業のブランドストーリーなどを最短10日間で高品質なアニメーション動画として制作する新サービスモデルが構築されました。
-
-- &lt;a href='https://news.google.com/rss/articles/CBMiX0FVX3lxTE43Sk5URElYRDE1QVZ0SWRrVVUteS1sbzRLYlZxclcxdW9DdEUzTmhZM2dFbFBYeFM1ZjktRmZpR2pFdnJ3UG44bnBjSVVzZEt3ODJrelBQMDZSN2hqSl9n?oc=5' target='_blank'&gt;生成AIはなぜ単純な質問を間違えるのか - LLMが「見慣れたパターン」に頼る理由 - Infoseek&lt;/a&gt;
-生成AIが基礎的な質問に対してミスを犯す原因として、確率的なテキスト生成アルゴリズムが見慣れたテキストパターンを優先してしまう傾向について考察しています。</description>
-      <guid isPermaLink="false">news-ai-1788916350</guid>
-      <pubDate>Wed, 09 Sep 2026 01:12:30 GMT</pubDate>
+      <title>🤖 AI最新トレンド [15:34]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE11WWdHTGZHNWdsenhhbFdHNlFackR3bGdYSG5ZS0FiSmh6X1ZlSGFiZGt1czc5NmpENi16VDAyOHdnVnJkUWJvUTVqbE1ZeHZoNUxBMkwyTWFKc0ttSWhEWEt1N3hzVEV4aTVzMA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、「ミレニアム懸賞問題」の数学難問をAIで解決と発表 - 日本経済新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMie0FVX3lxTE9DZjNzcDJzaVdkQmh1cTJScXJ0N0pLRHpFQ2h3N01UTTVYc0tqc1FCM0ZoZ0ZIR0JxM0F3QzR2TjF3NkFvS1BlX3lVVDI0WlBNNFU4S19UT1dJOUc4OXJ6cVlieG5aUFM2dGV0SF8wUjUwRXJlZjNCLVNOSQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、数学の大難問をAIが解いたと発表。数学者が研究経緯に異議 - WIRED.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiY0FVX3lxTFB5WmlzYmRXd3NkclV4dUc0WTY2Y0FRM29vM1VOcXJFNHVob0FhMHU2QXdpTTlmRXBybGN4b2FDT0V4NTA4THFwRTJMS3U0R2l6ZXEwTE52bTV4U3JEOUdKUzRfNA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、最新の画像生成AIモデル「ChatGPT Images 2.5」を発表 - 株式会社インプレス&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE9XaVlkMEhCbkNud0ZOMmZVY21jM0E3R0hYa1pvRkhMWTg3N3pHdlpQQ2NGQk9YOVhWanJvTDl1RGJXNGRGZmNkZ1BSSnlraEV4NElhWEdHanltU0JJa3lwR3lsSnZ6S0dYOHc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OrcaRouter、OpenAIのフラッグシップモデル「GPT-6 Astra」の提供を開始 - PR TIMES&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE83ZGswc3BUNElVcXBZdlByYWFUMHc5bEdZYUFBM0xRZF9qRWRMbnh4dC1kRDlyLVp1UkNnN3JEajVCUk8yWXp1d2R0czZ2MXR5NFZPVVJzQ2tSMmNoY0o5QzRFSXlPUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Googleの自動化ツール「Workspace Studio」×Gemini、4つの業務効率化アイデア - キーマンズネット&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1788968053</guid>
+      <pubDate>Wed, 09 Sep 2026 15:34:13 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [01:12]</title>
-      <description>・&lt;a href='https://news.google.com/rss/articles/CBMiYkFVX3lxTE9OZ3lMUnh0R2Jxb0VNeUJkUDhfSi1uRU5QUUVsME1CQ0tjaEEwNFFoWHpFSG50cVR4UHlJaWl5OUJKQjZnSHBjOUZBNVcxNWVjZV81TGMtZ1A3ckxEUHBzMzVR?oc=5' target='_blank'&gt;病理標本の自動作製装置「パスワン」を開発 仙北市拠点の機器製造会社 - 秋田魁新報電子版&lt;/a&gt;
-秋田県仙北市に拠点を置く機器製造会社が、病理標本の作製工程を自動化する装置「パスワン」を開発しました。専門技師の作業負担軽減と標本作製の効率化が期待されています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiS0FVX3lxTE93T2NYWmlydVE4cXJXSHYxV2Q1U1JEWjAzU1NNT1dTNm11VHZXNDZZaWZ6M1dQTkxFQTg3MlJhcVk5SG1LSi1TLXZEMA?oc=5' target='_blank'&gt;病理標本の自動作製装置「パスワン」を開発 仙北市拠点の機器製造会社 - 47NEWS&lt;/a&gt;
-病理標本の自動作製装置「パスワン」の開発に関するニュースです。がん診断などに不可欠な標本作製の精度均一化と医療現場での効率化を目指します。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5UTVlWTVk5TDhfN1JRdWt3UktPNmFtQndrZC1qTU1lWGdJTWNxUHpwR2d4MFR4ejRoajJRZ290czJpa1cybnozZ1FaWk9RYTh4XzMwTW14ZDlvczhvbFZ6dFFkVWRLTTBtMkQ3OEwxV2U1MzZDcTZSaW5JUEs3ZFk?oc=5' target='_blank'&gt;がん診断に大きく貢献 病理標本作りの工程 専門技師の技術を自動化 /秋田（秋田朝日放送） - Yahoo!ニュース&lt;/a&gt;
-専門技師の高度な手技が必要とされる病理標本作りの工程を自動化する装置が秋田県で開発され、がん診断における検査体制の強化と効率化への貢献が期待されています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiWkFVX3lxTE5_S2dERVk3c0V3b19raGpuNVY1bjNuUXpSemlydWdyb1RDODVScUNfeU1JZmhoZl9DUlE5VlBFZGttamlzRGlPMkcwemIydmNrSkJFQ1FGUHRDUQ?oc=5' target='_blank'&gt;「人工知能等の利活用を見据えた病理組織デジタル画像（WSI）の収集と病理支援システム開発研究」の分担研究「自律性・持続性を持った病理診断支援システムを構築するための地域実証実験モデル」 - pref.shiga.lg.jp&lt;/a&gt;
-病理組織デジタル画像（WSI）とAI等の先進技術を活用し、地域における持続可能な病理診断支援システムを構築するための実証実験モデルに関する研究概要が掲載されています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiWkFVX3lxTE9qNXRvWXFQQ3NZRjJoMEhnZGxXeTFnckp6bVhaUUF5NncteTZDQUJrLXdoUW5QLWZxX1IzSThEV3FlRkVMSVZmUmxtVDE1T0FibnlNall4dllYdw?oc=5' target='_blank'&gt;血液検査で大腸がんの再発や転移のリスクが予測可能に？ 手がかりは「アミノ酸のネットワーク」 - ニューズウィーク日本版&lt;/a&gt;
-血液中のアミノ酸バランスやネットワークの解析を通じ、大腸がん患者の再発・転移リスクを予測する新たな検査技術に関する研究成果が報告されています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTE5fQTBncjVrTVV4dU1tb2NOZ1UyZ3pzSTJOSlFtSFhiLS1rZUVXYmVCVW5XN1N5YjcyaV9kSXQ5SUtjRjlJVWEzQ3M4SlBneWdBOEJr?oc=5' target='_blank'&gt;CLOUD GYM（クラウドジム）は怪しいって本当？口コミやメリット・デメリット、効果を解説 - 東京23FC&lt;/a&gt;
-遺伝子検査に基づく個別化プログラムを提供するオンラインパーソナルジム「CLOUD GYM」のサービス概要、メリット、利用者の口コミなどをまとめた解説記事です。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTFBiMzZJeW1SVkFiWmswUDNqNTI0UzFLSHcyUDUtUTZmYUxwY18tb2x0pEdJTDJaZERkcVFEZTBjb0VKWWNOTG45WU00N3NBSm8?oc=5' target='_blank'&gt;新生児代謝スクリーニングの世界市場（2026年～2032年）、市場規模（血液検査、尿検査）・分析レポートを発表 - アットプレス&lt;/a&gt;
-血液検査や尿検査を用いる新生児代謝スクリーニング市場に関する調査レポートが出され、2026年から2032年にかけた市場動向や成長予測が提示されています。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMiWEFVX3lxTE5aSmRkREduVFg2a0VhbHZrQ0FTMG1KU1JNTjhQdExtaEFWbmlTZUt4c1hGczIwUG5TMXRPRVRXMm9BTWJxZ3VDOFRFYUhpS0tYbk9qaU5WUmU?oc=5' target='_blank'&gt;早期膵がんの90％を血液検査で検出することに成功 - 金沢大学&lt;/a&gt;
-金沢大学の研究チームが、従来の検査では発見が難しかった早期膵がんを、血液検査によって約90％の精度で検出することに成功したと発表しました。
-
-・&lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTFBIUlhxclB0cGFuSWozNE9kamFBZVJLb3NFd2xYUHdLOFgycU1RN1NpQkMxZ0J3OXM2ejlndEliSWJYOURPZzB6QzhINVJwZlFDRGluQmJPUTB4dW0zY0wxSGh4U09ZV0lPb28yVFN5S0w?oc=5' target='_blank'&gt;NovacytがIVDR認証取得のDPYD遺伝子検査アッセイを商業展開 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース&lt;/a&gt;
-Novacyt社が欧州IVDR認証を取得したDPYD遺伝子検査キットの商業展開を開始し、特定の治療を行う患者の遺伝的リスク評価に役立つ検査として提供を行っています。</description>
-      <guid isPermaLink="false">news-medical-1788916350</guid>
-      <pubDate>Wed, 09 Sep 2026 01:12:30 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [15:34]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE1Nc1FWTllOSm5pbmFIOUR0OVIwYkgyaVh1MDVUcHhyajByT2p6ejlMc3lrVVcwMVJmcEZGUG1URWwyUG8tLXNQRFdlVlBHUUEyVkdzdVJJMkdERTAzNlhVcWN2MTZPN2M2bkdDdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;富士経済、CGP・NIPTなど注目ゲノム検査の国内市場を調査結果を発表 - 日本経済新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE1zLWY2SDdsY2tYR2hlNERWQ3kxRlhkMnNYVWR3Wm51T2IxS3BxQWhuMzBCMmd6NEVJYmNsS282VWhLaDZmLXJrYVZfQTl2dXNyYWZVc1Q2dmhYZ2g0WXY1bmhmNzZSUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Roche社、ADアミロイド病理を検出するpTau217血液検査のFDA認可を取得 - 日経バイオテクONLINE&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMic0FVX3lxTE9jZVIwa201Y3BuN2NybWhMT2JHU0tvYm4tOFhSZC1TSUtHbXRwYTFpNnhaODdmNHJYeXdtYkpZc040cW1UeDN5TFhlWnhqcjFCTnBNVU1rdHY0R3JQeGZPeFZ5TGtWNkd0RXdmQVJ5aEZ4Q28?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;テンクー、がんゲノム医療のエキスパートパネルを支援するプログラム医療機器の製造販売承認を申請 - Excite エキサイト&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5sN3c4MXZDTGdWbGs2eGhQWURmREhuU0VSdXJmaGRMRk93WTBLQ3dkS09neGFXSDhsQ01HSVZlazNZVVFmVlhRZkQ1ekQwdnJUVHQ3TUZjQW9RZUdsMFI4ZkE5bEJtVWlyUnJ6b0JDeHdsTGtTbzIya2RzbDNhMms?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;血液検査で大腸がんの再発や転移のリスクが予測可能に？ 手がかりは「アミノ酸のネットワーク」（ニューズウィーク日本版） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiYEFVX3lxTFB6Z2lfWEZ1MWtqVldKVER1U1VlS25mV1FsaEF0VzhaMUxpVC1GQ2VVRXZHQzFTbzhtMk9uNWJzVWVaR1RMZW9WWDBUdV92eWl1QUdBTWcxNVdIanlLb2hhSA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;病理標本の薄切り加工を自動化 秋田・仙北に拠点を置く企業が開発 機械化は世界初か 品質均質化や人手不足解消期待 - 河北新報オンライン&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiWkFVX3lxTE5fS2dERVk3c0V3b19raGpuNVY1bjNuUXpSemlydWdyb1RDODVScUNfeU1JZmhoZl9DUlE5VlBFZGttamlzRGlPMkcwemIydmNrSkJFQ1FGUHRDUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「人工知能等の利活用を見据えた病理組織デジタル画像（WSI）の収集と病理支援システム開発研究」の分担研究「自律性・持続性を持った病理診断支援システムを構築するための地域実証実験モデル」 - pref.shiga.lg.jp&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1788968053</guid>
+      <pubDate>Wed, 09 Sep 2026 15:34:13 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部） [01:12]</title>
-      <description>指定された対象エリア（和歌山県全域および大阪府南部8市町）に関連するニュース記事は含まれておりません。</description>
-      <guid isPermaLink="false">news-local-1788916350</guid>
-      <pubDate>Wed, 09 Sep 2026 01:12:30 GMT</pubDate>
+      <title>🗾 地域医療（和歌山・大阪南部 施設情報） [15:34]</title>
+      <description>APIの混雑が解消されないため、スキップしました。</description>
+      <guid isPermaLink="false">news-local-1788968053</guid>
+      <pubDate>Wed, 09 Sep 2026 15:34:13 GMT</pubDate>
     </item>
   </channel>
 </rss>
