@@ -21,18 +21,37 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 1. ニュース収集関数
+# 1. ニュース収集関数（リダイレクト解凍機能を追加）
 # ==========================================
 def fetch_google_news(query):
-    """Google News RSSから直近2日限定(when:2d)の記事を取得"""
+    """Google News RSSから直近2日限定(when:2d)の記事を取得し、リダイレクト先の本URLを解凍する"""
     encoded_query = requests.utils.quote(f"({query}) when:2d")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
+
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+
     try:
-        res = requests.get(rss_url, timeout=10)
+        res = requests.get(rss_url, headers=headers, timeout=10)
         feed = feedparser.parse(res.content)
         articles = []
+
         for entry in feed.entries[:10]:
-            articles.append({"title": entry.title, "link": entry.link})
+            raw_link = entry.link
+            final_link = raw_link
+
+            # Googleの転送URLから最終的な本記事のURLを取得
+            try:
+                response = requests.head(
+                    raw_link, headers=headers, allow_redirects=True, timeout=5
+                )
+                final_link = response.url
+            except Exception:
+                final_link = raw_link
+
+            articles.append({"title": entry.title, "link": final_link})
+
         return articles
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
@@ -94,7 +113,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = f"Daily Medical & AI News [{time_str}]"
     ET.SubElement(channel, "link").text = "https://github.com"
-    ET.SubElement(channel, "description").text = "AI・医療・地域ニュースの自動要約フィード"
+    ET.SubElement(channel, "description").text = "AI・医療・地域ニュースの自動一覧フィード"
 
     for item_data in all_summaries:
         item = ET.SubElement(channel, "item")
@@ -110,7 +129,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（クエリすべてOR条件＆追加キーワード）
+# 4. メイン処理（要約文廃止・タイトルリンクのみ生成）
 # ==========================================
 def main():
     categories = [
@@ -119,24 +138,24 @@ def main():
             "name": "🤖 AI最新トレンド",
             # 主要ツール（Grok, Qwen, Rikyu等）を直接追加して漏れを完全に防止
             "query": "生成AI OR LLM OR ChatGPT OR OpenAI OR Claude OR Gemini OR Perplexity OR Grok OR Qwen OR Rikyu OR AI新機能 OR AIアプデ",
-            "system_instruction": "前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。",
+            "system_instruction": "前置き、挨拶、要約文章、本文解説は一切出力禁止。重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
-            "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
+            "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
-記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
+重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
         },
         {
             "id": "local",
             "name": "🗾 地域医療（和歌山・大阪南部）",
             "query": "地域医療 OR 和歌山 医療 OR 泉佐野 医療 OR 岸和田 医療",
-            "system_instruction": """前置き、挨拶、二重タイトルは一切出力禁止。1文字目から本文を開始すること。
+            "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【対象エリア】和歌山県全域および大阪府南部8市町（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）に限定。
 【絶対除外】大阪市内、堺市、北摂地域。
-記事タイトルに <a href='URL' target='_blank'> のHTMLハイパーリンクを埋め込んで要約を作成してください。""",
+重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
         },
     ]
 
@@ -151,7 +170,7 @@ def main():
         articles = fetch_google_news(cat["query"])
 
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
-        prompt = f"以下のニュース記事リストを基に、指定のルールに従って要約を作成してください。\n\n【記事リスト】\n{context}"
+        prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
 
         summary_text = None
 
@@ -174,7 +193,7 @@ def main():
                     time.sleep(wait_time)
 
         if not summary_text:
-            summary_text = "APIの混雑が解消されないため、要約をスキップしました。"
+            summary_text = "APIの混雑が解消されないため、スキップしました。"
 
         all_summaries.append({
             "id": cat["id"],
