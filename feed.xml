@@ -1,34 +1,33 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [01:11]</title>
+    <title>Daily Medical &amp; AI News [01:10]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [01:11]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE9HcVdmWUYwVWtCNnF5N1ZYVFowa1p5LTFqQXItZDItQWJGcVUzRFZ5NW50ZzBGNXdaZGNPNlRfWmNDT0ZwWUM4Z2JqdnFENU5waWExbnhrRFdfS3BJdHZUOGtjaUhTOU1OSmVmMw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;アンソロピックで抗議の退社、OpenAI社員も同調 AI開発加速を懸念 - 日本経済新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1jc1N6Y05uSU5wbGNmeFVxc1p6R25oTUtFRjJQak83RnZjUzdzZ1RRRml4TERFVDFiWHdac3lTc3JWUDN5MHRoNFJHc2c2ZFFFMXdaV0Jza0c3cHFieFpTX0E0SFRsWFk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;災害とフェイク情報 真実まで虚偽と疑わせる生成AIの危うさ - 朝日新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9GNnRXQWxNZjNfTXA5U2dneWhSTlI5MkhNZHFndzFqbnBlN0tSUGVHWUQtN3Y1SWJQY1ZCX0ZMeEp5NUNGRU1qUjd2Ty1MOWQ4ZkgwekJJSUhKY1RvNjRKZUpUYldCbFVKZkN1NUlfSmZrRmJmRHEwM1pWYWRyOW8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;グーグル、「Gemini」のWindowsアプリを公開 Alt＋スペースで手軽に起動 - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMikgFBVV95cUxQQWtzZno0bjNRZHV0LXIydU5PMzRuYVRaUm8yU2J6RXZhVG9uQk5vcE41cG5jQ2pfRkdMN1RWSFJPVFZsYUEtUWlMZVdYX2VCQXFOS3BRLTNNczRvbGxHY216RkJXcUFvQktpRnplZWVsOEdMVnV3NzVieHI3c3ZKcnU2dDZ0UHI2SGM0TWM1bjYyQQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、社内でのAIコーディングエージェント利用実態を公開…1日100万円分以上を消費する研究者も - Business Insider Japan&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiTkFVX3lxTE5pMzVLb1BnNk1QbzlmRkZsZEMxRXdjM3Y3MzFnWFFweFBlWmx2QzJYRlRlX0ZNM1hoVUlZVy0waV9FQ1VNdWJVbmdlYlQ5UQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;生成AI「クロード」が生物兵器開発を手助けする恐れ 関連アカウントを停止 アンソロピック社 - FNNプライムオンライン&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9qbHgwa3BXS1RReEtYekMxU3JKZklTUUhSUVBTdG9yNlg3NlhFS2hVQmVGVVFkTTMtc2hWUG9KY21nVWdrM3ZQVUJvRzZMdzJTNGhoWGVHd2k3OWJSSHEtd0dGczVrbU0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Google WorkspaceのGeminiが“サービス横断で処理”できるように - ケータイ Watch&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-ai-1789089067</guid>
-      <pubDate>Fri, 11 Sep 2026 01:11:07 GMT</pubDate>
+      <title>🤖 AI最新トレンド [01:10]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMi9wJBVV95cUxQc0w2VmFvcnBBVDlqcDEwTDlKX05QSjFHT0RrSFR3REg0WXlrSTVTNnpuaHBXaWtKcmw2dWFWSm5VT29SaEx6VWtra1VtQXpJaEN4ZS1PTmxSSnNYejVreUt0NXFPeWhhV0NTNVR1WmJiNjYyV2RoSlV4amlEV0Rja3lsOWhPTHJPcEt0Y1lKZldNcW82aTJGLW81N09lYzFHN29WQkpMT09RRnZuYVo3eVA3Y1VHVFBFRUpPNGtNQjQxZVh1TDVuUk5ZSnprS1FPVWRXdF9wZ2U5aEpSMjVObFJiVnZwWXhhbm1aZVZ1ak9lb3dSMldpWmxTZHJKd29VNGQxcmhmV2JNRFZwMXZfYk9qX1lTc3llYzlxNjRQdXgwUXFTZFVnSWY3R29oeFZKSDl0amw2YVJodnlYZEU5Ujlwa2twM1RwQlFibVNTZG1TSWxiTmd4a3BtcHZ4eWtFQ3FFaGpSamJoNkswQmxjY0gzai12TVk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;イエメンのフーシ派が誘導ミサイルの開発にClaude AIを使用 - アラブニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiTEFVX3lxTFBfc1BYQTF2amdMWm9jMGNQdGExWHFrejRSZk5iY2l2WE45RDk3OWFSZ2p1MlZuYnJBX01OSG91bU83TW84VWVVS2RQMW_SAU9BVV95cUxObXhndEF4OEc5Mm9XdHFOcVYwUWtIdUlDUmVHOEZqcUZqQ1pxbnNnNTNuYzBMaS1nSExvSzBnT1ZwSDVOUWxzYnpnWFVfOEd3?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;【OpenAIへの出資1.6兆円】ソフトバンクGの決算書にどれほど影響を与えたのか、説明できますか？ - ダイヤモンド・オンライン&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE4yRzNTZ2VDOWtyZjFOZXg0QUt6d0E0VXVRSVhCTnhEbXFZWmFpdUV2cVFheHR0XzlUcTJXb0p4OGpfYjNRRlFkbV92ZHFJUTNRUjFvbnpqZEs3M2FiTHBzNm1hTjktMW82MzloOEc3Y1VlRkdnajYzOTExOHlrRjg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ChatGPTやClaudeなど主要AIで相次ぐ障害、企業は代替サービスをどう確保すべきか - news.yahoo.co.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE5VR2JiUGdqeUhadXhTaGFPOG9EQUhlbnE3VXFYSlJqVDl6UFI1Xzd6eGt4NkNGOUpHdm0xRFVoVUFtQlpuQmhUZEtlT2lGd1c0ZnJ5RlBmY19aNk1tZU9sZEZPM1djU28?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、ChatGPT WorkのDataエージェントを紹介 ——自然言語で企業データを分析、ダッシュボードも作成 - gihyo.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE51QXVmWXJTUjlvbW9lYml4NTZST2hBWDFLMUpHOXMwVWhSOGt6N0tZRkxvdVlFeENGekctSXZEMW41NGMtYkpSVkNVa3I1WGFNQ3NGT2w4N1RSejhtZVhOdGR1RVVYWGpWY0hpbUdYeGY4WTRZ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;算力逼迫 OpenAI、月額200ドルのPro 20X新規受付を停止——3年で2度目の利用制限 - BigGo ファイナンス&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1789175431</guid>
+      <pubDate>Sat, 12 Sep 2026 01:10:31 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [01:11]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTE12ckFOczhjak9RclZfbE9nZDBNU3NpRmxoUlg5bktMVGxEWDJEWUIyRFEzREtrUko2RkN5YUROTGtiZzRsM3ZWTFNhVWg3WFp4NVlZ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;PFAS汚染「公費で血液検査を」 東京都に1万5800人分署名を提出 予防と健康影響の把握に - 東京新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiS0FVX3lxTFB1cGRRM0lKODFhSzRlVlNVcl9Ec0UzSWdTSHRaUDRMOUYySkVsNDNjeWFsaU5lOHJNaGVSUnBLaTZHMndXRXh3RnUzSQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;医師のわずか1％…病理医不足を救う「集合知」 自治医大発・国内最大プラットフォームの現在地 - 47NEWS&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE1Nc1FWTllOSm5pbmFIOUR0OVIwYkgyaVh1MDVUcHhyajByT2p6ejlMc3lrVVcwMVJmcEZGUG1URWwyUG8tLXNQRFdlVlBHUUEyVkdzdVJJMkdERTAzNlhVcWN2MTZPN2M2bkdDdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;富士経済、CGP・NIPTなど注目ゲノム検査の国内市場を調査結果を発表 - 日本経済新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiW0FVX3lxTE41WTh5RGpGcERPT2dFaWhYakpJa2o0a2lCSV_TYWRlUFNpN1R0ZVZNakR6LUdkblowQTJkVnJBcFFtX0lGTGFVZTlOUkJCdzh0Nndtc0NVc0t0Zmc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;診断の地域差 解消へ前進 - 下野新聞社&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1789089067</guid>
-      <pubDate>Fri, 11 Sep 2026 01:11:07 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [01:10]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTE81dXR5UWN4QV9EbVNpSENJYlN5R3J1bEZCTmtNU19fdEhRQWNrbmFfTURXcGlkTGNreVNmdU1MSE56QUY2bTZRUmFydWRRUE5YUTBZWW1KMXQzNENhVGNySzZJWEx1SGpOcUU0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;新生児のゲノム検査が広げる早期治療の可能性、親の同意と遺伝情報保護が課題に&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTE1vckFOczhjak9RclZfbE9nZDBNU3NpRmxoUlg5bktMVGxEWDJEWUIyRFEzREtrUko2RkN5YUROTGtiZzRsM3ZWTFNhVWg3WFp4NVlZ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;PFAS汚染「公費で血液検査を」 東京都に1万5800人分署名を提出 予防と健康影響の把握に&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiW0FVX3lxTE9lQVFVY3oxSE5XOUhUYzV2SmNHN21MNTdOaDJ0TGdZbk5vVFJaaDdmRnM2NzBWXzhfWVZLSElNOUt5QTI4SjhYejd1NzBiMzNMRG1rLVdhUTdNZFk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;医師のわずか1％…病理医不足を救う「集合知」 自治医大発・国内最大プラットフォームの現在地&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMib0FVX3lxTFBya29XM2VKTEVGYlMtM1lqanR6enhGc1VFaHhZdFNTbi1aQmhkem9rX3NXMndoV3NEZ05NbjQwaUg0bm1JNl9OUGtQTmxoc3d0dGwxVElLbDNKSTBJTmdkWDFaTGNiY2F3cDhLZ2NfOA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Kala Bio、眼科遺伝子検査でVirotek社と米国独占販売契約を締結&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1789175431</guid>
+      <pubDate>Sat, 12 Sep 2026 01:10:31 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部 施設情報） [01:11]</title>
+      <title>🗾 地域医療（和歌山・大阪南部 施設情報） [01:10]</title>
       <description>APIの混雑が解消されないため、スキップしました。</description>
-      <guid isPermaLink="false">news-local-1789089067</guid>
-      <pubDate>Fri, 11 Sep 2026 01:11:07 GMT</pubDate>
+      <guid isPermaLink="false">news-local-1789175431</guid>
+      <pubDate>Sat, 12 Sep 2026 01:10:31 GMT</pubDate>
     </item>
   </channel>
 </rss>
