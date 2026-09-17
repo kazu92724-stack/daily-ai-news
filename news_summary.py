@@ -21,11 +21,11 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 1. ニュース収集関数（リダイレクト解凍機能付き）
+# 1. ニュース収集関数（直近24時間: when:1d）
 # ==========================================
-def fetch_google_news(query):
-    """Google News RSSから直近2日限定(when:2d)の記事を取得し、リダイレクト先の本URLを解凍する"""
-    encoded_query = requests.utils.quote(f"({query}) when:2d")
+def fetch_google_news(query, timeframe="2d"):
+    """Google News RSSから記事を取得し、リダイレクト先の本URLを解凍する"""
+    encoded_query = requests.utils.quote(f"({query}) when:{timeframe}")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
 
     headers = {
@@ -37,7 +37,7 @@ def fetch_google_news(query):
         feed = feedparser.parse(res.content)
         articles = []
 
-        for entry in feed.entries[:15]:  # 指定サイトが増えたため少し上限を調整
+        for entry in feed.entries[:15]:
             raw_link = entry.link
             final_link = raw_link
 
@@ -67,7 +67,6 @@ def send_to_discord(category_name, summary_text):
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
         return
 
-    # Discord用にリンク形式を変換
     discord_text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
@@ -83,7 +82,7 @@ def send_to_discord(category_name, summary_text):
                 "title": f"📰 {category_name}",
                 "description": discord_text[:4000],
                 "color": 3447003,
-                "footer": {"text": "Daily AI & Medical News • 自動配信"},
+                "footer": {"text": "Daily AI & Regional News • 自動配信"},
             }
         ]
     }
@@ -111,7 +110,7 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
-    ET.SubElement(channel, "title").text = f"Daily Medical & AI News [{time_str}]"
+    ET.SubElement(channel, "title").text = f"Daily News [{time_str}]"
     ET.SubElement(channel, "link").text = "https://github.com"
     ET.SubElement(channel, "description").text = "AI・医療・地域ニュースの自動一覧フィード"
 
@@ -132,16 +131,15 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 # 4. メイン処理
 # ==========================================
 def main():
-    # 指定Webサイトのリスト（Google Newsドメイン指定）
     ai_sites = [
-        "site:news.yahoo.co.jp",       # Y!ニュース
-        "site:itmedia.co.jp",          # ITmedia NEWS
-        "site:ledge.ai",               # Ledge.ai
-        "site:cloud.watch.impress.co.jp", # クラウド Watch
-        "site:prtimes.jp",             # PR TIMES
-        "site:jbpress.ismedia.jp",     # JBpress
-        "site:gihyo.jp",               # gihyo.jp
-        "site:k-tai.watch.impress.co.jp" # ケータイ Watch
+        "site:news.yahoo.co.jp",
+        "site:itmedia.co.jp",
+        "site:ledge.ai",
+        "site:cloud.watch.impress.co.jp",
+        "site:prtimes.jp",
+        "site:jbpress.ismedia.jp",
+        "site:gihyo.jp",
+        "site:k-tai.watch.impress.co.jp"
     ]
     sites_query = " OR ".join(ai_sites)
 
@@ -149,26 +147,28 @@ def main():
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            # キーワード検索 OR 指定ドメイン検索
             "query": f"(生成AI OR LLM OR ChatGPT OR OpenAI OR Claude OR Gemini OR Perplexity OR Grok OR Qwen OR Rikyu OR AI新機能 OR AIアプデ) OR ({sites_query})",
+            "timeframe": "2d",
             "system_instruction": "前置き、挨拶、要約文章、本文解説は一切出力禁止。指定されたソース・キーワードから重要度の高いAI関連記事を選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
+            "timeframe": "2d",
             "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
 重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
         },
         {
             "id": "local",
-            "name": "🗾 地域医療（和歌山・大阪南部 施設情報）",
-            "query": "(和歌山 OR 泉佐野 OR 岸和田 OR 阪南 OR 泉南 OR 貝塚) AND (病院 OR クリニック OR 診療所 OR 開院 OR 移転)",
+            "name": "🗾 地域ニュース（和歌山・大阪南部）",
+            # 指定地域キーワードを OR 検索（直近24時間）
+            "query": "和歌山 OR 阪南市 OR 泉南市 OR 泉佐野市 OR 岬町 OR 熊取町",
+            "timeframe": "1d",
             "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
-【対象エリア】和歌山県全域および大阪府南部（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）の病院・クリニック・診療所の施設に関するニュース（開院、移転、新設、診療体制変更、病床、施設イベントなど）に限定。
-【絶対除外】大阪市内、堺市、北摂地域、抽象的な医療政策の一般論。
-タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
+【対象地域】和歌山県、阪南市、泉南市、泉佐野市、岬町、熊取町に関する地域の話題・ニュース。
+重要度の高い地域ニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
         },
     ]
 
@@ -178,7 +178,20 @@ def main():
     for cat in categories:
         print(f"\n=== {cat['name']} の処理開始 ===")
 
-        articles = fetch_google_news(cat["query"])
+        # カテゴリごとの期間指定(timeframe)で記事を取得
+        articles = fetch_google_news(cat["query"], timeframe=cat.get("timeframe", "2d"))
+
+        # 記事が0件だった場合の安全処理
+        if not articles:
+            print("該当する記事が0件のため、スキップメッセージを出力します。")
+            no_news_text = "直近に該当するニュースはありませんでした。"
+            all_summaries.append({
+                "id": cat["id"],
+                "category": cat["name"],
+                "content": no_news_text,
+            })
+            send_to_discord(cat["name"], no_news_text)
+            continue
 
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
         prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
