@@ -37,7 +37,7 @@ def fetch_google_news(query):
         feed = feedparser.parse(res.content)
         articles = []
 
-        for entry in feed.entries[:10]:
+        for entry in feed.entries[:15]:  # 指定サイトが増えたため少し上限を調整
             raw_link = entry.link
             final_link = raw_link
 
@@ -129,15 +129,29 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. メイン処理（地域医療を「病院・クリニック施設情報」へ刷新）
+# 4. メイン処理
 # ==========================================
 def main():
+    # 指定Webサイトのリスト（Google Newsドメイン指定）
+    ai_sites = [
+        "site:news.yahoo.co.jp",       # Y!ニュース
+        "site:itmedia.co.jp",          # ITmedia NEWS
+        "site:ledge.ai",               # Ledge.ai
+        "site:cloud.watch.impress.co.jp", # クラウド Watch
+        "site:prtimes.jp",             # PR TIMES
+        "site:jbpress.ismedia.jp",     # JBpress
+        "site:gihyo.jp",               # gihyo.jp
+        "site:k-tai.watch.impress.co.jp" # ケータイ Watch
+    ]
+    sites_query = " OR ".join(ai_sites)
+
     categories = [
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            "query": "生成AI OR LLM OR ChatGPT OR OpenAI OR Claude OR Gemini OR Perplexity OR Grok OR Qwen OR Rikyu OR AI新機能 OR AIアプデ",
-            "system_instruction": "前置き、挨拶、要約文章、本文解説は一切出力禁止。重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。",
+            # キーワード検索 OR 指定ドメイン検索
+            "query": f"(生成AI OR LLM OR ChatGPT OR OpenAI OR Claude OR Gemini OR Perplexity OR Grok OR Qwen OR Rikyu OR AI新機能 OR AIアプデ) OR ({sites_query})",
+            "system_instruction": "前置き、挨拶、要約文章、本文解説は一切出力禁止。指定されたソース・キーワードから重要度の高いAI関連記事を選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。",
         },
         {
             "id": "medical",
@@ -150,7 +164,6 @@ def main():
         {
             "id": "local",
             "name": "🗾 地域医療（和歌山・大阪南部 施設情報）",
-            # 地域×病院/クリニック/開院/閉院/診療にクエリを特化
             "query": "(和歌山 OR 泉佐野 OR 岸和田 OR 阪南 OR 泉南 OR 貝塚) AND (病院 OR クリニック OR 診療所 OR 開院 OR 移転)",
             "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【対象エリア】和歌山県全域および大阪府南部（阪南、泉南、田尻、熊取、泉佐野、岸和田、貝塚）の病院・クリニック・診療所の施設に関するニュース（開院、移転、新設、診療体制変更、病床、施設イベントなど）に限定。
@@ -160,8 +173,6 @@ def main():
     ]
 
     all_summaries = []
-
-    # 試行回数と待機時間の設定
     max_retries = 4
 
     for cat in categories:
@@ -174,7 +185,6 @@ def main():
 
         summary_text = None
 
-        # 混雑時(503)を考慮し、時間をおいて複数回リトライ
         for attempt in range(1, max_retries + 1):
             try:
                 print(f"[gemini-3.6-flash] API呼び出し中 (試行 {attempt}/{max_retries}) ...")
@@ -184,7 +194,7 @@ def main():
                 )
                 summary_text = response.text
                 print("[gemini-3.6-flash] 生成完了！")
-                break  # 成功したらループを抜ける
+                break
             except Exception as e:
                 print(f"[gemini-3.6-flash] エラー: {e}")
                 if attempt < max_retries:
@@ -201,7 +211,6 @@ def main():
             "content": summary_text,
         })
 
-        # Discordへ送信
         send_to_discord(cat["name"], summary_text)
 
         print("API制限防止のため15秒待機中...")
