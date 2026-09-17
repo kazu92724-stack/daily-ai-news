@@ -1,36 +1,37 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily Medical &amp; AI News [14:46]</title>
+    <title>Daily News [15:17]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [14:46]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE50dGJCODR2SERkellaT01Pd2tWWUdFM0pqSUxsME1RaUZBVVViUzZvejRvWHQ3REpISDc4YlM2NGw5UlZwVG9ZSEVXTVNUSzU3SzZDYWlFZmd2NUkyQXg0eEI4UWZHMkt2VkE1TUJKbWduTERWWmNIaThMX3RldVU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、6件の新たなAIインシデントを公表 透明性向上のため新指針を提示 - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9SdzlEVkZUZGw0OWtZWlFQQk0tVGxiUGhPV2xFV3ZIUWFyYUczZHg4aHJWS3Jvd2o0Rzc2a1dLNXY5WC1MYWIwLVlkVi1GTmFLbzZ3LVZScjRWNi10RVV4c3VCUGZwSlZKM0NQZE05MVA0R3pPTlIzRzZGTi1QaEU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「Claude」のチャットと「Cowork」が1つに。「Claude Docs」「Claude Slides」も登場（窓の杜） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE9ySFlyX01kUjJIRHNxcjItamNJNE9XN1FsOHdaODdGUGhSaVRzT2FZTEdSNEgyMnBjWlZIZ0E0djhjWjZMS2g3bWlNU09DaVBCWVRfV2NzQjFpSTFGRGhFaXVpZS1MSVJtUE9Gc003RmlGdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;なぜ「Claude Code」で想定外のコストになるのか？ 「トークン浪費」を防ぐポイントまとめ - ITmedia&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9sTVZudDRYQnJpLWdtMXZFcWV0OXBvZTZCRW14QWVIdlZ6dEw5YS1UVmdFYXRlYU5SU1IzZXhvM3lHVkg0R0wxelNId2I5OXBsWnB4U1VHWExSczd6TXBwSC04Q29WSkdCYi11czdieGlMV1hZdzZHSUdlUXFrck0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Google「Gemini Notebook」、資料について声で質問可能に 約100言語に対応 - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE1DaW1POGV0d0hRTHBMYWJXdTNua1E4LXJVUjdCU0k0aHdGSnBCeEhqaTBxUDBhc0pjUWlhT1NmaXV5cWwzdHYwQkh3RGZXb3NkSmlPRjZua192SHdoZTVTVUYwZ0VFYnVrRDhuZA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;AI学習は拒否、検索クロールは維持……Cloudflareの新機能「AI学習の不許可」 Google、Apple、Microsoftが対応 - ITmedia&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrQVExckdnX29heE5YbXNIR2FhSU1VQkhtZ3ZXUmJhdEIybU13bG1CLU1SQmRZSDdRVTd4d3dlVmFkVndEanV3emVYNUVKU2xRM2NWeWN2ZUdocElQSElZSF9sTUw4QQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;神戸市、Copilotの弱点を「Dify」でどう解決？ あえて自前でAI環境を構築した理由 - キーマンズネット&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1vUUtuN3JIcUF1Mlk2RjV5ZjhncnJORnVsam5DN2xmVm5VNkNscFB1c1BoZUNzcHFLQ2NMdUtEeWhHMkhURlNNX2pOMElkS2RqUW9rTExqZHZyRHNJSlRMM2dCQjNXRUlHekxmd3RHaDNxLThybm9MWjhVVlRvd2s?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ChatGPTとマネーフォワードMEの連携がエグすぎる サブスク・固定費・資産配分もAIが一発分析 - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9oVzM2ZElMZEhiVjdVZ1I3Z056X3VadWZfVmV5ckNLR0tqc1JpTS1XeW5acU9yWGI5NXlkaTZxM3pBckJ0bmdsbDRnVV9OWmVZNEkzU0UyeGs0cWlPWU5JR0s1cE9VZl91VGV4UEpOQjFENGtJWUdySVJIYzJYcjQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;記事のライセンス料は「誤差の範囲」、OpenAIとの訴訟めぐりメディア側が反論 - Yahoo!ニュース&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-ai-1789656419</guid>
-      <pubDate>Thu, 17 Sep 2026 14:46:59 GMT</pubDate>
+      <title>🤖 AI最新トレンド [15:17]</title>
+      <description>* &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE9ySFlyX01kUjJIRHNxcjItamNJNE9XN1FsOHdaODdGUGhSaVRzT2FZTEdSNEgyMnBjWlZIZ0E0djhjWjZMS2g3mW1NU09DaVBCWVRfV2NzQjFpSTFGRGhFaXVpZS1MSVJtUE9Gc003RmlGdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;なぜ「Claude Code」で想定外のコストになるのか？ 「トークン浪費」を防ぐポイントまとめ - ITmedia&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9SdzlEVkZUZGw0OWtZWlFQQk0tVGxiUGhPV2xFV3ZIUWFyYUczZHg4aHJWS3Jvd2o0Rzc2a1dLNXY5WC1MYWIwLVlkVi1GTmFLbzZ3LVZScjRWNi10RVV4c3VCUGZwSlZKM0NQZE05MVA0R3pPTlIzRzZGTi1QaEU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「Claude」のチャットと「Cowork」が1つに。「Claude Docs」「Claude Slides」も登場（窓の杜） - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxNXy1OUm5mNVoxR0hEZnUzUnh2cWEtT0VuenJRWGhuN2I4TzBPNXlyRzdNWndnQjhVZFZEMEVzQUFfclMxaDBScnJWOHBjdGJJcnFrS2Q3RTZ6cGNlbTJzSFNwY1BZQ3FRYnI1TTBYa2xaaHNtT3F1QTVyLW1aOXplV1FzZDRoUktn?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Claude Code「スキル」が凄すぎる…毎日のコピペ指示を“全自動化”する神スキル5選（ビジネス＋IT） - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE50dGJCODR2SERkellaT01Pd2tWWUdFM0pqSUxsME1RaUZBVVViUzZvejRvWHQ3REpISDc4YlM2NGw5UlZwVG9ZSEVXTVNUSzU3SzZDYWlFZmd2NUkyQXg0eEI4UWZHMkt2VkE1TUJKbWduTERWWmNIaThMX3RldVU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、6件の新たなAIインシデントを公表 透明性向上のため新指針を提示 - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9sTVZudDRYQnJpLWdtMXZFcWV0OXBvZTZCRW14QWVIdlZ6dEw5YS1UVmdFYXRlYU5SU1IzZXhvM3lHVkg0R0wxelNId2I5OXBsWnB4U1VHWExSczd6TXBwSC04Q29WSkdCYi11czdieGlMV1hZdzZHSUdlUXFrck0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Google「Gemini Notebook」、資料について声で質問可能に 約100言語に対応 - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE1DaW1POGV0d0hRTHBMYWJXdTNua1E4LXJVUjdCU0k0aHdGSnBCeEhqaTBxUDBhc0pjUWlhT1NmaXV5cWwzdHYwQkh3RGZXb3NkSmlPRjZua192SHdoZTVTVUYwZ0VFYnVrRDhuZA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;AI学習は拒否、検索クロールは維持……Cloudflareの新機能「AI学習の不許可」 Google、Apple、Microsoftが対応 - ITmedia&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTFBrQVExckdnX29heE5YbXNIR2FhSU1VQkhtZ3ZXUmJhdEIybU13bG1CLU1SQmRZSDdRVTd4d3dlVmFkVndEanV3emVYNUVKU2xRM2NWeWN2ZUdocElQSElZSF9sTUw4QQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;神戸市、Copilotの弱点を「Dify」でどう解決？ あえて自前でAI環境を構築した理由 - キーマンズネット&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1vUUtuN3JIcUF1Mlk2RjV5ZjhncnJORnVsam5DN2xmVm5VNkNscFB1c1BoZUNzcHFLQ2NMdUtEeWhHMkhURlNNX2pOMElkS2RqUW9rTExqZHZyRHNJSlRMM2dCQjNXRUlHekxmd3RHaDNxLThybm9MWjhVVlRvd2s?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ChatGPTとマネーフォワードMEの連携がエグすぎる サブスク・固定費・資産配分もAIが一発分析 - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1789658238</guid>
+      <pubDate>Thu, 17 Sep 2026 15:17:18 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [14:46]</title>
-      <description>* &lt;a href='https://news.google.com/rss/articles/CBMiUEFVX3lxTFA2Z1d1blFIR20yeFF5WlhrNmRHSFZfNHpGSzBseldYUHZaa0lHazEyRnpPNDl0b2pxOEtyVFZsS1dzVzBvWkdUam9VcUpETjdM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;病理画像から「臓器の年齢」を測るAI - The Medical AI Times&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE1SOVFFQWpabUxiOXA1ZlB0YVdJb242bzE3Vm9xZnFPdlM4cXhtVTFRWGU1d05lYklIZV9TQk5EellSNFFRV29IOUZjb3BWOUR5dk1LWGJsVVpqNWIya2lNQWt6U0R6eDVnMUE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;デジタル病理学市場、2035年85億米ドル・CAGR18.9％を予測｜AI活用による病理画像解析と診断ワークフローのデジタル化が加速 - Excite エキサイト&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTFBDLS0ybWJFNzVlQUZlX09pdEFIUk1kNVlPSHN5MmpYV1p2d3RSMUtieGptMk82QXgxYWxwQ0xoN3JMOWJFRkpMbl9YcHJmT0k?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;乳がん診断市場：提供別、技術別、バイオマーカータイプ別、検体タイプ別、臨床使用事例別、エンドユーザー別―2026年～2032年の世界市場予測 - アットプレス&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE5rTlFQYld3SGdFR3l4RzlzYy1EVDlVOGVSbVVxVFVNUHFQWWIxNmluWTE0UVpfT3BES202N1JJMTBXd0RWaFRkcVZxVTVTZ0tJZU5leV9WTi14a2FNY1RaeXpjdVNIVnVkOXlhWUZ5cjVNd0tpbnc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;トランプ氏側近のワイルズ米大統領首席補佐官、がんを克服 病理検査で異常なし - 産経ニュース&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1789656419</guid>
-      <pubDate>Thu, 17 Sep 2026 14:46:59 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [15:17]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiUEFVX3lxTFA2Z1d1blFIR20yeFF5WlhrNmRHSFZfNHpGSzBseldYUHZaa0lHazEyRnpPNDl0b2pxOEtyVFZsS1dzVzBvWkdUam9VcUpETjdM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;病理画像から「臓器の年齢」を測るAI&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTFA5NjZUOTRsVjUwVkxZQUNDbkp0U0R2NGkxTjVIOGl5X3pnZ2RjU3pwdTRkTzhiZVZSc0JxS0Zack05czRHWjVTcW55TF8wcDkyNlU4?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;デジタル病理学市場、2035年85億米ドル・CAGR18.9％を予測｜AI活用による病理画像解析と診断ワークフローのデジタル化が加速&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTFBDLS0ybWJFNzVlQUZlX09pdEFIUk1kNVlPSHN5MmpYV1p2d3RSMUtieGptMk82QXgxYWxwQ0xoN3JMOWJFRkpMbl9YcHJmT0k?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;乳がん診断市場：提供別、技術別、バイオマーカータイプ別、検体タイプ別、臨床使用事例別、エンドユーザー別―2026年～2032年の世界市場予測&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1789658238</guid>
+      <pubDate>Thu, 17 Sep 2026 15:17:18 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域医療（和歌山・大阪南部 施設情報） [14:46]</title>
-      <description>APIの混雑が解消されないため、スキップしました。</description>
-      <guid isPermaLink="false">news-local-1789656419</guid>
-      <pubDate>Thu, 17 Sep 2026 14:46:59 GMT</pubDate>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [15:17]</title>
+      <description>* &lt;a href='https://news.google.com/rss/articles/CBMiWEFVX3lxTE5lMktFa2JPZE5aN094WjF6RDVvQzhibEU4ZUE1Y3NWcTZITUFzNHFOTjl2S1R1dkx2MU04WV9PQ0hzMTdJaEdiUzdYemR4U1FuWVQ2TjR4U0o?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山 県道交差点でバイク２台が衝突 ２０代の男性死亡&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMiVEFVX3lxTE9fVHFLcmJIVDVWRm84TFIwX2liS2hBbGIwMkY0RWtTdFBycWJiTklBYTV4SEN6bHRrVmF4U1dLMHJMd3psOUItWW5UdlFmN3g3czhHMg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;【速報】和歌山市の県道でバイク２台と軽自動車の計３台絡む事故 大型バイクの運転手が死亡&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBpcWhaNG1GUjlwZkh3el90aDRfSmE2LVl5dWIzZk5TUjBZTUwzTkdIQ2Q3T2R4RENCak9nb1ppUEdQM2VEYUJlUHh4YUJGeW9waHRkemZhRXlfbEZleFpWUHQ1U1lYQUcxUE5wcDZCMl9CbmNPYVpKcXBvUGd2NUE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;バイク2台と軽乗用車が交差点で事故 大型バイク運転の男性が死亡 和歌山市（関西テレビ） - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1789658238</guid>
+      <pubDate>Thu, 17 Sep 2026 15:17:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
