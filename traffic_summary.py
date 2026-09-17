@@ -2,13 +2,37 @@ import json
 import os
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 import feedparser
 from google import genai
 import requests
+import jpholiday
 
 # ==========================================
-# 0. 環境変数 & クライアント初期化
+# 0. 土日・日本の祝日判定関数
+# ==========================================
+def is_holiday_or_weekend():
+    """今日が土曜日・日曜日・日本の祝日（振替休日含む）かどうかを判定"""
+    # 日本時間 (JST: UTC+9) を取得
+    jst = timezone(timedelta(hours=9))
+    now = datetime.now(jst)
+
+    # 1. 土曜日(5) または 日曜日(6) の判定
+    if now.weekday() >= 5:
+        print(f"[{now.strftime('%Y-%m-%d')}] 本日は土曜日または日曜日のため処理をスキップします。")
+        return True
+
+    # 2. 日本の祝日判定 (jpholiday)
+    if jpholiday.is_holiday(now.date()):
+        holiday_name = jpholiday.is_holiday_name(now.date())
+        print(f"[{now.strftime('%Y-%m-%d')}] 本日は日本の祝日（{holiday_name}）のため処理をスキップします。")
+        return True
+
+    return False
+
+
+# ==========================================
+# 1. 環境変数 & クライアント初期化
 # ==========================================
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
@@ -20,7 +44,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 1. ニュース収集関数（直近2時間: when:2h）
+# 2. ニュース収集関数（直近2時間: when:2h）
 # ==========================================
 def fetch_google_news(query):
     """Google News RSSから直近2時間以内の記事を取得し、URLを解凍する"""
@@ -36,7 +60,7 @@ def fetch_google_news(query):
         feed = feedparser.parse(res.content)
         articles = []
 
-        for entry in feed.entries[:10]:
+        for entry in feed.entries[:15]:
             raw_link = entry.link
             final_link = raw_link
 
@@ -57,7 +81,7 @@ def fetch_google_news(query):
 
 
 # ==========================================
-# 2. Discord送信関数
+# 3. Discord送信関数
 # ==========================================
 def send_to_discord(category_name, summary_text):
     if not DISCORD_WEBHOOK_URL:
@@ -78,7 +102,7 @@ def send_to_discord(category_name, summary_text):
             {
                 "title": f"🚨 {category_name}",
                 "description": discord_text[:4000],
-                "color": 15158332,  # 赤系統の色
+                "color": 15158332,
                 "footer": {"text": "Traffic Information • 毎時自動更新"},
             }
         ]
@@ -97,23 +121,34 @@ def send_to_discord(category_name, summary_text):
 
 
 # ==========================================
-# 3. メイン処理
+# 4. メイン処理
 # ==========================================
 def main():
-    # 道路交通障害・取締情報に特化したクエリ（電車等の公共交通は除外）
-    query = "(通行止め OR 事故処理 OR 交通規制 OR 事故通行止め OR 交通取締 OR 取り締まり OR 速度違反 OR 交通検挙) AND (和歌山 OR 阪南 OR 泉南 OR 泉佐野 OR 岬町 OR 熊取 OR 阪神高速 OR 阪和道)"
+    # 土日・祝日チェック（休日の場合は即座に終了）
+    if is_holiday_or_weekend():
+        return
+
+    # エリア：和歌山県全域（南部含む）〜大阪府南部（岸和田、貝塚、泉佐野、阪南、泉南、岬町、熊取など）
+    query = "(運転見合わせ OR 遅延 OR 運行遅延 OR 通行止め OR 交通規制 OR 事故通行止め OR 交通取締 OR 取り締まり) AND (和歌山 OR 田辺 OR 新宮 OR 紀南 OR 岸和田 OR 貝塚 OR 泉佐野 OR 阪南 OR 泉南 OR 岬町 OR 熊取 OR 阪和道 OR 阪神高速 OR 京奈和 OR 湯浅御坊道路 OR JR OR 南海)"
 
     system_instruction = """前置き、挨拶、要約文章、本文解説は一切出力禁止。
-【対象情報】道路の通行止め、事故による交通規制、道路の交通障害、警察による交通取締・検挙情報。
-【絶対除外】電車・鉄道（JR、私鉄等）の運行情報・運転見合わせ・遅延、飛行機・フェリーの運行情報。
-重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。"""
 
-    print("=== 道路交通情報の処理開始 ===")
+【対象エリア】
+和歌山県全域（紀南・和歌山南部を含む）〜 大阪府南部（岸和田市、貝塚市、泉佐野市、泉南市、阪南市、熊取町、岬町など）および該当エリアを通る高速道路・主要道路・鉄道路線。
+
+【収集ルール】
+1. **鉄道・公共交通（JR、南海等）**: 「運転見合わせ」および「遅延（大幅遅延・ダイヤ乱れ含む）」に関する情報のみを抽出。（※駅のイベントやその他の一般的なニュースは除外）
+2. **道路情報（高速道路・一般道）**: 阪和自動車道、阪神高速、京奈和自動車道、湯浅御坊道路、主要国道の「通行止め」「事故による交通規制」「通行規制」に関する情報。
+3. **交通取締**: 警察による交通取締・検挙・速度違反監視などの情報。
+
+【出力形式】
+該当する重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。"""
+
+    print("=== 道路・交通情報の処理開始 ===")
     articles = fetch_google_news(query)
 
-    # 1時間ごとのチェックのため、該当記事がない場合はDiscordへ送信せず終了
     if not articles:
-        print("直近2時間以内に該当する道路交通ニュースはありませんでした。送信をスキップします。")
+        print("直近2時間以内に該当する交通ニュースはありませんでした。送信をスキップします。")
         return
 
     context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
@@ -138,7 +173,7 @@ def main():
                 time.sleep(10)
 
     if summary_text:
-        send_to_discord("道路交通・事故・取締情報", summary_text)
+        send_to_discord("交通・事故・遅延・取締情報", summary_text)
 
 
 if __name__ == "__main__":
