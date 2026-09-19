@@ -2,37 +2,13 @@ import json
 import os
 import re
 import time
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 import feedparser
 from google import genai
 import requests
-import jpholiday
 
 # ==========================================
-# 0. 土日・日本の祝日判定関数
-# ==========================================
-def is_holiday_or_weekend():
-    """今日が土曜日・日曜日・日本の祝日（振替休日含む）かどうかを判定"""
-    # 日本時間 (JST: UTC+9) を取得
-    jst = timezone(timedelta(hours=9))
-    now = datetime.now(jst)
-
-    # 1. 土曜日(5) または 日曜日(6) の判定
-    if now.weekday() >= 5:
-        print(f"[{now.strftime('%Y-%m-%d')}] 本日は土曜日または日曜日のため処理をスキップします。")
-        return True
-
-    # 2. 日本の祝日判定 (jpholiday)
-    if jpholiday.is_holiday(now.date()):
-        holiday_name = jpholiday.is_holiday_name(now.date())
-        print(f"[{now.strftime('%Y-%m-%d')}] 本日は日本の祝日（{holiday_name}）のため処理をスキップします。")
-        return True
-
-    return False
-
-
-# ==========================================
-# 1. 環境変数 & クライアント初期化
+# 0. 環境変数 & クライアント初期化
 # ==========================================
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
@@ -44,7 +20,7 @@ client = genai.Client(api_key=GEMINI_API_KEY)
 
 
 # ==========================================
-# 2. ニュース収集関数（直近2時間: when:2h）
+# 1. ニュース収集関数（直近2時間: when:2h）
 # ==========================================
 def fetch_google_news(query):
     """Google News RSSから直近2時間以内の記事を取得し、URLを解凍する"""
@@ -81,7 +57,7 @@ def fetch_google_news(query):
 
 
 # ==========================================
-# 3. Discord送信関数
+# 2. Discord送信関数
 # ==========================================
 def send_to_discord(category_name, summary_text):
     if not DISCORD_WEBHOOK_URL:
@@ -121,13 +97,9 @@ def send_to_discord(category_name, summary_text):
 
 
 # ==========================================
-# 4. メイン処理
+# 3. メイン処理
 # ==========================================
 def main():
-    # 土日・祝日チェック（休日の場合は即座に終了）
-    if is_holiday_or_weekend():
-        return
-
     # エリア：和歌山県全域（南部含む）〜大阪府南部（岸和田、貝塚、泉佐野、阪南、泉南、岬町、熊取など）
     query = "(運転見合わせ OR 遅延 OR 運行遅延 OR 通行止め OR 交通規制 OR 事故通行止め OR 交通取締 OR 取り締まり) AND (和歌山 OR 田辺 OR 新宮 OR 紀南 OR 岸和田 OR 貝塚 OR 泉佐野 OR 阪南 OR 泉南 OR 岬町 OR 熊取 OR 阪和道 OR 阪神高速 OR 京奈和 OR 湯浅御坊道路 OR JR OR 南海)"
 
