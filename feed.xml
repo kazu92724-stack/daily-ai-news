@@ -1,41 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [01:13]</title>
+    <title>Daily News [01:12]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [01:13]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE50dGJCODR2SERkellaT01Pd2tWWUdFM0pqSUxsME1RaUZBVVViUzZvejRvWHQ3REpISDc4YlM2NGw5UlZwVG9ZSEVXTVNUSzU3SzZDYWlFZmd2NUkyQXg0eEI4UWZHMkt2VkE1TUJKbWduTERWWmNIaThMX3RldVU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAI、6件の新たなAIインシデントを公表 透明性向上のため新指針を提示 - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9obkFFSUVjQ0RlR1lsekZIX3Fqa29iSTFzbzdXbnBqX1VXZ2NHUjhfVXUycEVLbXAtd29EbG80TVdIcHZTbXg5Q1h0c3E5YmRnU0RKOHl2eER5TWNNdDZ5cUs4cFlsQWVmaFUwMGgzTGZ0aXJOTXZyOUZDQVR0R3M?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ChatGPTがWordに対応 ラフなメモ→しっかりした文章に校正 - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1vUUtuN3JIcUF1Mlk2RjV5ZjhncnJORnVsam5DN2xmVm5VNkNscFB1c1BoZUNzcHFLQ2NMdUtEeWhHMkhURlNNX2pOMElkS2RqUW9rTExqZHZyRHNJSlRMM2dCQjNXRUlHekxmd3RHaDNxLThybm9MWjhVVlRvd2s?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ChatGPTとマネーフォワードMEの連携がエグすぎる サブスク・固定費・資産配分もAIが一発分析 - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9HTEROMW5NNEhweUFyMXdNZkl0RGpPZG5UTmh0NlpEV2dvTllaeFpSdWVnRXZjRjk4azRrQ1ZuSEQtMDMwV0t1bkRNM0lOUERxUjVpTmp3R1hpTy03bVBxcXJ4UWlIVnJiMk5JNUwtNDQzVnFlRURxOVlJMUlkVmM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Anthropic、「Claude」のチャットと「Cowork」を統合（ZDNET Japan） - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE9ySFlyX01kUjJIRHNxcjItamNJNE9XN1FsOHdaODdGUGhSaVRzT2FZTEdSNEgyMnBjWlZIZ0E0djhjWjZMS2g3bWlNU09DaVBCWVRfV2NzQjFpSTFGRGhFaXVpZS1MSVJtUE9Gc003RmlGdw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;なぜ「Claude Code」で想定外のコストになるのか？ 「トークン浪費」を防ぐポイントまとめ - ITmedia&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUzJ5R3FBemx4WGZrVkIyVVFxc0Z5UVlTa1h4bW1SNjItOFloRTY4dkdVNVdjYjRnYUs1WHNWdTBIZUtBNVFTRjJJT2VRUDBidTVYQXViWnZGN0ZLT3RvZkZudTJEMkZtMDk5cFV4WWw3T2doVFE3YjNkelpuYlEzY21ONnlXWjJF?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Gemini搭載PC「Googlebook」ついに予約開始へ／Anthropic CEOのAI開発減速提言（ITmedia PC USER） - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE91eW9QM21uSFJxeTBRVFhUdmkwLThKWWJ4VWNidFVBZWlNLWZuUFRLc1IxdzBrbGFBa0I4ZHRlOWhtdHA2VXBaQ1JqUUVMWS1oUHp1ajgwaU5IZ3VMd2F0S0paa2tkZkNTVFpkWlkyOVlTdmVBbTdudS1zR19lRU0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;グーグルが外部AIエージェントで家電を制御できる新規格「Google Home MCP」公開（ビジネス＋IT） - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxOUnFrTjlsXzNvbzJ3bmFVVDBhZkxHYUdUTHU0cUVCZmVoVU9oOHpUaTVaTUVRMk53RlRBR1pYQm0xT0xUeWRyVW94a0FtNVVuSTN5Ym5BZS0tOWFqejNXZHZFcEw4Z2dJZWFtbzQzbmVLbFRkQ3RJUGdlaU43VFU5Z0czUHY3c0lL?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;経営「AIでラクして早く帰って」→社員「帰らない」 工数最大9割減のDeNAも悩むAI効率化の壁（ITmedia NEWS） - news.yahoo.co.jp&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-ai-1789866786</guid>
-      <pubDate>Sun, 20 Sep 2026 01:13:06 GMT</pubDate>
+      <title>🤖 AI最新トレンド [01:12]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE9rYl9vQnkxTnpCeE5zWktreFdqLUt4REVqU2U5OFhpMnluNVRYLXdIb2dzZFNVdWVRbWloM0E3WFZzTzI4OVNWWnpDbTVLdTIxY3QxS1pqZnYxY1JlelZsbGY3TFl4VElvdXlXcQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「Jev」とは “文章を書かないAI”がなぜ話題に？ 元OpenAI研究者が開発、「“スマートなif文”と考えてみて」（1/2 ページ） - itmedia.co.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5Cd21XNFFNWlNfdkpBMFBpaGZDb01LUHpwLWdWZ1pLRmN4aFBabkhESDMtVUl0OEhBdnY4N3FTUTZvd2VhQVkzM3dpaHFPUS1zRG1HU3g3NmlsRVp3U1dmaTk4NnBYZHVMaC1ROXdyNVk4eldMYlNQZGZUVzhxa3M?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「AI検出」を「不正」と見なす危険 “Claude電子透かし”の技術的限界と企業の正しい運用設計（ITmedia エンタープライズ） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9obkFFSUVjQ0RlR1lsekZIX3Fqa29iSTFzbzdXbnBqX1VXZ2NHUjhfVXUycEVLbXAtd29EbG80TVdIcHZTbXg5Q1h0c3E5YmRnU0RKOHl2eER5TWNNdDZ5cUs4cFlsQWVmaFUwMGgzTGZ0aXJOTXZyOUZDQVR0R3M?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ChatGPTがWordに対応 ラフなメモ→しっかりした文章に校正 - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUzJ5R3FBemx4WGZrVkIyVVFxc0Z5UVlTa1h4bW1SNjItOFloRTY4dkdVNVdjYjRnYUs1WHNWdTBIZUtBNVFTRjJJT2VRUDBidTVYQXViWnZGN0ZLT3RvZkZudTJEMkZtMDk5cFV4WWw3T2doVFE3YjNkelpuYlEzY21ONnlXWjJF?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Gemini搭載PC「Googlebook」ついに予約開始へ／Anthropic CEOのAI開発減速提言（ITmedia PC USER） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1TRHI5UEFLMm9femU1NUd1amlGWWdRVXFoSElna2RNT2UtZEhnSW9kaDNZdzdkNmk2R2xYaXNKRmJnc1dfdUFCVmx0WU9WNi1mT3pqR2std295cERwOFV6Ym9XMjc0bEQtQmg5TDVnellJbGRBbUZKay0zS0owSms?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「ChatGPT」が「Word」のサイドバーに、無料プランを含む全プランでグローバル提供（窓の杜） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5oeWV6dEcwbTlqMXhGVGVNYVVJSDdVU3pXRVVEWmpCMnhkSE92dnJNX0VPbHA3R0h1cmpyNEF6UEEtQmhYMDcyV25uaWd2YldBVHRBMkJvUTJhUl9jVkllbTlibUVVMVhrd0tJYVlaUks3cGhqemlsVjhjTFlqU3c?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;新興TypeSafe AIが放つ新AI「Jev」、ハルシネーションなしは本当か？ - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTE81OGJjMC1ScTFLR1JWZHh0NDlWX2lsLXgyVEhKNlJCTjRNbnlsbEMtNGlKbWhOTTNzdllEZlV4Rm5LODN3VkNrSVBka1lOdVZOMy01cTQxSnU2YlJPRFBENE1TTGMzS3JKTThvYy1CWEs?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;1200万円のSaaS導入を回避 スギ薬局「運用費10万円」のAIエージェント構築術：【2026年上期メガヒット記事】 - TechTargetジャパン&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE1tV296WW9EWGJpUjVXa2RRVDF0N2tVZ04yd25KR0pwc2o0eEJyc2FZY1Zqbk96c1UzOFRXM05jbFpBa3JLNXk5cnZUOEhhY2ZrU1Q5Zy1TdlQzTnBGMUhYRjZHTkdXUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;AIを入れても「最後は人頼み」 自動化の穴を「AI＋人」で埋める新たなBPOサービス - キーマンズネット&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE5LRWxiU2d5RnNvcDJQcWxxQk9WYk1CaUZ1aXotdHFiYU1iRUpZRnFBTmQ5TVVEdFZGYm5QWmRwbjNGN2JESUR1SFFnUFprZ0RPVF9tOER0NXZ5UG8tZUkxY0VfTUloQQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;双日調査、Copilot導入企業の87.5％が「情報分散」を課題 「横断検索AI」に期待か - キーマンズネット&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBGQWxoaVk1Z1V5X1lZZTFKaUpsa3BPd3F1MW1EODdCZXQzaXlxcUEyamVjRmdlcUZGNjhpQ0trb1VYaWFCTTJ5RmVFdG9xck01eUhyNnkzTGNpazJhc0I5X1d0a2psVnE5RjFyXy1GQW9TTlI0OVVld19WdTFDd0E?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;NTTドコモビジネスら5社、「ワット・ビット連携」の実証開始-分散データセンター間でAI処理を最適化 - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1789953120</guid>
+      <pubDate>Mon, 21 Sep 2026 01:12:00 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [01:13]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiS0FVX3lxTE9jWkpVc1pIWkYxWWo1RVY2ZnR6VWtWczZFaHppOXhJRUZBR2lCNE1TS0xMWS04aHM4LXFrZXdtVXhwVHNHdFM0M3JHRQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;受託臨床検査市場に関する調査を実施（2026年）～2025年度の国内受託臨床検査市場規模は前年度比2.0％増の6,170億円、持続可能な事業運営に向け、集配・検査体制の最適化と再編・連携が焦点に～ - 47NEWS&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE9QRnVic0t3Yk4tNEVoUXZsOTlJQ0xMOG9GMENacFg4UVgyWXd1VGxTY2gzOTdFWFNNaHFodFpMTFNkcWRwY0NSS0ZVTXBIUzQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;エソテリック検査市場は2035年に878億4,000万米ドルへ、CAGR 13.65％で拡大｜高度診断・希少疾患検査需要が成長を牽引 - Newscast.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiwAFBVV95cUxOZGl1QWVVUUtNeHVwSE9VTklDcHllX1ZmQkdlTFNBT2ZtQkdhazBtd0xvdE1TaTFhQV9hZUFuQ0stUnNlZ1ZCZ1VpbnRNMzVVQXQtMkNCdlBWQWZrSFNBdDYxZllfMmsybjFhUmlzVncxNEtvRmxGTDR2SFBIdkxHRlc4d1VRUndXX08zNXk4Yy1LUnI4SEk2U3BiY0w1eThzQm5Pa3ZsRXdSOFJwRDE2eVQ1UEd0SVpMNFFoYkVFZzk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;中央高地地域の人々に、生殖補助医療や出生前スクリーニングのための遺伝子検査を提供する。 - Vietnam.vn&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE84cHVObVVta19KU1E2VlUtSTZzZ2E0Vk9iSHEyQ2lHNUY0anNlVDdad2pVWTBrTGpIX0ZNUXZ1bmxYNzQ2WnZHZGhCTUtfWEU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;乳房生検装置市場―2026年～2032年の世界市場予測 - アットプレス&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiWEFVX3lxTE85cVJieVZGQlhyYzdVQUI4WUtramk3ZFBuOV9pcklJSFlVV2pVRUJ0RTlQTnpzR0ZPNnhPMzgyemUyb25Wekl3d1VTNi1fc1doMWJ3UEpDT3g?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;乳牛の遺伝子検査、世界トップ水準の評価 中標津の工藤牧場 - 北海道新聞デジタル&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1789866786</guid>
-      <pubDate>Sun, 20 Sep 2026 01:13:06 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [01:12]</title>
+      <description>直近に該当するニュースはありませんでした。</description>
+      <guid isPermaLink="false">news-medical-1789953120</guid>
+      <pubDate>Mon, 21 Sep 2026 01:12:00 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [01:13]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTE56cnR1cnFQTi00SGNSYTJNZzdaQzktbDJsZlhvWGNNcGNTVnhVdnBNV1ljQ1B0LUdJc0JTYXdhSVUzb211Yk9VWDJ1QWFCU3hyNzE5NGh3TFpMbzIyQ0xOUFBYanhIMllE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;避難所運営 女性視点を 防災ワークショップ 50人学ぶ 災害時の不便さや違和感共有 和歌山 ／和歌山 - 毎日新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBnZ3JINml1U3lzZHMxZF94cXVCR0s2Z1dKbEs2TlFZS1NweEhHYnh4ZE9UcHlGTmRBUUVYLXdneU54YTloOTB0dzhkOHhSZzlncHVoTkdqS0EzaHpqaUZrYmVNLTRGSFMySUt1Ny1Uck00N3BGVGZmU1NlVWNIOUk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;第11回「ビッグホエール杯全国少年剣道錬成大会」／和歌山市（WBS和歌山放送ニュース） - news.yahoo.co.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE9HRzdWbDBESWMxQUtvZURhWDdRVHZ0aDh6dVgyOEYwTDd5ZTBZODlYeHVuNGx2MHZIbWppWlllak4yc2VLX2llTDFjQXZwRHYwa1BEQV9ROGZacHVVOUZKazZXUmVmQlUxV205R2MzNEHKA1m1?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「招き猫」ならぬ「招きパンダ」 AWが１０月販売へ - 読売新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMid0FVX3lxTFBqWDBUdW1hNVp6SWFJQjl1MDd6di1ERGFTdGFsN3hEekhzLU1SY1poZGxSMWVBb09nSURyd0pRbkl6V19Oak9LSmNqYk50aXVNRkdJRFlMMXFZTlk4WklTWTBVakdFMENDYUw5bXVqVTZmb0hUU3RN0gF3QVVfeXFMUGpYMFR1bWE1WnpJYUlCOXUwN3p2LUREYVN0YWw3eER6SHMtTVJjWmhkbFIxZUFvT2dJRHJ3SlFuSXpXX05qT0tKY2piTnRpdU1GR0lEWUwxcVlOWThaSVNZMFVqR0UwQ0NhTDltdWpVNmZvSFRTdE0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;【和歌山・白浜】夜のアドベンチャーワールドで「シルバーウィーク ナイトLIVE！アドベンチャー」開催、初のナイトペンギンパレードも - ｄメニューニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTE1ZdUpPejVvNlBTMmRTa2dqNHpRX28yX0JJV0hYVmlFNUhqZjJ6SndGczJmUXhGZGVWdndNdVpKQmYtbzJ4dEdVV3NGRmhXUWV2eWFaMkUxcVZWYVRIUkZXT2lNanlUMjllbEFwaGtvcGM1YzZQdHFFNA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山：秋旅スポット ひんやり坑道 冒険だ：地域ニュース - 読売新聞&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-local-1789866786</guid>
-      <pubDate>Sun, 20 Sep 2026 01:13:06 GMT</pubDate>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [01:12]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFB4emtrZnBrSXBkZlVUZmlETzNhaE9ReTNFazR0dy16bDVITmRwME96Y3JOYmM5UDdnaXN4TlJ6dk9IOGdxUE5vNFQtaUdla2RCOFZwcW5LejRTZE9WNk9lbmRGbTdfTU9KR0lheDhpOEtFRVJiZTJhMHhNZ1NSbm8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山県「八郎山トンネル」が開通 23年12月の開通を予定も…天井部分の空洞など施工不良見つかり工事やり直し - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9UUWI1cjFSbkJQdW9ZZ3BfN01rdzBaRHoxRGY2aHVXQzh4NktHaDlmQTVuOVhybldEdlkyRGNpX2w2NVJiWE5yUmR6dDIwWWp5QnluOHF3V0p3MVFFZ0JreHoya1ZURWNKRmRuVGVaSHlaVWZDYXJxYmVGc1g1YXM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;中国にパンダ返還後も「訪問客数はむしろ増加」 和歌山県が「観光客動態調査」を公表 地元・白浜町が「ゼロ・パンダ」の影響を受けなかった“納得の理由”（デイリー新潮） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE5VYVd2aTRucnZfX29ReDBocXhMSHNhdHJKUTluMzd4S1MzeXdFNzVvcTFZcHRTdWIzOFNmam9PTERSR21XSnE1QlhmWmc2RGNGc083cGxJdW03MFlRektCN3lmOF9NZEJOczN0UWdjMjFXUQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山・目指せ天守閣！７０人が城やホールで囲碁対局…江戸時代の御前試合にちなみ４回目 - 読売新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE95X0NJVVVpMWJKQ2Nmc0thRExCeXc0Q1BrVjUxVHY5WXNiUWVmOFNDdUNFQzQyZmNhaklsb3p0ZmtOT3d1dVhPN0FMTF8zTzV4SkRxRzVYczF5R0piOXdjUU5CdXlNc1ZJNUJQRHhTM2JJNUs5bjZHVmQ2UndiOFE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;2次予選進出校決定！和歌山東と那賀が勝利！秋季和歌山県1次予選【26年秋高校野球】（高校野球ドットコム） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTFBCWmZaeG1SZG12bFNuMnVyVEtqblpXcHk2X1dxT1RlUENJaGJxSm1lZDI0SHdzaHUtUVhHMVdlUVNId1E4OWVIRXZlZlFSVFE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;大阪・奈良・和歌山で「すみっコぐらし」のかわいいイベント開催 - anna（アンナ）&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1789953120</guid>
+      <pubDate>Mon, 21 Sep 2026 01:12:00 GMT</pubDate>
     </item>
   </channel>
 </rss>
