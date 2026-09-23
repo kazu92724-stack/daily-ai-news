@@ -1,42 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [01:11]</title>
+    <title>Daily News [01:14]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [01:11]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE9rYl9vQnkxTnpCeE5zWktreFdqLUt4REVqU2U5OFhpMnluNVRYLXdIb2dzZFNVdWVRbWloM0E3WFZzTzI4OVNWWnpDbTVLdTIxY3QxS1pqZnYxY1JlelZsbGY3TFl4VElvdXlXcQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「Jev」とは “文章を書かないAI”がなぜ話題に？ 元OpenAI研究者が開発、「“スマートなif文”と考えてみて」（1/2 ページ） - ITmedia&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5QczdUYkZjUmVwZnBpS2ZhRW9BTWRObE9OQXhvUjNNYUZVcm80UlZHM2ZwX1NwU0c3MEpYLV9FQ0dqR25TMXI5Unp2OXBVMV9nOHJnM011NxFsQXFYUVRYTWZEU3A5Mk1aelRKY3VxZi1FYTNMQ3ZRbERJbDdUUzA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Google、GeminiとAndroid連携を深めた新PC「Googlebook」正式発表（ケータイ Watch） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5Cd21XNFFNWlNfdkpBMFBpaGZDb01LUHpwLWdWZ1pLRmN4aFBabkhESDMtVUl0OEhBdnY0N3FTUTZvd2VhQVkzM3dpaHFPUS1zRG1HU3g3NmlsRVp3U1dmaTk4NnBYZHVMaC1ROXdyNVk4eldMYlNQZGZUVzhxa3M?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「AI検出」を「不正」と見なす危険 “Claude電子透かし”の技術的限界と企業の正しい運用設計（ITmedia エンタープライズ） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTE81OGJjMC1ScTFLR1JWZHh0NDlWX2lsLXgyVEhKNlJCTjRNbnlsbEMtNGlKbWhOTTNzdllEZlV4Rm5LODN3VkNrSVBka1lOdVZOMy01cTQxJnU2YlJPRFBENE1TTGMzS3JKTThvYy1CWEs?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;1200万円のSaaS導入を回避 スギ薬局「運用費10万円」のAIエージェント構築術：【2026年上期メガヒット記事】 - TechTargetジャパン&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE5LRWxiU2d5RnNvcDJQcWxxQk9WYk1CaUZ1aXotdHFiYU1iRUpZRnFBTmQ5TVVEdFZGYm5QWmRwbjNGN2JESUR1SFFnUFprZ0RPVF9tOER0NXZ5UG8tZUkxY0VfTUloQQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;双日調査、Copilot導入企業の87.5％が「情報分散」を課題 「横断検索AI」に期待か - キーマンズネット&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9OY2NBb3g3M3cxUzBlTzlZVVgtWXAwZ290VU1PeUhDaUZhaV9ES1NvRGJ1YXZkZ2w3ZkxLWHpBRUZOd1poaWRkaXh0M0c0d1FMZTlWNWREeXh0ekY3SjR0VnZaZDNXaTJ2cklLbF9ORVo0M20zMEp0R3dFaDVJLTA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;42州142ヵ所で一斉デモ勃発!!! 全米「反AIレジ スタンス」最前線（週プレNEWS） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTFB2Q0VuRzNqb1ktWU9pSUxqRURqSFpETnE2Rlc1RlNjU05WbGtCbUZ3MWtuRUdPdnlib3JORHJZdXdZVG5RVm9VZF9UQldveUVXSUVnX3NQd0JIcWl3b2hTbldxanJsZw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;栃木県、生成AIチャットbotを高精度化 県サイト全体を横断検索し、対話形式で回答 - キーマンズネット&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPc1pXMWZ4NFVfZi1wLS16aFZtbFlrWDF4WTJKVFh1N2o3bXBUajFVZWFXNUdNUkV4bUVHU1pWMjJnNDdob2xXdkFKOF9zWjM0aklmSk9XNmNvTjNLWThQR2FPSTJ6dUpfQzZ5bFNsMk5NclZ0djNucnQydHNPYm5ZUUdOX0c3ckR5?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;渋谷に似ている？なぜOpenAIは人気ブランド「Supreme」が生まれた通りにオフィスを構えたのか（藤田結子） - エキスパート - Yahoo!ニュース&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-ai-1790039462</guid>
-      <pubDate>Tue, 22 Sep 2026 01:11:02 GMT</pubDate>
+      <title>🤖 AI最新トレンド [01:14]</title>
+      <description>APIの混雑が解消されないため、スキップしました。</description>
+      <guid isPermaLink="false">news-ai-1790126058</guid>
+      <pubDate>Wed, 23 Sep 2026 01:14:18 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [01:11]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiTkFVX3lxTE9CS0FqRzVmZlJnVmt1cFViOUR4NnVmSDFtOF9LejZlRkw4NjhjOUR4UjJNVVlUdGc5ZTFxNFRTcmtZR1loUTNlOGJNcENPZw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;治療難しい｢原発不明がん｣ 発見時には既に転移 ゲノム医療進展で“一筋の光” - 静岡新聞DIGITAL&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMijgFBVV95cUxQS25lRWNJMFZLU01MSWo5amxJSnVtd2xHSWNlQ1lBZzVaek52WHJrenM1dVhuV25aTW9icm0yazdVYXlTZnRKUFl0ZHp3UFdXVVFydmZ0dkpCNExrR3gwM3duYmNucWpRVlhZQkJJLTlacjFUUll0NnZISnNJdklqUV8zeDRaeFZ6Yk9aTTNR?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;重症化リスクの高い心不全患者の臨床所見、血液検査、心エコー - 日経メディカル&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTE5FTVZFUDdJNTNRRUpGUDVWTzVyZF9DeVVPUVVZYnhCLUtYYTF1ejFTOWt3Y3owS3dMMTlnRFk3V2NkRGdrMWFtdlNnOHQydVZaTmI0c2lwpEZrenBadUhJOVVBTnFyUXZVVTRrZDBtNmY?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;アジレント、臨床検査室向けDNA・RNA分析システムを発売 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMigAFBVV95cUxNR29XUkVybXpqTGNERS1EN0U2VVNMbmZERV9rSHdOTDZLaVRZbm83QlNES2hPN0NlRFk3a2NPZXlnOG9tbk5VVkJBS202aEUxTkU0RWVmUWhQLWhzVl94LUxfNWdMbXhpcUZZRU8tbmJ4alpqQzV5WXZ3SklSTGwySw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;メドメイン、個人向け病理画像クラウド「PidPort Personalプラン」を提供開始、3か月無料キャンペーンを実施 - 373news.com&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTFAtRFhqOS01QzZ6bkQ1OEdvZzZNYlBfNElTSnJQRVNFLXRQbkNpMVZWams2R0JSbG92MFNUV2RwcndvN3lRTG9zSFd1Y3pYTUMtMnlzMlRIN2t2ZE1DVEhHMjZlY1NfUjFWaW9aaTdZRVM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Verici Dx、臓器移植患者向け遺伝子検査「TranscripTx」を2026年第4四半期に発売予定 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1790039462</guid>
-      <pubDate>Tue, 22 Sep 2026 01:11:02 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [01:14]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiTkFVX3lxTE9CS0FqRzVmZlJnVmt1cFViOUR4NnVmSDFtOF_LejZlRkw4NjhjOUR4UjJNVVlUdGc5ZTFxNFRTcmtZR1loUTNlOGJNcENPZw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;治療難しい｢原発不明がん｣ 発見時には既に転移 ゲノム医療進展で“一筋の光” - 静岡新聞DIGITAL&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTFBXMFFWV3o2ZDdldGx1WHgzN185U0dHUDREZFY1a1AwSDB0Ml_ZVk44MU9UR1RWZy1lUmNXNVJweTFHZ2REVjZPWjFva3dmYkNINUM4Y2htRWdRVjhVQlJPWmhCeG5DQU5ET2dpSV96cWh6NGdv?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;米FDAスタッフ、グレイルの「Galleri」がん検査に重大な安全性・精度懸念示さず、株価急騰 - BigGo ファイナンス&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTE5FTVZFUDdJNTNRRUpGUDVWTzVyZF9DeVVPUVVZYnhCLUtYYTF1ejFTOWt3Y3owS3dMMTlnRFk3V2NkRGdrMWFtdlNnOHQydVZaTmI0c2lwcEZrenBadUhJOVVBTnFyUXZVVTRrZDBtNmY?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;アジレント、臨床検査室向けDNA・RNA分析システムを発売 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMicEFVX3lxTFAtRFhqOS01QzZ6bkQ1OEdvZzZNYlBfNElTSnJQRVNFLXRQbkNpMVZWams2R0JSbG92MFNUV2RwcndvN3lRTG9zSFd1Y3pYTUMtMnlzMlRIN2t2ZE1DVEhHMjZlY1NfUjFWaW9aaTdZRVM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;Verici Dx、臓器移植患者向け遺伝子検査「TranscripTx」を2026年第4四半期に発売予定 執筆 - Investing.com - FX | 株式市場 | ファイナンス | 金融ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiowFBVV95cUxQQXM2MEtINUEwY3YzNXEzeUVJNTdBTXdsYXJZSUZMWXRLUjVuNWEwYU1mRnpNdjEzdWJVVkNEOGQ2UzZMRUNKY0ExSlB3Nkw0WnpiVjBCdmhPRHl2c3dCTFU1WE1jNjk1RkVCLXpWSmdacmEyVWJpOWo1VE1JNEVkQjJHWmJIRDJleDk1MVpFdUZBUmdNUXc1bl81c1hlZ0RfaFdF?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;CorHeart 6の植込みが成功した場合、重度の心不全患者にとってより多くの治療選択肢が提供される。 - Vietnam.vn&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1790126058</guid>
+      <pubDate>Wed, 23 Sep 2026 01:14:18 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [01:11]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE51eWtraDVQNkFfdzlXR1BNRzVQVFAtc3RUWldkR2xrMi1rVTBEZEhHeS1mNHRYaTh2RjZzSmhVTENoYWVQZ2czUkFBWXViRzk3eDRrVF82RS0yWUhQSlBxcmV0ODlfVWV2YkZPWVVUNzlLQmtXZ2xmU3hLQnRVcG8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山・白浜町内の海水浴客 前年比1.8倍 花火大会押し上げも コロナ前には戻らず（産経新聞） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE1vMlVMcWZpWDdqSXlRbU0tX09RdWVDeGo1YXhQX2JMQmhaUFhEOFVtU0wxOUZSQXRjRDhNbFhuYXpBUDZjQURMZEw0TEtWLTJHRzVsXzI0RHJ1aFhHTTVhbnB3RmlIUjRvVnp0TV9DSnd5Zw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;【防災・防犯・事故等】日本損害保険協会：和歌山で地震防災・減災セミナー開催、南海トラフへの備えや防災心理学を解説 - みんなの広報宣伝部&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTFBlajllUXZiTHVtS0cxN195czBjUFpyaVB3YXNMcUF1cDNzeG91aUJVRHpkc3NrYm10ck8wMEZnV2FtbkgxZzY2YktqUUo3R3Z2UTdIRjFXdkk2VFE4TXpxVWJNQ2FvZ1dxV0xLM3FmQlM2ZmZWVDczdA?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山：＜秋旅スポット＞ 風に揺れる 広大な草原：地域ニュース - 読売新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1HT19ZbU12NzdHRXJTZVpxWTNjVWZ3Y0FKeGRMZ0hua1hhUzB6Q01EdWQyTURHZkstdXBtOTU2N011cThiVG9GTk5uWHZVb3lCamk5Tl9zV0dLbzNyZHh3alRneTRuM3NUUXpoQUhrQWZkSllGa19oQW9nUTBOcWM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山で津軽笛奏者の佐藤ぶん太さんが初公演 フラメンコギターと共演（みんなの経済新聞ネットワーク） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE03cmRGTTk1SzZpV0ZYeWNySWZoaVBsbW5iT3h0b1JKRTQwaGN1enMxSjBPVHRCTF9kUUxpdUNPSm5QZGhNUUJobUJDS1NDa3djbXYtVVR1WlZ3clUxQlZDVk8xR3dycEJNMEl0YVZ4ekhzV0pJVjY2QU5yWmM0WVE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;中島由貴＞人気声優を地元・和歌山で撮影 デジタルフォトブックでランチデート リラックスした部屋着姿も（MANTANWEB） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTE5ydE8yNGcxcThsWEhvV2s2WjZrSWpWNEhYck1rMEZHamNzSXNNbkV4S3hsYW9icnp6VXh3ZFlWc0JPb0FmUjI2eXYtaEJHQ183OGpQVUktRVpZLTM5clZPUDUtNzNpVlNF?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;支局長からの手紙：赤い残照 ／和歌山 - 毎日新聞&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-local-1790039462</guid>
-      <pubDate>Tue, 22 Sep 2026 01:11:02 GMT</pubDate>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [01:14]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE16cVcxOEc2bTZqTmphTTFsbUpITnVvS1I3NlZ0WFZkUHduUVd6R1ZVazByeTJZOVctb2tydjBTYjlwQUlnbGxfVjJnQWNBSzV6SUpWc3R0LV9kM2wtTGFMdTQ4UDRveHpUbnkxWmlSUERsbGplTkRvWFBQcUdCZmM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山・有田川町で住宅火災 住人の４０代女性と連絡取れず - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE1KNDcxWXB2SXdWOTZtMVV4dFY2QUoyZUtjeWFyZ1JSOFhIMUltb2tmQWFZWVdSSTJXb18tdEh3eHN0Z3c1N0RYSzZJUGxhaVV0bUdxRmQ0VmVlWDAw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「豊臣兄弟」展、東京や和歌山で - 朝日新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTE9xZFNuakp0aDdhTmc0aVk1b2lEYi1kNnVOSmZ0cm9vTnZkYWZJUjNxVW84dnlLUkZvR1lURGZlekhfV0tieW1Kd3FjeFlOZC03dlM5YmRWbjJVallpZFROU0FtWlAwTVFp?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;7部門324作品 審査始まる 県展、初日は書 和歌山 ／和歌山 - 毎日新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiWEFVX3lxTE5ldkRGY3pRaGVoSjJtRjJMLWpvWEpvaHZlYlJqR0lnMmtfWlBQVF9xMU03YkUyY0JjNnV6M2F5cmVfaDUtMVVXTUNtblctY0UtVEpSc2RuWV8?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山 海南 地元の酒・食材味わって 地産地消促進の催し - NHKニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTE44OWk4WlpCTnBEMmJGdVBUTTU2ZkQ0YWcycVFKR2FvS1l5U3RDc2hHYzNjVUtPd3lhUGg4X0VqLXlQRGVqdnpqNkdIaXRkNjZaVnlkT0hEVlozaXYxVGRzZFI5T19qWGdCanhyTkltNEN3NDYyV254dg?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山：＜秋旅スポット＞ 特別名勝の断崖 船で：地域ニュース - 読売新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiVkFVX3lxTE5nZ25uTlhSdnUtMWF6ZGVNTkhaTDlGeW5hMW1vRTlDSjBGUHo3eGpQTERUb253WkQ3TkI3TDU5UEHHAjRYOGVsdUcxcGp3OER2UGFUX3lR0gFbQVVfeXFMTzc2akVoeUhlQm9aRktacjkwOUNsSUk1cTZPeHN4ODBTZE5EcFp2RzR3RVpyVWdRNGpYOVA5NHRZTnZFUVpXZ0pVMTZrMVk4djFycFVPdy1XYW9paw?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;今からでも間に合う！奈良・和歌山のイオンモールで開催されるおすすめシルバーウィークイベント6選[2026年9月21日〜23日開催分] - ウォーカープラス&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1790126058</guid>
+      <pubDate>Wed, 23 Sep 2026 01:14:18 GMT</pubDate>
     </item>
   </channel>
 </rss>
