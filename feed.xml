@@ -1,35 +1,42 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [01:12]</title>
+    <title>Daily News [03:50]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [01:12]</title>
-      <description>APIの混雑が解消されないため、スキップしました。</description>
-      <guid isPermaLink="false">news-ai-1790385152</guid>
-      <pubDate>Sat, 26 Sep 2026 01:12:32 GMT</pubDate>
+      <title>🤖 AI最新トレンド [03:50]</title>
+      <description>* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFAxdk5CMld6YUV0dFk4VkVRb3pWNU1sU1hiRkhzUlBtaURxJnNTczQ1MGQ2MlNFSGYwSVVUbFRUeHFRckpSY0xzVkI4OE9BWTBXQklVZml3Y0NsRDZCc3hzN29EaklQQ2c3dTNJc1NmRllwSHJSSmpsMFZSWFhsRHc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAIが「GPT-6 Sol」など公開、精度2倍でコスト半減--発表の裏を読む - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA0anRtZEZZQmFIYWtScmJtamFRS09iZ0dnRTZoQ21ReFhVaVVNdXpZT2VxT3ZHTXk3ZFREcDJyUUhRZGt6ZDZGTFFMSTF5aFBTWTBnMHFaSHBoaEtXcEhieXRoSGF2ZE9TSllLVW9md09NT1YwVWhnZVhPYkFPdkU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;OpenAIのエージェントが豪州政府サイトに不正侵入。首相が抗議「法的措置とる」と述べる（テクノエッジ） - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBXSF96RXp4R2d2N3BrdVhITjlNQ2FCUmhxb0JuSTFza3RDU1k4TWZJZjBESlh0RVR0c3BOYzRGQ1NEazItOTFNRmlNaThwTVZwWDRzbU02Vi1LbWlwMjF3Q1BYU3RhZ0RYNEZmUHhWMTBJV29DbEZvODVKa25DajQ?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ノートPCを閉じてもOK、「Claude Code」の“クラウドセッション”の一般提供が開始（窓の杜） - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBZdFJPOEpTX3dZbzdBc0FrTWROU2VxeUc5NUpPLWVBU004SXRTUWNSN21jQkxmaUxrYUxNVnptd0t6OThJUk9KZmJ4cE96c3g0YXpKdXhNeEc0T0RPY01vaFNiWFRaQjVqLXdlTW84b0xuRllLbnRpenRkSW1aWFE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;グーグル「Gemini」に電話代行の新機能 レストラン予約もお任せ - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5SS3ZiN2xZb2k4MHhVdDNkMWxZQU1vdF_eVWh5QzlMM3NEMEw0eVJLbllhMTUxVTdreWROQ3VaR2VONjNxZVJGdkxXMzI3VElmZ1MtSXBKYkdwWUh2bExwcWprU3hGS3Z3anNCUlNIMnNfajA0S0toRmRUREl0b0U?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;グーグル、自然な音声生成AIモデル「Gemini 3.8 Flash TTS/Flash-Lite TTS」発表（ケータイ Watch） - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBTcGZRM2w5OC16RURUTUpuMUw1Q0NETnEyQlVtOFFDbDQtVFJxbWNoV3hodGVKSVkyaU12RmFBR3BXaGl3RXFxd0VaRkpWeW1JbmcxcmZRRGp0UG00NUlDSUtUWHd6dU5Ua0E1Q2twbUZRWlBQaklPX20zZWdBUHM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;まるで「本物のClaude」な偽サイト見つかる Googleアカウントを乗っ取る恐れ - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9MamdWQzl1cmx5RlJiakVVVVlSUFA2U19ZN0Fzek5hUXhwdXlKUGNvU2ZncFJTUTl1R2FqVnhrdVdvV3FPbmtrb2k3QWRNcHB0dVJCSDZsUC1PQ1BIdXY5S0h6Vm5uaFYwZ0paemgwMk5ickMyTVBRLWVHSnhMR2s?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;生成AIがプレイヤー好みにゲームを書き換える マイクロソフトが特許出願 - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE53MDd6S3kwU2ZNRjd1Tm1KMzB6ZkdoMjdZaDVXVG0xJnJuaGlTQjI4RmpkUF9Rblc4NFZOZnFhb1llSXhVUnQ2ZHVVY2JSby0tbzdZNk1aRkJvVE9tVDZ1M2RPaS01dTl6WEI0QVVja2kxc3Z5RjFJc2ZIQnpSYmc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;イーロン・マスク、スペースXAIは「約6カ月で首位に立つ」と主張 - Yahoo!ニュース&lt;/a&gt;
+* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1ocjB1QWY4NmpUSU9XLUVyb25OQl8ybkNaQ3NfSW10S2pjZ3VDMlNNbVRwYXlfX3BXWWMtRjUxLS1QdTNtY253OU1qc08tUUZTQW05eXNFM1ZLV2l3Q0htZ294YkVKQUozbkx6Z1R1Nmtoand3UURQWk42Q1Z5eWc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;生成AI利用者の4割が「誤情報」に不満、ファクトチェックを行う人ほど高い傾向（こどもとIT） - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1790394622</guid>
+      <pubDate>Sat, 26 Sep 2026 03:50:22 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [01:12]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMihwFBVV95cUxNUEdINTVUZ0FNMmZsUVpXQ2V6cXRHcUJoNnJHa1dqRldOYU1mRmd5UUkxdGZxaDRYNzVuSEpIUGFSQ2ZIcDQ4RXRmMTdtaFFfMDFSRkIybTY5TnFFOWtOZ1JyLVlHV0VxNnVjU1djVXNXMmM5RU1VTGREallFSDlyNkFacnJIZEU?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;愛子さま、世界医学検査学会でおことば 「医療の質の向上」願う - 朝日新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMid0FVX3lxTE9yeElERUI0YVA5TE9aMkYxbkl0TlJvWWFrb0I2a0p6OER4dC0zdmRIUDVMVUpRTDVBQUU2eEtfU2x2RDg1NW1mc1BwakxaMzRld1BCMUJKbmVEVDNIQldKN2VNTEQ1QWhYeFBneFFieHpfS2VtZzZr?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;がん検出血液検査、FDA諮問委が支持－米バイオ企業グレイルが開発 - Bloomberg.com&lt;/a&gt;
+      <title>🏥 医療・ゲノム・病理・検体検査 [03:50]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1YVUlDYnN3Q0IzRE1SYlFvZ2lHbXpRNzQwMm9MZmlHS0dNUVBUa2tiUDR4WGVEUXZSOHh1ekpNUU9lSXJ5Qll4X205a1pqbWlFbFExdU9JRjJibVp0UU9pMUlMdDhLX1VIcVVqSGpSWWlzcElHNU52TklhcVZsMUk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;愛子さま、世界医学検査学会ご臨席 臨床検査技師の交流目的「研鑽続ける意義を感じます」（産経新聞） - Yahoo!ニュース&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTFBVa0sxYlJULXhYNHc0SnlncWMzUll0ZHhRU1gzRjhtNmxyN2hDTXowR2JQVTBadTQ2VTFBZmZPMUs1M3B0MEVJWFk1SWhCbGtQSU1fcWFKY3YzcFlEV3otN0loRm1EMndn?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;どうすれば安全安心：治療が難しい「原発不明がん」 ゲノム医療の進展で“光” - 毎日新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiUEFVX3lxTFBjaXpzN1Z6Nl9FRXplb1ZBVHFBWWhiZzEtZnhOckNsNHdkcmpkMHgyQ3B3T2w4X0FoRHdvNU9LSG8zdUl2YnpuTENzUmNvRmM0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;【2026年公開講演会特別インタビュー】縄文人からゲノム医療までーDNAから読み解く私たちの過去と未来 - 国立遺伝学研究所&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1790385152</guid>
-      <pubDate>Sat, 26 Sep 2026 01:12:32 GMT</pubDate>
+- &lt;a href='https://news.google.com/rss/articles/CBMiUEFVX3lxTFBjaXpzN1Z6Nl9FRXplb1ZBVHFBWWhiZzEtZnhOckNsNHdkcmpkMHgyQ3B3T2w4X0FoRHdvNU9LSG8zdUl2YnpuTENzUmNvRmM0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;【2026年公開講演会特別インタビュー】縄文人からゲノム医療までーDNAから読み解く私たちの過去と未来 - 国立遺伝学研究所&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTFBjSmJON2NNTGhnUlBfbW5HcWwybVVIYkZweGk5bW56RVZqU2F3d2g0TGtzMVd3R1V1WWN4UmJKQkNjckFVUVczMnlEVVFmN1k?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;東京昭和医院、院内血液検査を導入 採血後30分以内に結果確認 - Newscast.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMinAFBVV95cUxPTnVqa3FiRFZ1SDkwaXd1TjM4djFHSHd3WmtXUU9lcnMtZTRlalpRZDQzRHBRdWREejZYSFFZaEVjQXpzcVpFOFpYSmVGbW1wVlNIX29fU3JiYUlwSF9QRjFUaWJwUC10M3ZZYlU4MC1kLU1zdGltbHJTVzZLd0RhZWJzdnhJSFFEOWVTUEduX2l4RE4wbkZ3Z0JyNFI?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;ラムドン省は、3,625基以上の殉教者の墓からDNA検査用のサンプルを採取し終えた。 - Vietnam.vn&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1790394622</guid>
+      <pubDate>Sat, 26 Sep 2026 03:50:22 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [01:12]</title>
-      <description>* &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE1IN3Z3a3FrS0NUTS1PczJYeGtHSGxqVVdMMkhkcnVPelRoZ1lzbkhuc2JtTnVNUWF5NzhzMFlibTVLUnFGSTJoMXRNelF5N3BmNDBuRWkxU3c3NDNoMXZEc09zNDd3aE0?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;立憲和歌山県連が前代表を職員雇用 「国保逃れ」指摘も本人は否定 [和歌山県] - 朝日新聞&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMiaEFVX3lxTFBXbkpOOGItdFFWbHNJRDNmdl8wWGVMUkx2dENYdU9WU21uOHBWZTF1Uzc3elVoRmpkQ1hQQ0dPQVloTDVOX3lucGRfTzd6QkNodVNYdU9TM3lsdEI3SG9yc3gxNTN4a2xL?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;相互視点で「事前の備え重要」 熊本地震支援 和歌山市職員が報告 ／和歌山 - 毎日新聞&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE5lVXdwODMwd2JvaDdBQW9Fd2JiRWprVDdHRzVwcURhZ3g2VnVyZDh0R3F0U0hiY2pmTnZyVWVmVTJrMnpFTEk4MU02M1QtR1ItYktLLW1zT3BVd2ZzVFRZZlo5ZGNSZERMV0Z6TEpFOUI3ZlZM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山：子ども食堂 笑顔咲かせて「成長を見守る楽しさをやりがいに」：地域ニュース - 読売新聞&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9zRTZTMnl1dzNQOEZMTHVjSHBreE5nVVR4dUhzbTRGMkNWQUR4d0RwdWplWTRXTWhBOHc0eTZIZTZBdzV2YkFUTWdCNlRQSDlFam1HUlN1UmJOT3J1dGFYX3VWM2plUkFUbkVZXzhGUGJMQUQ5b25WeUZFb3FIYnM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山県出身 俳優・堀川梨心さん一日隊長に 特撮のヒロイン役などで注目 秋の全国交通安全運動 和歌山県警（テレビ和歌山） - news.yahoo.co.jp&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMihAFBVV95cUxNQkdYZVhDTFE4cVJfTFJ4NFdiMmNTUXY5RGRnZjlxYVBma3pyUFVFeDJmM3RFdkFwNmdQTWcwZ3c4UmsxUGhBUkNhSnNsUW9BWkh3MzNQZW9EcW9oMDFvMmZWb211aVplS1lNdGdlY29sMnJJOXdtNzlOZjNBZFphdllHUDk?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;9月25日5年生非行防止教室 - city.izumisano.lg.jp&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9MYUpzczFPbWhHRHNiX0l0NDV2V1hHbUhLcU5Ud0JEQzNQVjItQ3VMTk5oR2ZFRU5RV2htMW9jclVESTNkZ1RGc3g5Y2FOampJSzQycDJmQXlEaHYzTGlQc3FlN0ticWc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;滋賀のソウルフードが和歌山初上陸 - nwn.jp&lt;/a&gt;
-* &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE9vREJPUk4tTGN2STV2ZHJDRUxNWnlPUU1wUVltV0NqRHBaY2pUREpBXzJyUjRaMnJPcVpGV0tfSEVEakw1UmJVWWg4MEpiQ0ptMHdYbUk0T3RjNjEzRWZkRjNiLU5sa0VYUUE?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;見て触って体感！ はたらくくるま 大集合 - nwn.jp&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-local-1790385152</guid>
-      <pubDate>Sat, 26 Sep 2026 01:12:32 GMT</pubDate>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [03:50]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE0xZklxTGQ3VXBHd3VzUEJrQjgySWVoRHIxMWFqNldELXh3OG1FNVJSc2dNUkg3eWRJMGtFRHREXzJkZ3ZiMkNiNlJEbExjR2JJSWpKb1dEdFI5VjZTSWZWMGRmNTVCWUo4OXRBSkppb1pPWWhzU1RqaWE4dWdxTms?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;「地震で陸路が断たれた」想定で海上輸送訓練…緊急搬送者の受け入れなど確認 大阪・岬町 - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiWEFVX3lxTE9FX1NMeUJ6TjBXanpFSDZNNGhOSWFkQzdUOEZONllKTk1vekw0amRreFhXZHB0d1VIeDFDZTQ3dlkxVkNxd1BmVDJRU19VdEthbl9TSWI3MEM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山県 昼過ぎから２７日夜遅く 落雷 竜巻 強い雨に注意 - NHKニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidkFVX3lxTE8tSXM3dGtPbTBsMnc3SVdOSmR4eU5lVzR6bG1ZczlLTERTTVl6SFdQaDRrUzN5TUJXT21xdmtSWmxoVHAtdXA4NTRDbmZkR19Ud1QyOWI0cE5WN3JGNzdJUk9YcGoyM25UYnR5Rmw2cTRfY2tJSWc?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;熊野本宮大社で「献湯祭」 和歌山、神前に湯を供え自然の恵みに感謝 - 産経ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTENlVXdwODMwd2JvaDdBQW9Fd2JiRWprVDdHRzVwcURhZ3g2VnVyZDh0R3F0U0hiY2pmTnZyVWVmVTJrMnpFTEk4MU02M1QtR1ItYktLLW1zT3BVd2ZzVFRZZlo5ZGNSZERMV0Z6TEpFOUI3ZlZM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山：子ども食堂 笑顔咲かせて「成長を見守る楽しさをやりがいに」：地域ニュース - 読売新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9zRTZTMnl1dzNQOEZMTHVjSHBreE5nVVR4dUhzbTRGMkNWQUR4d0RwdWplWTRXTWhBOHc0eTZIZTZBdzV2YkFUTWdCNlRQSDlFam1HUlN1UmJOT3J1dGFYX3VWM2plUkFUbkVZXzhGUGJMQUQ5b25WeUZFb3FIYnM?oc=5&amp;hl=en-US&amp;gl=US&amp;ceid=US:en' target='_blank'&gt;和歌山県出身 俳優・堀川梨心さん一日隊長に 特撮のヒロイン役などで注目 秋の全国交通安全運動 和歌山県警（テレビ和歌山） - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1790394622</guid>
+      <pubDate>Sat, 26 Sep 2026 03:50:22 GMT</pubDate>
     </item>
   </channel>
 </rss>
