@@ -32,6 +32,8 @@ HEADERS = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
 }
 
+FORMAT_RULE = "出力形式：HTMLタグは <a href='URL' target='_blank'>タイトル</a> のみ使用可。<ul>、<li>、<p>、<br> など他のタグは絶対に使わない。各行は「- 」で始める箇条書きにする。"
+
 
 # ==========================================
 # 1. ニュース収集関数
@@ -63,21 +65,37 @@ def build_fallback_list(articles):
 # ==========================================
 # 2. Discord送信関数
 # ==========================================
+def html_to_discord(text):
+    """HTMLをDiscord用Markdownに変換（<a>→リンク、<li>→「- 」、他のタグは除去）"""
+    # <a href="URL">タイトル</a> → [タイトル](URL)
+    text = re.sub(
+        r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
+        r"[\2](\1)",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    # リスト系
+    text = re.sub(r"</?(ul|ol)[^>]*>", "", text, flags=re.IGNORECASE)
+    text = re.sub(r"<li[^>]*>", "- ", text, flags=re.IGNORECASE)
+    text = re.sub(r"</li>", "\n", text, flags=re.IGNORECASE)
+    # 改行系
+    text = re.sub(r"</p>|<br\s*/?>", "\n", text, flags=re.IGNORECASE)
+    # 残ったタグを全部除去
+    text = re.sub(r"<[^>]+>", "", text)
+    text = html.unescape(text)
+    # 行頭の空白除去、「- - 」の重複を「- 」に、空行の圧縮
+    text = "\n".join(line.strip() for line in text.splitlines())
+    text = re.sub(r"^[-*]\s+- ", "- ", text, flags=re.MULTILINE)
+    text = re.sub(r"\n{2,}", "\n", text).strip()
+    return text
+
+
 def send_to_discord(category_name, summary_text):
-    """HTML形式のリンクをDiscord用Markdown形式に変換して送信"""
     if not DISCORD_WEBHOOK_URL:
         print("DISCORD_WEBHOOK_URLが未設定のためDiscord送信をスキップします。")
         return
 
-    discord_text = re.sub(
-        r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
-        r"[\2](\1)",
-        summary_text,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    discord_text = re.sub(r"</p>|<br\s*/?>", "\n", discord_text)
-    discord_text = re.sub(r"<p>", "", discord_text)
-    discord_text = html.unescape(discord_text)
+    discord_text = html_to_discord(summary_text)
 
     payload = {
         "embeds": [
@@ -191,28 +209,31 @@ def main():
         {
             "id": "ai",
             "name": "🤖 AI最新トレンド",
-            # 修正: 元は「キーワード OR サイト」で、対象サイトの全記事が混入していた
             "query": f"({ai_keywords}) ({sites_query})",
             "timeframe": "2d",
-            "system_instruction": "前置き、挨拶、要約文章、本文解説は一切出力禁止。指定されたソース・キーワードから重要度の高いAI関連記事を選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。",
+            "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
+指定されたソース・キーワードから重要度の高いAI関連記事を選び、リンク付きの箇条書きリストのみを出力してください。
+{FORMAT_RULE}""",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
             "timeframe": "2d",
-            "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
+            "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
-重要度の高いニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
+重要度の高いニュースを選び、リンク付きの箇条書きリストのみを出力してください。
+{FORMAT_RULE}""",
         },
         {
             "id": "local",
             "name": "🗾 地域ニュース（和歌山・大阪南部）",
             "query": "和歌山 OR 阪南市 OR 泉南市 OR 泉佐野市 OR 岬町 OR 熊取町",
             "timeframe": "1d",
-            "system_instruction": """前置き、挨拶、要約文章、本文解説は一切出力禁止。
+            "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【対象地域】和歌山県、阪南市、泉南市、泉佐野市、岬町、熊取町に関する地域の話題・ニュース。
-重要度の高い地域ニュースを選び、タイトルに <a href='URL' target='_blank'>タイトル</a> のHTMLハイパーリンクを埋め込んだ箇条書きリストのみを出力してください。""",
+重要度の高い地域ニュースを選び、リンク付きの箇条書きリストのみを出力してください。
+{FORMAT_RULE}""",
         },
     ]
 
