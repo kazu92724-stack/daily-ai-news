@@ -1,26 +1,26 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [06:44]</title>
+    <title>Daily News [11:14]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [06:44]</title>
+      <title>🤖 AI最新トレンド [11:14]</title>
       <description>APIの混雑が解消されないため、スキップしました。</description>
-      <guid isPermaLink="false">news-ai-1790664298</guid>
-      <pubDate>Tue, 29 Sep 2026 06:44:58 GMT</pubDate>
+      <guid isPermaLink="false">news-ai-1790680466</guid>
+      <pubDate>Tue, 29 Sep 2026 11:14:26 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [06:44]</title>
+      <title>🏥 医療・ゲノム・病理・検体検査 [11:14]</title>
       <description>APIの混雑が解消されないため、スキップしました。</description>
-      <guid isPermaLink="false">news-medical-1790664298</guid>
-      <pubDate>Tue, 29 Sep 2026 06:44:58 GMT</pubDate>
+      <guid isPermaLink="false">news-medical-1790680466</guid>
+      <pubDate>Tue, 29 Sep 2026 11:14:26 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [06:44]</title>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [11:14]</title>
       <description>APIの混雑が解消されないため、スキップしました。</description>
-      <guid isPermaLink="false">news-local-1790664298</guid>
-      <pubDate>Tue, 29 Sep 2026 06:44:58 GMT</pubDate>
+      <guid isPermaLink="false">news-local-1790680466</guid>
+      <pubDate>Tue, 29 Sep 2026 11:14:26 GMT</pubDate>
     </item>
   </channel>
 </rss>
