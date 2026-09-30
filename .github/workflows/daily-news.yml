@@ -2,7 +2,7 @@ name: Daily News Summary & Notification
 
 on:
   schedule:
-    - cron: '0 1 * * *' # 毎日 午前10:00 (JST)
+    - cron: '17 1 * * *' # 毎日 10:17 (JST)
   workflow_dispatch: # 手動実行ボタン
 
 permissions:
