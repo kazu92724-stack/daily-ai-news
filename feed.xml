@@ -1,43 +1,41 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [11:53 JST]</title>
+    <title>Daily News [16:13 JST]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [11:53]</title>
-      <description>&lt;ul&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1tSTVpZXU0dTZHVVUyNUlxLVNUSGJLcnBmLVhob0duTV9FRklESWtxUHBXT1ZFaFlCVVJGMFh6RWhWSUMxY3doVk5JMTJEYjBXM2lyS0JLekdSYlF1N2JYWElaTl8wazMtckhjVWF3YUI0UVVJQzNuQWJKclBGV1U?oc=5' target='_blank'&gt;ChatGPTの音声モードが進化、モバイルでも“作業”を指示&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA0ZVFfUmlkRzhPY3pRSVNidUY0Z1Q5WXZBWnFVVGJTTUQzNkVnbVpmS2RvSVpEelVBYUpkMVJad0M4eEtmaVoxVlE3YXRERU9TRTdScGktZXdQQWRxTzh3N2d6bHNyYkg3REttZjNCMnd4c0tkeFpNOVYxSE9BdGc?oc=5' target='_blank'&gt;「Claude Code」クラウド実行が正式版、最大250ドル分クレジット配布&lt;/a&gt;
+      <title>🤖 AI最新トレンド [16:13]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1tSTVpZXU0dTZHVVUyNUlxLVNUSGJLcnBmLVhob0duTV9FRklESWtxUHBXT1ZFaFlCVVJGMFh6RWhWSUMxY3doVk5JMTJEYjBXM2lyS0JLekdSYlF1N2JYWElaTl8wazMtckhjVWF3YUI0UVVJQzNuQWJKclBGV1U?oc=5' target='_blank'&gt;ChatGPTの音声モードが進化、モバイルでも“作業”を指示&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE56VXBjVWNHdUUxNndWSU5mMERiM3hoaFBzU3NqNmNSXzJrbll2V2ZWZkEyblN5Y2pIMkVPeFktVi1lSFlXaXpFMFJMcklTeldtQ2hudjlRYms0RVpNdEVwMU12ZFktcmpnWTl0UjZjMmFNQQ?oc=5' target='_blank'&gt;AIが書いたコードは「ブラックボックス」でいい？ Claude Code作者が語るプロトタイプと本番の線引き&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE5XcEo5MjIwdExlX3ZZaWxSa1pCcGFPSnNFZ3czekR6ZUtEY3Y5WWhzNHNycWc5SlpJQzF5T2ZmQjhzeWVFM1VTbjBSdUExRlQ0eXpkYmpNSmQzMm5YOF80dlNzNkV3eVpNQUE?oc=5' target='_blank'&gt;Geminiの「Gem」廃止へ、11月17日から「スキル」へ刷新&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBXSWlHZHZtazR4OE5ZSXRpc0Q1WUU4cEQ5eWRTQ0ZrRFYydHFlSDI5QlVWXzVsVldKNnFYaW5INENsS2RWY1JMWmw2MW81MzMtNndCZmtnZHVLZ0lZVEg3MEg1NEdfZnM5TmZ2bmZadzF1YndXWUxBd2V6YTlpYVE?oc=5' target='_blank'&gt;グーグル、Gemini「Gems」終了へ…11月17日から「Skills」へ自動移行&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPejRtcWRVcldRTVNSME04bEZjazJqeTBnYUZ5c0d3TWRaQ3JjbmZaMVNhVEQxaFFBeGlGZGVjd21WSlcwekYwYy05MzhmcDNZc2ZnUXJIS05EQTJPWi1odE9Gdk5YT3BPbllpMWZNRjhFdVJDVlAwX3NDNHVkT3gtcjFPRzdTTGd6?oc=5' target='_blank'&gt;OpenAIのエージェント、豪政府の医療保険サイトに侵入 通知は84日後、首相「容認できない」&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA0anRtZEZZQmFIYWtScmJtamFRS09iZ0dnRTZoQ21ReFhVaVVNdXpZT2VxT3ZHTXk3ZFREcDJyUUhRZGt6ZDZGTFFMSTF5aFBTWTBnMHFaSHBoaEtXcEhieXRoSGF2ZE9TSllLVW9md09NT1YwVWhnZVhPYkFPdkU?oc=5' target='_blank'&gt;OpenAIのエージェントが豪州政府サイトに不正侵入。首相が抗議「法的措置とる」と述べる&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5YaUYtVk52dTBOb1BoTThURk1RNHZ1NkxwbmtST3E4c3B2aTNic09WZXc4YmVyMVRLd2diTE5aUTJPTUJSUWUyX0V0QUlfUWd3NHRPUlh1VFpWTTFGRnA4ZFViWEc3QVNBQ0tELVgzMHkzUktHcnhFTlpDSnd3YTQ?oc=5' target='_blank'&gt;米フロリダ州、OpenAIの開発差し止めを裁判所に要請──安全性をめぐる懸念から&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBXSF96RXp4R2d2N3BrdVhITjlNQ2FCUmhxb0JuSTFza3RDU1k4TWZJZjBESlh0RVR0c3BOYzRGQ1NEazItOTFNRmlNaThwTVZwWDRzbU02Vi1LbWlwMjF3Q1BYU3RhZ0RYNEZmUHhWMTBJV29DbEZvODVKa25DajQ?oc=5' target='_blank'&gt;ノートPCを閉じてもOK、「Claude Code」の“クラウドセッション”の一般提供が開始&lt;/a&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">news-ai-1790736829</guid>
-      <pubDate>Wed, 30 Sep 2026 02:53:49 GMT</pubDate>
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA0ZVFfUmlkRzhPY3pRSVNidUY0Z1Q5WXZBWnFVVGJTTUQzNkVnbVpmS2RvSVpEelVBYUpkMVJad0M4eEtmaVoxVlE3YXRERU9TRTdScGktZXdQQWRxTzh3N2d6bHNyYkg3REttZjNCMnd4c0tkeFpNOVYxSE9BdGc?oc=5' target='_blank'&gt;「Claude Code」クラウド実行が正式版、最大250ドル分クレジット配布&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA1alltZU5NMWtSb1ZrSzM3RG5qYkhSUlFIaTZPSHlmb2x2UW9NaXFTbHVqQ2Rydkx5ZXFYUERKanpfMWIwTDVhaV9nd1pjanN2LUx1YXExM3NMRDBLd1Q1Z0xzdzZzdmlWZVREMV9KUFZnRFhraE1zaktKRkoyQ1E?oc=5' target='_blank'&gt;OpenAI、24時間働くAIエージェント「Dots」提供開始、GPT-6 Astra搭載&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1kNTA4aHJXeUlBQm81c2FacFNvUzhhYjlkTWtFMWwxV3J0OUFoUjQyLUl3SXZVNnNTMko2dnRmYXpMMHlfemdIbEw2MUo0OFQ2dEJOeV9ad3B6ZGIweU8wUDl6eTNlOHo5blhLWWpFX1VpRnFReFRGT0l1UFlmcWc?oc=5' target='_blank'&gt;OpenAI、「ChatGPT」のサブスクを再編 月200ドルプランは利用枠半減&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBZdFJPOEpTX3dZbzdBc0FrTWROU2VxeUc5NUpPLWVBU004SXRTUWNSN21jQkxmaUxrYUxNVnptd0t6OThJUk9KZmJ4cE96c3g0YXpKdXhNeEc0T0RPY01vaFNiWFRaQjVqLXdlTW84b0xuRllLbnRpenRkSW1aWFE?oc=5' target='_blank'&gt;グーグル「Gemini」に電話代行の新機能 レストラン予約もお任せ&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1790838826</guid>
+      <pubDate>Thu, 01 Oct 2026 07:13:46 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [11:53]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE14UHZ6bkRHTEZpSW1rLW9ITWN1V3FPTE5GbVl0bXlaQ1RaWG1rRUp2U3F1eTJ0RHZ3aUE2czd1eXJWZDlxSkE3b19QMmg2bWN4YXE4Wk9HcDk4NXlialFqZTFCMC11c1V3bzhQNDJpbk83M3Ra?oc=5' target='_blank'&gt;韓国のCosmax、遺伝子検査なしで脱毛リスクを予測するAIモデルの特許を出願&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTFB3NzFkY1FDc2d2Tm10QTNJU2Z4SXY1OGZLa1pzakdJVFFHQ0RELTNFUk05R2RHTDZfUVZ1TzhoWHM2WWxDVjhzczR1VVA1QXp5S095eW5SU2xIU2hManZpWV9sLWUyT3cxQ3Z5YzRR?oc=5' target='_blank'&gt;「血液検査」で医療のあり方を変えていく―松井社長が語るシスメックスのビジョン&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPUkNxVWpqZVMyRmhEUHN0aHV1OEpMenFYQUwxMTJXQWw2R0VuTm9QZ2xIcS04dmJ2bGxqRjRpRERaTW5VUnJfOUExMUZtS1ZCWXNwamptUGRRT1hBOXB5Wnh5eWZJVnJCcFhwRDZPa25FZ3Y1SE1MMWFXX1VaZ1M5dVBlREE2Y2xK?oc=5' target='_blank'&gt;遺伝子検査は手術中に脳腫瘍を特定する。&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMigwFBVV95cUxNc0Q0Z0pKQ3lBcEZ3ZU1YZ0dWWEI4Q19Ub1BqdmwySC1TZWlfVHcwN1BGUnJHdktfdmc2VmxXcmVYVkIwOU9TVGhreVVLTHNlRG5PU0lTeEQ3Q3pGeHNYTDVVX3g2UlRSQ3loLWtheG4zbllfdVBHTFVWeXhhNDZQQW5JTQ?oc=5' target='_blank'&gt;遺伝子検査では、2時間以内に脳腫瘍を特定できる。&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiowFBVV95cUxOZGFpd1NqdS1iWWVRNWdhSXVVU21ZWWNQRnhuSXRPamlkcXhzVzlleXk4eGgxTzNzX1VGOFJBOWlndjF5UmJRT3JlLWd3TmpCZ1FaLVd2aXJIQU9McWhhajVTUHRnQzZQZlQzZmFCUURBdDFuaTRGTjRRRVBqNFRFSTJZQ1VQWE1nM3dsbVRHRTZrSy1ZbDJLY2tOWmJRV0Q5Tkk4?oc=5' target='_blank'&gt;自宅でDNA検査サンプルを採取する際の容易な間違い&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1790736829</guid>
-      <pubDate>Wed, 30 Sep 2026 02:53:49 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [16:13]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE1LQjUxWmR4cjhzOFgtWkdTOTBJUEl4OTFtUkg0eDlqeEhaZ3ZFdS04VTM4WmViRm9KNjhQZXVVNjFhNTlOUGtZSnZCZF9aTEx3Mm5rd0M3aFUwZkN2akJaRGU1QTJ0VDltZjdNNQ?oc=5' target='_blank'&gt;ゲノム医療「AIと融合で副作用・診断ミス回避」 中村祐輔氏に聞く - 日本経済新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiTkFVX3lxTE1JVENPTW9mbDVoMnhLSTNISlZwUDl2bEItTmQwNXhjc1VnT3A1TG1MOTlKZ2UxSlg0T080bUZrT3JIN1BUbnB0dnk2TmI3dw?oc=5' target='_blank'&gt;乳がん「多遺伝子検査」で変わる乳がん治療の新しい進め方 - storyweb.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE1fT3U3UzJla1JpSG0yQ2tFd1V3OHhFOHJvM29sd0xnb3hpbEo4bXpQTW1RNEZzc3kwT3dkVGRIc2xwNjF3Z2tlb1UyU1N3VFBTeEVyalFkSXBMbm1i?oc=5' target='_blank'&gt;マウス脳におけるタウのプリオン様伝播の実証 -疾患特徴的な病理形成メカニズムの解明- - igakuken.or.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiT0FVX3lxTE5NUWlQclpKMVhFcUo4WU1MbFdKRTQ0M0tJLWNlLXg3dGl2RHNoMmNkSE5wZHpWMU9GbDVVMV83M04wQ3pOcFFHN1RxZV90dnM?oc=5' target='_blank'&gt;循環腫瘍細胞(CTC)基盤の精密医療専門企業サイトジェンは1日、合併期日を基点にゲノムケアとの合併を完了し、ゲノムケアの新しいブランドアイデンティティ(BI)である「Genomecare by Cyt.. - 매일경제&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE14UHZ6bkRHTEZpSW1rLW9ITWN1V3FPTE5GbVl0bXlaQ1RaWG1rRUp2U3F1eTJ0RHZ3aUE2czd1eXJWZDlxSkE3b19QMmg2bWN4YXE4Wk9HcDk4NXlialFqZTFCMC11c1V3bzhQNDJpbk83M3Ra?oc=5' target='_blank'&gt;韓国のCosmax、遺伝子検査なしで脱毛リスクを予測するAIモデルの特許を出願 - BigGo ファイナンス&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiSkFVX3lxTE9EUkJUa2RkSDZLaXVQVWpFTHMyaWcxNmc2UnMzQVJTeUNmTVg3TThpVGMzeE5NOGRRaW9zaTlqWGxRTjAwcWl0Wlpn?oc=5' target='_blank'&gt;デジタル病理市場トップ10企業 - pando.life&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1790838826</guid>
+      <pubDate>Thu, 01 Oct 2026 07:13:46 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [11:53]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE5HdHIzdmFEZ0tMY0tGbHVjcTBDOTlDNk9renpvT3ZkSlAwRTQwZC1WZFZHbFJZLW8yWmh3T0tLdFp4c2ZJeVpCWjY2S0lCN0tvUmo4M2g3Wk1fZFFiTmhfT3F1ZFhhQUFyaDc3aVJ3?oc=5' target='_blank'&gt;泉州の魅力を味わう「オープンファクトリー2026」開催！&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTFBCSDFib3U1Y2c5SUFKVXV3cXptX3NJYzhMTUNUcHl5S1gwU0RQb3doblZDWkpaeGlIeGlYZGlKRnVLTDNKblc3Ml9PX2hBdkFJTjl3UWxyUGhIcm9JQWs4WlpSRFo4X2phdVFvRWlRWWQ3Zw?oc=5' target='_blank'&gt;ふるさと納税寄付額日本一の泉佐野市、稼いだ“外貨”を何に使った？ 「ないなら、作ろう」で起きた変化&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA4S2c4YW9YbGl0VDgxdTI3bFkwYmxwSGRqV3JXVENXaFM3VDlMSVNYcUZMU25laGtsQ3N6UVRsbklwemVDZVFrMktBTHF3M1JIOGVnNkp3M0xMNnB1LVVha2VGc2QtemtpMW85eElhWVFpX1BwNGRoa3VOenBKNFU?oc=5' target='_blank'&gt;返礼品がないなら作ればいい 泉佐野市が「65億円」を集めてヤッホーブルーイングを呼び込めた理由&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMinAFBVV95cUxQeTdOZjgxTFF1RTlTa2ZDUDB3VzNXMHNTbHRpU1Z1ZUt5WXR4eU1Cc2hjMFViSEh2LTNLTTlsQm1RajJwZ3l4d1doZmxyQkVza2p2V1pVMmR1WFFUVEYwb2x1U05McTJaQmNIWVFseERwWlpRYWJGWWpGMEcyVjhSRmZMNEJPSTBYZXF1SDIxS2lVNWI3SjN6ZkRieDDSAZwBQVVfeXFMUHk3TmY4MUxRdUU5U2tmQ1Awd1czVzBzU2x0aVNWdWVLeVl0eHlNQnNoYzBVYkhIdi0zS005bEJtUWoycGd5eHdXaGZsckJFc2tqdmNaVTJkdVhRVFRGMG9sdVNOTHEyWkJjSFlRbHhEcFpaUWFiRllqRjBHMlY4UkZmTDRCT0kwWGVxdUgyMUtpVTViN0ozemZEYngw?oc=5' target='_blank'&gt;返礼品がないなら作ればいい　泉佐野市が「65億円」を集めてヤッホーブルーイングを呼び込めた理由&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE1qNXRTZ2ZlWGVkaHJCUk1mWW1ZUVFQQmlaWWRFVWtveW8yWnFTOFkwTUFhQ04xZ1VPZVYzYjk0N1BKRldIOTlDQjEzbUFJSmlQbUdNNzgzUkxuMkZzcEtWMHVsLXlJaUJFOHVmeU5hVVdJQQ?oc=5' target='_blank'&gt;返礼品がないなら作ればいい 泉佐野市が「65億円」を集めてヤッホーブルーイングを呼び込めた理由&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-local-1790736829</guid>
-      <pubDate>Wed, 30 Sep 2026 02:53:49 GMT</pubDate>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [16:13]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBjbUJGS1N5aF9ZTExYTTF6U25Gc2thWk1hSUt0dWx2UHVQWjF6alpuM1pzcF9pREFfT1lUc3VUWm5SdEdmald1SUNfWEVrMFhtUDlpakFvRWNqXzVrelZsRE44N2ZTYy12Yk5RWk9SMTQzcnV4LXBPaEMySnlmUkU?oc=5' target='_blank'&gt;智弁和歌山と和歌山東が近畿大会出場へ 秋季近畿地区高校野球県予選&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE9BZHd3QWo2aEw2ZkkxcmFUT0hkcmZpd2NBaURmOWVLWF9SR3QzZkNoQzc0R1NEajY3VHlfbkhzQnNxM2pDZkFJZXphTU15czIzdmZZRTg0YjJGWExUUWg2c210OTBsOXdpV0E?oc=5' target='_blank'&gt;「第14回深日漁港ふれあいフェスタ」開催！&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE5tQ2NMQ0I1MGw0N2hjazN6a205dDMyVld5X2RwMnZDWEMySjBfZTVrYjRRLU03YkFmUEVSMF84U1I3N3NlX2hJSi1mZExhdWNnSVBySlJQck9INHZl?oc=5' target='_blank'&gt;【和歌山大学教育学部附属小学校】児童が人命救助で感謝状 学長・校長に報告&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiW0FVX3lxTE9UcU44OGZhekd6N0toWUNUOF95VGswMDlXSnJWcS03cGZpbURHTTBaNGgyODBLeDFPMEtENDZFMzhPaTBqWTlpNS1aUC12VXV2Vm1mUFdnbGxiRGc?oc=5' target='_blank'&gt;プレジオシリーズ「（仮称）泉佐野市りんくう往来南 新築マンション計画」新築工事着工のお知らせ&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiUkFVX3lxTE1XMkNrMTJ1cERKXzAwTWoyWTRuaVFSNUk2Mk1SYUFodnBaSnc1b1dlem9YVkZuNWc3SUt0anFxckRpUlJITXFXQkFpTWVsU1dTZHc?oc=5' target='_blank'&gt;夏の甲子園優勝・智弁和歌山がコールド勝ちで近畿大会出場決定！指揮官は「チームとして形になってきている」と手応え【和歌山】｜記事一覧&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1790838826</guid>
+      <pubDate>Thu, 01 Oct 2026 07:13:46 GMT</pubDate>
     </item>
   </channel>
 </rss>
