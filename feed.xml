@@ -1,49 +1,53 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [17:24 JST]</title>
+    <title>Daily News [17:00 JST]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [17:24]</title>
+      <title>🤖 AI最新トレンド [17:00]</title>
       <description>- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE00R01fQUhoaDJkWmk5UVlJUW1yTHhtSWdtREN2OTdpSWJCTEpyLV92UG02VG5GWE4xQjQydENmLVZCQm4xOEtDRXBuZTFBRlgzOWlSbi1uVzVmOXF0Ri1VTTA3QzlRUTlMMzNMWlB4TU5XQQ?oc=5' target='_blank'&gt;ClaudeとGemini「AIコーディング解決率はほぼ同じ」 でも“解き方”に表れた正反対の「性格」&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE56VXBjVWNHdUUxNndWSU5mMERiM3hoaFBzU3NqNmNSXzJrbll2V2ZWZkEyblN5Y2pIMkVPeFktVi1lSFlXaXpFMFJMcklTeldtQ2hudjlRYms0RVpNdEVwMU12ZFktcmpnWTl0RjZjMmFNQQ?oc=5' target='_blank'&gt;AIが書いたコードは「ブラックボックス」でいい？ Claude Code作者が語るプロトタイプと本番の線引き&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTFBQUV9rcGRJY3hJTGVfeERXb1JFMVJSak1NSk9obTItQTJJTG9zMUVaRzJ5ek5nbVk2LXVmckFUNERRbFlGdndtX2lncmtaQUVvQTZiVU05RFluajZGa0VESW5vVEpYVTgzVlE?oc=5' target='_blank'&gt;ChatGPTにAIでバーチャル試着機能とカメラでの書類スキャン→PDF化機能&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5BYVZ2MkUyUGxJd1hGQWtyRFQ1bGxkUklXWGlZZVJ1eGpYZV8yMWk2YTdmNTFfZ09yUkNMU20tZm5sTnRlNW9TbXZLZ0UxdnFrSUF6OHVzRnVXU0FkVlRQZldKY3pLZDBKbnZveW9kQnlqY1Q0em1kcEJZOVNLbjg?oc=5' target='_blank'&gt;Geminiの「Daily Brief」を使ったら、朝のメールチェックがいらなくなった&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBXSWlHZHZtazR4OE5ZSXRpc0Q1WUU4cEQ5eWRTQ0ZrRFYydHFlSDI5QlVWXzVsVldKNnFYaW5INENsS2RWY1JMWmw2MW81MzMtNndCZmtnZHVLZ0lZVEg3MEg1NEdfZnM5TmZ2bmZadzF1YndXWUxBd2V6YTlpYVE?oc=5' target='_blank'&gt;グーグル、Gemini「Gems」終了へ…11月17日から「Skills」へ自動移行&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFA1alltZU5NMWtSb1ZrSzM3RG5qYkhSUlFIaTZPSHlmb2x2UW9NaXFTbHVqQ2Rydkx5ZXFYUERKanpfMWIwTDVhaV9nd1pjanN2LUx1YXExM3NMRDBLd1Q1Z0xzdzZzdmlWZVREMV9KUFZnRFhraE1zaktKRkoyQ1E?oc=5' target='_blank'&gt;OpenAI、24時間働くAIエージェント「Dots」提供開始、GPT-6 Astra搭載&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTFBQUV9rcGRJY3hJTGVfeERXb1JFMVJSak1NSk9obTItQTJJTG9zMUVaRzJ5ek5nbVk2LXVmckFUNERRbFlGdndtX2lncmtaQUVvQTZiVU05RFluajZGa0VESW5vVEpYVTgzVlE?oc=5' target='_blank'&gt;ChatGPTにAIでバーチャル試着機能とカメラでの書類スキャン→PDF化機能&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE9kNUZJNzhnbFB2ei1GZXJ4TXExYk5tSUE5RFZBSXRSU1RaTU5TS3AyN2hwMEdmTUdQbXFEZlNSQVNZUWZfM0VsX1FWTkN3blBnSkpVUFc4dDV0SUI2Q1JYUjVmWUZIMlRCTVVPNA?oc=5' target='_blank'&gt;7割の企業が生成AI「個人利用」への対策せず デロイト調査&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1sTFlWeDhVcTNzTE5maThXNTFhZmtiLVBWUzdEdlJCT3gzVHpLdkp3SVFfakhNWGJteFgxcnFGUms3RnlXZEp0WF96ZWduN2lDM3ByZ0ZveTBxSUdwa2tITjQ0YlVLUW9HcEJJMFRLcUtJaElHbHh4V3JBcHhKQ0k?oc=5' target='_blank'&gt;ChatGPTが「業務委託先」に？ 仕事を丸投げできるAIが続々登場&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1kNTA4aHJXeUlBQm81c2FacFNvUzhhYjlkTWtFMWwxV3J0OUFoUjQyLUl3SXZVNnNTMko2dnRmYXpMMHlfemdIbEw2MUo0OFQ2dEJOeV9ad3B6ZGIweU8wUDl6eTNlOHo5blhLWWpFX1VpRnFReFRGT0l1UFlmcWc?oc=5' target='_blank'&gt;OpenAI、「ChatGPT」のサブスクを再編 月200ドルプランは利用枠半減&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9ZaENzT3F6MV9SWmdleTRYOWx2ckNoVkM4NV85Yl8wa1ZlNkphM1lBbDlrTGVVM0J5NG5pOWVUSDBPZjhiNE9UUl9JWGhELWNGdHI4UkhlWEVSRFNkVEYwWFR3eUU3ODQxZFhnT2dmSEhTZUpHUDV3aTdYV1BDTE0?oc=5' target='_blank'&gt;ChatGPTで1500万円稼げるケースも、副業の「常識を覆す」プロンプト&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE01SGJJYTMwSEF1dE90Nm1vNGhXdlNQQVc2OTNMSzBPbFhTc29CNHBicmpEaGVvT2R3WDN3VGJDNDBielRrV2N3V1h6SWN2R3QwVV9RWjZaVEdQUE9yWV92V09RTG9VZENqb2VLTndMSHhKWmwtQWZMeElqWDBDVzQ?oc=5' target='_blank'&gt;OpenAI、常時稼働のAIエージェント「dots」発表 「GPT-6 Astra」搭載&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE8wbDhTVm0zSmVTUXpzc3VIdV9mc1I0empxdnlyUnVTeml0R2dVR3JYZnE1OW9wNTdRZHZhOFZtOGZSbWRJMEREVDZMdGc2WGpTMnFzeUxXSjZVcjBUek56UEVjUXdpSGtkZ3pkQjlyMF9EbnN3c0JlbHgxZzBEOWc?oc=5' target='_blank'&gt;もはやバーチャル人間。OpenAIの常時稼働AIエージェント「dots」&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiYEFVX3lxTE9GZUVhMnd4Um9UV04zazVJMlZhQzl4djFHWjhoTlZrNjZpSGd3VkVGeG1JcFVsUTdMLVlZUE5ycjlCRWU1WktLdW11OEI1T1FEUDBONDlBS3F1MkpJQW9uQg?oc=5' target='_blank'&gt;生成AIのセキュリティリスクにどう対処する？ 経営層が知るべきポイント&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMickFVX3lxTE5VUUhpelFkdThRN3BMVmNWVUpzVDNSVWR4QXlDUk1ta0xUQkJ6WXhjWVJ3WjRnSGFkb0M0dUxnbm9SSnZRQ1lBamRyYjFuYVRNbTh3RWZOR2hlSF84VFlNcXFJcERSb3pDVDJYZ2NUSngxZw?oc=5' target='_blank'&gt;Hugging FaceのローカルLLMモデル名「Q4_K_M」「A3B」の読み方と失敗しない選び方&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBwdHl2V1J3ekV0VDFFSzdlT3VOWlBaTzFGVEEwZENpTHhnQW1fcDdKd0czd3pwbmd3T2NFR1FpT1dYVVZ1RjNWTE5TN2lCdk92TWpsRTlOdGFoYUJld1ZjdG42UlBnMExBRWxIT2RwdlJjc204Rzd1V0pyQk5HeDg?oc=5' target='_blank'&gt;OpenAI、「GPT-6.1 Sol」発表 Astraに迫る性能を5分の1の料金で&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE02U3M4cWpuSnFZNjFYeThKOUJXcDdmV0FGVDhEUC02aEl5Rms3TGplNWhfd2JsUlJCbi14cVBCdmlUdExsc0k4ZDZ6Wk1wSmVpXzRQNnVabllnQlhFWGxWMFBRTFUxMnE1alI3dm02VWhmdjIyTnktNDlmOE5fZGM?oc=5' target='_blank'&gt;「Gemini Notebook」に電子書籍を取り込む機能が追加、Google Play ブックスで購入して利用&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-ai-1790929488</guid>
-      <pubDate>Fri, 02 Oct 2026 08:24:48 GMT</pubDate>
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE01SGJJYTMwSEF1dE90Nm1vNGhXdlNQQVc2OTNMSzBPbFhTc29CNHBicmpEaGVvT2R3WDN3VGJDNDBielRrV2N3V1h6SWN2R3QwVV9RWjZaVEdQUE9yWV92V09RTG9VZENqb2VLTndMSHhKWmwtQWZMeElqWDBDVzQ?oc=5' target='_blank'&gt;OpenAI、常時稼働のAIエージェント「dots」発表 「GPT-6 Astra」搭載&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE15OTBTaFl4WEkzOVNuaVl2U1dyUUtwN0JsNDZOV1F6M2dxTE9VdW5jNHRBVnp0Y211YXJ3cUxUT0RidEQ2WXhETURHQS1FUTlYcy1kOHpPV20xbGN4OEFXbkRHRnhDcTBPN0RYLU1UcDBuY2hq?oc=5' target='_blank'&gt;「AIの同僚」をどう管理する？ OpenAIが企業ITに与えるインパクト&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBwdHl2V1J3ekV0VDFFSzdlT3VOWlBaTzFGVEEwZENpTHhnQW1fcDdKd0czd3pwbmd3T2NFR1FpT1dYVVZ1RjNWTE5TN2lCdk92TWpsRTlOdGFoYUJld1ZjdG42UlBnMExBRWxIT2RwdlJjc204Rzd1V0pyQk5HeDg?oc=5' target='_blank'&gt;OpenAI、「GPT-6.1 Sol」発表 Astraに迫る性能を5分の1の料金で&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1791014430</guid>
+      <pubDate>Sat, 03 Oct 2026 08:00:30 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [17:24]</title>
-      <description>&lt;ul&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE5Denp2bGVTaXZoX2VCMWpNaXVEVENYYzFrd3plVlhNTU1Cb1ZYcjFvZlZjOUtPbGhWWUpEQW50NjZxemdPWm9wRTFfUlhOcWhLVFVoTExIaFVyX0hCS3dpbUx5UFM4aG5VYkE?oc=5' target='_blank'&gt;【17年の実績】開業病理医のための業務支援システム「NeXT-PaTH clinic」を日本病理学会に出展&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMiU0FVX3lxTE9xQmhuNV9tTklRZVVUY0dfdUpPVjhFTFQ2Z1ZMMFR0OXJSYXlhUE53UHlJeUZWREI5RV9ndkJEZFZYTDBTWVNXRmpWMnZyaVFOcDZR?oc=5' target='_blank'&gt;パーソナライズ遺伝子検査がDNAベーススキンケア製品市場の見通しを再定義、2030年までに108.9億ドルへ&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMinAFBVV95cUxNV0xZZkl6Qk0wTjlpeU9oYTFDa3lyN2h1UG1iXzlRSEFvaUhpWm1GanRSZDlvX1c4aXJ5bXZHSy1FWXNNQ2g2RUE2N3NRU0otTDlsdzJkTTBUaDdKMlB6Z0JNd0I1THV2emp2RE9oaTdqUEtJN2ROU0RneEN1MUk2WkJlbzd0MktpQ1FIOVMzUHFKRnNrNXl0OGJzUlk?oc=5' target='_blank'&gt;迅速な血液検査とMRIスキャンは、アルツハイマー病の診断期間を短縮する道を開く。&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMiWEFVX3lxTE5YYTNKY1o3c3czRW4zWG1oRFVfZXo5UFBhMmUtMVlNX21Dal9Od256V05rTnZreFZ5TXJMUXl3Tzk4b0p1OG9iWEZneXRBc29jU1ZmM1d4Q24?oc=5' target='_blank'&gt;臨床検査学科の学生が第10回日本ワンヘルスサイエンス学会で優秀賞を受賞しました&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE1LQjUxWmR4cjhzOFgtWkdTOTBJUEl4OTFtUkg0eDlqeEhaZ3ZFdS04VTM4WmViRm9KNjhQZXVVNjFhNTlOUGtZSnZCZF9aTEx3Mm5rd0M3aFUwZkN2akJaRGU1QTJ0VDltZjdNNQ?oc=5' target='_blank'&gt;ゲノム医療「AIと融合で副作用・診断ミス回避」 中村祐輔氏に聞く&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMiTkFVX3lxTE1JVENPTW9mbDVoMnhLSTNISlZwUDl2bEItTmQwNXhjc1VnT3A1TG1MOTlKZ2UxSlg0T080bUZrT3JIN1BUbnB0dnk2TmI3dw?oc=5' target='_blank'&gt;乳がん「多遺伝子検査」で変わる乳がん治療の新しい進め方&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMia0FVX3lxTE1tR1dkbTJlTkt3dHZyZ3gwdERNcXNlbFN4Qmt2MkQ0b2dKcHMxYzBhanpYeWNpRDVtdjdoTmlKNzByUklfYU5pMjR5Qi1YV0ktcjhXU0c2UDNiWVZac1h5WHZMMl9xR0h4bFN3?oc=5' target='_blank'&gt;株式会社デジタル・ウント・メアが日本病理学会に出展する「NeXT-PaTH clinic」の魅力&lt;/a&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTFBWZThQejM3TzVMM1pBNkpxUjBIRmI5eEpGdGlnMllfTXZMdTVIVmRiaG1vZWNqcjFLUHZGdDZiMTlmQVlrRkt1Rmx2MnpobmdhWFB4bzJ2X3NzNkhlbWtSTkVLbmVnVDh4Y0FGUUt3?oc=5' target='_blank'&gt;「お前、今患者を殺したからな？」臨床検査技師を目指す学生が東大病院で実習に臨む！仕事×青春ストーリーに注目！&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-      <guid isPermaLink="false">news-medical-1790929488</guid>
-      <pubDate>Fri, 02 Oct 2026 08:24:48 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [17:00]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMijgFBVV95cUxPTXBCczRZQjJyc2dQeFRuemV1SzF0VmJ1bGZhdFNQVUN1SW1YdDF4d3FhTmcxaWNyZTFVRmQ4SllKY1JRT3VNRUQydUlyUlJ6d05OLVgtdEFKLUktcVB4dzhPaXFLYjV2X3NKZjhwcC13M2puc0RHQVJUUGE5S05lcXZEN3N5ODJ2VTItQUZn?oc=5' target='_blank'&gt;多発性骨髄腫、妻と出演の動画で公表 血液検査で希少がん発覚「レディ・Ａ」メンバー、12月もツアー出演予定&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiW0FVX3lxTFBrcTFaT09ERk9oZUJmdjdHd2tPVkNEM21qd3lHWEVRSVdLb0g5YWdZN3hXcmlGeU5IZjd0cHQtMlJaN0pkRmdrRlB4Vi1JMFFZU3FvaXJPWXlSYmM?oc=5' target='_blank'&gt;認知症治療や予防 厚労省が強化方針&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMieEFVX3lxTE4tSXlVSV9oQXN2UTNHVUpFdnFNY2pMeUt5UE5KYkppc1c5bVhwaDJuTjZ1OG9Kd1ZYTlB2RnVES3JadTIzVUN0M0JVX01jNDBzTkFZc2xoYVA1ZmhmaUJrOGZKT2FQNjZ0NU5JUU10X0xrX1dJZENpbQ?oc=5' target='_blank'&gt;グレイルがん血液検査、FDA承認近づくも保険適用に課題&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiTkFVX3lxTE1JVENPTW9mbDVoMnhLSTNISlZwUDl2bEItTmQwNXhjc1VnT3A1TG1MOTlKZ2UxSlg0T080bUZrT3JIN1BUbnB0dnk2TmI3dw?oc=5' target='_blank'&gt;乳がん「多遺伝子検査」で変わる乳がん治療の新しい進め方&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMinAFBVV95cUxNV0xZZkl6Qk0wTjlpeU9oYTFDa3lyN2h1UG1iXzlRSEFvaUhpWm1GanRSZDlvX1c4aXJ5bXZHSy1FWXNNQ2g2RUE2N3NRU0otTDlsdzJkTTBUaDdKMlB6Z0JNd0I1THV2emp2RE9oaTdqUEtJN2ROU0RneEN1MUk2WkJlbzd0MktpQ1FIOVMzUHFKRnNrNXl0OGJzUlk?oc=5' target='_blank'&gt;迅速な血液検査とMRIスキャンは、アルツハイマー病の診断期間を短縮する道を開く。&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMifkFVX3lxTFBISjhrNWNFWllSaXVZZm1NcTRRd1lYSGNlR0J4bFAxUW9nRTRQXzZvUlBHekpENy1CYlgyUG9sOTB1cWFQNi1IUlNNRXFFQS00MWJERnlxTVZhQnYzalVPMnJRT0pabjNtS0FwMDJON2pVVFEtdndvNjdESGh6dw?oc=5' target='_blank'&gt;乳がんを正しく知る ピンクリボンフェスティバル2026 矢方美紀さんが語った25歳の乳がん経験 遺伝子検査 BRCA1 BRCA2 についても専門家とその意義を共有 ８つのサポートにも注目&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1791014430</guid>
+      <pubDate>Sat, 03 Oct 2026 08:00:30 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [17:24]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMipgFBVV95cUxNOGVpVVMtdC16aEg4cTBUWkMycWFsQkw2U0U4MFh2NS1jTWpOSXNRQmpSRVYxRmxZQ1lJSG1aOUtFTEhxRnlaSmJ6azNUdm9lSW96UTNTMnVQVEtfcC1zZE5sOHp1YjV2RFVkUkwzNGpoMzB5bmllMENTeko3ZlV2R253WjVhVmo3VUg0QWNfNkFDR3NqUjEwVUV1ZG41ZzJ2djVucThB?oc=5' target='_blank'&gt;中学生部活動の地域展開（泉佐野市中学生部活動地域展開「泉佐野モデル」推進計画を策定しました）&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-local-1790929488</guid>
-      <pubDate>Fri, 02 Oct 2026 08:24:48 GMT</pubDate>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [17:00]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMib0FVX3lxTE9MaGxzTzJKRDgtNTJ0VWdZcDJiOWlNWW1wWnUyTThaVGQzVGlkLW1wbUhlOEc1cGUyZXM2eElud3B1MnhNZUdOMnFQRFpCZHVlSzJRYkxhdFB0SG9BdkY5ckhWUVlJSmZobXp1VHMzNA?oc=5' target='_blank'&gt;国民スポーツ大会1回戦 智弁和歌山(和歌山) vs. 横浜(神奈川) - 高校野球 国民スポーツ大会 - ライブ配信&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMifkFVX3lxTE5mUW8xYTJqUFR6RTA4VnV5NUpVRmVYb2NpeTZCOF9Vd01kd2lFVG40TzlQZXFVY3RqcllsdEJWWkg5QmpnTFE2alRNXzlvRG5RZUx3YVBBM0RaMFVJalVQN2tTVFE4bzVqQ0NwV05uSWpaVWFzNDNpalBNa2RuQQ?oc=5' target='_blank'&gt;スタンプラリー「ぐるっと泉佐野スタンプコレクション」&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiZ0FVX3lxTE9HRDVwcEh3dzFmQkdHUnFjUFMwSmtycjJwbDBONTVudGdyOE5OVk56c09ieU96VExtNWJmbldpZGxiYlkzeHBYdWFQWEZXTFhtX05qcHhnTS1teDBLREhUajB3VUUxbk0?oc=5' target='_blank'&gt;ジャンボニンニクを特産に 岬町観光協会と和歌山大がコラボ - 朝日新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBhS3VQbHExZUJRSnZQcVBCSUsxVDdmeWxjWjRyZVVXUGtrS00yQlJvaVlOaE1PUGszWDN4TmxxV3NoMTNFamlBN0JwN1BiRGV6akc5dHdpMWJKVkdFOTNValpEM0NKYVJvZ2xlaUZJRmFrb2Y2NEJFVTdweXEwOXM?oc=5' target='_blank'&gt;【国スポ】有明－花巻東 横浜が智弁和歌山に夏のリベンジ 織田翔希が３失点完投／速報中 - 日刊スポーツ&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMi3wJBVV95cUxPY09xZ1RIT2xhMHFxSWZ4RTE4NmJ2YkJXYVkyU0VYb3ZmRmpPZXpiU3pkQlB6U2YxaG5IRmtBLXpfNzhoRXhoMER1OGp4Z1pwT2RGZS15ck9xSkJZdnI5aEllR2ZJSjZJRV81UTlBRjBrQXdtU211YmxaUUtYX0xzLWRlWUNsZk5qSDU4eDBEcm9ZY2pScEd0dEZUajFZQlpzZFJYdlhtOVh0TDFuSElKNFpTWURHcThfdkF5MVV3WTdMbnNTZnpLOFY1WkJUMkQtQmtabDFtUUlMWXVzWWd3LTNoU1d4bHVOUGp3UUFxZVU2NEdxdE5MTF9kSnp4aWpTN2Y0N3dTdEZNVkNyNGFJV0lZRFlTZHVWYVNEaWRBd1hZcFNrOWozZk54UTFVNjlSTmhOMlBIVndCQWRIWXpCVVJjdmRxRVl0QXQ0bVBQQmZISWU0cHFkbTJBWGdXVEk?oc=5' target='_blank'&gt;国スポ硬式野球 横浜が智弁和歌山に逆転勝利 - SmartNews&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBOSjZ0YXJRSzlZQU1Db2NJSjR6Ql9UMjdqM3d4Rlp1eTRrR2c4elFmX0ZURldsci10bU1QbGNvaEZTdW5SMVJrVDJ6S3BqYnN3eHBxaXl5NE81azcteFJ5NGZHRXA3VFhaZEZaa2p2bk5uOTUtTC13aG1qRE95QzQ?oc=5' target='_blank'&gt;【和歌山】田辺が完封勝利！3位で近畿大会出場決定戦へ！【26年秋高校野球】（高校野球ドットコム） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMipgFBVV95cUxNOGVpVVMtdC16aEg4cTBUWkMycWFsQkw2U0U4MFh2NS1jTWpOSXNRQmpSRVYxRmxZQ1lJSG1aOUtFTEhxRnlaSmJ6azNUdm9lSW96UTNTMnVQVEtfcC1zZE5sOHp1YjV2RFVkUkwzNGpoMzB5bmllMENTeko3ZlV2R253WjVhVmo3VUg0QWNfNkFDR3NqUjEwVUV1ZG41ZzJ2djVucThB?oc=5' target='_blank'&gt;中学生部活動の地域展開（泉佐野市中学生部活動地域展開「泉佐野モデル」推進計画を策定しました） - city.izumisano.lg.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMigwNBVV95cUxQSU8xd0ZoUmRsRjY3RmIwM2ZtRDM2Y0dYSmI2N3Ezc1Uzc1VTbEp1eGtSemhHNklWUEdDclhaQVJYMDRKRFRJSmhKUFVmQ3c4dWh0d2xWdWl2VmlMWVJ0WnIwZVdjc1AxUzBkNEJOV3NsM0FpTHZ1OVpUaG9FRXVuN2dpc1FCRjZkb2xJd0ZPWkU4TnpNYldsSmUwaGNacTNQaWpSU2V1VGloS3hmbkxVRTRnbzRudTBJQWZZQTJIZUg2VzZXRVpNcGVUUjQxSXZoRG5nUzNNd05DOXBQUnloUmd1aTctUG1KMkVJWnZ4Vlp6RmVISUgwdUh3X1dld0dVdEJQblhiRGVyZnFUWkp0X0tKZkZzSFVSa1RveFNjTG5LUzRkYWY1WVh3S3dPczVkR1pxTEI2ejE3YW1teXNGLWFvVWJERGYzSm05THo5YUExRGVMWWQ3NXpqSHpEcVJUT2FZMXQ2LXFySXJxQVR6X2o1X2M3bnVWZi1rQk1RZlVnb1k?oc=5' target='_blank'&gt;国スポ高校野球 横浜が智弁和歌山に勝利しリベンジ - SmartNews&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBDZ2tONXRQd294ajNGamFlOTkyaUlWd3V3RnBBUHZXNHBiazVnaGpRZ2o3TDN5clhpWndEWmNFMVo4RmVkcTBYamZJVmUwSkRUY0hmb01QcTVzcU83eDYtbU82U0ltYlZzTl9uTjhMZExLOTJYbzE3Q0haTk1RaEU?oc=5' target='_blank'&gt;英王室ゆかりのインター校が和歌山に 全寮制年800万円 「Aレベル」で大学受験資格も（産経新聞） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9ORW01QUtBSmRZODRlX3hZd01RcDlsQ3ZCU0pKODRReWFkVVhXelhoNWhwUDFia3cxLXNWXzk0a1pVRkI2Wl8zcUVrc0hMc1Eyc01ST1hETDhDRDhFZlI1bmFzUExvZkMwZmtZQ0RlZlptNG1nSWJ2T19iMl9aRjg?oc=5' target='_blank'&gt;田辺３位、近畿出場決定戦へ 高校野球和歌山県２次予選（紀伊民報） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBMcW5nU1gyeWxlUnl6WnVuZXU1enI3RFJ1QS1XaDFyN2pVSy1ualJKMUFkQnNxNWwyR2U5NHQycUlGcU9lSzh0dHFSaXBkYVl3bDZzNVpKYmI2V3NTa2MydmNRTF9IS3lDUE5DYXZRbHZpc3NlMW5DSEJLUnV5dWM?oc=5' target='_blank'&gt;和歌山のめぐみピクルス 梅調味液×規格外野菜、神島屋新商品（紀伊民報） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE16dF9oTDRUZXpsVUhMMGpHOG96eWZ3M0hNSXZGTnp2d0tZeTgyYTRYbk5hR21sRm5Da2NoQU9yVTZJZWhxQ2VJd3hhUVhXa0FhVHpJNFFGXzdjMGZEdGoxRk1YdjJ5TGkxODJpNmoxeEVBZmVsaFRBa3pNUlYtUFE?oc=5' target='_blank'&gt;【国スポ】横浜が智弁和歌山に競り勝ち今夏甲子園のリベンジ 織田翔希が先発し粘りの投球（日刊スポーツ） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE5hM3JqTEJHajZ1dGJDU3V3dk1CWUpoWE5xMmdiS0NUQzdnWmUtVDVmLU84dGEyeGVvVG81TC1ScVJ1QzE2Z1Axbmg4azRFU1JSV3ByVUltR18zVDIyV0JBMjZ6N0NVVFc0TGI0MHV3QlpPSkVseWYzYWlnbDhQN0E?oc=5' target='_blank'&gt;【高校野球】横浜が国スポで智弁和歌山に甲子園のリベンジ成功 日米争奪戦の織田翔希は進路は表明せず - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1791014430</guid>
+      <pubDate>Sat, 03 Oct 2026 08:00:30 GMT</pubDate>
     </item>
   </channel>
 </rss>
