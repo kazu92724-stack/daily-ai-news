@@ -2,7 +2,8 @@ name: Daily News Summary & Notification
 
 on:
   schedule:
-    - cron: '8 2 * * *' # 毎日 11:08 (JST)
+    # JST 10:08 (UTC 01:08) に起動設定
+    - cron: '8 1 * * *'
   workflow_dispatch: # 手動実行ボタン
 
 permissions:
@@ -11,7 +12,8 @@ permissions:
 jobs:
   build-and-notify:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    # リトライ時間を考慮してタイムアウトを30分に拡張
+    timeout-minutes: 30
 
     steps:
       - name: リポジトリのチェックアウト
