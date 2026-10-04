@@ -18,8 +18,9 @@ from google.genai.errors import APIError
 # ==========================================
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
-# モデル名は環境変数で差し替え可能（廃止対策）
-GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-3.5-flash-lite")
+
+# デフォルトモデル（軽量で応答速度の早い gemini-1.5-flash）
+GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
 
 if not GEMINI_API_KEY:
     print("エラー: GEMINI_API_KEY が設定されていません。")
@@ -39,7 +40,7 @@ FORMAT_RULE = "出力形式：HTMLタグは <a href='URL' target='_blank'>タイ
 # 1. ニュース収集関数
 # ==========================================
 def fetch_google_news(query, timeframe="2d"):
-    """Google News RSSから記事を取得（リンクはRSSのURLをそのまま使用）"""
+    """Google News RSSから記事を取得"""
     encoded_query = requests.utils.quote(f"({query}) when:{timeframe}")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
 
@@ -54,7 +55,7 @@ def fetch_google_news(query, timeframe="2d"):
 
 
 def build_fallback_list(articles):
-    """Gemini失敗時：LLMなしで記事リンク一覧を作る"""
+    """Gemini失敗時：LLMなしで記事リンク一覧を作成"""
     lines = [
         f"- <a href='{a['link']}' target='_blank'>{html.escape(a['title'])}</a>"
         for a in articles
@@ -66,24 +67,19 @@ def build_fallback_list(articles):
 # 2. Discord送信関数
 # ==========================================
 def html_to_discord(text):
-    """HTMLをDiscord用Markdownに変換（<a>→リンク、<li>→「- 」、他のタグは除去）"""
-    # <a href="URL">タイトル</a> → [タイトル](URL)
+    """HTMLをDiscord用Markdownに変換"""
     text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
         text,
         flags=re.IGNORECASE | re.DOTALL,
     )
-    # リスト系
     text = re.sub(r"</?(ul|ol)[^>]*>", "", text, flags=re.IGNORECASE)
     text = re.sub(r"<li[^>]*>", "- ", text, flags=re.IGNORECASE)
     text = re.sub(r"</li>", "\n", text, flags=re.IGNORECASE)
-    # 改行系
     text = re.sub(r"</p>|<br\s*/?>", "\n", text, flags=re.IGNORECASE)
-    # 残ったタグを全部除去
     text = re.sub(r"<[^>]+>", "", text)
     text = html.unescape(text)
-    # 行頭の空白除去、「- - 」の重複を「- 」に、空行の圧縮
     text = "\n".join(line.strip() for line in text.splitlines())
     text = re.sub(r"^[-*]\s+- ", "- ", text, flags=re.MULTILINE)
     text = re.sub(r"\n{2,}", "\n", text).strip()
@@ -150,13 +146,17 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. Gemini呼び出し（リトライ対象を限定）
+# 4. Gemini呼び出し（粘り強い再試行ロジック）
 # ==========================================
 RETRYABLE_CODES = {429, 500, 502, 503, 504}
 
 
-def call_gemini(prompt, system_instruction, max_retries=5):
-    delay = 5
+def call_gemini(prompt, system_instruction, max_retries=8, initial_delay=5):
+    """
+    混雑エラー(503/429等)が発生した場合、時間を倍々に伸ばしながら
+    成功するまで最大 max_retries 回粘り強くリトライする関数
+    """
+    delay = initial_delay
     for attempt in range(1, max_retries + 1):
         try:
             print(f"[{GEMINI_MODEL}] API呼び出し中 (試行 {attempt}/{max_retries}) ...")
@@ -171,20 +171,22 @@ def call_gemini(prompt, system_instruction, max_retries=5):
             if response and response.text:
                 print(f"[{GEMINI_MODEL}] 生成完了！")
                 return response.text
-            print("空のレスポンスでした。")
+            print("空のレスポンスが返却されたため再試行します。")
+
         except APIError as e:
             code = getattr(e, "code", None)
             print(f"[{GEMINI_MODEL}] APIエラー {code}: {e}")
-            if code not in RETRYABLE_CODES:
-                # 404(モデル廃止)・400・403などは再試行しても直らない
+            if code not in RETRYABLE_CODES and code is not None:
+                # リトライしても解決しないエラー（404等）は即座に中断
                 return None
         except Exception as e:
-            print(f"[{GEMINI_MODEL}] エラー: {e}")
+            print(f"[{GEMINI_MODEL}] 一時的エラー: {e}")
 
         if attempt < max_retries:
-            print(f"{delay}秒後に再試行します...")
+            print(f"混雑回避のため {delay} 秒待機してから再試行します...")
             time.sleep(delay)
-            delay *= 2
+            delay *= 2  # 待機時間を5s -> 10s -> 20s -> 40s... と増幅
+
     return None
 
 
@@ -254,7 +256,8 @@ def main():
         context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
         prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
 
-        summary_text = call_gemini(prompt, cat["system_instruction"])
+        # 最大8回までリトライを実行
+        summary_text = call_gemini(prompt, cat["system_instruction"], max_retries=8)
 
         if not summary_text:
             print("Gemini失敗のため、LLMなしのリンク一覧に切り替えます。")
@@ -263,8 +266,9 @@ def main():
         all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
         send_to_discord(cat["name"], summary_text)
 
-        print("API制限防止のため15秒待機中...")
-        time.sleep(15)
+        # 連続呼び出しによるレート制限を防ぐため20秒待機
+        print("API制限防止のため20秒待機中...")
+        time.sleep(20)
 
     generate_rss_xml(all_summaries)
 
