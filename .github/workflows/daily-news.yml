@@ -2,8 +2,8 @@ name: Daily News Summary & Notification
 
 on:
   schedule:
-    # JST 10:08 (UTC 01:08) に起動設定
-    - cron: '8 1 * * *'
+    # JST 07:00 (UTC 22:00) に起動設定（遅延を見越して前倒し）
+    - cron: '0 22 * * *'
   workflow_dispatch: # 手動実行ボタン
 
 permissions:
@@ -12,7 +12,6 @@ permissions:
 jobs:
   build-and-notify:
     runs-on: ubuntu-latest
-    # リトライ時間を考慮してタイムアウトを30分に拡張
     timeout-minutes: 30
 
     steps:
