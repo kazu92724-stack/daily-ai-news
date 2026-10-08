@@ -40,4 +40,5 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add feed.xml
-          git diff --staged --quiet || (git commit -m "Auto-update feed.xml [skip ci]" && git push)
+          # ★ ここに git pull --rebase を追加して競合エラーを回避
+          git diff --staged --quiet || (git commit -m "Auto-update feed.xml [skip ci]" && git pull --rebase && git push)
