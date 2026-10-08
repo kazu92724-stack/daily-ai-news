@@ -19,7 +19,6 @@ from google.genai.errors import APIError
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
-# デフォルトモデル（軽量で応答速度の早い gemini-1.5-flash）
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
 
 if not GEMINI_API_KEY:
@@ -40,7 +39,6 @@ FORMAT_RULE = "出力形式：HTMLタグは <a href='URL' target='_blank'>タイ
 # 1. ニュース収集関数
 # ==========================================
 def fetch_google_news(query, timeframe="2d"):
-    """Google News RSSから記事を取得"""
     encoded_query = requests.utils.quote(f"({query}) when:{timeframe}")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
 
@@ -53,9 +51,7 @@ def fetch_google_news(query, timeframe="2d"):
         print(f"Google News取得エラー ({query}): {e}")
         return []
 
-
 def build_fallback_list(articles):
-    """Gemini失敗時：LLMなしで記事リンク一覧を作成"""
     lines = [
         f"- <a href='{a['link']}' target='_blank'>{html.escape(a['title'])}</a>"
         for a in articles
@@ -67,7 +63,6 @@ def build_fallback_list(articles):
 # 2. Discord送信関数
 # ==========================================
 def html_to_discord(text):
-    """HTMLをDiscord用Markdownに変換"""
     text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
@@ -84,7 +79,6 @@ def html_to_discord(text):
     text = re.sub(r"^[-*]\s+- ", "- ", text, flags=re.MULTILINE)
     text = re.sub(r"\n{2,}", "\n", text).strip()
     return text
-
 
 def send_to_discord(category_name, summary_text):
     if not DISCORD_WEBHOOK_URL:
@@ -146,16 +140,11 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. Gemini呼び出し（粘り強い再試行ロジック）
+# 4. Gemini呼び出し
 # ==========================================
 RETRYABLE_CODES = {429, 500, 502, 503, 504}
 
-
 def call_gemini(prompt, system_instruction, max_retries=8, initial_delay=5):
-    """
-    混雑エラー(503/429等)が発生した場合、時間を倍々に伸ばしながら
-    成功するまで最大 max_retries 回粘り強くリトライする関数
-    """
     delay = initial_delay
     for attempt in range(1, max_retries + 1):
         try:
@@ -177,15 +166,14 @@ def call_gemini(prompt, system_instruction, max_retries=8, initial_delay=5):
             code = getattr(e, "code", None)
             print(f"[{GEMINI_MODEL}] APIエラー {code}: {e}")
             if code not in RETRYABLE_CODES and code is not None:
-                # リトライしても解決しないエラー（404等）は即座に中断
                 return None
         except Exception as e:
             print(f"[{GEMINI_MODEL}] 一時的エラー: {e}")
 
         if attempt < max_retries:
-            print(f"混雑回避のため {delay} 秒待機してから再試行します...")
+            print(f"混回避のため {delay} 秒待機してから再試行します...")
             time.sleep(delay)
-            delay *= 2  # 待機時間を5s -> 10s -> 20s -> 40s... と増幅
+            delay *= 2
 
     return None
 
@@ -214,7 +202,7 @@ def main():
             "query": f"({ai_keywords}) ({sites_query})",
             "timeframe": "2d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
-指定されたソース・キーワードから重要度の高いAI関連記事を選び、リンク付きの箇条書きリストのみを出力してください。
+指定されたソース・キーワードから重要度の高いAI関連記事を厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
 {FORMAT_RULE}""",
         },
         {
@@ -224,7 +212,7 @@ def main():
             "timeframe": "2d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
-重要度の高いニュースを選び、リンク付きの箇条書きリストのみを出力してください。
+重要度の高いニュースを厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
 {FORMAT_RULE}""",
         },
         {
@@ -234,43 +222,54 @@ def main():
             "timeframe": "1d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【対象地域】和歌山県、阪南市、泉南市、泉佐野市、岬町、熊取町に関する地域の話題・ニュース。
-重要度の高い地域ニュースを選び、リンク付きの箇条書きリストのみを出力してください。
+重要度の高い地域ニュースを厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
 {FORMAT_RULE}""",
         },
     ]
 
     all_summaries = []
 
-    for cat in categories:
-        print(f"\n=== {cat['name']} の処理開始 ===")
+    # ★ 処理が途中で転んでも「出せるところまで出す」ための try-finally 構文
+    try:
+        for cat in categories:
+            print(f"\n=== {cat['name']} の処理開始 ===")
 
-        articles = fetch_google_news(cat["query"], timeframe=cat.get("timeframe", "2d"))
+            articles = fetch_google_news(cat["query"], timeframe=cat.get("timeframe", "2d"))
 
-        if not articles:
-            print("該当する記事が0件のため、スキップメッセージを出力します。")
-            no_news_text = "直近に該当するニュースはありませんでした。"
-            all_summaries.append({"id": cat["id"], "category": cat["name"], "content": no_news_text})
-            send_to_discord(cat["name"], no_news_text)
-            continue
+            if not articles:
+                print("該当する記事が0件のため、スキップメッセージを出力します。")
+                no_news_text = "直近に該当するニュースはありませんでした。"
+                all_summaries.append({"id": cat["id"], "category": cat["name"], "content": no_news_text})
+                send_to_discord(cat["name"], no_news_text)
+                continue
 
-        context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
-        prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
+            context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
+            prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
 
-        # 最大8回までリトライを実行
-        summary_text = call_gemini(prompt, cat["system_instruction"], max_retries=8)
+            summary_text = call_gemini(prompt, cat["system_instruction"], max_retries=8)
 
-        if not summary_text:
-            print("Gemini失敗のため、LLMなしのリンク一覧に切り替えます。")
-            summary_text = build_fallback_list(articles)
+            if not summary_text:
+                print("Gemini失敗のため、LLMなしのリンク一覧に切り替えます。")
+                summary_text = build_fallback_list(articles)
 
-        all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
-        send_to_discord(cat["name"], summary_text)
+            all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
+            # Discordには取得できたタイミングで順次送信される
+            send_to_discord(cat["name"], summary_text)
 
-        # 連続呼び出しによるレート制限を防ぐため20秒待機
-        print("API制限防止のため20秒待機中...")
-        time.sleep(20)
+            print("API制限防止のため20秒待機中...")
+            time.sleep(20)
 
-    generate_rss_xml(all_summaries)
+    except Exception as e:
+        # 万が一予期せぬエラーで処理が中断されても、以下のfinallyブロックへ進む
+        print(f"処理中にエラーが発生し中断しました: {e}")
+        
+    finally:
+        # 処理が転んだ場合でも、完了しているカテゴリがあればXMLを出力する（出せるところまで出す）
+        if all_summaries:
+            print(f"\n{len(all_summaries)}件のカテゴリ情報をもとにフィードを生成します。")
+            generate_rss_xml(all_summaries)
+        else:
+            print("\n出力できる要約データがありませんでした。")
 
 
 if __name__ == "__main__":
