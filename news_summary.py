@@ -46,15 +46,17 @@ def fetch_google_news(query, timeframe="1d"):
         res = requests.get(rss_url, headers=HEADERS, timeout=15)
         res.raise_for_status()
         feed = feedparser.parse(res.content)
+        # Googleニュースからは最大15件取得する
         return [{"title": e.title, "link": e.link} for e in feed.entries[:15]]
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
         return []
 
-def build_fallback_list(articles):
+def build_fallback_list(articles, max_items=8):
+    """Gemini失敗時：LLMなしで記事リンク一覧を作成（★最大8件に強制カット）"""
     lines = [
         f"- <a href='{a['link']}' target='_blank'>{html.escape(a['title'])}</a>"
-        for a in articles
+        for a in articles[:max_items]
     ]
     return "\n".join(lines)
 
@@ -200,7 +202,7 @@ def main():
             "id": "ai",
             "name": "🤖 AI最新トレンド",
             "query": f"({ai_keywords}) ({sites_query})",
-            "timeframe": "1d", # ★2dから1dに変更
+            "timeframe": "1d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 指定されたソース・キーワードから重要度の高いAI関連記事を厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
 {FORMAT_RULE}""",
@@ -209,7 +211,7 @@ def main():
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
-            "timeframe": "1d", # ★2dから1dに変更
+            "timeframe": "1d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
 重要度の高いニュースを厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
@@ -243,13 +245,15 @@ def main():
                 continue
 
             context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
-            prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
+            
+            # ★ AIへ渡す直前のプロンプトでも「最大8件」を強力に念押し
+            prompt = f"以下のニュース記事リストから重要度を判定し、【最大8件まで】に厳選して指定ルールに従ってリンク一覧を作成してください。\n※8件を超える出力は絶対にしないでください。\n\n【記事リスト】\n{context}"
 
             summary_text = call_gemini(prompt, cat["system_instruction"], max_retries=8)
 
             if not summary_text:
                 print("Gemini失敗のため、LLMなしのリンク一覧に切り替えます。")
-                summary_text = build_fallback_list(articles)
+                summary_text = build_fallback_list(articles, max_items=8)
 
             all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
             send_to_discord(cat["name"], summary_text)
