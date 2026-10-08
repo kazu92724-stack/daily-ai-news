@@ -38,7 +38,7 @@ FORMAT_RULE = "出力形式：HTMLタグは <a href='URL' target='_blank'>タイ
 # ==========================================
 # 1. ニュース収集関数
 # ==========================================
-def fetch_google_news(query, timeframe="2d"):
+def fetch_google_news(query, timeframe="1d"):
     encoded_query = requests.utils.quote(f"({query}) when:{timeframe}")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
 
@@ -171,7 +171,7 @@ def call_gemini(prompt, system_instruction, max_retries=8, initial_delay=5):
             print(f"[{GEMINI_MODEL}] 一時的エラー: {e}")
 
         if attempt < max_retries:
-            print(f"混回避のため {delay} 秒待機してから再試行します...")
+            print(f"混雑回避のため {delay} 秒待機してから再試行します...")
             time.sleep(delay)
             delay *= 2
 
@@ -200,7 +200,7 @@ def main():
             "id": "ai",
             "name": "🤖 AI最新トレンド",
             "query": f"({ai_keywords}) ({sites_query})",
-            "timeframe": "2d",
+            "timeframe": "1d", # ★2dから1dに変更
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 指定されたソース・キーワードから重要度の高いAI関連記事を厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
 {FORMAT_RULE}""",
@@ -209,7 +209,7 @@ def main():
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
-            "timeframe": "2d",
+            "timeframe": "1d", # ★2dから1dに変更
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
 重要度の高いニュースを厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
@@ -229,12 +229,11 @@ def main():
 
     all_summaries = []
 
-    # ★ 処理が途中で転んでも「出せるところまで出す」ための try-finally 構文
     try:
         for cat in categories:
             print(f"\n=== {cat['name']} の処理開始 ===")
 
-            articles = fetch_google_news(cat["query"], timeframe=cat.get("timeframe", "2d"))
+            articles = fetch_google_news(cat["query"], timeframe=cat.get("timeframe", "1d"))
 
             if not articles:
                 print("該当する記事が0件のため、スキップメッセージを出力します。")
@@ -253,18 +252,15 @@ def main():
                 summary_text = build_fallback_list(articles)
 
             all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
-            # Discordには取得できたタイミングで順次送信される
             send_to_discord(cat["name"], summary_text)
 
             print("API制限防止のため20秒待機中...")
             time.sleep(20)
 
     except Exception as e:
-        # 万が一予期せぬエラーで処理が中断されても、以下のfinallyブロックへ進む
         print(f"処理中にエラーが発生し中断しました: {e}")
         
     finally:
-        # 処理が転んだ場合でも、完了しているカテゴリがあればXMLを出力する（出せるところまで出す）
         if all_summaries:
             print(f"\n{len(all_summaries)}件のカテゴリ情報をもとにフィードを生成します。")
             generate_rss_xml(all_summaries)
