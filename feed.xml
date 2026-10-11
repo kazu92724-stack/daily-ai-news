@@ -1,47 +1,47 @@
 <?xml version='1.0' encoding='utf-8'?>
 <rss version="2.0">
   <channel>
-    <title>Daily News [10:26 JST]</title>
+    <title>Daily News [09:38 JST]</title>
     <link>https://github.com</link>
     <description>AI・医療・地域ニュースの自動一覧フィード</description>
     <item>
-      <title>🤖 AI最新トレンド [10:26]</title>
+      <title>🤖 AI最新トレンド [09:38]</title>
       <description>- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE5ORGVSTDdtcklNMGJKNVd0bWxxZUNya2Z4eFJvYkpjZGF5QmdVVVFCUHJEQkJwd1dkd243NmNzVDFmc3dZaGxpblJNa0RlV2FlTVJQUXEwQVBldXBYQTlPaXBmUFZIVkRmZFE?oc=5' target='_blank'&gt;Anthropic、Claudeへの“虐待”を利用ポリシーで禁止 影響工作の規定も集約 - ITmedia&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTFBWbklOUEZSWWhpd1M0RDhuS2dLWDB0NnJNd2ZRU19HZHJhR1VXa1Z1Y0JpU2JVWkJIUkpXSG04RGRZck1LOUlxOVFLVXAzaUgtaUxvSHV4Q2lNaWw1bVVjSVE1Y0JEUV9KOHc?oc=5' target='_blank'&gt;Anthropic、セキュリティ専門家向け「Cyber Verification Program」を拡充 「Claude Mythos 5.1」も対象に - ITmedia&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE45cUVSdU44anNZNVE4YWtzX283RlNuLVlsdEoyejlrRm4xSE1fZjA4cVBHNFJhaDRmVVcyZFBkaVBzd3RmdDBjaTVGV1VqSzJGNk51WmlxRXlzdEpSbVNVNDVjZ29BajFydXc?oc=5' target='_blank'&gt;個人向けGeminiのモデル選択が厳格化 無料ユーザーが使えるのは「Flash-Lite」のみに - ITmedia&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE50YTBJTHF5TmQ5VVV2UXpYVU5XNVEtZGhESXpsak9yeHVCcVJqdEcxLWpXUEh5bnY2WFRoMmc0RGpnb0tMazU2WWJ3UXRCUGtrY1lxeUQwRTlOQU5wQkF6VmlyTDVKQUlaMWxYUQ?oc=5' target='_blank'&gt;Google「Gemini」新サービスで「Claude」利用可能に 他モデルも今後追加予定（1/2 ページ） - ITmedia&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFAwVTZPQ1Q0MjJfV2xGZEUxT1lJQTREbm9PZlVvTFpjSVh6YnhFN1ZIMTJIXzZ6OGptQlAtOTNNdkxzVmpSbWlPX0dEZnZMMTdVNEFqV1Z3aDhKUXZhb19WZnBva1Rua0hta29RTms1X1VzSkNpV1ZXTkU2VzV1Rzg?oc=5' target='_blank'&gt;アンソロピック、Claude Codeに「Mods」追加 画面も処理も書き換えるプラグイン（ビジネス＋IT） - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBMZm0zWENGVHlPSVhQM2hNdGZ3QVdKYzZrdTAzbzVKZnVPOWx5WWdTbkRSc2ZTSV9lTXBySEhiVUFZMU5fYTlGd3ZSdWtLX2hCVDlmR1UzZUlVX1REdV83NUllVnd6YzBMS3dLU1VHTlNyVnJ5Qk96MVp4LXNjZ00?oc=5' target='_blank'&gt;Googleドキュメントやスプシから「Claude」を利用 新アドオン公開（Impress Watch） - Yahoo!ニュース&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE5SMFJnTUluX1I1Y3RqSklyTEhmdy0tSFZHYmVtcklNVXJjNWpaS2x0OUNicHBVSDJCSXBOeGMxUUxkbXZTaXg3a3l5UGJYUTJvYkRFVEJYVm0xS3FlT2xYbjhVUTVseHMxRUE?oc=5' target='_blank'&gt;ChatGPT、無料版を含む全ユーザーに「GPT-6」 回答内に“操作できる画面”を生成する「Intelligent UI」搭載 - ITmedia&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTFBQUV9rcGRJY3hJTGVfeERXb1JFMVJSak1NSk9obTItQTJJTG9zMUVaRzJ5ek5nbVk2LXVmckFUNERRbFlGdndtX2lncmtaQUVvQTZiVU05RFluajZGa0VESW5vVEpYVTgzVlE?oc=5' target='_blank'&gt;ChatGPTにAIでバーチャル試着機能とカメラでの書類スキャン→PDF化機能 - ITmedia&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-ai-1791595614</guid>
-      <pubDate>Sat, 10 Oct 2026 01:26:54 GMT</pubDate>
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTFBMZm0zWENGVHlPSVhQM2hNdGZ3QVdKYzZrdTAzbzVKZnVPOWx5WWdTbkRSc2ZTSV9lTXBySEhiVUFZMU5fYTlGd3ZSdWtLX2hCVDlmR1UzZUlVX1REdV83NUllVnd6YzBMS3dLU1VHTlNyVnJ5Qk96MVp4LXNjZ00?oc=5' target='_blank'&gt;Googleドキュメントやスプシから「Claude」を利用 新アドオン公開（Impress Watch） - Yahoo!ニュース&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTE4xTlB1UDlVX1hpLUt1NUJDSThadzhiNWRGYU9vU0YwcnV5ZDZoYXFGN0g2eXlOcW1tWVQycTk5Y2hMeFM1bVVYSHNvSExONE85bHpYN2M5dmI5OU9DRkxXOHI5MkJ2aWdmOUdUQQ?oc=5' target='_blank'&gt;イラストレーターなど芸術系フリーランスに聞く「生成AIで収入は増えた？ 減った？」 調査団体が約2万5000人にアンケート - ITmedia&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE1pc2RJV1A3WXppLVc3ZWJST1lzcFdUUmIzNHZtVnhKandua3Q4a1F5QjZ0Wk1qRFpoNzJVLUxBMFJaYXRZQkNKbTNvTjdaTjdNWXRGV3o3Xy16bHBCcy1EYWVaVnlEcHowdkk2RWlxdDAxMkR1VTdfWTk2N3lmRDA?oc=5' target='_blank'&gt;Gemini無料版、10月9日から「Flash-Lite」のみに - Yahoo!ニュース&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-ai-1791679084</guid>
+      <pubDate>Sun, 11 Oct 2026 00:38:04 GMT</pubDate>
     </item>
     <item>
-      <title>🏥 医療・ゲノム・病理・検体検査 [10:26]</title>
-      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTFBFQms2c1BWVkxKS25TajJrNnhMblZCUkNRLUFhVzhhUHhXbm12b29rTWVPYkNHVktPMm1mR05HbjJiZGlGdkxsWUp0MEdOQmMzdlI1dThOYVVhWldUcUV1eXRNVS1Vc1Naamc?oc=5' target='_blank'&gt;臨床検査ワークフローの自動化を推進 豪病院で中央検査室向け質量分析ソリューションの開発・実証を開始 - 島津製作所 SHIMADZU&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMibEFVX3lxTFBXWkZhMVcxQnZsbzU4R21YSHZTRFU5LUtoRGRuR1NlSmVRZ3c4Y05BRHFQUGpza05QdlJtNEdxNEQtYnpOa2dEZUllSnZmUlM1Yjdvckk2dkRaczhaTFZBS1gxc0Rxc2F1NzZHNw?oc=5' target='_blank'&gt;「司法の病理」冤罪を考える5冊 重い歴史と道半ばの改革 - 日本経済新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiVkFVX3lxTE42TDBwM18xQ1JSTE5yZFM5RVEzcTVqeVVKNW9kTnFYT2JaRVBpRVdkWjctSVllNVVSTmYwM250a0VScmVwclNwX2VDTjQyX1JNa01LN0JR?oc=5' target='_blank'&gt;京都橘大学 生命健康科学研究センター講演会開催 ～病理診断と治療 病気になる前に知っておくべきこと - 大学プレスセンター&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiUEFVX3lxTE1BcFMxdVZlajVnX3U1cWFWY1V3RTN3RUZyNmFvbkpJOENQZmhaaFp5cjBfSnIxR0xvWUkzSE1IN1YyNVB5U3U1VEdlc3FlMjlS?oc=5' target='_blank'&gt;【クラファン】1検体で最大12種類 独自の遺伝子検査基盤で感染症抑止を！ ＴＢＡ、募集中 - 株探&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMibkFVX3lxTE9aUFUwOEIxR3psTnBzVXhQNFJXUFlmbXB4c1JTdmpuTWFFSm9iWTBKdUR3Z0pmWHZnUGR6VVcycTBueDZGV2s1eTRjTmdFa1k4ejRPLUd4SzgwRHdVbzNXSFVPMEIxUkFrZEp5OTNR?oc=5' target='_blank'&gt;画像2 / 159＞「お前、今患者を殺したからな？」臨床検査技師を目指す学生が東大病院で実習に臨む！仕事×青春ストーリーに注目！【作者に聞く】 - ウォーカープラス&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMijAJBVV95cUxQOWVvZHlEc1d4UXJIVW1fTW5UOEZDRklIYnNCODVjNVBfVlFGQnl1TXJLbzBnUDFMRzVaMHV0R28xTjU4anVuOEdhY1E2V3M3d2JVRFE4ZEh0OEQyQzktWmlTMjI5RmNPZ3VUU2JSckM5dVlKOENwNGhxUmRzbDhCc3NKZFRDbXpxNU1fbUJxbDA4MzVuQnFpMUlHcEFPUG4yeWUteTZ6QWMtdUdwdlBMbTJhLW1kdkZFR0RaLUIwb3R4OTh5NThQZ0kwOFBtQWpjcXpmbzVWMUlFcE1nS21sbUpVZER2Rk1WdUxTeXR4WGlGTlZXUzUwejFUdk9OdnRzS1Z0ekNfS0xwajhQ?oc=5' target='_blank'&gt;HTLV検査結果：スクリーニング陽性および確認 - Kantesti AI Blood Test Analyzer&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiZkFVX3lxTE9Qa0EzTU40RGZHTzlZdC1GVFlfajhJMXpRUEwzN3NYSW1xcTZQVGNsaVRjZ2pkWkd3cjh0NVlQWEcyVXJMVGNPUFpVNy0wOENCdURuZDdfbVcySi1LWndxQ3FIVVBCQQ?oc=5' target='_blank'&gt;写真：京都橘大学 生命健康科学研究センター講演会開催 ～病理診断と治療 病気になる前に知っておくべきこと～ - 沖縄タイムス社&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPbG1CblotRWtzNnN2d0h2SWJicE1nZDl5LWpEUnkwV19yekk5cVdKMUxzZUVTZE5LaHdGYW9HOGJtdjFrZ3N0NXJVT0llMWJtaVhLR2pUdFZBQ3Q5UUZmZ05scks3ZnhrcWxDRWo2QngtUExfSE96bElrS0RJbU9pMUJjajRXUkk5?oc=5' target='_blank'&gt;遺伝子検査から、運動も食事も自分専用に。「FURDI Plus+(ファディープラス)」が小岩店で受け入れ枠を拡大 - MANTANWEB&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-medical-1791595614</guid>
-      <pubDate>Sat, 10 Oct 2026 01:26:54 GMT</pubDate>
+      <title>🏥 医療・ゲノム・病理・検体検査 [09:38]</title>
+      <description>- &lt;a href='https://news.google.com/rss/articles/CBMiXEFVX3lxTE5GMGFHQ2FjRFdBS0xITVlscThLSkFtWEpjMUhIdzkxa1l4M3NuQVc5eTlhVktIeUIwbWJ1dDZhWG1oak55WEtWRmszaHlyaVU0bTRPY3U4azF4YkRk?oc=5' target='_blank'&gt;心不全パンデミック、超高齢社会の課題 悪化・回復重ね介護も、早めの発見に血液検査のすすめ - 朝日新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE10WGRTREJaNktFRng0ZW1zd3UwSXlaZzdxaWpvNC1vamdXdDU1Q1RQLVhzQ3I0d1c4TEhKYUVKSGVYcDdsYUdGeFo4NmMwdWVobzRHQ3FYcTczLWJPSXpTMEE0TjJXd2ROc1R1ek1SdXgyZlJp?oc=5' target='_blank'&gt;中国の肺がん遺伝子検査費用が数百元台へ低下も 鍾南山氏チームがAI病理大規模モデルを発表 - BigGo ファイナンス&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMilwFBVV95cUxOQzNWYUxrWXpsSmZzcnFjR3FPdjlzb1F5ZnBrd3lvQmlVRmFmMEliblB1b0tLdjB5X0U4d2FQQmhaWXJrWUhWVVYxSXdDSzlZUjhXeUVoUkpYNlVGSm5FUGc3cE1VM25mOERydXU4cGJTTndvZFNvb0IwUFFjZ195eV9xejk1Q0NMNmpiOC1PZVh2VXhVNXkw?oc=5' target='_blank'&gt;市場調査レポート: 臨床検査サービスの世界市場規模、シェア、動向および成長分析レポート2026-2034年 - グローバルインフォメーション&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE1jNmgwa09hdjdHcE0xX1dEdWF6eGVjS281Mk42aks1Tjh4QzZibWRjTFoyS0lKdl83dzFpMnhEdTJlWUdqcHV0UV83Q1laeElDV0YtV19xSjh5TnhtbS0tcnhqZEptME1HdGc?oc=5' target='_blank'&gt;「ユアホール西多賀」10月16日開催 健康診断結果から考える“これからの備え” 血液検査の見方講座＆終活安心相談会を実施 - PR TIMES&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiSkFVX3lxTE1nMmo4dHNUZEVLbi1VTTlvLWxmNzdCeTJSeFJDZzd1RTN6Q0xUWDRFOFoxakZmeVR1UWFoXzdJVWtSVnBfTzV4ODJ3?oc=5' target='_blank'&gt;日本のデジタル病理市場2026年版 - pando.life&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMi9gFBVV95cUxOVi11MXRSYnAwNUFuT3hTWGxTeHJmV0w4OGJGQk5PNDUzQmlHX2ppaVJGQU85WHk0NE5LaFg3N2d2akJGQUM4dTltVlJSQ1hmSTAzLXEtM3lKdkpBbkFEcmJOMmZUenZWNlpiMEhxY016ZFJZUWQtU1BFTjY5a3JLcDNFUjB6ak5pTEpzT1pNTk5SZHFkcVJIOFFqQ2ROTTNiNGtkdk90aUxGSF9NVDBtWnFQTnk4MDBsUlZ5WmpsR1hCZURCOGl0Q09QVjJlU0ZYVGlaTi1rZWRnU1BQSk9leUstZkczMTVGdDRkeURMeGRlREtSY3c?oc=5' target='_blank'&gt;PLA2R抗体：陽性、陰性、および腎生検 - Kantesti AI Blood Test Analyzer&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMi4gFBVV95cUxOdjdvVUkxeUEzMTVOdXN3Qk0tWEhoTnUyMURSUVc2VFJHQ1NxZXZENS0yX1Q5c3JEWjYwaERtZWlRU0hGOE9qdzhaTmpCX1BmQUFuZUpMYm82aFk1ZWtxX2xMQl9sY3NXbEc4S3dkQWhLUXNVYUpsQ29WM1h0ZEVDTUpEVm9hRFhSNDcyTmVUUUVCMUVMOURqNld4Q2xsWDZTVjFIVkJmd2RJcWdBWm9tZUZVU2hRRm1NaFF4YXhpTF9icm14S2JaN1RKUUUyVjhUMkg2X1AtNWZqa0E4Ujl3NmNB?oc=5' target='_blank'&gt;症状が全くなかった53歳の男性が、ホアンミービン病院で行われた消化器内視鏡検査で、初期の食道がんと診断された。 - Vietnam.vn&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMikwFBVV95cUxPVVhYYW1LM2xVOE1CWWpqdXpYYi0tcnM5cThrOV9iYTRlb0NEX0N0ck1acS13ODhwaEVTMGV4T255WmtEaWNxdnFzY3BRVHZDUVJ4a21ITGJiSlR4ajQ5VjJIMERJWHBtd0xCNDFsZnh5azZuaDZDb1ZuQUd2dlRQVEFvTm1sazl2c0h6a2QyQnRvWFU?oc=5' target='_blank'&gt;DNA検査の結果に影響を与える要因 - Laodong.vn&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-medical-1791679084</guid>
+      <pubDate>Sun, 11 Oct 2026 00:38:04 GMT</pubDate>
     </item>
     <item>
-      <title>🗾 地域ニュース（和歌山・大阪南部） [10:26]</title>
+      <title>🗾 地域ニュース（和歌山・大阪南部） [09:38]</title>
       <description>- &lt;a href='https://news.google.com/rss/articles/CBMif0FVX3lxTE9IZGF3bEJGaG53d0dBYlEtaVdkQ3JBMmdLUjItbGstQjY0V0RNdENLMUluemdoOFlNa0hueWRKcXNJV1NpdmdpOW0wNUNrRHNHWndtdlpQUUppTXl4UmxrMHZ1S3V2YUYtSUlvX255LXkxV1l3azNBbzh0d0RYUFk?oc=5' target='_blank'&gt;泉南市の秋祭り 10月10・11日（土日） - 南海電気鉄道株式会社&lt;/a&gt;
 - &lt;a href='https://news.google.com/rss/articles/CBMiiwFBVV95cUxOZXRpVFNyVTFnSHZfcXUtTVVPUmFLZjRaSlFFUDBoQjdBWW43RWIzaW52SFlGXzBQLUR4dlhqY0tJTkgwc1NJXzdMVWY1X0o3cE9jVEtrUmdTRTF6Q3JvLUw0UEhmSy1zNDI3WktJRndqeTFFQUhTQTNJTGV4bEJCVmZ4ektXNThNdTRN?oc=5' target='_blank'&gt;オータムフェスタ2026 in 和歌山港（海上自衛隊 掃海艇「ちちじま」一般公開）｜2026年10月11日(日) - 陸自調査団&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMifEFVX3lxTE85TTFReVVEaGpwcW4xZnJXVnRyTkpVbURCYkVTRjhBRlVOOW84UE9QODdNWTNzaVBjcXp0S0YtMUo4b3ZjaUFKenctTjZxRDNNdkVPRk5xU0x1SjN4LW9CVU50ODRUd09HN0gxenlpdm9OZ2J2c0hqaGM1VG4?oc=5' target='_blank'&gt;苗木作り - www.pref.wakayama.lg.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiiAFBVV95cUxPMnlyV3BaaktOOGNOWml6cVF6b1VDOHR5Q0lzUzZDVks5bzU1S1ZTZjR2NnNTU1oxZHo5dGlmdHlmbmQwdkF6bkJ5VkZfdjcwenhvSDBRRUlsZS1tbHd5S0IwWDRKRnpCRmcwM3hBT25iUHg5LWt3V3A5bzNWTnlUanVzbG5UdTBU?oc=5' target='_blank'&gt;「和歌山城＝徳川」は半分だけ正しい…大河では描かれない羽柴秀長と紀州の深い関係（渡邊大門） - エキスパート - Yahoo!ニュース&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiV0FVX3lxTE1ZOE5sTnpfbkhENmQ0WHZDaFFVSFEzM2ZXWVZOcWFKUnc0UDZKWXZmSzQ5aF94bW8yaWFWdzAyTDJwUjY3a09Qekc4bUd6R1p1ak13TWNnNA?oc=5' target='_blank'&gt;和歌山県で最大震度2の地震 和歌山県・御坊市 - TBS NEWS DIG&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE83ZTlWYUxXdjdfamowOHdhd0h6OXdyVElWNkJiaktnbVNNQlQzTjhRQ2l5ZTlMU1pXUm5tQ25xWHB2MWM0bUx1dGU5SjBhV19qWEh5N1JydEkxY00wazhXN2tTYzlqVU41SUJhRlNzWHo3WFV6?oc=5' target='_blank'&gt;和歌山：事業承継にネットワーク：地域ニュース - 読売新聞&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMiakFVX3lxTE9UUVkzQzZ3c2tpSmJBWkhHUXE5cGdFSURkQUVxemdOY0w5YW9FOEU0cWMtN2ZzTGtXUmRUak14aURmaTZpTjJDWEJsQnZFVDBraUg3UnZJWld0X1g3SFRoV2ZqUllCZ1ZjQlE?oc=5' target='_blank'&gt;台風29号(2026年)の和歌山県田辺・西牟婁の暴風域に入る確率 - tenki.jp&lt;/a&gt;
-- &lt;a href='https://news.google.com/rss/articles/CBMihwFBVV95cUxOV1Ntd19uTHRwUlVuMFI0QnZTdGVYVzZ2dDNoLWZ5QnR5VTVFc0ZvWVBNbmNRQ0g1T3JsSlYteFVLUnowcmRZMDltYWd5czdLc0VPVFEwRTJKUjBKaWpZZ2pNaV9qSUpyTDVKMzB5Nk95ektsclNuMGs0cGhiVk9TQkVwVmJpTjA?oc=5' target='_blank'&gt;震度2 和歌山県北部 2026年10月10日03:26ごろ 地震詳細 | RCC NEWS | 広島ニュース | RCC中国放送 - TBS NEWS DIG&lt;/a&gt;</description>
-      <guid isPermaLink="false">news-local-1791595614</guid>
-      <pubDate>Sat, 10 Oct 2026 01:26:54 GMT</pubDate>
+- &lt;a href='https://news.google.com/rss/articles/CBMiWkFVX3lxTE9pM09DcjFoUHo0Tkc4c19ZLUpuaEwxYXd3SzJXNEF4bWZTU3dxU0dhQWRqVGx4MWQ5a0d5WGxySXNSLVpsWlJzM2tucW8tY19hTndjV0dSdURRdw?oc=5' target='_blank'&gt;泉佐野市と泉南市が「合併」も視野に検討を開始 2013年は“財政難”からとん挫…インバウンドによる関空の税収効果が周辺自治体にも波及するなか“泉州南”どうなる？ - ktv.jp&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiV0FVX3lxTFByXzlKQVdBX0U4R1k4elNwN0UwTVhXbENZTGc1Sk1HMVlzcWE4M2xTQzloWXZkcE1xMUprWWsxZDlxTWFlZzh3dEhsbEwtNzdyUklfa2wwcw?oc=5' target='_blank'&gt;だんじり横転相次ぐ 男性2人死亡 16人重軽傷 大阪・泉佐野市と泉大津市 - TBS NEWS DIG&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMidEFVX3lxTE53YXU5d19LeWdicVJMX0F4dzB2dTZuVjFHckY3WEFNdXV0TGstVTYzeWt6Y0FNTkNFLVBHeVptMVlCS2xXWkxXVWVxVnAzY3owZDJDdnhTM0p1ZkVhRUVjLWFWemxHaktjZHpibHZxaWJ0UF9K?oc=5' target='_blank'&gt;幅１ミリに満たない細い線で 小林古径「研ぎ澄まされた線描の美」 田辺市立美術館 開館３０年特別展 - 読売新聞&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiV0FVX3lxTE05VmhSRDBSOHlvT0ZnRjVvcTh5U2tWaEg1RmV1d2RkVXFpZHpaMExkSkZsMzFrTlJIRU9kZUNwdFRybTh4VHNOanZ6M08zU21PNVEzOHA1dw?oc=5' target='_blank'&gt;「軽タクシー」ついに登場!! ルークスがタクシーに!? 関西圏初の軽自動車タクシーが和歌山で運行開始 - ベストカーWeb&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMifEFVX3lxTE5zazJ1cVVhYVlYd3pDeVB2dW50V0Vha2trTjd5emg3dGlrZVQtMlNEaEwzQm1LZXZLV3ZDTnFUNG4yZDdpVVA3RVRWcmFFQVgzS2p1djNzR3hUdXRXaDc3UUNpazkydV9abGctX3dnMnBVMC1tazVFLUxFV3Y?oc=5' target='_blank'&gt;だんじり横転する事故相次ぐ 2人死亡 大阪・泉佐野市と泉大津市（2026年10月10日掲載） - 日テレNEWS NNN&lt;/a&gt;
+- &lt;a href='https://news.google.com/rss/articles/CBMiYEFVX3lxTE1ZUEloSkc5dXJ6VVNmdlpuREtCcEdUcDVFejcwVWFUTzNocV9JSkpwN2Q0TmtVN0JoTlBGMm9Vd1lONzY3NnVpTGlWNEFEVklkS3VjUkpkX0lxaEVWcXhIQg?oc=5' target='_blank'&gt;バイオハザード イオンシネマ和歌山(和歌山) の上映時間・上映スケジュール - MOVIE WALKER PRESS&lt;/a&gt;</description>
+      <guid isPermaLink="false">news-local-1791679084</guid>
+      <pubDate>Sun, 11 Oct 2026 00:38:04 GMT</pubDate>
     </item>
   </channel>
 </rss>
