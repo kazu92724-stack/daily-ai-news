@@ -2,8 +2,8 @@ name: Daily News Summary & Notification
 
 on:
   schedule:
-    # JST 07:00 (UTC 22:00) に起動設定（遅延を見越して前倒し）
-    - cron: '0 22 * * *'
+    # JST 10:08 (UTC 01:08) に起動設定
+    - cron: '8 1 * * *'
   workflow_dispatch: # 手動実行ボタン
 
 permissions:
@@ -35,10 +35,9 @@ jobs:
         run: |
           python news_summary.py
 
-      - name: 生成された feed.xml をコミットしてPush
+      - name: 生成された feed.xml と sent_links.json をコミットしてPush
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
-          git add feed.xml
-          # ★ ここに git pull --rebase を追加して競合エラーを回避
-          git diff --staged --quiet || (git commit -m "Auto-update feed.xml [skip ci]" && git pull --rebase && git push)
+          git add feed.xml sent_links.json
+          git diff --staged --quiet || (git commit -m "Auto-update feed.xml and sent_links.json [skip ci]" && git push)
