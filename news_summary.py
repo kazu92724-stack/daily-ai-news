@@ -19,7 +19,9 @@ from google.genai.errors import APIError
 GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 DISCORD_WEBHOOK_URL = os.environ.get("DISCORD_WEBHOOK_URL")
 
+# デフォルトモデル（軽量で応答速度の早い gemini-1.5-flash）
 GEMINI_MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
+HISTORY_FILE = "sent_links.json"
 
 if not GEMINI_API_KEY:
     print("エラー: GEMINI_API_KEY が設定されていません。")
@@ -36,9 +38,37 @@ FORMAT_RULE = "出力形式：HTMLタグは <a href='URL' target='_blank'>タイ
 
 
 # ==========================================
-# 1. ニュース収集関数
+# 1. 配信履歴管理関数
 # ==========================================
-def fetch_google_news(query, timeframe="1d"):
+def load_sent_links():
+    """過去に送信した記事のURLリストをファイルから読み込む"""
+    if os.path.exists(HISTORY_FILE):
+        try:
+            with open(HISTORY_FILE, "r", encoding="utf-8") as f:
+                return set(json.load(f))
+        except Exception as e:
+            print(f"履歴読み込みエラー: {e}")
+            return set()
+    return set()
+
+
+def save_sent_links(sent_links):
+    """送信した記事のURLリストをファイルに保存する"""
+    try:
+        # 直近1000件のみ保存（ファイルの肥大化を防止）
+        links_list = list(sent_links)[-1000:]
+        with open(HISTORY_FILE, "w", encoding="utf-8") as f:
+            json.dump(links_list, f, ensure_ascii=False, indent=2)
+        print(f"[{HISTORY_FILE}] へ配信履歴を保存しました。（件数: {len(links_list)}）")
+    except Exception as e:
+        print(f"履歴保存エラー: {e}")
+
+
+# ==========================================
+# 2. ニュース収集関数（重複除外機能付き）
+# ==========================================
+def fetch_google_news(query, sent_links, timeframe="2d"):
+    """Google News RSSから記事を取得し、配信済みの記事を除外する"""
     encoded_query = requests.utils.quote(f"({query}) when:{timeframe}")
     rss_url = f"https://news.google.com/rss/search?q={encoded_query}&hl=ja&gl=JP&ceid=JP:ja"
 
@@ -46,25 +76,36 @@ def fetch_google_news(query, timeframe="1d"):
         res = requests.get(rss_url, headers=HEADERS, timeout=15)
         res.raise_for_status()
         feed = feedparser.parse(res.content)
-        # Googleニュースからは最大15件取得する
-        return [{"title": e.title, "link": e.link} for e in feed.entries[:15]]
+        
+        filtered_articles = []
+        for e in feed.entries:
+            link = e.link
+            # 過去に送信していないURLのみを採用
+            if link not in sent_links:
+                filtered_articles.append({"title": e.title, "link": link})
+            if len(filtered_articles) >= 15:
+                break
+
+        return filtered_articles
     except Exception as e:
         print(f"Google News取得エラー ({query}): {e}")
         return []
 
-def build_fallback_list(articles, max_items=8):
-    """Gemini失敗時：LLMなしで記事リンク一覧を作成（★最大8件に強制カット）"""
+
+def build_fallback_list(articles):
+    """Gemini失敗時：LLMなしで記事リンク一覧を作成"""
     lines = [
         f"- <a href='{a['link']}' target='_blank'>{html.escape(a['title'])}</a>"
-        for a in articles[:max_items]
+        for a in articles
     ]
     return "\n".join(lines)
 
 
 # ==========================================
-# 2. Discord送信関数
+# 3. Discord送信関数
 # ==========================================
 def html_to_discord(text):
+    """HTMLをDiscord用Markdownに変換"""
     text = re.sub(
         r"<a\s+[^>]*href=['\"]([^'\"]+)['\"][^>]*>(.*?)</a>",
         r"[\2](\1)",
@@ -81,6 +122,7 @@ def html_to_discord(text):
     text = re.sub(r"^[-*]\s+- ", "- ", text, flags=re.MULTILINE)
     text = re.sub(r"\n{2,}", "\n", text).strip()
     return text
+
 
 def send_to_discord(category_name, summary_text):
     if not DISCORD_WEBHOOK_URL:
@@ -115,7 +157,7 @@ def send_to_discord(category_name, summary_text):
 
 
 # ==========================================
-# 3. feed.xml 生成関数
+# 4. feed.xml 生成関数
 # ==========================================
 def generate_rss_xml(all_summaries, output_path="feed.xml"):
     now = datetime.now(timezone.utc)
@@ -142,9 +184,10 @@ def generate_rss_xml(all_summaries, output_path="feed.xml"):
 
 
 # ==========================================
-# 4. Gemini呼び出し
+# 5. Gemini呼び出し（粘り強い再試行ロジック）
 # ==========================================
 RETRYABLE_CODES = {429, 500, 502, 503, 504}
+
 
 def call_gemini(prompt, system_instruction, max_retries=8, initial_delay=5):
     delay = initial_delay
@@ -181,9 +224,11 @@ def call_gemini(prompt, system_instruction, max_retries=8, initial_delay=5):
 
 
 # ==========================================
-# 5. メイン処理
+# 6. メイン処理
 # ==========================================
 def main():
+    sent_links = load_sent_links()
+
     ai_sites = [
         "site:news.yahoo.co.jp",
         "site:itmedia.co.jp",
@@ -202,19 +247,19 @@ def main():
             "id": "ai",
             "name": "🤖 AI最新トレンド",
             "query": f"({ai_keywords}) ({sites_query})",
-            "timeframe": "1d",
+            "timeframe": "2d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
-指定されたソース・キーワードから重要度の高いAI関連記事を厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
+指定されたソース・キーワードから重要度の高いAI関連記事を選び、リンク付きの箇条書きリストのみを出力してください。
 {FORMAT_RULE}""",
         },
         {
             "id": "medical",
             "name": "🏥 医療・ゲノム・病理・検体検査",
             "query": "臨床検査 OR 病理 OR ゲノム検査 OR 遺伝子検査 OR 血液検査 OR ゲノム医療",
-            "timeframe": "1d",
+            "timeframe": "2d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【絶対除外】新薬、薬価、処方薬、添付文書。
-重要度の高いニュースを厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
+重要度の高いニュースを選び、リンク付きの箇条書きリストのみを出力してください。
 {FORMAT_RULE}""",
         },
         {
@@ -224,52 +269,48 @@ def main():
             "timeframe": "1d",
             "system_instruction": f"""前置き、挨拶、要約文章、本文解説は一切出力禁止。
 【対象地域】和歌山県、阪南市、泉南市、泉佐野市、岬町、熊取町に関する地域の話題・ニュース。
-重要度の高い地域ニュースを厳選し、最大8件までリンク付きの箇条書きリストのみを出力してください。8件を超える出力は禁止します。
+重要度の高い地域ニュースを選び、リンク付きの箇条書きリストのみを出力してください。
 {FORMAT_RULE}""",
         },
     ]
 
     all_summaries = []
 
-    try:
-        for cat in categories:
-            print(f"\n=== {cat['name']} の処理開始 ===")
+    for cat in categories:
+        print(f"\n=== {cat['name']} の処理開始 ===")
 
-            articles = fetch_google_news(cat["query"], timeframe=cat.get("timeframe", "1d"))
+        # 未送信の記事のみを取得
+        articles = fetch_google_news(cat["query"], sent_links, timeframe=cat.get("timeframe", "2d"))
 
-            if not articles:
-                print("該当する記事が0件のため、スキップメッセージを出力します。")
-                no_news_text = "直近に該当するニュースはありませんでした。"
-                all_summaries.append({"id": cat["id"], "category": cat["name"], "content": no_news_text})
-                send_to_discord(cat["name"], no_news_text)
-                continue
+        if not articles:
+            print("新規の記事が0件のため、メッセージを出力します。")
+            no_news_text = "直近に新規のニュースはありませんでした。"
+            all_summaries.append({"id": cat["id"], "category": cat["name"], "content": no_news_text})
+            send_to_discord(cat["name"], no_news_text)
+            continue
 
-            context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
-            
-            # ★ AIへ渡す直前のプロンプトでも「最大8件」を強力に念押し
-            prompt = f"以下のニュース記事リストから重要度を判定し、【最大8件まで】に厳選して指定ルールに従ってリンク一覧を作成してください。\n※8件を超える出力は絶対にしないでください。\n\n【記事リスト】\n{context}"
+        context = "\n".join([f"- タイトル: {a['title']} / URL: {a['link']}" for a in articles])
+        prompt = f"以下のニュース記事リストから対象を選び、指定ルールに従ってリンク一覧を作成してください。\n\n【記事リスト】\n{context}"
 
-            summary_text = call_gemini(prompt, cat["system_instruction"], max_retries=8)
+        summary_text = call_gemini(prompt, cat["system_instruction"], max_retries=8)
 
-            if not summary_text:
-                print("Gemini失敗のため、LLMなしのリンク一覧に切り替えます。")
-                summary_text = build_fallback_list(articles, max_items=8)
+        if not summary_text:
+            print("Gemini失敗のため、LLMなしのリンク一覧に切り替えます。")
+            summary_text = build_fallback_list(articles)
 
-            all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
-            send_to_discord(cat["name"], summary_text)
+        # 今回扱った記事のURLを履歴リストへ登録
+        for a in articles:
+            sent_links.add(a["link"])
 
-            print("API制限防止のため20秒待機中...")
-            time.sleep(20)
+        all_summaries.append({"id": cat["id"], "category": cat["name"], "content": summary_text})
+        send_to_discord(cat["name"], summary_text)
 
-    except Exception as e:
-        print(f"処理中にエラーが発生し中断しました: {e}")
-        
-    finally:
-        if all_summaries:
-            print(f"\n{len(all_summaries)}件のカテゴリ情報をもとにフィードを生成します。")
-            generate_rss_xml(all_summaries)
-        else:
-            print("\n出力できる要約データがありませんでした。")
+        print("API制限防止のため20秒待機中...")
+        time.sleep(20)
+
+    # 履歴ファイルとRSSフィードを書き出し
+    save_sent_links(sent_links)
+    generate_rss_xml(all_summaries)
 
 
 if __name__ == "__main__":
