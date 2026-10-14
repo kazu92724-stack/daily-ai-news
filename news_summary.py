@@ -55,8 +55,8 @@ def load_sent_links():
 def save_sent_links(sent_links):
     """送信した記事のURLリストをファイルに保存する"""
     try:
-        # 直近1000件のみ保存（ファイルの肥大化を防止）
-        links_list = list(sent_links)[-1000:]
+        # 直近500件のみ保存（ファイルの肥大化を防止）
+        links_list = list(sent_links)[-500:]
         with open(HISTORY_FILE, "w", encoding="utf-8") as f:
             json.dump(links_list, f, ensure_ascii=False, indent=2)
         print(f"[{HISTORY_FILE}] へ配信履歴を保存しました。（件数: {len(links_list)}）")
