@@ -2,7 +2,7 @@ name: Daily News Summary & Notification
 
 on:
   schedule:
-    # JST 10:08 (UTC 01:08) に起動設定
+    # JST 05:08 (UTC 20:08) に起動設定（現在より5時間前）
     - cron: '8 20 * * *'
   workflow_dispatch: # 手動実行ボタン
 
